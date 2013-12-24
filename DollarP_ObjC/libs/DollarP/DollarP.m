@@ -77,8 +77,11 @@ int const DollarPNumPoints = 32;
 + (float)cloudDistanceFrom:(NSArray *)points1
                         to:(NSArray *)points2
                      start:(int)start {
-    int numPoints1 = [points1 count];
-    int numPoints2 = [points2 count];
+    NSUInteger numPoints1 = [points1 count];
+    NSUInteger numPoints2 = [points2 count];
+    
+    if (numPoints1 < 1)
+        return NAN;
     
     NSMutableArray *matched = [NSMutableArray arrayWithCapacity:numPoints1];
 	for (int k = 0; k < numPoints1; k++) {

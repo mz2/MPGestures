@@ -1,18 +1,6 @@
 #import "GestureView.h"
 
-@interface Stroke : NSObject
-
-@property (nonatomic, strong) NSMutableArray *points;
-@property (nonatomic, strong) UIColor *color;
-
-@end
-
-
-@implementation Stroke
-
-@synthesize points, color;
-
-@end
+#import "Stroke.h"
 
 
 @implementation GestureView

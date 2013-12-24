@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F16418690ED500466512 /* InfoPlist.strings */; };
+		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
+		5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FF3F17518690ED500466512 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
+		5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F17918690ED500466512 /* InfoPlist.strings */; };
+		5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F17C18690ED500466512 /* DollarPTests.m */; };
+		5FF3F18418690EDB00466512 /* DollarP.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219799165EA5AF009CFCF3 /* DollarP.m */; };
+		5FF3F18618690EDF00466512 /* DollarDefaultGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A7165F650C009CFCF3 /* DollarDefaultGestures.m */; };
+		5FF3F18718690EE200466512 /* DollarPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21979E165EA66C009CFCF3 /* DollarPoint.m */; };
+		5FF3F18818690EE400466512 /* DollarPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A1165EA8D2009CFCF3 /* DollarPointCloud.m */; };
+		5FF3F18918690EE600466512 /* DollarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A4165EAA1F009CFCF3 /* DollarResult.m */; };
+		5FF3F18A18690EF100466512 /* DollarP.h in Headers */ = {isa = PBXBuildFile; fileRef = DC219798165EA5AF009CFCF3 /* DollarP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F18C18690EF100466512 /* DollarDefaultGestures.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A6165F650B009CFCF3 /* DollarDefaultGestures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F18D18690EF100466512 /* DollarPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DC21979D165EA66C009CFCF3 /* DollarPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F18E18690EF100466512 /* DollarPointCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A0165EA8D2009CFCF3 /* DollarPointCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F18F18690EF100466512 /* DollarResult.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A3165EAA1F009CFCF3 /* DollarResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1991869135C00466512 /* InfoPlist.strings */; };
+		5FF3F19D1869135C00466512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F19C1869135C00466512 /* main.m */; };
+		5FF3F1A11869135C00466512 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F19F1869135C00466512 /* Credits.rtf */; };
+		5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A31869135C00466512 /* MPAppDelegate.m */; };
+		5FF3F1A71869135C00466512 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A51869135C00466512 /* MainMenu.xib */; };
+		5FF3F1A91869135C00466512 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A81869135C00466512 /* Images.xcassets */; };
+		5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
+		5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FF3F1B81869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B61869135C00466512 /* InfoPlist.strings */; };
+		5FF3F1BA1869135C00466512 /* DollarP_OSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */; };
+		5FF3F1C31869145300466512 /* MPGestureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1C11869145300466512 /* MPGestureView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF3F1C41869145300466512 /* MPGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C21869145300466512 /* MPGestureView.m */; };
+		5FF3F1C7186914D700466512 /* DollarStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1C5186914D700466512 /* DollarStroke.h */; };
+		5FF3F1C8186914D700466512 /* DollarStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C6186914D700466512 /* DollarStroke.m */; };
+		5FF3F1C9186914D700466512 /* DollarStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C6186914D700466512 /* DollarStroke.m */; };
+		5FF3F1CC1869194200466512 /* MPGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */; };
+		5FF3F1CD1869194200466512 /* MPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */; };
+		5FF3F1D0186A0FC700466512 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
 		DC219726165E7072009CFCF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219725165E7072009CFCF3 /* UIKit.framework */; };
 		DC219728165E7072009CFCF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219727165E7072009CFCF3 /* Foundation.framework */; };
 		DC21972A165E7072009CFCF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219729165E7072009CFCF3 /* CoreGraphics.framework */; };
@@ -32,7 +68,64 @@
 		DC4B79EC165FED0900A3BF09 /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5FF3F17318690ED500466512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = DollarP;
+		};
+		5FF3F1B11869135C00466512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F1931869135C00466512;
+			remoteInfo = "DollarP-OSX";
+		};
+		5FF3F1CE186A0FC200466512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = DollarP;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5FF3F15A18690ED500466512 /* DollarP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DollarP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5FF3F15F18690ED500466512 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5FF3F16018690ED500466512 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5FF3F16318690ED500466512 /* DollarP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-Info.plist"; sourceTree = "<group>"; };
+		5FF3F16518690ED500466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FF3F16718690ED500466512 /* DollarP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP-Prefix.pch"; sourceTree = "<group>"; };
+		5FF3F16F18690ED500466512 /* DollarPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DollarPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F17018690ED500466512 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5FF3F17818690ED500466512 /* DollarPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarPTests-Info.plist"; sourceTree = "<group>"; };
+		5FF3F17A18690ED500466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FF3F17C18690ED500466512 /* DollarPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarPTests.m; sourceTree = "<group>"; };
+		5FF3F1941869135C00466512 /* DollarP-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DollarP-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F1981869135C00466512 /* DollarP-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSX-Info.plist"; sourceTree = "<group>"; };
+		5FF3F19A1869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FF3F19C1869135C00466512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FF3F19E1869135C00466512 /* DollarP-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		5FF3F1A01869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5FF3F1A21869135C00466512 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
+		5FF3F1A31869135C00466512 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
+		5FF3F1A61869135C00466512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5FF3F1A81869135C00466512 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DollarP-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F1B51869135C00466512 /* DollarP-OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSXTests-Info.plist"; sourceTree = "<group>"; };
+		5FF3F1B71869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarP_OSXTests.m; sourceTree = "<group>"; };
+		5FF3F1C11869145300466512 /* MPGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureView.h; sourceTree = "<group>"; };
+		5FF3F1C21869145300466512 /* MPGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureView.m; sourceTree = "<group>"; };
+		5FF3F1C5186914D700466512 /* DollarStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarStroke.h; path = DollarP_ObjC/libs/DollarP/DollarStroke.h; sourceTree = "<group>"; };
+		5FF3F1C6186914D700466512 /* DollarStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarStroke.m; path = DollarP_ObjC/libs/DollarP/DollarStroke.m; sourceTree = "<group>"; };
+		5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureRecognizer.h; sourceTree = "<group>"; };
+		5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureRecognizer.m; sourceTree = "<group>"; };
 		DC219721165E7072009CFCF3 /* DollarP_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DollarP_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC219725165E7072009CFCF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC219727165E7072009CFCF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +166,42 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5FF3F15618690ED400466512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F16C18690ED500466512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F17518690ED500466512 /* DollarP.framework in Frameworks */,
+				5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */,
+				5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1911869135C00466512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F1D0186A0FC700466512 /* DollarP.framework in Frameworks */,
+				5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1AB1869135C00466512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */,
+				5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC21971E165E7072009CFCF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,10 +215,106 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FF3F15D18690ED500466512 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F15E18690ED500466512 /* Foundation.framework */,
+				5FF3F15F18690ED500466512 /* CoreData.framework */,
+				5FF3F16018690ED500466512 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		5FF3F16118690ED500466512 /* DollarP */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F16218690ED500466512 /* Supporting Files */,
+				5FF3F1C11869145300466512 /* MPGestureView.h */,
+				5FF3F1C21869145300466512 /* MPGestureView.m */,
+				5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */,
+				5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */,
+			);
+			path = DollarP;
+			sourceTree = "<group>";
+		};
+		5FF3F16218690ED500466512 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F16318690ED500466512 /* DollarP-Info.plist */,
+				5FF3F16418690ED500466512 /* InfoPlist.strings */,
+				5FF3F16718690ED500466512 /* DollarP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FF3F17618690ED500466512 /* DollarPTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F17C18690ED500466512 /* DollarPTests.m */,
+				5FF3F17718690ED500466512 /* Supporting Files */,
+			);
+			path = DollarPTests;
+			sourceTree = "<group>";
+		};
+		5FF3F17718690ED500466512 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F17818690ED500466512 /* DollarPTests-Info.plist */,
+				5FF3F17918690ED500466512 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FF3F1961869135C00466512 /* DollarP-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F1A21869135C00466512 /* MPAppDelegate.h */,
+				5FF3F1A31869135C00466512 /* MPAppDelegate.m */,
+				5FF3F1A51869135C00466512 /* MainMenu.xib */,
+				5FF3F1A81869135C00466512 /* Images.xcassets */,
+				5FF3F1971869135C00466512 /* Supporting Files */,
+			);
+			path = "DollarP-OSX";
+			sourceTree = "<group>";
+		};
+		5FF3F1971869135C00466512 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F1981869135C00466512 /* DollarP-OSX-Info.plist */,
+				5FF3F1991869135C00466512 /* InfoPlist.strings */,
+				5FF3F19C1869135C00466512 /* main.m */,
+				5FF3F19E1869135C00466512 /* DollarP-OSX-Prefix.pch */,
+				5FF3F19F1869135C00466512 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FF3F1B31869135C00466512 /* DollarP-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */,
+				5FF3F1B41869135C00466512 /* Supporting Files */,
+			);
+			path = "DollarP-OSXTests";
+			sourceTree = "<group>";
+		};
+		5FF3F1B41869135C00466512 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F1B51869135C00466512 /* DollarP-OSXTests-Info.plist */,
+				5FF3F1B61869135C00466512 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DC219716165E7072009CFCF3 = {
 			isa = PBXGroup;
 			children = (
 				DC21972B165E7072009CFCF3 /* DollarP_ObjC */,
+				5FF3F16118690ED500466512 /* DollarP */,
+				5FF3F17618690ED500466512 /* DollarPTests */,
+				5FF3F1961869135C00466512 /* DollarP-OSX */,
+				5FF3F1B31869135C00466512 /* DollarP-OSXTests */,
 				DC219724165E7072009CFCF3 /* Frameworks */,
 				DC219722165E7072009CFCF3 /* Products */,
 			);
@@ -99,6 +324,10 @@
 			isa = PBXGroup;
 			children = (
 				DC219721165E7072009CFCF3 /* DollarP_ObjC.app */,
+				5FF3F15A18690ED500466512 /* DollarP.framework */,
+				5FF3F16F18690ED500466512 /* DollarPTests.xctest */,
+				5FF3F1941869135C00466512 /* DollarP-OSX.app */,
+				5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +338,9 @@
 				DC219725165E7072009CFCF3 /* UIKit.framework */,
 				DC219727165E7072009CFCF3 /* Foundation.framework */,
 				DC219729165E7072009CFCF3 /* CoreGraphics.framework */,
+				5FF3F15B18690ED500466512 /* Cocoa.framework */,
+				5FF3F17018690ED500466512 /* XCTest.framework */,
+				5FF3F15D18690ED500466512 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,13 +406,105 @@
 				DC2197A1165EA8D2009CFCF3 /* DollarPointCloud.m */,
 				DC2197A3165EAA1F009CFCF3 /* DollarResult.h */,
 				DC2197A4165EAA1F009CFCF3 /* DollarResult.m */,
+				5FF3F1C5186914D700466512 /* DollarStroke.h */,
+				5FF3F1C6186914D700466512 /* DollarStroke.m */,
 			);
 			name = DollarP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5FF3F15718690ED400466512 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F18C18690EF100466512 /* DollarDefaultGestures.h in Headers */,
+				5FF3F1C7186914D700466512 /* DollarStroke.h in Headers */,
+				5FF3F18F18690EF100466512 /* DollarResult.h in Headers */,
+				5FF3F18A18690EF100466512 /* DollarP.h in Headers */,
+				5FF3F1C31869145300466512 /* MPGestureView.h in Headers */,
+				5FF3F18E18690EF100466512 /* DollarPointCloud.h in Headers */,
+				5FF3F18D18690EF100466512 /* DollarPoint.h in Headers */,
+				5FF3F1CC1869194200466512 /* MPGestureRecognizer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		5FF3F15918690ED400466512 /* DollarP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "DollarP" */;
+			buildPhases = (
+				5FF3F15518690ED400466512 /* Sources */,
+				5FF3F15618690ED400466512 /* Frameworks */,
+				5FF3F15718690ED400466512 /* Headers */,
+				5FF3F15818690ED400466512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DollarP;
+			productName = DollarP;
+			productReference = 5FF3F15A18690ED500466512 /* DollarP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FF3F16E18690ED500466512 /* DollarPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "DollarPTests" */;
+			buildPhases = (
+				5FF3F16B18690ED500466512 /* Sources */,
+				5FF3F16C18690ED500466512 /* Frameworks */,
+				5FF3F16D18690ED500466512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FF3F17418690ED500466512 /* PBXTargetDependency */,
+			);
+			name = DollarPTests;
+			productName = DollarPTests;
+			productReference = 5FF3F16F18690ED500466512 /* DollarPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5FF3F1931869135C00466512 /* DollarP-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSX" */;
+			buildPhases = (
+				5FF3F1901869135C00466512 /* Sources */,
+				5FF3F1911869135C00466512 /* Frameworks */,
+				5FF3F1921869135C00466512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FF3F1CF186A0FC200466512 /* PBXTargetDependency */,
+			);
+			name = "DollarP-OSX";
+			productName = "DollarP-OSX";
+			productReference = 5FF3F1941869135C00466512 /* DollarP-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FF3F1AD1869135C00466512 /* DollarP-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSXTests" */;
+			buildPhases = (
+				5FF3F1AA1869135C00466512 /* Sources */,
+				5FF3F1AB1869135C00466512 /* Frameworks */,
+				5FF3F1AC1869135C00466512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FF3F1B21869135C00466512 /* PBXTargetDependency */,
+			);
+			name = "DollarP-OSXTests";
+			productName = "DollarP-OSXTests";
+			productReference = 5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DC219720165E7072009CFCF3 /* DollarP_ObjC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "DollarP_ObjC" */;
@@ -207,6 +531,14 @@
 				CLASSPREFIX = DollarP;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = de.ur;
+				TargetAttributes = {
+					5FF3F16E18690ED500466512 = {
+						TestTargetID = DC219720165E7072009CFCF3;
+					};
+					5FF3F1AD1869135C00466512 = {
+						TestTargetID = DC219720165E7072009CFCF3;
+					};
+				};
 			};
 			buildConfigurationList = DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -214,6 +546,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DC219716165E7072009CFCF3;
 			productRefGroup = DC219722165E7072009CFCF3 /* Products */;
@@ -221,11 +554,50 @@
 			projectRoot = "";
 			targets = (
 				DC219720165E7072009CFCF3 /* DollarP_ObjC */,
+				5FF3F15918690ED400466512 /* DollarP */,
+				5FF3F16E18690ED500466512 /* DollarPTests */,
+				5FF3F1931869135C00466512 /* DollarP-OSX */,
+				5FF3F1AD1869135C00466512 /* DollarP-OSXTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5FF3F15818690ED400466512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F16D18690ED500466512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1921869135C00466512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */,
+				5FF3F1A91869135C00466512 /* Images.xcassets in Resources */,
+				5FF3F1A11869135C00466512 /* Credits.rtf in Resources */,
+				5FF3F1A71869135C00466512 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1AC1869135C00466512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F1B81869135C00466512 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC21971F165E7072009CFCF3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +616,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5FF3F15518690ED400466512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F1C41869145300466512 /* MPGestureView.m in Sources */,
+				5FF3F18818690EE400466512 /* DollarPointCloud.m in Sources */,
+				5FF3F18418690EDB00466512 /* DollarP.m in Sources */,
+				5FF3F18718690EE200466512 /* DollarPoint.m in Sources */,
+				5FF3F1CD1869194200466512 /* MPGestureRecognizer.m in Sources */,
+				5FF3F18618690EDF00466512 /* DollarDefaultGestures.m in Sources */,
+				5FF3F1C9186914D700466512 /* DollarStroke.m in Sources */,
+				5FF3F18918690EE600466512 /* DollarResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F16B18690ED500466512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1901869135C00466512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F19D1869135C00466512 /* main.m in Sources */,
+				5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF3F1AA1869135C00466512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF3F1BA1869135C00466512 /* DollarP_OSXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC21971D165E7072009CFCF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +669,7 @@
 				DC21979F165EA66C009CFCF3 /* DollarPoint.m in Sources */,
 				DC2197A2165EA8D2009CFCF3 /* DollarPointCloud.m in Sources */,
 				DC2197A5165EAA20009CFCF3 /* DollarResult.m in Sources */,
+				5FF3F1C8186914D700466512 /* DollarStroke.m in Sources */,
 				DC2197A8165F650C009CFCF3 /* DollarDefaultGestures.m in Sources */,
 				DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */,
 				DC2197B2165F97C6009CFCF3 /* DollarPGestureRecognizer.m in Sources */,
@@ -265,7 +678,73 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5FF3F17418690ED500466512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F15918690ED400466512 /* DollarP */;
+			targetProxy = 5FF3F17318690ED500466512 /* PBXContainerItemProxy */;
+		};
+		5FF3F1B21869135C00466512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F1931869135C00466512 /* DollarP-OSX */;
+			targetProxy = 5FF3F1B11869135C00466512 /* PBXContainerItemProxy */;
+		};
+		5FF3F1CF186A0FC200466512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F15918690ED400466512 /* DollarP */;
+			targetProxy = 5FF3F1CE186A0FC200466512 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		5FF3F16418690ED500466512 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F16518690ED500466512 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FF3F17918690ED500466512 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F17A18690ED500466512 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FF3F1991869135C00466512 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F19A1869135C00466512 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FF3F19F1869135C00466512 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F1A01869135C00466512 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5FF3F1A51869135C00466512 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F1A61869135C00466512 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5FF3F1B61869135C00466512 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF3F1B71869135C00466512 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		DC21972E165E7072009CFCF3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -277,6 +756,278 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5FF3F17E18690ED500466512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP/DollarP-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		5FF3F17F18690ED500466512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP/DollarP-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		5FF3F18018690ED500466512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarPTests/DollarPTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5FF3F18118690ED500466512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarPTests/DollarPTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		5FF3F1BC1869135D00466512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP-OSX/DollarP-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FF3F1BD1869135D00466512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP-OSX/DollarP-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FF3F1BF1869135D00466512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP-OSXTests/DollarP-OSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5FF3F1C01869135D00466512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DollarP-OSXTests/DollarP-OSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		DC21973D165E7072009CFCF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -352,6 +1103,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "DollarP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF3F17E18690ED500466512 /* Debug */,
+				5FF3F17F18690ED500466512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "DollarPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF3F18018690ED500466512 /* Debug */,
+				5FF3F18118690ED500466512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF3F1BC1869135D00466512 /* Debug */,
+				5FF3F1BD1869135D00466512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF3F1BF1869135D00466512 /* Debug */,
+				5FF3F1C01869135D00466512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
