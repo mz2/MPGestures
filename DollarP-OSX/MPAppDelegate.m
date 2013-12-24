@@ -8,6 +8,7 @@
 
 #import "MPAppDelegate.h"
 #import "MPGestureView.h"
+#import "DollarResult.h"
 
 @implementation MPAppDelegate
 
@@ -15,6 +16,12 @@
 {
     // Insert code here to initialize your application
     [self.window makeFirstResponder:self.gestureView];
+    self.gestureLabel.stringValue = @"";
+}
+
+- (void)gestureView:(MPGestureView *)gestureView didDetectGesture:(DollarResult *)result
+{
+    self.gestureLabel.stringValue = result.name;
 }
 
 @end

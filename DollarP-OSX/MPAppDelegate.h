@@ -8,11 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "MPGestureView.h"
+
 @class MPGestureView;
 
-@interface MPAppDelegate : NSObject <NSApplicationDelegate>
+@interface MPAppDelegate : NSObject <NSApplicationDelegate, MPGestureViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTextField *gestureLabel;
 
 @property (weak) IBOutlet MPGestureView *gestureView;
 

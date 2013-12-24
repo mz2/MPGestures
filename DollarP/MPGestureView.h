@@ -8,11 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MPGestureView : NSView
-{
-    NSMutableDictionary *currentTouches;
-    NSMutableArray *completeStrokes;
-}
+@class MPGestureView, DollarResult;
 
+@protocol MPGestureViewDelegate <NSObject>
+
+- (void)gestureView:(MPGestureView *)gestureView didDetectGesture:(DollarResult *)result;
+
+@end
+
+@interface MPGestureView : NSView
 - (void)clearAll;
 @end

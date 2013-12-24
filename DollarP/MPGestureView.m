@@ -9,6 +9,7 @@
 #import "MPGestureView.h"
 #import "DollarStroke.h"
 #import "DollarP.h"
+#import "DollarDefaultGestures.h"
 
 @interface MPGestureView ()
 
@@ -38,8 +39,7 @@
 }
 
 - (void)setup {
-    currentTouches = [[NSMutableDictionary alloc] init];
-    completeStrokes = [NSMutableArray array];
+    _strokes = [[NSMutableArray alloc] init];
     
     //[self setBackgroundColor:[UIColor whiteColor]];
 }
@@ -49,13 +49,8 @@
     CGContextSetLineWidth(context, 5.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
-    for (int i = 0; i < [completeStrokes count]; i++) {
-        DollarStroke *stroke = [completeStrokes objectAtIndex:i];
-        [self drawStroke:stroke inContext:context];
-    }
-    
-    for (NSValue *touchValue in currentTouches) {
-        DollarStroke *stroke = [currentTouches objectForKey:touchValue];
+    for (int i = 0; i < _strokes.count; i++) {
+        DollarStroke *stroke = _strokes[i];
         [self drawStroke:stroke inContext:context];
     }
 }
@@ -93,20 +88,25 @@
         _strokes = [[NSMutableArray alloc] initWithCapacity:5];
     
     DollarStroke *stroke = [[DollarStroke alloc] init];
-    [stroke addPoint:p identifier:_strokes.count];
+    [stroke addPoint:p identifier:1];
     
     [_strokes addObject:stroke];
+    
+    [self setNeedsDisplay:YES];
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent
 {
     NSPoint p = [self convertPoint:theEvent.locationInWindow fromView:nil];
     [[_strokes lastObject] addPoint:p identifier:_strokes.count];
+    
+    [self setNeedsDisplay:YES];
 }
 
 - (void)mouseUp:(NSEvent *)theEvent
 {
     DollarP *dp = [[DollarP alloc] init];
+    dp.pointClouds = [DollarDefaultGestures defaultPointClouds];
     
     NSArray *ps = [[_strokes valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     
@@ -117,6 +117,8 @@
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
     _strokes = nil;
+    
+    [self setNeedsDisplay:YES];
 }
 
 - (NSView *)hitTest:(NSPoint)aPoint
@@ -141,9 +143,7 @@
 
 
 - (void)clearAll {
-    [completeStrokes removeAllObjects];
-    [currentTouches removeAllObjects];
-    
+    [_strokes removeAllObjects];
     [self setNeedsDisplay:YES];
 }
 
