@@ -11,9 +11,13 @@
 #import "DollarP.h"
 #import "DollarDefaultGestures.h"
 
+const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
+
 @interface MPGestureView ()
 
 @property NSMutableArray *strokes;
+
+@property NSTimer *strokesEndedTimer;
 
 @end
 
@@ -23,7 +27,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-
     }
     return self;
 }
@@ -82,6 +85,9 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
+    [_strokesEndedTimer invalidate];
+    _strokesEndedTimer = nil;
+    
     NSPoint p = [self convertPoint:theEvent.locationInWindow fromView:nil];
     
     if (!_strokes)
@@ -105,6 +111,16 @@
 
 - (void)mouseUp:(NSEvent *)theEvent
 {
+    [self setNeedsDisplay:YES];
+    
+    _strokesEndedTimer = [NSTimer scheduledTimerWithTimeInterval:MPGestureViewStrokesEndedInterval
+                                                          target:self
+                                                        selector:@selector(strokesDidEnd:)
+                                                        userInfo:nil repeats:NO];
+}
+
+- (void)strokesDidEnd:(NSTimer *)timer
+{
     DollarP *dp = [[DollarP alloc] init];
     dp.pointClouds = [DollarDefaultGestures defaultPointClouds];
     
@@ -113,12 +129,12 @@
     NSLog(@"Point: %@", ps);
     
     DollarResult *result = [dp recognize:ps];
-    
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
-    _strokes = nil;
+    [self.delegate gestureView:self didDetectGesture:result];
     
-    [self setNeedsDisplay:YES];
+    _strokes = nil;
+    _strokesEndedTimer = nil;
 }
 
 - (NSView *)hitTest:(NSPoint)aPoint

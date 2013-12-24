@@ -23,4 +23,10 @@
 
 @property (readonly) DollarPoint *lastPoint;
 
+- (NSDictionary *)dictionaryRepresentation;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
++ (NSArray *)strokesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
+
 @end

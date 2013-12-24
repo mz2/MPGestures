@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
+
 @class MPGestureView, DollarResult;
 
 @protocol MPGestureViewDelegate <NSObject>
@@ -18,4 +20,6 @@
 
 @interface MPGestureView : NSView
 - (void)clearAll;
+
+@property (weak) IBOutlet id<MPGestureViewDelegate> delegate;
 @end

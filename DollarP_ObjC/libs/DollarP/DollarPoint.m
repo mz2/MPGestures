@@ -14,13 +14,25 @@
     return origin;
 }
 
-- (id)initWithId:(id)anId x:(float)aX y:(float)aY {
+- (instancetype)initWithId:(id)anId x:(float)aX y:(float)aY {
     self = [super init];
     if (self) {
         [self setId:anId];
         [self setX:aX];
         [self setY:aY];
     }
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.id = dictionary[@"id"];
+        self.x = [dictionary[@"x"] floatValue];
+        self.y = [dictionary[@"y"] floatValue];
+    }
+    
     return self;
 }
 
@@ -42,6 +54,27 @@
 - (CGPoint)CGPointValue
 {
     return CGPointMake(self.x, self.y);
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    return @{
+                @"id":self.id,
+                 @"x":@(self.x),
+                 @"y":@(self.y)
+            };
+}
+
++ (NSArray *)pointsWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
+{
+    NSMutableArray *points = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
+    for (NSDictionary *dict in arrayOfDictionaries)
+    {
+        assert([dict isKindOfClass:[NSDictionary class]]);
+        [points addObject:[[DollarPoint alloc] initWithDictionary:dict]];
+    }
+    
+    return [points copy];
 }
 
 @end

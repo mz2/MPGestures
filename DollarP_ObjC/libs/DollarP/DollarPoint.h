@@ -10,6 +10,12 @@
 
 + (DollarPoint *)origin;
 
-- (id)initWithId:(id)id x:(float)x y:(float)y;
+- (instancetype)initWithId:(id)id x:(float)x y:(float)y;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+- (NSDictionary *)dictionaryRepresentation;
+
++ (NSArray *)pointsWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
 @end

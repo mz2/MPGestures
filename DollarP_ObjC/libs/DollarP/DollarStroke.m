@@ -25,6 +25,16 @@
     return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init])
+    {
+        _points = [[DollarPoint pointsWithArrayOfDictionaries:dictionary[@"points"]] mutableCopy];
+    }
+    
+    return self;
+}
+
 - (void)addPoint:(CGPoint)p identifier:(NSUInteger)i
 {
     assert(_points);
@@ -35,6 +45,20 @@
 - (NSArray *)pointsArray
 {
     return [_points copy];
+}
+
+-(NSDictionary *)dictionaryRepresentation
+{
+    return @{ @"points" : [_points valueForKey:@"dictionaryRepresentation"] };
+}
+
++ (NSArray *)strokesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
+{
+    NSMutableArray *strokes = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
+    for (NSDictionary *dict in arrayOfDictionaries)
+        [strokes addObject:[[DollarStroke alloc] initWithDictionary:dict]];
+    
+    return strokes;
 }
 
 @end
