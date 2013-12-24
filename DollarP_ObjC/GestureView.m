@@ -1,7 +1,7 @@
 #import "GestureView.h"
 
-#import "Stroke.h"
-
+#import "DollarStroke.h"
+#import "DollarPoint.h"
 
 @implementation GestureView
 
@@ -33,9 +33,9 @@
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
         CGPoint location = [touch locationInView:self];
         
-        Stroke *stroke = [[Stroke alloc] init];
-        [stroke setPoints:[NSMutableArray arrayWithObject:
-                                  [NSValue valueWithCGPoint:location]]];
+        DollarStroke *stroke = [[DollarStroke alloc] init];
+        
+        [stroke addPoint:location identifier:@(1)];
         [stroke setColor:[UIColor blackColor]];
         
         [currentTouches setObject:stroke forKey:key];
@@ -47,9 +47,11 @@
     
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        NSMutableArray *points = [[currentTouches objectForKey:key] points];
+        
+        DollarStroke *stroke = [currentTouches objectForKey:key];
         CGPoint location = [touch locationInView:self];
-        [points addObject:[NSValue valueWithCGPoint:location]];
+        
+        [stroke addPoint:location identifier:stroke.pointsArray.count];
     }
 
     [self setNeedsDisplay];
@@ -70,7 +72,7 @@
 - (void)endTouches:(NSSet *)touches {
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        Stroke *stroke = [currentTouches objectForKey:key];
+        DollarStroke *stroke = [currentTouches objectForKey:key];
         [stroke setColor:[self randomColor]];
         
         if (stroke) {
@@ -88,21 +90,21 @@
     CGContextSetLineCap(context, kCGLineCapRound);
     
     for (int i = 0; i < [completeStrokes count]; i++) {
-        Stroke *stroke = [completeStrokes objectAtIndex:i];
+        DollarStroke *stroke = [completeStrokes objectAtIndex:i];
         [self drawStroke:stroke inContext:context];
     }
     
     for (NSValue *touchValue in currentTouches) {
-        Stroke *stroke = [currentTouches objectForKey:touchValue];
+        DollarStroke *stroke = [currentTouches objectForKey:touchValue];
         [self drawStroke:stroke inContext:context];
     }
 }
 
-- (void)drawStroke:(Stroke *)stroke
+- (void)drawStroke:(DollarStroke *)stroke
          inContext:(CGContextRef)context {
     [[stroke color] set];
     
-    NSMutableArray *points = [stroke points];
+    NSArray *points = [stroke pointsArray];
     CGPoint point = [points[0] CGPointValue];
     
     CGContextFillRect(context, CGRectMake(point.x - 5, point.y - 5, 10, 10));

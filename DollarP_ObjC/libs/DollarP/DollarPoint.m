@@ -39,4 +39,9 @@
             [self id], [self x], [self y]];
 }
 
+- (CGPoint)CGPointValue
+{
+    return CGPointMake(self.x, self.y);
+}
+
 @end

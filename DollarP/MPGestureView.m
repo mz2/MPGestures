@@ -110,6 +110,8 @@
     
     NSArray *ps = [[_strokes valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     
+    NSLog(@"Point: %@", ps);
+    
     DollarResult *result = [dp recognize:ps];
     
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
