@@ -9,6 +9,7 @@
 #import "MPAppDelegate.h"
 #import "MPGestureView.h"
 #import "DollarResult.h"
+#import "DollarStrokeSequence.h"
 
 @interface MPAppDelegate ()
 @property DollarStrokeSequence *strokeSequence;
@@ -124,25 +125,87 @@
 {
     if (!_strokeSequence || _strokeSequence != strokeSequence)
         _strokeSequence = strokeSequence;
+    
+    [self.gestureTextfield setEnabled:NO];
+    [self.gestureTextfield setHidden:YES];
+    [self.submitGestureButton setEnabled:NO];
+    [self.submitGestureButton setHidden:YES];
 }
 
 - (void)gestureView:(MPGestureView *)gestureView
  didFinishDetection:(DollarResult *)result
  withStrokeSequence:(DollarStrokeSequence *)strokeSequence
 {
-    self.gestureLabel.stringValue = result.name;
+    self.gestureLabel.stringValue = [NSString stringWithFormat:@"Detected as %@", result.name];
     self.strokeSequence = strokeSequence;
     
+    [self.gestureTextfield setEnabled:YES];
+    [self.gestureTextfield setHidden:NO];
+    
+    [self.submitGestureButton setEnabled:self.gestureLabelEntered];
+    [self.submitGestureButton setHidden:NO];
 }
 
 - (void)addExample:(id)sender
 {
+    if (self.gestureView.isStroking)
+    {
+        NSBeep();
+        return;
+    }
     
+    if (!self.gestureLabelEntered)
+    {
+        NSBeep();
+        return;
+    }
+    
+    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithName:self.gestureTextfield.stringValue strokes:self.strokeSequence.strokesArray];
+    
+    [self.db addStrokeSequence:seq];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+    ^{
+        NSError *err = nil;
+        if (![self.db writeToURL:[NSURL fileURLWithPath:self.strokeSequencePath] error:&err])
+        {
+            [[NSAlert alertWithError:err] runModal];
+        }
+        else
+        {
+            NSLog(
+            @"Database now has %lu labeled stroke sequences for %lu different labels:\nnames:%@",
+                  self.db.strokeSequenceSet.count,
+                  self.db.strokeSequenceNameSet.count,
+                  self.db.strokeSequenceNameSet);
+        }
+    });
+}
+
+- (BOOL)gestureLabelEntered
+{
+    return self.gestureTextfield.stringValue.length > 0;
 }
 
 - (void)controlTextDidChange:(NSNotification *)obj
 {
+    [self.submitGestureButton setEnabled:self.gestureLabelEntered];
+}
+
+- (IBAction)nextStrokeSequence:(id)sender
+{
     
 }
+
+- (IBAction)previousStrokeSequence:(id)sender
+{
+    
+}
+
+- (IBAction)deleteStrokeSequence:(id)sender
+{
+    [self.gestureView clear:self];
+}
+
 
 @end

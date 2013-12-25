@@ -31,6 +31,6 @@ extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @property (readonly) BOOL isStroking;
 
-
+- (IBAction)clear:(id)sender;
 
 @end

@@ -163,11 +163,6 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     [self setNeedsDisplay:YES];
 }
 
-- (NSView *)hitTest:(NSPoint)aPoint
-{
-    return self;
-}
-
 - (BOOL)acceptsTouchEvents
 {
     return YES;
@@ -178,9 +173,14 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     return YES;
 }
 
-- (void)mouseMoved:(NSEvent *)theEvent
+- (IBAction)clear:(id)sender
 {
-    NSLog(@"Moved");
+    _currentStrokeSequence = nil;
+    _lastStrokeSequence = nil;
+    [_strokesEndedTimer invalidate];
+    _strokesEndedTimer = nil;
+    
+    [self setNeedsDisplay:YES];
 }
 
 @end

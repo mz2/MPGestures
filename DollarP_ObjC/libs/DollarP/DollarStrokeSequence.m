@@ -101,4 +101,9 @@
     return [self.strokes isEqual:object.strokes];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<DollarStrokeSequence: name:%@ (%lu strokes) >", self.name, self.strokeCount];
+}
+
 @end

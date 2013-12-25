@@ -22,11 +22,20 @@
 
 @property (assign) IBOutlet NSTextField *gestureLabel;
 @property (assign) IBOutlet NSTextField *gestureTextfield;
+@property (assign) IBOutlet NSButton *submitGestureButton;
+
+@property (assign) IBOutlet NSButton *nextGestureButton;
+@property (assign) IBOutlet NSButton *previousGestureButton;
+@property (assign) IBOutlet NSButton *deleteGestureButton;
 
 @property (strong) DollarStrokeSequenceDatabase *db;
 
 @property (weak) IBOutlet MPGestureView *gestureView;
 
 - (IBAction)addExample:(id)sender;
+
+- (IBAction)nextStrokeSequence:(id)sender;
+- (IBAction)previousStrokeSequence:(id)sender;
+- (IBAction)deleteStrokeSequence:(id)sender;
 
 @end

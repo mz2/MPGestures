@@ -112,4 +112,9 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
     return [NSSet setWithArray:[self.namedStrokeSequences allKeys]];
 }
 
+- (NSSet *)strokeSequenceSet
+{
+    return [NSSet setWithArray:[self.namedStrokeSequences allValues]];
+}
+
 @end
