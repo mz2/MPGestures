@@ -98,9 +98,9 @@
     
     NSArray *deserialisedSequences = deserialisedDB[@"Foobar"];
     
-    XCTAssertTrue([deserialisedSequence isEqual:@[seq]], @"The deserialised stroke sequence is equal");
+    XCTAssertTrue([deserialisedSequences isEqual:@[seq]], @"The deserialised stroke sequence is equal");
     
-    //XCTAssertTrue([db isEqual:deserialisedDB], @"The original and the deserialised database are equal.");
+    XCTAssertTrue([db isEqual:deserialisedDB], @"The original and the deserialised database are equal.");
     
 }
 
