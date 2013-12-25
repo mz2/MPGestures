@@ -18,4 +18,6 @@
 
 + (NSArray *)pointsWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
++ (float)leastSquaresEuclideanDistanceOfPoints:(NSArray *)pointsA withPoints:(NSArray *)pointsB;
+
 @end

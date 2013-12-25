@@ -9,6 +9,7 @@
 #import "DollarStrokeSequenceDatabase.h"
 #import "DollarStrokeSequence.h"
 
+NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenceDatabaseErrorDomain";
 
 @interface DollarStrokeSequenceDatabase ()
 @property NSMutableDictionary *namedStrokeSequences;
@@ -37,6 +38,33 @@
     return self;
 }
 
+- (instancetype)initWithContentsOfURL:(NSURL *)url error:(NSError **)err
+{
+    NSData *data = [NSData dataWithContentsOfURL:url options:0 error:err];
+    if (!data)
+        return nil;
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:err];
+    if (!dict)
+        return nil;
+    
+    self = [self initWithDictionary:dict];
+    return self;
+}
+
+- (BOOL)writeToURL:(NSURL *)url error:(NSError **)err
+{
+    NSDictionary *dict = [self dictionaryRepresentation];
+    assert(dict);
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:err];
+    if (!data) return NO;
+    
+    return [data writeToURL:url atomically:YES];
+}
+
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:_namedStrokeSequences.count];
@@ -51,10 +79,37 @@
 
 - (void)addStrokeSequence:(DollarStrokeSequence *)sequence
 {
+    assert(sequence.name);
     if (!_namedStrokeSequences[sequence.name])
         _namedStrokeSequences[sequence.name] = [NSMutableArray arrayWithCapacity:32];
     
     [_namedStrokeSequences[sequence.name] addObject:sequence];
+}
+
+- (BOOL)isEqual:(DollarStrokeSequenceDatabase *)object
+{
+    if (!object)
+        return NO;
+    
+    if (![object isKindOfClass:[DollarStrokeSequenceDatabase class]])
+        return NO;
+    
+    return [self.namedStrokeSequences isEqualToDictionary:object.namedStrokeSequences];
+}
+
+- (void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
+{
+    self.namedStrokeSequences[key] = obj;
+}
+
+- (id)objectForKeyedSubscript:(id)key
+{
+    return self.namedStrokeSequences[key];
+}
+
+- (NSSet *)strokeSequenceNameSet
+{
+    return [NSSet setWithArray:[self.namedStrokeSequences allKeys]];
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F04A431186B32CB00AAC922 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F16418690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
@@ -75,6 +76,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F04A42D186B2EEC00AAC922 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = DollarP;
+		};
+		5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = DollarP;
+		};
 		5FF3F17318690ED500466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
@@ -88,13 +103,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5FF3F1931869135C00466512;
 			remoteInfo = "DollarP-OSX";
-		};
-		5FF3F1CE186A0FC200466512 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FF3F15918690ED400466512;
-			remoteInfo = DollarP;
 		};
 		5FF3F24F186A284C00466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -230,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F04A431186B32CB00AAC922 /* DollarP.framework in Frameworks */,
 				5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */,
 				5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */,
 			);
@@ -529,7 +538,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5FF3F1CF186A0FC200466512 /* PBXTargetDependency */,
+				5F04A42E186B2EEC00AAC922 /* PBXTargetDependency */,
 			);
 			name = "DollarP-OSX";
 			productName = "DollarP-OSX";
@@ -547,6 +556,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F04A430186B32C600AAC922 /* PBXTargetDependency */,
 				5FF3F1B21869135C00466512 /* PBXTargetDependency */,
 			);
 			name = "DollarP-OSXTests";
@@ -755,6 +765,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F04A42E186B2EEC00AAC922 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F15918690ED400466512 /* DollarP */;
+			targetProxy = 5F04A42D186B2EEC00AAC922 /* PBXContainerItemProxy */;
+		};
+		5F04A430186B32C600AAC922 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F15918690ED400466512 /* DollarP */;
+			targetProxy = 5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */;
+		};
 		5FF3F17418690ED500466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FF3F15918690ED400466512 /* DollarP */;
@@ -764,11 +784,6 @@
 			isa = PBXTargetDependency;
 			target = 5FF3F1931869135C00466512 /* DollarP-OSX */;
 			targetProxy = 5FF3F1B11869135C00466512 /* PBXContainerItemProxy */;
-		};
-		5FF3F1CF186A0FC200466512 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5FF3F15918690ED400466512 /* DollarP */;
-			targetProxy = 5FF3F1CE186A0FC200466512 /* PBXContainerItemProxy */;
 		};
 		5FF3F254186A285400466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1044,7 +1059,7 @@
 		5FF3F1BF1869135D00466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP-OSX.app/Contents/MacOS/DollarP-OSX";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1079,7 +1094,7 @@
 		5FF3F1C01869135D00466512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP-OSX.app/Contents/MacOS/DollarP-OSX";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;

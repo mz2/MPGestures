@@ -61,4 +61,21 @@
     return strokes;
 }
 
+
+- (BOOL)isEqual:(DollarStroke *)object
+{
+    if (!object)
+        return NO;
+    
+    if (![object isKindOfClass:[DollarStroke class]])
+        return NO;
+    
+    if (self.points.count != object.points.count)
+        return NO;
+    
+    float dist = [DollarPoint leastSquaresEuclideanDistanceOfPoints:self.points withPoints:object.points];
+    
+    return dist < 0.0001;
+}
+
 @end

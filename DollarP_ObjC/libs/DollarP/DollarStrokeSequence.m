@@ -63,4 +63,18 @@
     return strokeSequences;
 }
 
+- (BOOL)isEqual:(DollarStrokeSequence *)object
+{
+    if (!object)
+        return NO;
+    
+    if (![object isKindOfClass:[DollarStrokeSequence class]])
+        return NO;
+    
+    if (![self.name isEqualToString:object.name])
+        return NO;
+    
+    return [self.strokes isEqual:object.strokes];
+}
+
 @end

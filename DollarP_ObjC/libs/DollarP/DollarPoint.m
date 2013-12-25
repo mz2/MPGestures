@@ -77,4 +77,42 @@
     return [points copy];
 }
 
++ (float)leastSquaresEuclideanDistanceOfPoints:(NSArray *)pointsA
+                                    withPoints:(NSArray *)pointsB
+{
+    float d = 0;
+    
+    if (pointsA.count != pointsB.count)
+        @throw [NSException exceptionWithName:@"MPInvalidArgumentsException"
+                                       reason:[NSString stringWithFormat:
+                                               @"Mismatching point counts: %lu != %lu",
+                                               pointsA.count, pointsB.count]
+                                     userInfo:nil];
+    
+    for (NSUInteger i = 0; i < pointsA.count; i++)
+    {
+        DollarPoint *a = pointsA[i];
+        DollarPoint *b = pointsB[i];
+        d += powf(b.x - a.x, 2.f);
+        d += powf(b.y - a.y, 2.f);
+    }
+    
+    d = sqrtf(d);
+    
+    return d;
+}
+
+- (BOOL)isEqual:(DollarPoint *)object
+{
+    if (!object)
+        return NO;
+    
+    if (![self.id isEqual:object.id])
+        return NO;
+    
+    float dist = [[self class] leastSquaresEuclideanDistanceOfPoints:@[self] withPoints:@[object]];
+    
+    return dist < 0.00001;
+}
+
 @end
