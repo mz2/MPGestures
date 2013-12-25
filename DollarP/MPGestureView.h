@@ -29,4 +29,8 @@ extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @property (weak) IBOutlet id<MPGestureViewDelegate> delegate;
 
+@property (readonly) BOOL isStroking;
+
+
+
 @end

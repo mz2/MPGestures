@@ -17,7 +17,9 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 
 @interface MPGestureView ()
 
-@property DollarStrokeSequence *strokeSequence;
+@property DollarStrokeSequence *currentStrokeSequence;
+
+@property DollarStrokeSequence *lastStrokeSequence;
 
 @property NSTimer *strokesEndedTimer;
 
@@ -47,13 +49,18 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 {
 }
 
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
     CGContextSetLineWidth(context, 5.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
-    for (int i = 0; i < _strokeSequence.strokesArray.count; i++) {
-        DollarStroke *stroke = _strokeSequence.strokesArray[i];
+    DollarStrokeSequence *strokeSequence
+        = _lastStrokeSequence ? _lastStrokeSequence : _currentStrokeSequence;
+    
+    for (NSUInteger i = 0; i < strokeSequence.strokeCount; i++)
+    {
+        DollarStroke *stroke = strokeSequence.strokesArray[i];
         [self drawStroke:stroke inContext:context];
     }
 }
@@ -83,21 +90,30 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
+- (BOOL)isStroking
+{
+    return _currentStrokeSequence != nil;
+}
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
     [_strokesEndedTimer invalidate];
     _strokesEndedTimer = nil;
+    _lastStrokeSequence = nil;
     
     NSPoint p = [self convertPoint:theEvent.locationInWindow fromView:nil];
     
-    if (!_strokeSequence)
-        _strokeSequence = [[DollarStrokeSequence alloc] initWithName:nil strokes:@[]];
+    if (!_currentStrokeSequence)
+    {
+        _currentStrokeSequence = [[DollarStrokeSequence alloc] initWithName:nil strokes:@[]];
+    }
     
     DollarStroke *stroke = [[DollarStroke alloc] init];
     [stroke addPoint:p identifier:1];
+    stroke.color = [self randomColor];
     
-    [_strokeSequence addStroke:stroke];
-    [_delegate gestureView:self didStartStroke:stroke inStrokeSequence:_strokeSequence];
+    [_currentStrokeSequence addStroke:stroke];
+    [_delegate gestureView:self didStartStroke:stroke inStrokeSequence:_currentStrokeSequence];
     
     [self setNeedsDisplay:YES];
 }
@@ -106,8 +122,9 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 {
     NSPoint p = [self convertPoint:theEvent.locationInWindow fromView:nil];
     
-    assert(_strokeSequence);
-    [[_strokeSequence lastStroke] addPoint:p identifier:_strokeSequence.strokeCount];
+    assert(_currentStrokeSequence);
+    assert(_currentStrokeSequence.strokeCount > 0);
+    [[_currentStrokeSequence lastStroke] addPoint:p identifier:_currentStrokeSequence.strokeCount];
     
     [self setNeedsDisplay:YES];
 }
@@ -127,17 +144,23 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     DollarP *dp = [[DollarP alloc] init];
     dp.pointClouds = [DollarDefaultGestures defaultPointClouds];
     
-    NSArray *ps = [[_strokeSequence.strokesArray valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
+    NSArray *ps = [[_currentStrokeSequence.strokesArray valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     
     NSLog(@"Points:\n%@", ps);
     
     DollarResult *result = [dp recognize:ps];
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
-    [self.delegate gestureView:self didFinishDetection:result withStrokeSequence:_strokeSequence];
+    [self.delegate gestureView:self didFinishDetection:result withStrokeSequence:_currentStrokeSequence];
     
-    _strokeSequence = nil;
+    _lastStrokeSequence = _currentStrokeSequence;
+    for (NSUInteger i = 0; i < _lastStrokeSequence.strokeCount; i++)
+        [_lastStrokeSequence.strokesArray[i] setColor:[NSColor blackColor]];
+    
+    _currentStrokeSequence = nil;
     _strokesEndedTimer = nil;
+    
+    [self setNeedsDisplay:YES];
 }
 
 - (NSView *)hitTest:(NSPoint)aPoint

@@ -10,6 +10,10 @@
 #import "MPGestureView.h"
 #import "DollarResult.h"
 
+@interface MPAppDelegate ()
+@property DollarStrokeSequence *strokeSequence;
+@end
+
 @implementation MPAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -118,7 +122,8 @@
      didStartStroke:(DollarStroke *)stroke
    inStrokeSequence:(DollarStrokeSequence *)strokeSequence
 {
-    
+    if (!_strokeSequence || _strokeSequence != strokeSequence)
+        _strokeSequence = strokeSequence;
 }
 
 - (void)gestureView:(MPGestureView *)gestureView
@@ -126,6 +131,7 @@
  withStrokeSequence:(DollarStrokeSequence *)strokeSequence
 {
     self.gestureLabel.stringValue = result.name;
+    self.strokeSequence = strokeSequence;
     
 }
 
