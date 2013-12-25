@@ -90,6 +90,20 @@
 			remoteGlobalIDString = 5FF3F15918690ED400466512;
 			remoteInfo = DollarP;
 		};
+		5F85863C186B6D2A00AD762E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F858608186B6CBB00AD762E;
+			remoteInfo = MPRandomForest;
+		};
+		5F85863E186B6D2A00AD762E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F85861F186B6CBB00AD762E;
+			remoteInfo = MPRandomForestTests;
+		};
 		5FF3F17318690ED500466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
@@ -128,6 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
 		5FF3F15A18690ED500466512 /* DollarP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DollarP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -257,6 +272,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F858637186B6D2A00AD762E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F85863D186B6D2A00AD762E /* MPRandomForest.framework */,
+				5F85863F186B6D2A00AD762E /* MPRandomForestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5FF3F15D18690ED500466512 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +410,7 @@
 		DC219724165E7072009CFCF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */,
 				5FF3F24A186A284C00466512 /* ALGLIB.xcodeproj */,
 				DC219725165E7072009CFCF3 /* UIKit.framework */,
 				DC219727165E7072009CFCF3 /* Foundation.framework */,
@@ -615,6 +640,10 @@
 					ProductGroup = 5FF3F24B186A284C00466512 /* Products */;
 					ProjectRef = 5FF3F24A186A284C00466512 /* ALGLIB.xcodeproj */;
 				},
+				{
+					ProductGroup = 5F858637186B6D2A00AD762E /* Products */;
+					ProjectRef = 5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -628,6 +657,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5F85863D186B6D2A00AD762E /* MPRandomForest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MPRandomForest.framework;
+			remoteRef = 5F85863C186B6D2A00AD762E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F85863F186B6D2A00AD762E /* MPRandomForestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MPRandomForestTests.xctest;
+			remoteRef = 5F85863E186B6D2A00AD762E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5FF3F250186A284C00466512 /* ALGLIB.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

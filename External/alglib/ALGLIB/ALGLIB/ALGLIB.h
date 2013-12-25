@@ -6,8 +6,5 @@
 //  Copyright (c) 2013 Manuscripts.app Limited. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface ALGLIB : NSObject
-
-@end
+#import "ap.h"
+#import "dataanalysis.h"

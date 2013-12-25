@@ -17,9 +17,15 @@
 
 - (instancetype)init
 {
+    @throw [NSException exceptionWithName:@"MPInvalidInitException" reason:nil userInfo:nil];
+}
+
+- (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays
+{
     self = [super init];
     if (self)
     {
+        _name = name;
         _strokes = [NSMutableArray arrayWithCapacity:5];
     }
     
@@ -32,7 +38,8 @@
     if (self)
     {
         _name = dictionary[@"name"];
-        _strokes = [[DollarStroke strokesWithArrayOfDictionaries:dictionary[@"strokes"]] mutableCopy];
+        _strokes = [[DollarStroke strokesWithArrayOfDictionaries:dictionary[@"strokes"]]
+                    mutableCopy];
     }
     
     return self;

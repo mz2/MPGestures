@@ -14,7 +14,7 @@ extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @protocol MPGestureViewDelegate <NSObject>
 
-- (void)gestureView:(MPGestureView *)gestureView didDetectGesture:(DollarResult *)result;
+- (void)gestureView:(MPGestureView *)gestureView didFinishDetectionAttempt:(DollarResult *)result;
 
 @end
 

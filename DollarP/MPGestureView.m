@@ -11,6 +11,8 @@
 #import "DollarP.h"
 #import "DollarDefaultGestures.h"
 
+#import "DollarStrokeSequence.h"
+
 const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 
 @interface MPGestureView ()
@@ -128,10 +130,13 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     
     NSLog(@"Point: %@", ps);
     
+    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithDictionary:@{}];
+    
+    
     DollarResult *result = [dp recognize:ps];
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
-    [self.delegate gestureView:self didDetectGesture:result];
+    [self.delegate gestureView:self didFinishDetectionAttempt:result];
     
     _strokes = nil;
     _strokesEndedTimer = nil;

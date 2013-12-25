@@ -9,18 +9,17 @@
 /* Begin PBXBuildFile section */
 		5FF3F1DF186A276700466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F1DE186A276700466512 /* Cocoa.framework */; };
 		5FF3F1E9186A276700466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1E7186A276700466512 /* InfoPlist.strings */; };
-		5FF3F1ED186A276700466512 /* ALGLIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1EC186A276700466512 /* ALGLIB.m */; };
 		5FF3F1F4186A276700466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F1F3186A276700466512 /* XCTest.framework */; };
 		5FF3F1F5186A276700466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F1DE186A276700466512 /* Cocoa.framework */; };
 		5FF3F1F8186A276700466512 /* ALGLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F1DB186A276700466512 /* ALGLIB.framework */; };
 		5FF3F1FE186A276700466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1FC186A276700466512 /* InfoPlist.strings */; };
 		5FF3F200186A276700466512 /* ALGLIBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1FF186A276700466512 /* ALGLIBTests.m */; };
 		5FF3F224186A278200466512 /* alglibinternal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F209186A278200466512 /* alglibinternal.cpp */; };
-		5FF3F225186A278200466512 /* alglibinternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20A186A278200466512 /* alglibinternal.h */; };
+		5FF3F225186A278200466512 /* alglibinternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20A186A278200466512 /* alglibinternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF3F226186A278200466512 /* alglibmisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F20B186A278200466512 /* alglibmisc.cpp */; };
-		5FF3F227186A278200466512 /* alglibmisc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20C186A278200466512 /* alglibmisc.h */; };
+		5FF3F227186A278200466512 /* alglibmisc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20C186A278200466512 /* alglibmisc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF3F228186A278200466512 /* ap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F20D186A278200466512 /* ap.cpp */; };
-		5FF3F229186A278200466512 /* ap.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20E186A278200466512 /* ap.h */; };
+		5FF3F229186A278200466512 /* ap.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F20E186A278200466512 /* ap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF3F22A186A278200466512 /* dataanalysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F20F186A278200466512 /* dataanalysis.cpp */; };
 		5FF3F22C186A278200466512 /* diffequations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F211186A278200466512 /* diffequations.cpp */; };
 		5FF3F22E186A278200466512 /* fasttransforms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F213186A278200466512 /* fasttransforms.cpp */; };
@@ -30,7 +29,7 @@
 		5FF3F236186A278200466512 /* optimization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F21B186A278200466512 /* optimization.cpp */; };
 		5FF3F238186A278200466512 /* solvers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F21D186A278200466512 /* solvers.cpp */; };
 		5FF3F23A186A278200466512 /* specialfunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F21F186A278200466512 /* specialfunctions.cpp */; };
-		5FF3F23B186A278200466512 /* specialfunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F220186A278200466512 /* specialfunctions.h */; };
+		5FF3F23B186A278200466512 /* specialfunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F220186A278200466512 /* specialfunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF3F23C186A278200466512 /* statistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F221186A278200466512 /* statistics.cpp */; };
 		5FF3F23E186A278200466512 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F223186A278200466512 /* stdafx.h */; };
 		5FF3F240186A279E00466512 /* dataanalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F210186A278200466512 /* dataanalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,7 +64,6 @@
 		5FF3F1E8186A276700466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F1EA186A276700466512 /* ALGLIB-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALGLIB-Prefix.pch"; sourceTree = "<group>"; };
 		5FF3F1EB186A276700466512 /* ALGLIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALGLIB.h; sourceTree = "<group>"; };
-		5FF3F1EC186A276700466512 /* ALGLIB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGLIB.m; sourceTree = "<group>"; };
 		5FF3F1F2186A276700466512 /* ALGLIBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALGLIBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F1F3186A276700466512 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F1FB186A276700466512 /* ALGLIBTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ALGLIBTests-Info.plist"; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				5FF3F222186A278200466512 /* statistics.h */,
 				5FF3F223186A278200466512 /* stdafx.h */,
 				5FF3F1EB186A276700466512 /* ALGLIB.h */,
-				5FF3F1EC186A276700466512 /* ALGLIB.m */,
 				5FF3F1E5186A276700466512 /* Supporting Files */,
 			);
 			path = ALGLIB;
@@ -352,7 +349,6 @@
 				5FF3F228186A278200466512 /* ap.cpp in Sources */,
 				5FF3F22A186A278200466512 /* dataanalysis.cpp in Sources */,
 				5FF3F22E186A278200466512 /* fasttransforms.cpp in Sources */,
-				5FF3F1ED186A276700466512 /* ALGLIB.m in Sources */,
 				5FF3F230186A278200466512 /* integration.cpp in Sources */,
 				5FF3F226186A278200466512 /* alglibmisc.cpp in Sources */,
 				5FF3F22C186A278200466512 /* diffequations.cpp in Sources */,
@@ -558,6 +554,7 @@
 				5FF3F205186A276700466512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FF3F206186A276700466512 /* Build configuration list for PBXNativeTarget "ALGLIBTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +563,7 @@
 				5FF3F208186A276700466512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
