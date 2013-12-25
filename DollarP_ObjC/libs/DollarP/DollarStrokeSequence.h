@@ -12,16 +12,21 @@
 
 @interface DollarStrokeSequence : NSObject
 
-@property NSString *name;
+@property (readonly) NSString *name;
 
 @property (readonly) NSArray *strokesArray;
 
+@property (readonly) NSUInteger strokeCount;
+
 - (void)addStroke:(DollarStroke *)stroke;
+
+- (DollarStroke *)lastStroke;
 
 - (NSDictionary *)dictionaryRepresentation;
 
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithStrokeSequence:(DollarStrokeSequence *)sequence;
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 

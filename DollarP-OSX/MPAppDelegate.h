@@ -14,7 +14,9 @@
 
 @class MPGestureView;
 
-@interface MPAppDelegate : NSObject <NSApplicationDelegate, MPGestureViewDelegate>
+@interface MPAppDelegate : NSObject <NSApplicationDelegate,
+                                     MPGestureViewDelegate,
+                                     NSTextFieldDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 

@@ -60,7 +60,7 @@
 {
     DollarStrokeSequenceDatabase *db = [[DollarStrokeSequenceDatabase alloc] initWithDictionary:@{}];
     
-    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithDictionary:@{}];
+    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithDictionary:@{@"name":@"Foobar"}];
     DollarStroke *stroke1 = [[DollarStroke alloc] initWithDictionary:@{}];
     DollarStroke *stroke2 = [[DollarStroke alloc] initWithDictionary:@{}];
     
@@ -79,8 +79,6 @@
     [seq addStroke:stroke2];
     
     XCTAssertTrue(seq.strokesArray.count == 2, @"Two strokes were added.");
-    
-    seq.name = @"Foobar";
     
     [db addStrokeSequence:seq];
     

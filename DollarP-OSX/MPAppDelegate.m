@@ -114,9 +114,29 @@
             [NSString stringWithFormat:@"%@.strokedb", userName]];
 }
 
-- (void)gestureView:(MPGestureView *)gestureView didFinishDetectionAttempt:(DollarResult *)result
+- (void)gestureView:(MPGestureView *)gestureView
+     didStartStroke:(DollarStroke *)stroke
+   inStrokeSequence:(DollarStrokeSequence *)strokeSequence
+{
+    
+}
+
+- (void)gestureView:(MPGestureView *)gestureView
+ didFinishDetection:(DollarResult *)result
+ withStrokeSequence:(DollarStrokeSequence *)strokeSequence
 {
     self.gestureLabel.stringValue = result.name;
+    
+}
+
+- (void)addExample:(id)sender
+{
+    
+}
+
+- (void)controlTextDidChange:(NSNotification *)obj
+{
+    
 }
 
 @end

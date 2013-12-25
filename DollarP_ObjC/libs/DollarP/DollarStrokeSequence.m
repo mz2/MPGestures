@@ -45,6 +45,13 @@
     return self;
 }
 
+- (instancetype)initWithStrokeSequence:(DollarStrokeSequence *)sequence
+{
+    // FIXME: don't serialise & deserialise to make a deep copy of the strokes.
+    return [self initWithName:sequence.name
+                      strokes:[DollarStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
+}
+
 - (void)addStroke:(DollarStroke *)stroke
 {
     [_strokes addObject:stroke];
@@ -53,6 +60,16 @@
 - (NSArray *)strokesArray
 {
     return [_strokes copy];
+}
+
+- (NSUInteger)strokeCount
+{
+    return _strokes.count;
+}
+
+- (DollarStroke *)lastStroke
+{
+    return [_strokes lastObject];
 }
 
 - (NSDictionary *)dictionaryRepresentation
