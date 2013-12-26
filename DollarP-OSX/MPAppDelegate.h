@@ -10,7 +10,7 @@
 
 #import "MPGestureView.h"
 
-#import "DollarStrokeSequenceDatabase.h"
+#import "MPStrokeSequenceDatabase.h"
 
 @interface MPAppDelegate : NSObject <NSApplicationDelegate>
 

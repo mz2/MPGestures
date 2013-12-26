@@ -1,7 +1,7 @@
-#import "DollarP.h"
-#import "DollarPointCloud.h"
+#import "MPDollarPointCloudRecognizer.h"
+#import "MPPointCloud.h"
 
-@implementation DollarP
+@implementation MPDollarPointCloudRecognizer
 
 @synthesize pointClouds;
 
@@ -14,8 +14,8 @@
     return self;
 }
 
-- (DollarResult *)recognize:(NSArray *)points {
-    DollarResult *result = [[DollarResult alloc] init];
+- (MPPointCloudRecognition *)recognize:(NSArray *)points {
+    MPPointCloudRecognition *result = [[MPPointCloudRecognition alloc] init];
     [result setName:@"No match"];
     [result setScore:0.0];
     
@@ -26,7 +26,7 @@
     assert(_resampleCount > 8);
     points = [[self class] resample:points numPoints:_resampleCount];
     points = [[self class] scale:points];
-    points = [[self class] translate:points to:[DollarPoint origin]];
+    points = [[self class] translate:points to:[MPPoint origin]];
     
     float b = +INFINITY;
     int u = -1;
@@ -55,11 +55,11 @@
 - (void)addGesture:(NSString *)name
             points:(NSArray *)points
 {
-    DollarPointCloud *pointCloud = [[DollarPointCloud alloc] initWithName:name
+    MPPointCloud *pointCloud = [[MPPointCloud alloc] initWithName:name
                                                                    points:points
                                                         resampledToNumber:self.resampleCount
                                                           normalizedScale:YES
-                                                     differenceToCentroid:[DollarPoint origin]];
+                                                     differenceToCentroid:[MPPoint origin]];
     [[self pointClouds] addObject:pointCloud];
 }
 
@@ -133,8 +133,8 @@
 	NSMutableArray *newPoints = [NSMutableArray arrayWithObject:thePoints[0]];
 
 	for (int i = 1; i < [thePoints count]; i++) {
-        DollarPoint *prevPoint = thePoints[i - 1];
-        DollarPoint *thisPoint = thePoints[i];
+        MPPoint *prevPoint = thePoints[i - 1];
+        MPPoint *thisPoint = thePoints[i];
 
 		if ([thisPoint id] == [prevPoint id]) {
 			float d = [self distanceFrom:prevPoint to:thisPoint];
@@ -143,7 +143,7 @@
 				float qx = [prevPoint x] + ((I - D) / d) * ([thisPoint x] - [prevPoint x]);
 				float qy = [prevPoint y] + ((I - D) / d) * ([thisPoint y] - [prevPoint y]);
                 
-				DollarPoint *q = [[DollarPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
+				MPPoint *q = [[MPPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
                 
 				[newPoints addObject:q];
 				[thePoints insertObject:q atIndex:i];
@@ -155,7 +155,7 @@
 	}
     
 	if ([newPoints count] == numPoints - 1) {
-        DollarPoint *lastPoint = thePoints[[thePoints count] - 1];
+        MPPoint *lastPoint = thePoints[[thePoints count] - 1];
 		[newPoints addObject:[lastPoint copy]];
     }
     
@@ -168,7 +168,7 @@
     float minY = +INFINITY;
     float maxY = -INFINITY;
     
-    DollarPoint *thisPoint;
+    MPPoint *thisPoint;
 	for (int i = 0; i < [points count]; i++) {
         thisPoint = points[i];
 		minX = MIN(minX, [thisPoint x]);
@@ -186,7 +186,7 @@
 		float qx = ([thisPoint x] - minX) / size;
 		float qy = ([thisPoint y] - minY) / size;
         
-        DollarPoint *q = [[DollarPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
+        MPPoint *q = [[MPPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
         
         [newPoints addObject:q];
 	}
@@ -195,17 +195,17 @@
 }
 
 + (NSArray *)translate:(NSArray *)points
-                    to:(DollarPoint *)point {
-    DollarPoint *c = [[self class] centroid:points];
+                    to:(MPPoint *)point {
+    MPPoint *c = [[self class] centroid:points];
 	NSMutableArray *newPoints = [NSMutableArray array];
     
 	for (int i = 0; i < [points count]; i++) {
-        DollarPoint *thisPoint = points[i];
+        MPPoint *thisPoint = points[i];
         
 		float qx = [thisPoint x] + [point x] - [c x];
 		float qy = [thisPoint y] + [point y] - [c y];
         
-        DollarPoint *q = [[DollarPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
+        MPPoint *q = [[MPPoint alloc] initWithId:[thisPoint id] x:qx y:qy];
         
         [newPoints addObject:q];
 	}
@@ -213,12 +213,12 @@
 	return newPoints;
 }
 
-+ (DollarPoint *)centroid:(NSArray *)points {
++ (MPPoint *)centroid:(NSArray *)points {
     float x = 0.0f;
     float y = 0.0f;
     
 	for (int i = 0; i < [points count]; i++) {
-        DollarPoint *thisPoint = points[i];
+        MPPoint *thisPoint = points[i];
         
 		x += [thisPoint x];
 		y += [thisPoint y];
@@ -227,7 +227,7 @@
 	x /= [points count];
 	y /= [points count];
     
-    return [[DollarPoint alloc] initWithId:0 x:x y:y];
+    return [[MPPoint alloc] initWithId:0 x:x y:y];
 }
 
 + (float)pathDistanceFrom:(NSArray *)points1
@@ -245,8 +245,8 @@
 	float d = 0.0f;
     
 	for (int i = 1; i < [points count]; i++) {
-        DollarPoint *prevPoint = points[i - 1];
-        DollarPoint *thisPoint = points[i];
+        MPPoint *prevPoint = points[i - 1];
+        MPPoint *thisPoint = points[i];
         
 		if ([thisPoint id] == [prevPoint id]) {
 			d += [self distanceFrom:prevPoint to:thisPoint];
@@ -256,8 +256,8 @@
 	return d;
 }
 
-+ (float)distanceFrom:(DollarPoint *)point1
-                   to:(DollarPoint *)point2 {
++ (float)distanceFrom:(MPPoint *)point1
+                   to:(MPPoint *)point2 {
     float dx = [point2 x] - [point1 x];
     float dy = [point2 y] - [point1 y];
     

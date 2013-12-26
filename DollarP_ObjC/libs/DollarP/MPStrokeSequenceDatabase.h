@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class DollarStrokeSequence;
+@class MPStrokeSequence;
 
 extern NSString * const DollarStrokeSequenceDatabaseErrorDomain;
 
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
  * The dollar stroke sequence database is a key-value store of stroke sequences keyed by their name.
  * It can be accessed using the keyed subscript notation.
  */
-@interface DollarStrokeSequenceDatabase : NSObject
+@interface MPStrokeSequenceDatabase : NSObject
 
 @property (readonly) NSString *identifier;
 
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
 
 @property (readonly) NSSet *strokeSequenceSet;
 
-- (void)addStrokeSequence:(DollarStrokeSequence *)sequence;
+- (void)addStrokeSequence:(MPStrokeSequence *)sequence;
 
 - (NSDictionary *)dictionaryRepresentation;
 

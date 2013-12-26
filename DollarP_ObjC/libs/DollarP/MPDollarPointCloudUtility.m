@@ -1,18 +1,18 @@
-#import "DollarDefaultGestures.h"
-#import "DollarPointCloud.h"
-#import "DollarPoint.h"
+#import "MPDollarPointCloudUtility.h"
+#import "MPPointCloud.h"
+#import "MPPoint.h"
 
-DollarPointCloud * MakePointCloud(NSString *name, NSArray *points) {
-    return [[DollarPointCloud alloc] initWithName:name points:points
+MPPointCloud * MakePointCloud(NSString *name, NSArray *points) {
+    return [[MPPointCloud alloc] initWithName:name points:points
                                 resampledToNumber:DollarPNumResampledPoints
-                                  normalizedScale:YES differenceToCentroid:[DollarPoint origin]];
+                                  normalizedScale:YES differenceToCentroid:[MPPoint origin]];
 }
 
-DollarPoint * MakePoint(float x, float y, int id) {
-    return [[DollarPoint alloc] initWithId:@(id) x:x y:y];
+MPPoint * MakePoint(float x, float y, int id) {
+    return [[MPPoint alloc] initWithId:@(id) x:x y:y];
 }
 
-@implementation DollarDefaultGestures
+@implementation MPDollarPointCloudUtility
 
 + (id)defaultPointClouds {
     static NSArray *defaultPointClouds = nil;

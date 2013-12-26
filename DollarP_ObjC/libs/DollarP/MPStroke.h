@@ -12,16 +12,16 @@
 @compatibility_alias UIColor NSColor;
 #endif
 
-@class DollarPoint;
+@class MPPoint;
 
-@interface DollarStroke : NSObject
+@interface MPStroke : NSObject
 
 @property (nonatomic, copy) NSArray *pointsArray;
 @property (nonatomic, strong) UIColor *color;
 
 - (void)addPoint:(CGPoint)p identifier:(NSUInteger)i;
 
-@property (readonly) DollarPoint *lastPoint;
+@property (readonly) MPPoint *lastPoint;
 
 - (NSDictionary *)dictionaryRepresentation;
 

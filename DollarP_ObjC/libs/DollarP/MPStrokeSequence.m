@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 de.ur. All rights reserved.
 //
 
-#import "DollarStrokeSequence.h"
-#import "DollarStroke.h"
-#import "DollarPointCloud.h"
-#import "DollarPoint.h"
+#import "MPStrokeSequence.h"
+#import "MPStroke.h"
+#import "MPPointCloud.h"
+#import "MPPoint.h"
 
-@interface DollarStrokeSequence ()
+@interface MPStrokeSequence ()
 @property (readonly) NSMutableArray *strokes;
 @end
 
-@implementation DollarStrokeSequence
+@implementation MPStrokeSequence
 
 - (instancetype)init
 {
@@ -41,26 +41,26 @@
     if (self)
     {
         _name = dictionary[@"name"];
-        _strokes = [[DollarStroke strokesWithArrayOfDictionaries:dictionary[@"strokes"]]
+        _strokes = [[MPStroke strokesWithArrayOfDictionaries:dictionary[@"strokes"]]
                     mutableCopy];
     }
     
     return self;
 }
 
-- (instancetype)initWithStrokeSequence:(DollarStrokeSequence *)sequence
+- (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence
 {
     // FIXME: don't serialise & deserialise to make a deep copy of the strokes.
     return [self initWithName:sequence.name
-                      strokes:[DollarStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
+                      strokes:[MPStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
 }
 
-- (BOOL)containsStroke:(DollarStroke *)stroke
+- (BOOL)containsStroke:(MPStroke *)stroke
 {
     return [_strokes containsObject:stroke];
 }
 
-- (void)addStroke:(DollarStroke *)stroke
+- (void)addStroke:(MPStroke *)stroke
 {
     [_strokes addObject:stroke];
 }
@@ -75,7 +75,7 @@
     return _strokes.count;
 }
 
-- (DollarStroke *)lastStroke
+- (MPStroke *)lastStroke
 {
     return [_strokes lastObject];
 }
@@ -86,37 +86,51 @@
              @"strokes" : [_strokes valueForKey:@"dictionaryRepresentation"]};
 }
 
-- (DollarPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
+- (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
 {
     NSArray *points = [self.strokes valueForKeyPath:@"unionOfArrays.self"];
-    return [[DollarPointCloud alloc] initWithName:self.name
+    return [[MPPointCloud alloc] initWithName:self.name
                                            points:points
                                 resampledToNumber:resampledPointCount
                                   normalizedScale:YES
-                             differenceToCentroid:[DollarPoint origin]];
+                             differenceToCentroid:[MPPoint origin]];
 }
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
     NSMutableArray *strokeSequences = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *dict in arrayOfDictionaries)
-        [strokeSequences addObject:[[DollarStrokeSequence alloc] initWithDictionary:dict]];
+        [strokeSequences addObject:[[MPStrokeSequence alloc] initWithDictionary:dict]];
     
     return strokeSequences;
 }
 
-- (BOOL)isEqual:(DollarStrokeSequence *)object
+- (BOOL)isEqual:(MPStrokeSequence *)object
 {
     if (!object)
         return NO;
     
-    if (![object isKindOfClass:[DollarStrokeSequence class]])
+    if (![object isKindOfClass:[MPStrokeSequence class]])
         return NO;
     
     if (![self.name isEqualToString:object.name])
         return NO;
     
     return [self.strokes isEqual:object.strokes];
+}
+
+- (NSUInteger)hash
+{
+    const NSUInteger prime = 31;
+    NSUInteger result = 1;
+    result = prime * result + _name.hash;
+    
+    // FIXME: prevent mutating _strokes after the stroke sequence has been added to a stroke sequence database
+    
+    for (MPStroke *stroke in _strokes)
+        result = prime * result + stroke.hash;
+    
+    return result;
 }
 
 - (NSString *)description

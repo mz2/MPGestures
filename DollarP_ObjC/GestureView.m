@@ -1,7 +1,7 @@
 #import "GestureView.h"
 
-#import "DollarStroke.h"
-#import "DollarPoint.h"
+#import "MPStroke.h"
+#import "MPPoint.h"
 
 @implementation GestureView
 
@@ -33,7 +33,7 @@
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
         CGPoint location = [touch locationInView:self];
         
-        DollarStroke *stroke = [[DollarStroke alloc] init];
+        MPStroke *stroke = [[MPStroke alloc] init];
         
         [stroke addPoint:location identifier:@(1)];
         [stroke setColor:[UIColor blackColor]];
@@ -48,7 +48,7 @@
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
         
-        DollarStroke *stroke = [currentTouches objectForKey:key];
+        MPStroke *stroke = [currentTouches objectForKey:key];
         CGPoint location = [touch locationInView:self];
         
         [stroke addPoint:location identifier:stroke.pointsArray.count];
@@ -72,7 +72,7 @@
 - (void)endTouches:(NSSet *)touches {
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        DollarStroke *stroke = [currentTouches objectForKey:key];
+        MPStroke *stroke = [currentTouches objectForKey:key];
         [stroke setColor:[self randomColor]];
         
         if (stroke) {
@@ -90,17 +90,17 @@
     CGContextSetLineCap(context, kCGLineCapRound);
     
     for (int i = 0; i < [completeStrokes count]; i++) {
-        DollarStroke *stroke = [completeStrokes objectAtIndex:i];
+        MPStroke *stroke = [completeStrokes objectAtIndex:i];
         [self drawStroke:stroke inContext:context];
     }
     
     for (NSValue *touchValue in currentTouches) {
-        DollarStroke *stroke = [currentTouches objectForKey:touchValue];
+        MPStroke *stroke = [currentTouches objectForKey:touchValue];
         [self drawStroke:stroke inContext:context];
     }
 }
 
-- (void)drawStroke:(DollarStroke *)stroke
+- (void)drawStroke:(MPStroke *)stroke
          inContext:(CGContextRef)context {
     [[stroke color] set];
     

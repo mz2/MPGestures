@@ -1,13 +1,13 @@
-#import "DollarPoint.h"
+#import "MPPoint.h"
 
-@implementation DollarPoint
+@implementation MPPoint
 
 @synthesize x, y, id;
 
-+ (DollarPoint *)origin {
-    static DollarPoint *origin = nil;
++ (MPPoint *)origin {
+    static MPPoint *origin = nil;
     if (!origin) {
-        origin = [[DollarPoint alloc] initWithId:0
+        origin = [[MPPoint alloc] initWithId:0
                                                x:0.0f
                                                y:0.0f];
     }
@@ -37,7 +37,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    DollarPoint *point = [[DollarPoint alloc] init];
+    MPPoint *point = [[MPPoint alloc] init];
     
     [point setX:[self x]];
     [point setY:[self y]];
@@ -71,7 +71,7 @@
     for (NSDictionary *dict in arrayOfDictionaries)
     {
         assert([dict isKindOfClass:[NSDictionary class]]);
-        [points addObject:[[DollarPoint alloc] initWithDictionary:dict]];
+        [points addObject:[[MPPoint alloc] initWithDictionary:dict]];
     }
     
     return [points copy];
@@ -92,8 +92,8 @@
     
     for (NSUInteger i = 0; i < pointsA.count; i++)
     {
-        DollarPoint *a = pointsA[i];
-        DollarPoint *b = pointsB[i];
+        MPPoint *a = pointsA[i];
+        MPPoint *b = pointsB[i];
         d += powf(b.x - a.x, 2.f);
         d += powf(b.y - a.y, 2.f);
     }
@@ -103,7 +103,7 @@
     return d;
 }
 
-- (BOOL)isEqual:(DollarPoint *)object
+- (BOOL)isEqual:(MPPoint *)object
 {
     if (!object)
         return NO;
@@ -114,6 +114,19 @@
     float dist = [[self class] leastSquaresEuclideanDistanceOfPoints:@[self] withPoints:@[object]];
     
     return dist < 0.00001;
+}
+
+- (NSUInteger)hash
+{
+    const NSUInteger prime = 31;
+    
+    NSUInteger result = 1;
+    
+    result = prime * result + [self.id hash];
+    result = prime * result + floor(self.x);
+    result = prime * result + floor(self.y);
+    
+    return result;
 }
 
 @end

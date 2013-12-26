@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
-#import "DollarP.h"
+#import "MPDollarPointCloudRecognizer.h"
 
-@interface DollarPGestureRecognizer : UIGestureRecognizer {
-    DollarP *dollarP;
+@interface MPDollarPGestureRecognizer : UIGestureRecognizer {
+    MPDollarPointCloudRecognizer *dollarP;
     NSMutableDictionary *currentTouches;
     NSMutableArray *currentPoints;
     NSMutableArray *points;
@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
-@property (nonatomic, strong, readonly) DollarResult *result;
+@property (nonatomic, strong, readonly) MPPointCloudRecognition *result;
 
 - (void)reset;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

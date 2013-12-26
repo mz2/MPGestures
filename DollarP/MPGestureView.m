@@ -7,19 +7,19 @@
 //
 
 #import "MPGestureView.h"
-#import "DollarStroke.h"
-#import "DollarP.h"
-#import "DollarDefaultGestures.h"
+#import "MPStroke.h"
+#import "MPDollarPointCloudRecognizer.h"
+#import "MPDollarPointCloudUtility.h"
 
-#import "DollarStrokeSequence.h"
+#import "MPStrokeSequence.h"
 
 const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 
 @interface MPGestureView ()
 
-@property DollarStrokeSequence *currentStrokeSequence;
+@property MPStrokeSequence *currentStrokeSequence;
 
-@property DollarStrokeSequence *lastStrokeSequence;
+@property MPStrokeSequence *lastStrokeSequence;
 
 @property NSTimer *strokesEndedTimer;
 
@@ -61,26 +61,26 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     
     // draw additional strokes first (so they're drawn faintly under the last / currently drawn)
     for (NSUInteger i = 0; i < self.additionalStrokeSequences.count; i++) {
-        DollarStrokeSequence *seq = self.additionalStrokeSequences[i];
+        MPStrokeSequence *seq = self.additionalStrokeSequences[i];
         
         for (NSUInteger j = 0 ; j < seq.strokesArray.count; j++) {
-            DollarStroke *stroke = [self.additionalStrokeSequences[i] strokesArray][j];
+            MPStroke *stroke = [self.additionalStrokeSequences[i] strokesArray][j];
             [self drawStroke:stroke inContext:context];
         }
     }
     
     // draw either the last (already finished) or the current (currently manipulated) stroke
-    DollarStrokeSequence *strokeSequence
+    MPStrokeSequence *strokeSequence
         = _lastStrokeSequence ? _lastStrokeSequence : _currentStrokeSequence;
     
     for (NSUInteger i = 0; i < strokeSequence.strokeCount; i++)
     {
-        DollarStroke *stroke = strokeSequence.strokesArray[i];
+        MPStroke *stroke = strokeSequence.strokesArray[i];
         [self drawStroke:stroke inContext:context];
     }
 }
 
-- (void)drawStroke:(DollarStroke *)stroke
+- (void)drawStroke:(MPStroke *)stroke
          inContext:(CGContextRef)context
 {
     if ([_currentStrokeSequence containsStroke:stroke])
@@ -129,10 +129,10 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     
     if (!_currentStrokeSequence)
     {
-        _currentStrokeSequence = [[DollarStrokeSequence alloc] initWithName:nil strokes:@[]];
+        _currentStrokeSequence = [[MPStrokeSequence alloc] initWithName:nil strokes:@[]];
     }
     
-    DollarStroke *stroke = [[DollarStroke alloc] init];
+    MPStroke *stroke = [[MPStroke alloc] init];
     [stroke addPoint:p identifier:1];
     stroke.color = [self randomColor];
     
@@ -165,14 +165,14 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 
 - (void)strokesDidEnd:(NSTimer *)timer
 {
-    DollarP *dp = [[DollarP alloc] init];
-    dp.pointClouds = [DollarDefaultGestures defaultPointClouds];
+    MPDollarPointCloudRecognizer *dp = [[MPDollarPointCloudRecognizer alloc] init];
+    dp.pointClouds = [MPDollarPointCloudUtility defaultPointClouds];
     
     NSArray *ps = [[_currentStrokeSequence.strokesArray valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     
     NSLog(@"Points:\n%@", ps);
     
-    DollarResult *result = [dp recognize:ps];
+    MPPointCloudRecognition *result = [dp recognize:ps];
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
     [self.delegate gestureView:self didFinishDetection:result withStrokeSequence:_currentStrokeSequence];

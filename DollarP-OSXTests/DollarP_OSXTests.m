@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "DollarStrokeSequenceDatabase.h"
-#import "DollarStrokeSequence.h"
-#import "DollarStroke.h"
-#import "DollarPoint.h"
-#import "DollarP.h"
+#import "MPStrokeSequenceDatabase.h"
+#import "MPStrokeSequence.h"
+#import "MPStroke.h"
+#import "MPPoint.h"
+#import "MPDollarPointCloudRecognizer.h"
 
 @interface DollarP_OSXTests : XCTestCase
 
@@ -58,11 +58,11 @@
 
 - (void)testStrokeDatabaseSerializationRoundtrip
 {
-    DollarStrokeSequenceDatabase *db = [[DollarStrokeSequenceDatabase alloc] initWithDictionary:@{}];
+    MPStrokeSequenceDatabase *db = [[MPStrokeSequenceDatabase alloc] initWithIdentifier:@"foobar"];
     
-    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithDictionary:@{@"name":@"Foobar"}];
-    DollarStroke *stroke1 = [[DollarStroke alloc] initWithDictionary:@{}];
-    DollarStroke *stroke2 = [[DollarStroke alloc] initWithDictionary:@{}];
+    MPStrokeSequence *seq = [[MPStrokeSequence alloc] initWithDictionary:@{@"name":@"Foobar"}];
+    MPStroke *stroke1 = [[MPStroke alloc] initWithDictionary:@{}];
+    MPStroke *stroke2 = [[MPStroke alloc] initWithDictionary:@{}];
     
     [stroke1 addPoint:CGPointMake(3,4) identifier:1];
     [stroke1 addPoint:CGPointMake(5,2) identifier:1];
@@ -91,12 +91,12 @@
     XCTAssertTrue([db writeToURL:url error:&err],
                   @"Serializing the stroke sequence database succeeds.");
     
-    DollarStrokeSequenceDatabase *deserialisedDB
-        = [[DollarStrokeSequenceDatabase alloc] initWithContentsOfURL:url error:&err];
+    MPStrokeSequenceDatabase *deserialisedDB
+        = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:url error:&err];
     
-    NSArray *deserialisedSequences = deserialisedDB[@"Foobar"];
+    NSSet *deserialisedSequences = [deserialisedDB[@"Foobar"] copy];
     
-    XCTAssertTrue([deserialisedSequences isEqual:@[seq]], @"The deserialised stroke sequence is equal");
+    XCTAssertTrue([deserialisedSequences isEqualToSet:[NSSet setWithObject:seq]], @"The deserialised stroke sequence is equal");
     
     XCTAssertTrue([db isEqual:deserialisedDB], @"The original and the deserialised database are equal.");
     

@@ -11,17 +11,17 @@
 extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @class MPGestureView;
-@class DollarStrokeSequence, DollarStroke, DollarResult;
+@class MPStrokeSequence, MPStroke, MPPointCloudRecognition;
 
 @protocol MPGestureViewDelegate <NSObject>
 
 - (void)gestureView:(MPGestureView *)gestureView
-     didStartStroke:(DollarStroke *)stroke
-   inStrokeSequence:(DollarStrokeSequence *)strokeSequence;
+     didStartStroke:(MPStroke *)stroke
+   inStrokeSequence:(MPStrokeSequence *)strokeSequence;
 
 - (void)gestureView:(MPGestureView *)gestureView
- didFinishDetection:(DollarResult *)result
- withStrokeSequence:(DollarStrokeSequence *)strokeSequence;
+ didFinishDetection:(MPPointCloudRecognition *)result
+ withStrokeSequence:(MPStrokeSequence *)strokeSequence;
 
 @end
 

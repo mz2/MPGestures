@@ -1,14 +1,14 @@
-#import "DollarPGestureRecognizer.h"
-#import "DollarPoint.h"
+#import "MPDollarPGestureRecognizer.h"
+#import "MPPoint.h"
 
-@implementation DollarPGestureRecognizer
+@implementation MPDollarPGestureRecognizer
 
 @synthesize pointClouds, result;
 
 - (id)initWithTarget:(id)target action:(SEL)action {
     self = [super initWithTarget:target action:action];
     if (self) {
-        dollarP = [[DollarP alloc] init];
+        dollarP = [[MPDollarPointCloudRecognizer alloc] init];
         currentTouches = [[NSMutableDictionary alloc] init];
         currentPoints = [NSMutableArray array];
         points = [NSMutableArray array];
@@ -45,7 +45,7 @@
         int index = [[currentTouches objectForKey:key] intValue];
         CGPoint location = [touch locationInView:[self view]];
         
-        DollarPoint *point = [[DollarPoint alloc] initWithId:@(index)
+        MPPoint *point = [[MPPoint alloc] initWithId:@(index)
                                                            x:location.x
                                                            y:location.y];
         [currentPoints addObject:point];

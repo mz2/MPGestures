@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface DollarResult : NSObject
+@interface MPPointCloudRecognition : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) float score;

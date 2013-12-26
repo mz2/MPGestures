@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@class DollarPoint;
+@class MPPoint;
 
 static const NSInteger DollarPNumResampledPoints = 32;
 
-@interface DollarPointCloud : NSObject 
+@interface MPPointCloud : NSObject 
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSArray *points;
@@ -24,6 +24,6 @@ static const NSInteger DollarPNumResampledPoints = 32;
                       points:(NSArray *)somePoints
            resampledToNumber:(NSUInteger)numPoints
              normalizedScale:(BOOL)normalizedScale
-        differenceToCentroid:(DollarPoint *)translationPoint;
+        differenceToCentroid:(MPPoint *)translationPoint;
 
 @end

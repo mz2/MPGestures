@@ -8,8 +8,8 @@
 
 #import "MPAppDelegate.h"
 #import "MPGestureView.h"
-#import "DollarResult.h"
-#import "DollarStrokeSequence.h"
+#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequence.h"
 
 @interface MPAppDelegate ()
 @end

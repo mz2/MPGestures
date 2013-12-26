@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MPGestureView.h"
 
-@class DollarStrokeSequenceDatabase;
+@class MPStrokeSequenceDatabase;
 
 @interface MPGestureViewController : NSViewController <MPGestureViewDelegate,
                                                        NSTextFieldDelegate,
@@ -28,7 +28,7 @@
 
 @property (weak) IBOutlet NSComboBox *labelComboBox;
 
-@property (strong) DollarStrokeSequenceDatabase *db;
+@property (strong) MPStrokeSequenceDatabase *db;
 
 - (IBAction)addExample:(id)sender;
 

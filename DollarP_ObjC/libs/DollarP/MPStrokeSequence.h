@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class DollarStroke, DollarPointCloud;
+@class MPStroke, MPPointCloud;
 
-@interface DollarStrokeSequence : NSObject
+@interface MPStrokeSequence : NSObject
 
 @property (readonly) NSString *name;
 
@@ -18,19 +18,19 @@
 
 @property (readonly) NSUInteger strokeCount;
 
-- (BOOL)containsStroke:(DollarStroke *)stroke;
+- (BOOL)containsStroke:(MPStroke *)stroke;
 
-- (void)addStroke:(DollarStroke *)stroke;
+- (void)addStroke:(MPStroke *)stroke;
 
-- (DollarStroke *)lastStroke;
+- (MPStroke *)lastStroke;
 
 - (NSDictionary *)dictionaryRepresentation;
 
-- (DollarPointCloud *)pointCloudRepresentation;
+- (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount;
 
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-- (instancetype)initWithStrokeSequence:(DollarStrokeSequence *)sequence;
+- (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence;
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 

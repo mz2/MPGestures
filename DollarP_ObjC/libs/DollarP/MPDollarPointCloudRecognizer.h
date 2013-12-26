@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "DollarResult.h"
-#import "DollarPoint.h"
+#import "MPPointCloudRecognition.h"
+#import "MPPoint.h"
 
-@interface DollarP : NSObject;
+@interface MPDollarPointCloudRecognizer : NSObject;
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
 
@@ -10,9 +10,9 @@
 
 + (NSArray *)resample:(NSArray *)points numPoints:(NSUInteger)numPoints;
 + (NSArray *)scale:(NSArray *)points;
-+ (NSArray *)translate:(NSArray *)points to:(DollarPoint *)point;
++ (NSArray *)translate:(NSArray *)points to:(MPPoint *)point;
 
-- (DollarResult *)recognize:(NSArray *)points;
+- (MPPointCloudRecognition *)recognize:(NSArray *)points;
 - (void)addGesture:(NSString *)name points:(NSArray *)points;
 
 @end

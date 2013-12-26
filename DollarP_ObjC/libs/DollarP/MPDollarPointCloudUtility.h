@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface DollarDefaultGestures : NSObject
+@interface MPDollarPointCloudUtility : NSObject
 
 + (NSMutableArray *)defaultPointClouds;
 

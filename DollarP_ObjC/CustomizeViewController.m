@@ -1,5 +1,5 @@
 #import "CustomizeViewController.h"
-#import "DollarDefaultGestures.h"
+#import "MPDollarPointCloudUtility.h"
 
 @implementation CustomizeViewController
 
@@ -101,7 +101,7 @@ numberOfRowsInComponent:(NSInteger)component {
 }
 
 - (IBAction)deleteAllCustomTypes:(id)sender {
-    [gestureRecognizer setPointClouds:[DollarDefaultGestures defaultPointClouds]];
+    [gestureRecognizer setPointClouds:[MPDollarPointCloudUtility defaultPointClouds]];
     [self updatePointCloudNames];
     [existingTypesPicker reloadAllComponents];
     

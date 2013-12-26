@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "DollarPGestureRecognizer.h"
+#import "MPDollarPGestureRecognizer.h"
 
 @interface CustomizeViewController : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate> {
     __weak IBOutlet UIPickerView *existingTypesPicker;
@@ -8,7 +8,7 @@
     NSCountedSet *pointCloudCount;
 }
 
-@property (nonatomic, strong) DollarPGestureRecognizer *gestureRecognizer;
+@property (nonatomic, strong) MPDollarPGestureRecognizer *gestureRecognizer;
 
 - (IBAction)addToExistingType:(id)sender;
 - (IBAction)addToCustomType:(id)sender;

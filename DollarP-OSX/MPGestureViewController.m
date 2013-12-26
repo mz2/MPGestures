@@ -9,12 +9,12 @@
 #import "MPGestureViewController.h"
 #import "NSFileManager+ApplicationSupport.h"
 
-#import "DollarStrokeSequenceDatabase.h"
-#import "DollarResult.h"
-#import "DollarStrokeSequence.h"
+#import "MPStrokeSequenceDatabase.h"
+#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequence.h"
 
 @interface MPGestureViewController ()
-@property DollarStrokeSequence *strokeSequence;
+@property MPStrokeSequence *strokeSequence;
 @end
 
 @implementation MPGestureViewController
@@ -43,14 +43,14 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self strokeSequencePath]])
     {
         // FIXME: make the identifier configurable when creating a new database.
-        self.db = [[DollarStrokeSequenceDatabase alloc] initWithIdentifier:NSUserName()];
+        self.db = [[MPStrokeSequenceDatabase alloc] initWithIdentifier:NSUserName()];
         
         [self.db dictionaryRepresentation];
     }
     else
     {
         NSError *err = nil;
-        self.db = [[DollarStrokeSequenceDatabase alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self strokeSequencePath]] error:&err];
+        self.db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self strokeSequencePath]] error:&err];
         
         if (err)
         {
@@ -97,8 +97,8 @@
 #pragma mark - Gesture view delegate
 
 - (void)gestureView:(MPGestureView *)gestureView
-     didStartStroke:(DollarStroke *)stroke
-   inStrokeSequence:(DollarStrokeSequence *)strokeSequence
+     didStartStroke:(MPStroke *)stroke
+   inStrokeSequence:(MPStrokeSequence *)strokeSequence
 {
     if (!_strokeSequence || _strokeSequence != strokeSequence)
         _strokeSequence = strokeSequence;
@@ -110,8 +110,8 @@
 }
 
 - (void)gestureView:(MPGestureView *)gestureView
- didFinishDetection:(DollarResult *)result
- withStrokeSequence:(DollarStrokeSequence *)strokeSequence
+ didFinishDetection:(MPPointCloudRecognition *)result
+ withStrokeSequence:(MPStrokeSequence *)strokeSequence
 {
     self.statusLabel.stringValue = [NSString stringWithFormat:@"Detected as %@", result.name];
     self.strokeSequence = strokeSequence;
@@ -170,7 +170,7 @@
         return;
     }
     
-    DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithName:self.gestureTextfield.stringValue strokes:self.strokeSequence.strokesArray];
+    MPStrokeSequence *seq = [[MPStrokeSequence alloc] initWithName:self.gestureTextfield.stringValue strokes:self.strokeSequence.strokesArray];
     
     if (seq.strokeCount == 0)
     {
@@ -208,7 +208,7 @@
 {
     if (self.gestureView.selectedAdditionalStrokeSequenceIndex != NSNotFound)
     {
-        DollarStrokeSequence *selectedSeq
+        MPStrokeSequence *selectedSeq
         = self.gestureView.additionalStrokeSequences
         [self.gestureView.selectedAdditionalStrokeSequenceIndex];
         [self.db[selectedSeq.name] removeObject:selectedSeq];
@@ -216,7 +216,7 @@
         self.gestureView.additionalStrokeSequences =
         [self.gestureView.additionalStrokeSequences filteredArrayUsingPredicate:
                 [NSPredicate predicateWithBlock:
-                 ^BOOL(DollarStrokeSequence *seq, NSDictionary *bindings)
+                 ^BOOL(MPStrokeSequence *seq, NSDictionary *bindings)
         {
             return seq != selectedSeq;
         }]];

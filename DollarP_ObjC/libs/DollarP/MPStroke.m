@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 de.ur. All rights reserved.
 //
 
-#import "DollarStroke.h"
-#import "DollarPoint.h"
+#import "MPStroke.h"
+#import "MPPoint.h"
 
-@interface DollarStroke ()
+@interface MPStroke ()
 @property (nonatomic, strong) NSMutableArray *points;
 @end
 
-@implementation DollarStroke
+@implementation MPStroke
 
 - (instancetype)init
 {
@@ -29,7 +29,7 @@
 {
     if (self = [super init])
     {
-        _points = [[DollarPoint pointsWithArrayOfDictionaries:dictionary[@"points"]] mutableCopy];
+        _points = [[MPPoint pointsWithArrayOfDictionaries:dictionary[@"points"]] mutableCopy];
     }
     
     return self;
@@ -38,7 +38,7 @@
 - (void)addPoint:(CGPoint)p identifier:(NSUInteger)i
 {
     assert(_points);
-    DollarPoint *dp = [[DollarPoint alloc] initWithId:@(i) x:p.x y:p.y];
+    MPPoint *dp = [[MPPoint alloc] initWithId:@(i) x:p.x y:p.y];
     [_points addObject:dp];
 }
 
@@ -56,26 +56,38 @@
 {
     NSMutableArray *strokes = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *dict in arrayOfDictionaries)
-        [strokes addObject:[[DollarStroke alloc] initWithDictionary:dict]];
+        [strokes addObject:[[MPStroke alloc] initWithDictionary:dict]];
     
     return strokes;
 }
 
 
-- (BOOL)isEqual:(DollarStroke *)object
+- (BOOL)isEqual:(MPStroke *)object
 {
     if (!object)
         return NO;
     
-    if (![object isKindOfClass:[DollarStroke class]])
+    if (![object isKindOfClass:[MPStroke class]])
         return NO;
     
     if (self.points.count != object.points.count)
         return NO;
     
-    float dist = [DollarPoint leastSquaresEuclideanDistanceOfPoints:self.points withPoints:object.points];
+    float dist = [MPPoint leastSquaresEuclideanDistanceOfPoints:self.points withPoints:object.points];
     
     return dist < 0.0001;
+}
+
+- (NSUInteger)hash
+{
+    const NSUInteger prime = 31;
+    NSUInteger result = 1;
+    
+    // FIXME: prevent mutating points once it's been added to a stroke
+    for (MPPoint *p in _points)
+        result = prime * result + p.hash;
+    
+    return result;
 }
 
 @end

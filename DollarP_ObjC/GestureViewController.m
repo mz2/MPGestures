@@ -1,6 +1,6 @@
 #import "GestureViewController.h"
-#import "DollarDefaultGestures.h"
-#import "DollarResult.h"
+#import "MPDollarPointCloudUtility.h"
+#import "MPPointCloudRecognition.h"
 #import "CustomizeViewController.h"
 
 @implementation GestureViewController
@@ -8,9 +8,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    dollarPGestureRecognizer = [[DollarPGestureRecognizer alloc] initWithTarget:self
+    dollarPGestureRecognizer = [[MPDollarPGestureRecognizer alloc] initWithTarget:self
                                                                        action:@selector(gestureRecognized:)];
-    [dollarPGestureRecognizer setPointClouds:[DollarDefaultGestures defaultPointClouds]];
+    [dollarPGestureRecognizer setPointClouds:[MPDollarPointCloudUtility defaultPointClouds]];
     [dollarPGestureRecognizer setDelaysTouchesEnded:NO];
 
     [gestureView addGestureRecognizer:dollarPGestureRecognizer];
@@ -30,8 +30,8 @@
     [gestureView setUserInteractionEnabled:!recognized];
 }
 
-- (void)gestureRecognized:(DollarPGestureRecognizer *)sender {
-    DollarResult *result = [sender result];
+- (void)gestureRecognized:(MPDollarPGestureRecognizer *)sender {
+    MPPointCloudRecognition *result = [sender result];
     [resultLabel setText:[NSString stringWithFormat:@"Result: %@ (Score: %.2f)",
                           [result name], [result score]]];
 }

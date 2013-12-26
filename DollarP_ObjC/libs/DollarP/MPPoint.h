@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface DollarPoint : NSObject
+@interface MPPoint : NSObject
 
 @property (nonatomic) float x;
 @property (nonatomic) float y;
@@ -8,7 +8,7 @@
 
 @property (readonly) CGPoint CGPointValue;
 
-+ (DollarPoint *)origin;
++ (MPPoint *)origin;
 
 - (instancetype)initWithId:(id)id x:(float)x y:(float)y;
 

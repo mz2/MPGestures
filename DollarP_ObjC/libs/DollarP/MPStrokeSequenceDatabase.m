@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 de.ur. All rights reserved.
 //
 
-#import "DollarStrokeSequenceDatabase.h"
-#import "DollarStrokeSequence.h"
+#import "MPStrokeSequenceDatabase.h"
+#import "MPStrokeSequence.h"
 
 NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenceDatabaseErrorDomain";
 
-@interface DollarStrokeSequenceDatabase ()
+@interface MPStrokeSequenceDatabase ()
 @property NSMutableDictionary *namedStrokeSequences;
 @end
 
-@implementation DollarStrokeSequenceDatabase
+@implementation MPStrokeSequenceDatabase
 
 - (instancetype)init
 {
@@ -24,7 +24,8 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
-    return [self initWithDictionary:@{@"identifier":identifier}];
+    return [self initWithDictionary:@{@"identifier":identifier,
+                                      @"strokeSequenceMap":@{}}];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -32,13 +33,16 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
     self = [super init];
     if (self)
     {
-        _identifier = dictionary[@"identifier"];
-        _namedStrokeSequences = [NSMutableDictionary dictionaryWithCapacity:dictionary.count];
         
-        for (id k in dictionary)
-        {
-            _namedStrokeSequences[k] = [DollarStrokeSequence strokeSequencesWithArrayOfDictionaries:dictionary[k]];
-        }
+        _identifier = dictionary[@"identifier"];
+
+        NSDictionary *strokeSequenceMap = dictionary[@"strokeSequenceMap"];
+        
+        _namedStrokeSequences
+            = [NSMutableDictionary dictionaryWithCapacity:strokeSequenceMap.count];
+        
+        for (id k in strokeSequenceMap)
+            _namedStrokeSequences[k] = [NSSet setWithArray:[MPStrokeSequence strokeSequencesWithArrayOfDictionaries:strokeSequenceMap[k]]];
     }
     
     return self;
@@ -80,12 +84,10 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
         dict[k] = [[_namedStrokeSequences[k] allObjects] valueForKey:@"dictionaryRepresentation"];
     }
     
-    dict[@"identifier"] = self.identifier;
-    
-    return [dict copy];
+    return @{@"identifier": self.identifier, @"strokeSequenceMap":dict};
 }
 
-- (void)addStrokeSequence:(DollarStrokeSequence *)sequence
+- (void)addStrokeSequence:(MPStrokeSequence *)sequence
 {
     assert(sequence.name);
     if (!_namedStrokeSequences[sequence.name])
@@ -94,13 +96,22 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
     [_namedStrokeSequences[sequence.name] addObject:sequence];
 }
 
-- (BOOL)isEqual:(DollarStrokeSequenceDatabase *)object
+- (BOOL)isEqual:(MPStrokeSequenceDatabase *)object
 {
     if (!object)
+    {
         return NO;
+    }
     
-    if (![object isKindOfClass:[DollarStrokeSequenceDatabase class]])
+    if (![object isKindOfClass:[MPStrokeSequenceDatabase class]])
+    {
         return NO;
+    }
+    
+    if (![self.identifier isEqualToString:object.identifier])
+    {
+        return NO;
+    }
     
     return [self.namedStrokeSequences isEqualToDictionary:object.namedStrokeSequences];
 }
