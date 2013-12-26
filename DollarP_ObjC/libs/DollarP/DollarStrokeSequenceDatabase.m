@@ -71,7 +71,7 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
     
     for (id k in _namedStrokeSequences)
     {
-        dict[k] = [_namedStrokeSequences[k] valueForKey:@"dictionaryRepresentation"];
+        dict[k] = [[_namedStrokeSequences[k] allObjects] valueForKey:@"dictionaryRepresentation"];
     }
     
     return dict;
@@ -81,7 +81,7 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
 {
     assert(sequence.name);
     if (!_namedStrokeSequences[sequence.name])
-        _namedStrokeSequences[sequence.name] = [NSMutableArray arrayWithCapacity:32];
+        _namedStrokeSequences[sequence.name] = [NSMutableSet setWithCapacity:64];
     
     [_namedStrokeSequences[sequence.name] addObject:sequence];
 }
@@ -110,6 +110,12 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
 - (NSSet *)strokeSequenceNameSet
 {
     return [NSSet setWithArray:[self.namedStrokeSequences allKeys]];
+}
+
+- (NSArray *)sortedStrokeSequenceNames
+{
+    return [[self.strokeSequenceNameSet allObjects]
+            sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
 
 - (NSSet *)strokeSequenceSet

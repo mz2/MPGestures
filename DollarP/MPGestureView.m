@@ -23,6 +23,8 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 
 @property NSTimer *strokesEndedTimer;
 
+@property (readwrite) NSUInteger selectedAdditionalStrokeSequenceIndex;
+
 @end
 
 @implementation MPGestureView
@@ -43,6 +45,8 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setup];
+    
+    _selectedAdditionalStrokeSequenceIndex = NSNotFound;
 }
 
 - (void)setup
@@ -55,6 +59,17 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     CGContextSetLineWidth(context, 5.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
+    // draw additional strokes first (so they're drawn faintly under the last / currently drawn)
+    for (NSUInteger i = 0; i < self.additionalStrokeSequences.count; i++) {
+        DollarStrokeSequence *seq = self.additionalStrokeSequences[i];
+        
+        for (NSUInteger j = 0 ; j < seq.strokesArray.count; j++) {
+            DollarStroke *stroke = [self.additionalStrokeSequences[i] strokesArray][j];
+            [self drawStroke:stroke inContext:context];
+        }
+    }
+    
+    // draw either the last (already finished) or the current (currently manipulated) stroke
     DollarStrokeSequence *strokeSequence
         = _lastStrokeSequence ? _lastStrokeSequence : _currentStrokeSequence;
     
@@ -68,7 +83,16 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
 - (void)drawStroke:(DollarStroke *)stroke
          inContext:(CGContextRef)context
 {
-    [[stroke color] set];
+    if ([_currentStrokeSequence containsStroke:stroke])
+        [[stroke color] set];
+    else if ([_lastStrokeSequence containsStroke:stroke])
+        [[NSColor blackColor] set];
+    else if (_selectedAdditionalStrokeSequenceIndex != NSNotFound
+             && [_additionalStrokeSequences[_selectedAdditionalStrokeSequenceIndex] containsStroke:stroke])
+        [[NSColor redColor] set];
+    else
+        [[NSColor colorWithWhite:0.0 alpha:0.2] set];
+    
     
     NSArray *points = [stroke pointsArray];
     CGPoint point = [points[0] CGPointValue];
@@ -181,6 +205,11 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     _strokesEndedTimer = nil;
     
     [self setNeedsDisplay:YES];
+}
+
+- (void)selectAdditionalStrokeSequenceAtIndex:(NSUInteger)index
+{
+    self.selectedAdditionalStrokeSequenceIndex = index;
 }
 
 @end

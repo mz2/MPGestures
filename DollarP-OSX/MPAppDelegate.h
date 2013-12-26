@@ -18,15 +18,17 @@
                                      MPGestureViewDelegate,
                                      NSTextFieldDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSWindow *window;
 
-@property (assign) IBOutlet NSTextField *gestureLabel;
-@property (assign) IBOutlet NSTextField *gestureTextfield;
-@property (assign) IBOutlet NSButton *submitGestureButton;
+@property (weak) IBOutlet NSTextField *statusLabel;
+@property (weak) IBOutlet NSTextField *gestureTextfield;
+@property (weak) IBOutlet NSButton *submitGestureButton;
 
-@property (assign) IBOutlet NSButton *nextGestureButton;
-@property (assign) IBOutlet NSButton *previousGestureButton;
-@property (assign) IBOutlet NSButton *deleteGestureButton;
+@property (weak) IBOutlet NSButton *nextGestureButton;
+@property (weak) IBOutlet NSButton *previousGestureButton;
+@property (weak) IBOutlet NSButton *deleteGestureButton;
+
+@property (weak) IBOutlet NSComboBox *labelComboBox;
 
 @property (strong) DollarStrokeSequenceDatabase *db;
 

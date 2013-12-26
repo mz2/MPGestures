@@ -31,6 +31,12 @@ extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @property (readonly) BOOL isStroking;
 
+@property NSArray *additionalStrokeSequences;
+
+@property (readonly) NSUInteger selectedAdditionalStrokeSequenceIndex;
+
+- (void)selectAdditionalStrokeSequenceAtIndex:(NSUInteger)index;
+
 - (IBAction)clear:(id)sender;
 
 @end

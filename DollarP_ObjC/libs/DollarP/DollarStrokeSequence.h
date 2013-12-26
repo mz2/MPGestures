@@ -18,6 +18,8 @@
 
 @property (readonly) NSUInteger strokeCount;
 
+- (BOOL)containsStroke:(DollarStroke *)stroke;
+
 - (void)addStroke:(DollarStroke *)stroke;
 
 - (DollarStroke *)lastStroke;

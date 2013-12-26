@@ -21,7 +21,7 @@
 {
     // Insert code here to initialize your application
     [self.window makeFirstResponder:self.gestureView];
-    self.gestureLabel.stringValue = @"";
+    self.statusLabel.stringValue = @"";
     
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self strokeSequencePath]])
@@ -41,6 +41,9 @@
             [[NSAlert alertWithError:err] runModal];
         }
     }
+    
+    [_previousGestureButton setEnabled:NO];
+    [_nextGestureButton setEnabled:NO];
 }
 
 
@@ -136,7 +139,7 @@
  didFinishDetection:(DollarResult *)result
  withStrokeSequence:(DollarStrokeSequence *)strokeSequence
 {
-    self.gestureLabel.stringValue = [NSString stringWithFormat:@"Detected as %@", result.name];
+    self.statusLabel.stringValue = [NSString stringWithFormat:@"Detected as %@", result.name];
     self.strokeSequence = strokeSequence;
     
     [self.gestureTextfield setEnabled:YES];
@@ -162,8 +165,24 @@
     
     DollarStrokeSequence *seq = [[DollarStrokeSequence alloc] initWithName:self.gestureTextfield.stringValue strokes:self.strokeSequence.strokesArray];
     
+    if (seq.strokeCount == 0)
+    {
+        NSBeep();
+        return;
+    }
+    
     [self.db addStrokeSequence:seq];
     
+    self.strokeSequence = nil;
+    
+    [self.labelComboBox reloadData];
+    [self.gestureView clear:self];
+    
+    [self persistStrokeSequenceDatabase];
+}
+
+- (void)persistStrokeSequenceDatabase
+{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
     ^{
         NSError *err = nil;
@@ -173,8 +192,7 @@
         }
         else
         {
-            NSLog(
-            @"Database now has %lu labeled stroke sequences for %lu different labels:\nnames:%@",
+            NSLog(@"Database now has %lu labeled stroke sequences for %lu different labels:\nnames:%@",
                   self.db.strokeSequenceSet.count,
                   self.db.strokeSequenceNameSet.count,
                   self.db.strokeSequenceNameSet);
@@ -194,18 +212,119 @@
 
 - (IBAction)nextStrokeSequence:(id)sender
 {
+    [self.gestureView selectAdditionalStrokeSequenceAtIndex:self.gestureView.selectedAdditionalStrokeSequenceIndex + 1];
     
+    [self refresh];
 }
 
 - (IBAction)previousStrokeSequence:(id)sender
 {
+    [self.gestureView selectAdditionalStrokeSequenceAtIndex:self.gestureView.selectedAdditionalStrokeSequenceIndex - 1];
     
+    [self refresh];
 }
 
 - (IBAction)deleteStrokeSequence:(id)sender
 {
-    [self.gestureView clear:self];
+    if (self.gestureView.selectedAdditionalStrokeSequenceIndex != NSNotFound)
+    {
+        DollarStrokeSequence *selectedSeq
+            = self.gestureView.additionalStrokeSequences
+               [self.gestureView.selectedAdditionalStrokeSequenceIndex];
+        [self.db[selectedSeq.name] removeObject:selectedSeq];
+        
+        self.gestureView.additionalStrokeSequences = [self.gestureView.additionalStrokeSequences filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:
+            ^BOOL(DollarStrokeSequence *seq, NSDictionary *bindings)
+        {
+            return seq != selectedSeq;
+        }]];
+        
+        NSInteger i = self.gestureView.selectedAdditionalStrokeSequenceIndex - 1;
+        
+        if (i >= 0)
+            [self.gestureView selectAdditionalStrokeSequenceAtIndex:i];
+        else if (self.gestureView.additionalStrokeSequences.count > 0)
+            i = 0;
+        else
+            [self.gestureView selectAdditionalStrokeSequenceAtIndex:NSNotFound];
+        
+        [self refresh];
+        
+        [self persistStrokeSequenceDatabase];
+    }
 }
 
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox
+{
+    return self.db.strokeSequenceNameSet.count;
+}
+
+- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index
+{
+    return self.db.sortedStrokeSequenceNames[index];
+}
+
+- (NSUInteger)comboBox:(NSComboBox *)aComboBox indexOfItemWithStringValue:(NSString *)string
+{
+    return [self.db.sortedStrokeSequenceNames indexOfObject:string];
+}
+
+- (NSString *)comboBox:(NSComboBox *)aComboBox completedString:(NSString *)completedString
+{
+    return [[[self.db.sortedStrokeSequenceNames filteredArrayUsingPredicate:
+     [NSPredicate predicateWithBlock:^BOOL(NSString *string, NSDictionary *bindings)
+    {
+        return [[string lowercaseString] hasPrefix:[completedString lowercaseString]];
+    }]] sortedArrayUsingComparator:^NSComparisonResult(NSString *strA, NSString *strB) {
+        int aDiff = abs((int)strA.length - (int)completedString.length);
+        int bDiff = abs((int)strB.length - (int)completedString.length);
+        
+        return [@(aDiff) compare:@(bDiff)];
+    }] firstObject];
+}
+
+- (void)refresh
+{
+    if (self.gestureView.additionalStrokeSequences.count == 0
+        || self.gestureView.selectedAdditionalStrokeSequenceIndex == NSNotFound)
+    {
+        [self.nextGestureButton setEnabled:NO];
+        [self.previousGestureButton setEnabled:NO];
+    }
+    else if (self.gestureView.selectedAdditionalStrokeSequenceIndex != NSNotFound)
+    {
+        [self.nextGestureButton setEnabled:self.gestureView.selectedAdditionalStrokeSequenceIndex
+         < (self.gestureView.additionalStrokeSequences.count - 1)];
+        
+        [self.previousGestureButton setEnabled:self.gestureView.selectedAdditionalStrokeSequenceIndex > 0];
+    }
+    
+    [self.deleteGestureButton setEnabled:self.gestureView.selectedAdditionalStrokeSequenceIndex != NSNotFound];
+    
+    [self.gestureView setNeedsDisplay:YES];
+}
+
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification
+{
+    NSInteger i = self.labelComboBox.indexOfSelectedItem;
+    
+    if (i == NSNotFound || i < 0)
+        return;
+    
+    NSString *name = self.db.sortedStrokeSequenceNames[i];
+    
+    NSLog(@"Selected %@ (%lu strokes)", name, [self.db[name] count]);
+    
+    if ([self.gestureView.additionalStrokeSequences isEqual:self.db[name]])
+        return;
+    
+    self.gestureView.additionalStrokeSequences = [self.db[name] allObjects];
+    
+    [self.gestureView selectAdditionalStrokeSequenceAtIndex:0];
+    
+    [self.labelComboBox resignFirstResponder];
+    
+    [self refresh];
+}
 
 @end

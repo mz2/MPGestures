@@ -20,13 +20,14 @@
     @throw [NSException exceptionWithName:@"MPInvalidInitException" reason:nil userInfo:nil];
 }
 
-- (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays
+- (instancetype)initWithName:(NSString *)name strokes:(NSArray *)strokes
 {
     self = [super init];
     if (self)
     {
+        
         _name = name;
-        _strokes = [NSMutableArray arrayWithCapacity:5];
+        _strokes = [strokes mutableCopy];
     }
     
     return self;
@@ -50,6 +51,11 @@
     // FIXME: don't serialise & deserialise to make a deep copy of the strokes.
     return [self initWithName:sequence.name
                       strokes:[DollarStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
+}
+
+- (BOOL)containsStroke:(DollarStroke *)stroke
+{
+    return [_strokes containsObject:stroke];
 }
 
 - (void)addStroke:(DollarStroke *)stroke
