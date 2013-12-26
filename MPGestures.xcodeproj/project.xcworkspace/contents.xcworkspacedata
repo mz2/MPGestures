@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DollarP_ObjC.xcodeproj">
+      location = "self:MPGestures.xcodeproj">
    </FileRef>
 </Workspace>

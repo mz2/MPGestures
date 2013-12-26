@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D05C04AB-AA94-4BAF-96C0-D766686D9374</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MPGestures</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>18C5C4DB-8ED5-488D-9337-98C58947D14C</key>
+		<string>ssh://github.com/shpakovski/MASPreferences.git</string>
+		<key>A57143CA-AF1D-44F7-A9BD-834DB58FE68A</key>
+		<string>ssh://github.com/mz2/DollarP_ObjC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MPGestures.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>18C5C4DB-8ED5-488D-9337-98C58947D14C</key>
+		<string>../../External/MASPreferences</string>
+		<key>A57143CA-AF1D-44F7-A9BD-834DB58FE68A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mz2/DollarP_ObjC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A57143CA-AF1D-44F7-A9BD-834DB58FE68A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A57143CA-AF1D-44F7-A9BD-834DB58FE68A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DollarP_ObjC</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>18C5C4DB-8ED5-488D-9337-98C58947D14C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MASPreferences</string>
+		</dict>
+	</array>
+</dict>
+</plist>

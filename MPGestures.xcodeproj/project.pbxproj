@@ -7,55 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F04A431186B32CB00AAC922 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
+		5F04A431186B32CB00AAC922 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
+		5F2C0291186CF953003CFD04 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A51869135C00466512 /* MainMenu.xib */; };
+		5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73578B186CF42E005951E7 /* MPGestureView.h */; };
+		5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73578C186CF42E005951E7 /* MPGestureView.m */; };
+		5F735796186CF478005951E7 /* MPDollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735795186CF478005951E7 /* MPDollarPGestureRecognizer.m */; };
+		5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F735797186CF495005951E7 /* MPDollarPointCloudRecognizer.h */; };
+		5F7357AA186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */; };
+		5F7357AB186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */; };
+		5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */; };
+		5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
+		5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
+		5F7357AF186CF495005951E7 /* MPPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579B186CF495005951E7 /* MPPoint.h */; };
+		5F7357B0186CF495005951E7 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579C186CF495005951E7 /* MPPoint.m */; };
+		5F7357B1186CF495005951E7 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579C186CF495005951E7 /* MPPoint.m */; };
+		5F7357B2186CF495005951E7 /* MPPointCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579D186CF495005951E7 /* MPPointCloud.h */; };
+		5F7357B3186CF495005951E7 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579E186CF495005951E7 /* MPPointCloud.m */; };
+		5F7357B4186CF495005951E7 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579E186CF495005951E7 /* MPPointCloud.m */; };
+		5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */; };
+		5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
+		5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
+		5F7357B8186CF495005951E7 /* MPStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A1186CF495005951E7 /* MPStroke.h */; };
+		5F7357B9186CF495005951E7 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A2186CF495005951E7 /* MPStroke.m */; };
+		5F7357BA186CF495005951E7 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A2186CF495005951E7 /* MPStroke.m */; };
+		5F7357BB186CF495005951E7 /* MPStrokeSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A3186CF495005951E7 /* MPStrokeSequence.h */; };
+		5F7357BC186CF495005951E7 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A4186CF495005951E7 /* MPStrokeSequence.m */; };
+		5F7357BD186CF495005951E7 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A4186CF495005951E7 /* MPStrokeSequence.m */; };
+		5F7357BE186CF495005951E7 /* MPStrokeSequenceDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */; };
+		5F7357BF186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */; };
+		5F7357C0186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */; };
+		5F7357C1186CF495005951E7 /* MPSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A7186CF495005951E7 /* MPSymbol.h */; };
+		5F7357C2186CF495005951E7 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A8186CF495005951E7 /* MPSymbol.m */; };
+		5F7357C3186CF495005951E7 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A8186CF495005951E7 /* MPSymbol.m */; };
+		5F7357C7186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */; };
+		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
+		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
+		5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */; };
 		5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */; };
 		5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */; };
 		5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */; };
-		5FAB2E12186C3F9300F7948E /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */; };
-		5FAB2E15186C72DB00F7948E /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E14186C72DB00F7948E /* MPSymbol.m */; };
-		5FAB2E16186C72DD00F7948E /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E14186C72DB00F7948E /* MPSymbol.m */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
-		5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F16418690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
 		5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
-		5FF3F17518690ED500466512 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
+		5FF3F17518690ED500466512 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F17918690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F17C18690ED500466512 /* DollarPTests.m */; };
-		5FF3F18418690EDB00466512 /* MPDollarPointCloudRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219799165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m */; };
-		5FF3F18618690EDF00466512 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A7165F650C009CFCF3 /* MPDollarPointCloudUtility.m */; };
-		5FF3F18718690EE200466512 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21979E165EA66C009CFCF3 /* MPPoint.m */; };
-		5FF3F18818690EE400466512 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A1165EA8D2009CFCF3 /* MPPointCloud.m */; };
-		5FF3F18918690EE600466512 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A4165EAA1F009CFCF3 /* MPPointCloudRecognition.m */; };
-		5FF3F18A18690EF100466512 /* MPDollarPointCloudRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = DC219798165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF3F18C18690EF100466512 /* MPDollarPointCloudUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A6165F650B009CFCF3 /* MPDollarPointCloudUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF3F18D18690EF100466512 /* MPPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DC21979D165EA66C009CFCF3 /* MPPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF3F18E18690EF100466512 /* MPPointCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A0165EA8D2009CFCF3 /* MPPointCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF3F18F18690EF100466512 /* MPPointCloudRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2197A3165EAA1F009CFCF3 /* MPPointCloudRecognition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1991869135C00466512 /* InfoPlist.strings */; };
 		5FF3F19D1869135C00466512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F19C1869135C00466512 /* main.m */; };
 		5FF3F1A11869135C00466512 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F19F1869135C00466512 /* Credits.rtf */; };
 		5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A31869135C00466512 /* MPAppDelegate.m */; };
-		5FF3F1A71869135C00466512 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A51869135C00466512 /* MainMenu.xib */; };
 		5FF3F1A91869135C00466512 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A81869135C00466512 /* Images.xcassets */; };
 		5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
 		5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F1B81869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B61869135C00466512 /* InfoPlist.strings */; };
 		5FF3F1BA1869135C00466512 /* DollarP_OSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */; };
-		5FF3F1C31869145300466512 /* MPGestureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1C11869145300466512 /* MPGestureView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF3F1C41869145300466512 /* MPGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C21869145300466512 /* MPGestureView.m */; };
-		5FF3F1C7186914D700466512 /* MPStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1C5186914D700466512 /* MPStroke.h */; };
-		5FF3F1C8186914D700466512 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C6186914D700466512 /* MPStroke.m */; };
-		5FF3F1C9186914D700466512 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1C6186914D700466512 /* MPStroke.m */; };
-		5FF3F1CC1869194200466512 /* MPGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */; };
-		5FF3F1CD1869194200466512 /* MPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */; };
-		5FF3F1D0186A0FC700466512 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
+		5FF3F1D0186A0FC700466512 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FF3F257186A28AD00466512 /* ALGLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F250186A284C00466512 /* ALGLIB.framework */; };
-		5FF3F25B186A2B6600466512 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F259186A2B6100466512 /* MPStrokeSequence.m */; };
-		5FF3F25C186A2B6600466512 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F259186A2B6100466512 /* MPStrokeSequence.m */; };
-		5FF3F25F186A324E00466512 /* MPStrokeSequenceDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF3F25D186A324E00466512 /* MPStrokeSequenceDatabase.h */; };
-		5FF3F260186A324E00466512 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F25E186A324E00466512 /* MPStrokeSequenceDatabase.m */; };
-		5FF3F261186A324E00466512 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F25E186A324E00466512 /* MPStrokeSequenceDatabase.m */; };
 		DC219726165E7072009CFCF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219725165E7072009CFCF3 /* UIKit.framework */; };
 		DC219728165E7072009CFCF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219727165E7072009CFCF3 /* Foundation.framework */; };
 		DC21972A165E7072009CFCF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219729165E7072009CFCF3 /* CoreGraphics.framework */; };
@@ -70,31 +78,25 @@
 		DC21977C165E821B009CFCF3 /* multistrokes.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC21977B165E821B009CFCF3 /* multistrokes.gif */; };
 		DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21978E165E9943009CFCF3 /* GestureViewController.m */; };
 		DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */; };
-		DC21979A165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219799165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m */; };
-		DC21979F165EA66C009CFCF3 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21979E165EA66C009CFCF3 /* MPPoint.m */; };
-		DC2197A2165EA8D2009CFCF3 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A1165EA8D2009CFCF3 /* MPPointCloud.m */; };
-		DC2197A5165EAA20009CFCF3 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A4165EAA1F009CFCF3 /* MPPointCloudRecognition.m */; };
-		DC2197A8165F650C009CFCF3 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A7165F650C009CFCF3 /* MPDollarPointCloudUtility.m */; };
 		DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197AA165F8CE9009CFCF3 /* GestureView.m */; };
-		DC2197B2165F97C6009CFCF3 /* MPDollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197B1165F97C5009CFCF3 /* MPDollarPGestureRecognizer.m */; };
 		DC4B79EB165FED0900A3BF09 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4B79E9165FED0900A3BF09 /* app-icon.png */; };
 		DC4B79EC165FED0900A3BF09 /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5F04A42D186B2EEC00AAC922 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FF3F15918690ED400466512;
-			remoteInfo = DollarP;
-		};
 		5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5FF3F15918690ED400466512;
 			remoteInfo = DollarP;
+		};
+		5F735789186CF253005951E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = Gestures;
 		};
 		5F85863C186B6D2A00AD762E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -148,6 +150,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F2C0290186CF947003CFD04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5F73578B186CF42E005951E7 /* MPGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGestureView.h; path = "MPGestures-framework/MPGestureView.h"; sourceTree = SOURCE_ROOT; };
+		5F73578C186CF42E005951E7 /* MPGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGestureView.m; path = "MPGestures-framework/MPGestureView.m"; sourceTree = SOURCE_ROOT; };
+		5F735794186CF478005951E7 /* MPDollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPGestureRecognizer.h; path = "MPGestures-framework/MPDollarPGestureRecognizer.h"; sourceTree = SOURCE_ROOT; };
+		5F735795186CF478005951E7 /* MPDollarPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPGestureRecognizer.m; path = "MPGestures-framework/MPDollarPGestureRecognizer.m"; sourceTree = SOURCE_ROOT; };
+		5F735797186CF495005951E7 /* MPDollarPointCloudRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudRecognizer.h; path = "MPGestures-framework/MPDollarPointCloudRecognizer.h"; sourceTree = "<group>"; };
+		5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudRecognizer.m; path = "MPGestures-framework/MPDollarPointCloudRecognizer.m"; sourceTree = "<group>"; };
+		5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudUtility.h; path = "MPGestures-framework/MPDollarPointCloudUtility.h"; sourceTree = "<group>"; };
+		5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudUtility.m; path = "MPGestures-framework/MPDollarPointCloudUtility.m"; sourceTree = "<group>"; };
+		5F73579B186CF495005951E7 /* MPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPoint.h; path = "MPGestures-framework/MPPoint.h"; sourceTree = "<group>"; };
+		5F73579C186CF495005951E7 /* MPPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPoint.m; path = "MPGestures-framework/MPPoint.m"; sourceTree = "<group>"; };
+		5F73579D186CF495005951E7 /* MPPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloud.h; path = "MPGestures-framework/MPPointCloud.h"; sourceTree = "<group>"; };
+		5F73579E186CF495005951E7 /* MPPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloud.m; path = "MPGestures-framework/MPPointCloud.m"; sourceTree = "<group>"; };
+		5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloudRecognition.h; path = "MPGestures-framework/MPPointCloudRecognition.h"; sourceTree = "<group>"; };
+		5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloudRecognition.m; path = "MPGestures-framework/MPPointCloudRecognition.m"; sourceTree = "<group>"; };
+		5F7357A1186CF495005951E7 /* MPStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStroke.h; path = "MPGestures-framework/MPStroke.h"; sourceTree = "<group>"; };
+		5F7357A2186CF495005951E7 /* MPStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStroke.m; path = "MPGestures-framework/MPStroke.m"; sourceTree = "<group>"; };
+		5F7357A3186CF495005951E7 /* MPStrokeSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequence.h; path = "MPGestures-framework/MPStrokeSequence.h"; sourceTree = "<group>"; };
+		5F7357A4186CF495005951E7 /* MPStrokeSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequence.m; path = "MPGestures-framework/MPStrokeSequence.m"; sourceTree = "<group>"; };
+		5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDatabase.h; path = "MPGestures-framework/MPStrokeSequenceDatabase.h"; sourceTree = "<group>"; };
+		5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDatabase.m; path = "MPGestures-framework/MPStrokeSequenceDatabase.m"; sourceTree = "<group>"; };
+		5F7357A7186CF495005951E7 /* MPSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSymbol.h; path = "MPGestures-framework/MPSymbol.h"; sourceTree = "<group>"; };
+		5F7357A8186CF495005951E7 /* MPSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSymbol.m; path = "MPGestures-framework/MPSymbol.m"; sourceTree = "<group>"; };
+		5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
+		5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
+		5F7357CA186CF4E8005951E7 /* MPGestures-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MPGestures-Info.plist"; path = "MPGestures-framework/MPGestures-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MPGestures-Prefix.pch"; path = "MPGestures-framework/MPGestures-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
 		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
 		5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MASPreferencesWindow.xib; path = External/MASPreferences/MASPreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
@@ -155,24 +184,18 @@
 		5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASPreferencesWindowController.m; path = External/MASPreferences/MASPreferencesWindowController.m; sourceTree = SOURCE_ROOT; };
 		5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureViewController.h; sourceTree = "<group>"; };
 		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
-		5FAB2E10186C3F9300F7948E /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "DollarP/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
-		5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "DollarP/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
-		5FAB2E13186C72DB00F7948E /* MPSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSymbol.h; path = DollarP/MPSymbol.h; sourceTree = "<group>"; };
-		5FAB2E14186C72DB00F7948E /* MPSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSymbol.m; path = DollarP/MPSymbol.m; sourceTree = "<group>"; };
-		5FF3F15A18690ED500466512 /* DollarP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DollarP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F15A18690ED500466512 /* Gestures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gestures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FF3F15F18690ED500466512 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5FF3F16018690ED500466512 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		5FF3F16318690ED500466512 /* DollarP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-Info.plist"; sourceTree = "<group>"; };
 		5FF3F16518690ED500466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5FF3F16718690ED500466512 /* DollarP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP-Prefix.pch"; sourceTree = "<group>"; };
-		5FF3F16F18690ED500466512 /* DollarPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DollarPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F16F18690ED500466512 /* Gestures-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gestures-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F17018690ED500466512 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F17818690ED500466512 /* DollarPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarPTests-Info.plist"; sourceTree = "<group>"; };
 		5FF3F17A18690ED500466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F17C18690ED500466512 /* DollarPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarPTests.m; sourceTree = "<group>"; };
-		5FF3F1941869135C00466512 /* DollarP-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DollarP-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F1941869135C00466512 /* Gestures-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F1981869135C00466512 /* DollarP-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSX-Info.plist"; sourceTree = "<group>"; };
 		5FF3F19A1869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F19C1869135C00466512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,26 +205,16 @@
 		5FF3F1A31869135C00466512 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
 		5FF3F1A61869135C00466512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5FF3F1A81869135C00466512 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DollarP-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gestures-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F1B51869135C00466512 /* DollarP-OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSXTests-Info.plist"; sourceTree = "<group>"; };
 		5FF3F1B71869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarP_OSXTests.m; sourceTree = "<group>"; };
-		5FF3F1C11869145300466512 /* MPGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureView.h; sourceTree = "<group>"; };
-		5FF3F1C21869145300466512 /* MPGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureView.m; sourceTree = "<group>"; };
-		5FF3F1C5186914D700466512 /* MPStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStroke.h; path = DollarP_ObjC/libs/DollarP/MPStroke.h; sourceTree = "<group>"; };
-		5FF3F1C6186914D700466512 /* MPStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStroke.m; path = DollarP_ObjC/libs/DollarP/MPStroke.m; sourceTree = "<group>"; };
-		5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureRecognizer.h; sourceTree = "<group>"; };
-		5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureRecognizer.m; sourceTree = "<group>"; };
 		5FF3F24A186A284C00466512 /* ALGLIB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ALGLIB.xcodeproj; path = External/alglib/ALGLIB/ALGLIB.xcodeproj; sourceTree = "<group>"; };
-		5FF3F258186A2B6100466512 /* MPStrokeSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequence.h; path = DollarP_ObjC/libs/DollarP/MPStrokeSequence.h; sourceTree = "<group>"; };
-		5FF3F259186A2B6100466512 /* MPStrokeSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequence.m; path = DollarP_ObjC/libs/DollarP/MPStrokeSequence.m; sourceTree = "<group>"; };
-		5FF3F25D186A324E00466512 /* MPStrokeSequenceDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDatabase.h; path = DollarP_ObjC/libs/DollarP/MPStrokeSequenceDatabase.h; sourceTree = "<group>"; };
-		5FF3F25E186A324E00466512 /* MPStrokeSequenceDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDatabase.m; path = DollarP_ObjC/libs/DollarP/MPStrokeSequenceDatabase.m; sourceTree = "<group>"; };
-		DC219721165E7072009CFCF3 /* DollarP_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DollarP_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC219721165E7072009CFCF3 /* Gestures-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC219725165E7072009CFCF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC219727165E7072009CFCF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC219729165E7072009CFCF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP_ObjC-Info.plist"; sourceTree = "<group>"; };
+		DC21972D165E7072009CFCF3 /* Gestures-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures-iOS-Info.plist"; sourceTree = "<group>"; };
 		DC21972F165E7072009CFCF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC219731165E7072009CFCF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC219733165E7072009CFCF3 /* DollarP_ObjC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP_ObjC-Prefix.pch"; sourceTree = "<group>"; };
@@ -218,20 +231,8 @@
 		DC21978E165E9943009CFCF3 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		DC219790165E9B1E009CFCF3 /* CustomizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeViewController.h; sourceTree = "<group>"; };
 		DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeViewController.m; sourceTree = "<group>"; };
-		DC219798165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudRecognizer.h; path = DollarP_ObjC/libs/DollarP/MPDollarPointCloudRecognizer.h; sourceTree = "<group>"; };
-		DC219799165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudRecognizer.m; path = DollarP_ObjC/libs/DollarP/MPDollarPointCloudRecognizer.m; sourceTree = "<group>"; };
-		DC21979D165EA66C009CFCF3 /* MPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPoint.h; path = DollarP_ObjC/libs/DollarP/MPPoint.h; sourceTree = "<group>"; };
-		DC21979E165EA66C009CFCF3 /* MPPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPoint.m; path = DollarP_ObjC/libs/DollarP/MPPoint.m; sourceTree = "<group>"; };
-		DC2197A0165EA8D2009CFCF3 /* MPPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloud.h; path = DollarP_ObjC/libs/DollarP/MPPointCloud.h; sourceTree = "<group>"; };
-		DC2197A1165EA8D2009CFCF3 /* MPPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloud.m; path = DollarP_ObjC/libs/DollarP/MPPointCloud.m; sourceTree = "<group>"; };
-		DC2197A3165EAA1F009CFCF3 /* MPPointCloudRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloudRecognition.h; path = DollarP_ObjC/libs/DollarP/MPPointCloudRecognition.h; sourceTree = "<group>"; };
-		DC2197A4165EAA1F009CFCF3 /* MPPointCloudRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloudRecognition.m; path = DollarP_ObjC/libs/DollarP/MPPointCloudRecognition.m; sourceTree = "<group>"; };
-		DC2197A6165F650B009CFCF3 /* MPDollarPointCloudUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudUtility.h; path = DollarP_ObjC/libs/DollarP/MPDollarPointCloudUtility.h; sourceTree = "<group>"; };
-		DC2197A7165F650C009CFCF3 /* MPDollarPointCloudUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudUtility.m; path = DollarP_ObjC/libs/DollarP/MPDollarPointCloudUtility.m; sourceTree = "<group>"; };
 		DC2197A9165F8CE8009CFCF3 /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
 		DC2197AA165F8CE9009CFCF3 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
-		DC2197B0165F97C5009CFCF3 /* MPDollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPGestureRecognizer.h; path = DollarP_ObjC/libs/DollarP/MPDollarPGestureRecognizer.h; sourceTree = "<group>"; };
-		DC2197B1165F97C5009CFCF3 /* MPDollarPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPGestureRecognizer.m; path = DollarP_ObjC/libs/DollarP/MPDollarPGestureRecognizer.m; sourceTree = "<group>"; };
 		DC4B79E9165FED0900A3BF09 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "res/images/app-icon.png"; sourceTree = "<group>"; };
 		DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon@2x.png"; path = "res/images/app-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,7 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF3F17518690ED500466512 /* DollarP.framework in Frameworks */,
+				5FF3F17518690ED500466512 /* Gestures.framework in Frameworks */,
 				5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */,
 				5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */,
 			);
@@ -260,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF3F1D0186A0FC700466512 /* DollarP.framework in Frameworks */,
+				5FF3F1D0186A0FC700466512 /* Gestures.framework in Frameworks */,
 				5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F04A431186B32CB00AAC922 /* DollarP.framework in Frameworks */,
+				5F04A431186B32CB00AAC922 /* Gestures.framework in Frameworks */,
 				5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */,
 				5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */,
 			);
@@ -288,6 +289,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F735792186CF463005951E7 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				5F73578B186CF42E005951E7 /* MPGestureView.h */,
+				5F73578C186CF42E005951E7 /* MPGestureView.m */,
+			);
+			name = OSX;
+			sourceTree = "<group>";
+		};
+		5F735793186CF467005951E7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5F735794186CF478005951E7 /* MPDollarPGestureRecognizer.h */,
+				5F735795186CF478005951E7 /* MPDollarPGestureRecognizer.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F7357C4186CF49B005951E7 /* Cocoa Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */,
+				5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */,
+			);
+			name = "Cocoa Categories";
+			sourceTree = "<group>";
+		};
 		5F858637186B6D2A00AD762E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,34 +354,36 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		5FF3F16118690ED500466512 /* DollarP */ = {
+		5FF3F16118690ED500466512 /* Gestures.framework */ = {
 			isa = PBXGroup;
 			children = (
+				5F7357C4186CF49B005951E7 /* Cocoa Categories */,
+				5F735793186CF467005951E7 /* iOS */,
+				5F735792186CF463005951E7 /* OSX */,
+				DC21979C165EA5CB009CFCF3 /* Point Cloud Recognition */,
 				5FF3F16218690ED500466512 /* Supporting Files */,
-				5FF3F1C11869145300466512 /* MPGestureView.h */,
-				5FF3F1C21869145300466512 /* MPGestureView.m */,
-				5FF3F1CA1869194200466512 /* MPGestureRecognizer.h */,
-				5FF3F1CB1869194200466512 /* MPGestureRecognizer.m */,
 			);
+			name = Gestures.framework;
 			path = DollarP;
 			sourceTree = "<group>";
 		};
 		5FF3F16218690ED500466512 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5FF3F16318690ED500466512 /* DollarP-Info.plist */,
+				5F7357CA186CF4E8005951E7 /* MPGestures-Info.plist */,
+				5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */,
 				5FF3F16418690ED500466512 /* InfoPlist.strings */,
-				5FF3F16718690ED500466512 /* DollarP-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FF3F17618690ED500466512 /* DollarPTests */ = {
+		5FF3F17618690ED500466512 /* Gestures-iOS-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				5FF3F17C18690ED500466512 /* DollarPTests.m */,
 				5FF3F17718690ED500466512 /* Supporting Files */,
 			);
+			name = "Gestures-iOS-Tests";
 			path = DollarPTests;
 			sourceTree = "<group>";
 		};
@@ -366,7 +396,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FF3F1961869135C00466512 /* DollarP-OSX */ = {
+		5FF3F1961869135C00466512 /* Gestures-OSX */ = {
 			isa = PBXGroup;
 			children = (
 				5FAB2E09186C3DC400F7948E /* External */,
@@ -377,9 +407,8 @@
 				5FF3F1A51869135C00466512 /* MainMenu.xib */,
 				5FF3F1A81869135C00466512 /* Images.xcassets */,
 				5FF3F1971869135C00466512 /* Supporting Files */,
-				5FAB2E10186C3F9300F7948E /* NSFileManager+ApplicationSupport.h */,
-				5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */,
 			);
+			name = "Gestures-OSX";
 			path = "DollarP-OSX";
 			sourceTree = "<group>";
 		};
@@ -395,12 +424,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FF3F1B31869135C00466512 /* DollarP-OSXTests */ = {
+		5FF3F1B31869135C00466512 /* Gestures-OSXTests */ = {
 			isa = PBXGroup;
 			children = (
 				5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */,
 				5FF3F1B41869135C00466512 /* Supporting Files */,
 			);
+			name = "Gestures-OSXTests";
 			path = "DollarP-OSXTests";
 			sourceTree = "<group>";
 		};
@@ -425,12 +455,11 @@
 		DC219716165E7072009CFCF3 = {
 			isa = PBXGroup;
 			children = (
-				DC21979C165EA5CB009CFCF3 /* Point Cloud Recognition */,
-				DC21972B165E7072009CFCF3 /* DollarP_ObjC */,
-				5FF3F16118690ED500466512 /* DollarP */,
-				5FF3F17618690ED500466512 /* DollarPTests */,
-				5FF3F1961869135C00466512 /* DollarP-OSX */,
-				5FF3F1B31869135C00466512 /* DollarP-OSXTests */,
+				5FF3F16118690ED500466512 /* Gestures.framework */,
+				DC21972B165E7072009CFCF3 /* Gestures-iOS */,
+				5FF3F17618690ED500466512 /* Gestures-iOS-Tests */,
+				5FF3F1961869135C00466512 /* Gestures-OSX */,
+				5FF3F1B31869135C00466512 /* Gestures-OSXTests */,
 				DC219724165E7072009CFCF3 /* Frameworks */,
 				DC219722165E7072009CFCF3 /* Products */,
 			);
@@ -439,11 +468,11 @@
 		DC219722165E7072009CFCF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC219721165E7072009CFCF3 /* DollarP_ObjC.app */,
-				5FF3F15A18690ED500466512 /* DollarP.framework */,
-				5FF3F16F18690ED500466512 /* DollarPTests.xctest */,
-				5FF3F1941869135C00466512 /* DollarP-OSX.app */,
-				5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */,
+				DC219721165E7072009CFCF3 /* Gestures-iOS.app */,
+				5FF3F15A18690ED500466512 /* Gestures.framework */,
+				5FF3F16F18690ED500466512 /* Gestures-iOSTests.xctest */,
+				5FF3F1941869135C00466512 /* Gestures-OSX.app */,
+				5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -463,7 +492,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC21972B165E7072009CFCF3 /* DollarP_ObjC */ = {
+		DC21972B165E7072009CFCF3 /* Gestures-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				DC219734165E7072009CFCF3 /* DollarPAppDelegate.h */,
@@ -479,6 +508,7 @@
 				DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */,
 				DC21972C165E7072009CFCF3 /* Supporting Files */,
 			);
+			name = "Gestures-iOS";
 			path = DollarP_ObjC;
 			sourceTree = "<group>";
 		};
@@ -488,7 +518,7 @@
 				DC4B79E9165FED0900A3BF09 /* app-icon.png */,
 				DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */,
 				DC21977B165E821B009CFCF3 /* multistrokes.gif */,
-				DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */,
+				DC21972D165E7072009CFCF3 /* Gestures-iOS-Info.plist */,
 				DC21972E165E7072009CFCF3 /* InfoPlist.strings */,
 				DC219731165E7072009CFCF3 /* main.m */,
 				DC219733165E7072009CFCF3 /* DollarP_ObjC-Prefix.pch */,
@@ -502,29 +532,27 @@
 		DC21979C165EA5CB009CFCF3 /* Point Cloud Recognition */ = {
 			isa = PBXGroup;
 			children = (
-				DC219798165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.h */,
-				DC219799165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m */,
-				DC2197B0165F97C5009CFCF3 /* MPDollarPGestureRecognizer.h */,
-				DC2197B1165F97C5009CFCF3 /* MPDollarPGestureRecognizer.m */,
-				DC2197A6165F650B009CFCF3 /* MPDollarPointCloudUtility.h */,
-				DC2197A7165F650C009CFCF3 /* MPDollarPointCloudUtility.m */,
-				DC21979D165EA66C009CFCF3 /* MPPoint.h */,
-				DC21979E165EA66C009CFCF3 /* MPPoint.m */,
-				DC2197A0165EA8D2009CFCF3 /* MPPointCloud.h */,
-				DC2197A1165EA8D2009CFCF3 /* MPPointCloud.m */,
-				DC2197A3165EAA1F009CFCF3 /* MPPointCloudRecognition.h */,
-				DC2197A4165EAA1F009CFCF3 /* MPPointCloudRecognition.m */,
-				5FF3F1C5186914D700466512 /* MPStroke.h */,
-				5FF3F1C6186914D700466512 /* MPStroke.m */,
-				5FF3F258186A2B6100466512 /* MPStrokeSequence.h */,
-				5FF3F259186A2B6100466512 /* MPStrokeSequence.m */,
-				5FF3F25D186A324E00466512 /* MPStrokeSequenceDatabase.h */,
-				5FF3F25E186A324E00466512 /* MPStrokeSequenceDatabase.m */,
-				5FAB2E13186C72DB00F7948E /* MPSymbol.h */,
-				5FAB2E14186C72DB00F7948E /* MPSymbol.m */,
+				5F735797186CF495005951E7 /* MPDollarPointCloudRecognizer.h */,
+				5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */,
+				5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */,
+				5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */,
+				5F73579B186CF495005951E7 /* MPPoint.h */,
+				5F73579C186CF495005951E7 /* MPPoint.m */,
+				5F73579D186CF495005951E7 /* MPPointCloud.h */,
+				5F73579E186CF495005951E7 /* MPPointCloud.m */,
+				5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */,
+				5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */,
+				5F7357A1186CF495005951E7 /* MPStroke.h */,
+				5F7357A2186CF495005951E7 /* MPStroke.m */,
+				5F7357A3186CF495005951E7 /* MPStrokeSequence.h */,
+				5F7357A4186CF495005951E7 /* MPStrokeSequence.m */,
+				5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */,
+				5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */,
+				5F7357A7186CF495005951E7 /* MPSymbol.h */,
+				5F7357A8186CF495005951E7 /* MPSymbol.m */,
 			);
 			name = "Point Cloud Recognition";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -533,24 +561,27 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF3F18C18690EF100466512 /* MPDollarPointCloudUtility.h in Headers */,
-				5FF3F1C7186914D700466512 /* MPStroke.h in Headers */,
-				5FF3F18F18690EF100466512 /* MPPointCloudRecognition.h in Headers */,
-				5FF3F18A18690EF100466512 /* MPDollarPointCloudRecognizer.h in Headers */,
-				5FF3F1C31869145300466512 /* MPGestureView.h in Headers */,
-				5FF3F25F186A324E00466512 /* MPStrokeSequenceDatabase.h in Headers */,
-				5FF3F18E18690EF100466512 /* MPPointCloud.h in Headers */,
-				5FF3F18D18690EF100466512 /* MPPoint.h in Headers */,
-				5FF3F1CC1869194200466512 /* MPGestureRecognizer.h in Headers */,
+				5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */,
+				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
+				5F7357B8186CF495005951E7 /* MPStroke.h in Headers */,
+				5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */,
+				5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */,
+				5F7357B2186CF495005951E7 /* MPPointCloud.h in Headers */,
+				5F7357BE186CF495005951E7 /* MPStrokeSequenceDatabase.h in Headers */,
+				5F7357AF186CF495005951E7 /* MPPoint.h in Headers */,
+				5F7357BB186CF495005951E7 /* MPStrokeSequence.h in Headers */,
+				5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */,
+				5F7357C1186CF495005951E7 /* MPSymbol.h in Headers */,
+				5F7357C7186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5FF3F15918690ED400466512 /* DollarP */ = {
+		5FF3F15918690ED400466512 /* Gestures */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "DollarP" */;
+			buildConfigurationList = 5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures" */;
 			buildPhases = (
 				5FF3F15518690ED400466512 /* Sources */,
 				5FF3F15618690ED400466512 /* Frameworks */,
@@ -562,14 +593,14 @@
 			dependencies = (
 				5FF3F254186A285400466512 /* PBXTargetDependency */,
 			);
-			name = DollarP;
+			name = Gestures;
 			productName = DollarP;
-			productReference = 5FF3F15A18690ED500466512 /* DollarP.framework */;
+			productReference = 5FF3F15A18690ED500466512 /* Gestures.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5FF3F16E18690ED500466512 /* DollarPTests */ = {
+		5FF3F16E18690ED500466512 /* Gestures-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "DollarPTests" */;
+			buildConfigurationList = 5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures-iOSTests" */;
 			buildPhases = (
 				5FF3F16B18690ED500466512 /* Sources */,
 				5FF3F16C18690ED500466512 /* Frameworks */,
@@ -580,14 +611,14 @@
 			dependencies = (
 				5FF3F17418690ED500466512 /* PBXTargetDependency */,
 			);
-			name = DollarPTests;
+			name = "Gestures-iOSTests";
 			productName = DollarPTests;
-			productReference = 5FF3F16F18690ED500466512 /* DollarPTests.xctest */;
+			productReference = 5FF3F16F18690ED500466512 /* Gestures-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5FF3F1931869135C00466512 /* DollarP-OSX */ = {
+		5FF3F1931869135C00466512 /* Gestures-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSX" */;
+			buildConfigurationList = 5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */;
 			buildPhases = (
 				5FF3F1901869135C00466512 /* Sources */,
 				5FF3F1911869135C00466512 /* Frameworks */,
@@ -596,16 +627,16 @@
 			buildRules = (
 			);
 			dependencies = (
-				5F04A42E186B2EEC00AAC922 /* PBXTargetDependency */,
+				5F73578A186CF253005951E7 /* PBXTargetDependency */,
 			);
-			name = "DollarP-OSX";
+			name = "Gestures-OSX";
 			productName = "DollarP-OSX";
-			productReference = 5FF3F1941869135C00466512 /* DollarP-OSX.app */;
+			productReference = 5FF3F1941869135C00466512 /* Gestures-OSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5FF3F1AD1869135C00466512 /* DollarP-OSXTests */ = {
+		5FF3F1AD1869135C00466512 /* Gestures-OSXTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSXTests" */;
+			buildConfigurationList = 5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSXTests" */;
 			buildPhases = (
 				5FF3F1AA1869135C00466512 /* Sources */,
 				5FF3F1AB1869135C00466512 /* Frameworks */,
@@ -617,14 +648,14 @@
 				5F04A430186B32C600AAC922 /* PBXTargetDependency */,
 				5FF3F1B21869135C00466512 /* PBXTargetDependency */,
 			);
-			name = "DollarP-OSXTests";
+			name = "Gestures-OSXTests";
 			productName = "DollarP-OSXTests";
-			productReference = 5FF3F1AE1869135C00466512 /* DollarP-OSXTests.xctest */;
+			productReference = 5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DC219720165E7072009CFCF3 /* DollarP_ObjC */ = {
+		DC219720165E7072009CFCF3 /* Gestures-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "DollarP_ObjC" */;
+			buildConfigurationList = DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "Gestures-iOS" */;
 			buildPhases = (
 				DC21971D165E7072009CFCF3 /* Sources */,
 				DC21971E165E7072009CFCF3 /* Frameworks */,
@@ -634,9 +665,9 @@
 			);
 			dependencies = (
 			);
-			name = DollarP_ObjC;
+			name = "Gestures-iOS";
 			productName = DollarP_ObjC;
-			productReference = DC219721165E7072009CFCF3 /* DollarP_ObjC.app */;
+			productReference = DC219721165E7072009CFCF3 /* Gestures-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -657,7 +688,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */;
+			buildConfigurationList = DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "MPGestures" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -680,11 +711,11 @@
 			);
 			projectRoot = "";
 			targets = (
-				DC219720165E7072009CFCF3 /* DollarP_ObjC */,
-				5FF3F15918690ED400466512 /* DollarP */,
-				5FF3F16E18690ED500466512 /* DollarPTests */,
-				5FF3F1931869135C00466512 /* DollarP-OSX */,
-				5FF3F1AD1869135C00466512 /* DollarP-OSXTests */,
+				DC219720165E7072009CFCF3 /* Gestures-iOS */,
+				5FF3F15918690ED400466512 /* Gestures */,
+				5FF3F16E18690ED500466512 /* Gestures-iOSTests */,
+				5FF3F1931869135C00466512 /* Gestures-OSX */,
+				5FF3F1AD1869135C00466512 /* Gestures-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -725,7 +756,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,10 +772,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */,
+				5F2C0291186CF953003CFD04 /* MainMenu.xib in Resources */,
 				5FF3F1A91869135C00466512 /* Images.xcassets in Resources */,
 				5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */,
 				5FF3F1A11869135C00466512 /* Credits.rtf in Resources */,
-				5FF3F1A71869135C00466512 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,17 +809,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF3F1C41869145300466512 /* MPGestureView.m in Sources */,
-				5FAB2E16186C72DD00F7948E /* MPSymbol.m in Sources */,
-				5FF3F18818690EE400466512 /* MPPointCloud.m in Sources */,
-				5FF3F18418690EDB00466512 /* MPDollarPointCloudRecognizer.m in Sources */,
-				5FF3F261186A324E00466512 /* MPStrokeSequenceDatabase.m in Sources */,
-				5FF3F18718690EE200466512 /* MPPoint.m in Sources */,
-				5FF3F1CD1869194200466512 /* MPGestureRecognizer.m in Sources */,
-				5FF3F18618690EDF00466512 /* MPDollarPointCloudUtility.m in Sources */,
-				5FF3F1C9186914D700466512 /* MPStroke.m in Sources */,
-				5FF3F18918690EE600466512 /* MPPointCloudRecognition.m in Sources */,
-				5FF3F25C186A2B6600466512 /* MPStrokeSequence.m in Sources */,
+				5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */,
+				5F7357AB186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
+				5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
+				5F7357B4186CF495005951E7 /* MPPointCloud.m in Sources */,
+				5F7357C0186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */,
+				5F7357C3186CF495005951E7 /* MPSymbol.m in Sources */,
+				5F7357BD186CF495005951E7 /* MPStrokeSequence.m in Sources */,
+				5F7357BA186CF495005951E7 /* MPStroke.m in Sources */,
+				5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
+				5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
+				5F7357B1186CF495005951E7 /* MPPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +839,6 @@
 				5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */,
 				5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */,
 				5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */,
-				5FAB2E12186C3F9300F7948E /* NSFileManager+ApplicationSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,46 +854,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F735796186CF478005951E7 /* MPDollarPGestureRecognizer.m in Sources */,
 				DC219732165E7072009CFCF3 /* main.m in Sources */,
 				DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */,
+				5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
 				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
-				5FF3F260186A324E00466512 /* MPStrokeSequenceDatabase.m in Sources */,
 				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,
+				5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
+				5F7357AA186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
+				5F7357C2186CF495005951E7 /* MPSymbol.m in Sources */,
 				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
-				DC21979A165EA5AF009CFCF3 /* MPDollarPointCloudRecognizer.m in Sources */,
-				DC21979F165EA66C009CFCF3 /* MPPoint.m in Sources */,
-				5FAB2E15186C72DB00F7948E /* MPSymbol.m in Sources */,
-				DC2197A2165EA8D2009CFCF3 /* MPPointCloud.m in Sources */,
-				DC2197A5165EAA20009CFCF3 /* MPPointCloudRecognition.m in Sources */,
-				5FF3F1C8186914D700466512 /* MPStroke.m in Sources */,
-				5FF3F25B186A2B6600466512 /* MPStrokeSequence.m in Sources */,
-				DC2197A8165F650C009CFCF3 /* MPDollarPointCloudUtility.m in Sources */,
+				5F7357BF186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */,
+				5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
+				5F7357BC186CF495005951E7 /* MPStrokeSequence.m in Sources */,
+				5F7357B9186CF495005951E7 /* MPStroke.m in Sources */,
+				5F7357B3186CF495005951E7 /* MPPointCloud.m in Sources */,
 				DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */,
-				DC2197B2165F97C6009CFCF3 /* MPDollarPGestureRecognizer.m in Sources */,
+				5F7357B0186CF495005951E7 /* MPPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F04A42E186B2EEC00AAC922 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5FF3F15918690ED400466512 /* DollarP */;
-			targetProxy = 5F04A42D186B2EEC00AAC922 /* PBXContainerItemProxy */;
-		};
 		5F04A430186B32C600AAC922 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5FF3F15918690ED400466512 /* DollarP */;
+			target = 5FF3F15918690ED400466512 /* Gestures */;
 			targetProxy = 5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */;
+		};
+		5F73578A186CF253005951E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF3F15918690ED400466512 /* Gestures */;
+			targetProxy = 5F735789186CF253005951E7 /* PBXContainerItemProxy */;
 		};
 		5FF3F17418690ED500466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5FF3F15918690ED400466512 /* DollarP */;
+			target = 5FF3F15918690ED400466512 /* Gestures */;
 			targetProxy = 5FF3F17318690ED500466512 /* PBXContainerItemProxy */;
 		};
 		5FF3F1B21869135C00466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5FF3F1931869135C00466512 /* DollarP-OSX */;
+			target = 5FF3F1931869135C00466512 /* Gestures-OSX */;
 			targetProxy = 5FF3F1B11869135C00466512 /* PBXContainerItemProxy */;
 		};
 		5FF3F254186A285400466512 /* PBXTargetDependency */ = {
@@ -881,6 +911,7 @@
 				5FF3F16518690ED500466512 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = "../MPGestures-framework";
 			sourceTree = "<group>";
 		};
 		5FF3F17918690ED500466512 /* InfoPlist.strings */ = {
@@ -911,6 +942,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5FF3F1A61869135C00466512 /* Base */,
+				5F2C0290186CF947003CFD04 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -937,6 +969,7 @@
 		5FF3F17E18690ED500466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -953,7 +986,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_PREFIX_HEADER = "MPGestures-framework/MPGestures-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -962,10 +995,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP/DollarP-Info.plist";
+				INFOPLIST_FILE = "MPGestures-framework/MPGestures-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -973,6 +1007,7 @@
 		5FF3F17F18690ED500466512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -991,15 +1026,16 @@
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP/DollarP-Prefix.pch";
+				GCC_PREFIX_HEADER = "MPGestures-framework/MPGestures-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP/DollarP-Info.plist";
+				INFOPLIST_FILE = "MPGestures-framework/MPGestures-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1075,6 +1111,7 @@
 		5FF3F1BC1869135D00466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1102,6 +1139,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1109,6 +1147,7 @@
 		5FF3F1BD1869135D00466512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1134,6 +1173,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1141,7 +1181,8 @@
 		5FF3F1BF1869135D00466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP-OSX.app/Contents/MacOS/DollarP-OSX";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1169,6 +1210,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1176,7 +1218,8 @@
 		5FF3F1C01869135D00466512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP-OSX.app/Contents/MacOS/DollarP-OSX";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1202,6 +1245,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -1261,7 +1305,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DollarP_ObjC/DollarP_ObjC-Prefix.pch";
-				INFOPLIST_FILE = "DollarP_ObjC/DollarP_ObjC-Info.plist";
+				INFOPLIST_FILE = "DollarP_ObjC/Gestures-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1272,7 +1316,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DollarP_ObjC/DollarP_ObjC-Prefix.pch";
-				INFOPLIST_FILE = "DollarP_ObjC/DollarP_ObjC-Info.plist";
+				INFOPLIST_FILE = "DollarP_ObjC/Gestures-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1281,7 +1325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "DollarP" */ = {
+		5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF3F17E18690ED500466512 /* Debug */,
@@ -1290,7 +1334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "DollarPTests" */ = {
+		5FF3F18318690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF3F18018690ED500466512 /* Debug */,
@@ -1299,7 +1343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSX" */ = {
+		5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF3F1BC1869135D00466512 /* Debug */,
@@ -1308,7 +1352,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "DollarP-OSXTests" */ = {
+		5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSXTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF3F1BF1869135D00466512 /* Debug */,
@@ -1317,7 +1361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */ = {
+		DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "MPGestures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC21973D165E7072009CFCF3 /* Debug */,
@@ -1326,7 +1370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "DollarP_ObjC" */ = {
+		DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "Gestures-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC219740165E7072009CFCF3 /* Debug */,
