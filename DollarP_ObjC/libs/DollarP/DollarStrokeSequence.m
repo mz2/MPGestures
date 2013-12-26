@@ -8,6 +8,8 @@
 
 #import "DollarStrokeSequence.h"
 #import "DollarStroke.h"
+#import "DollarPointCloud.h"
+#import "DollarPoint.h"
 
 @interface DollarStrokeSequence ()
 @property (readonly) NSMutableArray *strokes;
@@ -82,6 +84,16 @@
 {
     return @{@"name" : _name,
              @"strokes" : [_strokes valueForKey:@"dictionaryRepresentation"]};
+}
+
+- (DollarPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
+{
+    NSArray *points = [self.strokes valueForKeyPath:@"unionOfArrays.self"];
+    return [[DollarPointCloud alloc] initWithName:self.name
+                                           points:points
+                                resampledToNumber:resampledPointCount
+                                  normalizedScale:YES
+                             differenceToCentroid:[DollarPoint origin]];
 }
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

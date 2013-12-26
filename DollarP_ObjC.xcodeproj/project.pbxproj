@@ -12,6 +12,8 @@
 		5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */; };
 		5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */; };
 		5FAB2E12186C3F9300F7948E /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */; };
+		5FAB2E15186C72DB00F7948E /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E14186C72DB00F7948E /* MPSymbol.m */; };
+		5FAB2E16186C72DD00F7948E /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E14186C72DB00F7948E /* MPSymbol.m */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F16418690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
@@ -155,6 +157,8 @@
 		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
 		5FAB2E10186C3F9300F7948E /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "DollarP/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
 		5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "DollarP/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
+		5FAB2E13186C72DB00F7948E /* MPSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSymbol.h; path = DollarP/MPSymbol.h; sourceTree = "<group>"; };
+		5FAB2E14186C72DB00F7948E /* MPSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSymbol.m; path = DollarP/MPSymbol.m; sourceTree = "<group>"; };
 		5FF3F15A18690ED500466512 /* DollarP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DollarP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -525,6 +529,8 @@
 				5FF3F259186A2B6100466512 /* DollarStrokeSequence.m */,
 				5FF3F25D186A324E00466512 /* DollarStrokeSequenceDatabase.h */,
 				5FF3F25E186A324E00466512 /* DollarStrokeSequenceDatabase.m */,
+				5FAB2E13186C72DB00F7948E /* MPSymbol.h */,
+				5FAB2E14186C72DB00F7948E /* MPSymbol.m */,
 			);
 			name = DollarP;
 			sourceTree = "<group>";
@@ -783,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF3F1C41869145300466512 /* MPGestureView.m in Sources */,
+				5FAB2E16186C72DD00F7948E /* MPSymbol.m in Sources */,
 				5FF3F18818690EE400466512 /* DollarPointCloud.m in Sources */,
 				5FF3F18418690EDB00466512 /* DollarP.m in Sources */,
 				5FF3F261186A324E00466512 /* DollarStrokeSequenceDatabase.m in Sources */,
@@ -835,6 +842,7 @@
 				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
 				DC21979A165EA5AF009CFCF3 /* DollarP.m in Sources */,
 				DC21979F165EA66C009CFCF3 /* DollarPoint.m in Sources */,
+				5FAB2E15186C72DB00F7948E /* MPSymbol.m in Sources */,
 				DC2197A2165EA8D2009CFCF3 /* DollarPointCloud.m in Sources */,
 				DC2197A5165EAA20009CFCF3 /* DollarResult.m in Sources */,
 				5FF3F1C8186914D700466512 /* DollarStroke.m in Sources */,

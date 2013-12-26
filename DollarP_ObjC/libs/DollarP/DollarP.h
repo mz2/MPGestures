@@ -2,13 +2,13 @@
 #import "DollarResult.h"
 #import "DollarPoint.h"
 
-extern int const DollarPNumPoints;
-
 @interface DollarP : NSObject;
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
 
-+ (NSArray *)resample:(NSArray *)points numPoints:(int)numPoints;
+@property (readwrite) NSUInteger resampleCount;
+
++ (NSArray *)resample:(NSArray *)points numPoints:(NSUInteger)numPoints;
 + (NSArray *)scale:(NSArray *)points;
 + (NSArray *)translate:(NSArray *)points to:(DollarPoint *)point;
 

@@ -3,7 +3,9 @@
 #import "DollarPoint.h"
 
 DollarPointCloud * MakePointCloud(NSString *name, NSArray *points) {
-    return [[DollarPointCloud alloc] initWithName:name points:points];
+    return [[DollarPointCloud alloc] initWithName:name points:points
+                                resampledToNumber:DollarPNumResampledPoints
+                                  normalizedScale:YES differenceToCentroid:[DollarPoint origin]];
 }
 
 DollarPoint * MakePoint(float x, float y, int id) {

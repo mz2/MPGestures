@@ -1,8 +1,6 @@
 #import "DollarP.h"
 #import "DollarPointCloud.h"
 
-int const DollarPNumPoints = 32;
-
 @implementation DollarP
 
 @synthesize pointClouds;
@@ -11,6 +9,7 @@ int const DollarPNumPoints = 32;
     self = [super init];
     if (self) {
         pointClouds = [NSMutableArray array];
+        _resampleCount = DollarPNumResampledPoints;
     }
     return self;
 }
@@ -24,7 +23,8 @@ int const DollarPNumPoints = 32;
         return result;
     }
     
-    points = [[self class] resample:points numPoints:DollarPNumPoints];
+    assert(_resampleCount > 8);
+    points = [[self class] resample:points numPoints:_resampleCount];
     points = [[self class] scale:points];
     points = [[self class] translate:points to:[DollarPoint origin]];
     
@@ -53,9 +53,13 @@ int const DollarPNumPoints = 32;
 }
 
 - (void)addGesture:(NSString *)name
-            points:(NSArray *)points {
+            points:(NSArray *)points
+{
     DollarPointCloud *pointCloud = [[DollarPointCloud alloc] initWithName:name
-                                                                   points:points];
+                                                                   points:points
+                                                        resampledToNumber:self.resampleCount
+                                                          normalizedScale:YES
+                                                     differenceToCentroid:[DollarPoint origin]];
     [[self pointClouds] addObject:pointCloud];
 }
 
@@ -121,7 +125,7 @@ int const DollarPNumPoints = 32;
 }
 
 + (NSArray *)resample:(NSArray *)points
-            numPoints:(int)numPoints {
+            numPoints:(NSUInteger)numPoints {
     float I = [self pathLength:points] / (numPoints - 1);
 	float D = 0.0f;
     

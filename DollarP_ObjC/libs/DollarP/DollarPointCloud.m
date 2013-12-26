@@ -3,16 +3,24 @@
 
 @implementation DollarPointCloud
 
-@synthesize name, points;
-
-- (id)initWithName:(NSString *)aName points:(NSArray *)somePoints {
+- (instancetype)initWithName:(NSString *)aName
+                      points:(NSArray *)somePoints
+           resampledToNumber:(NSUInteger)numPoints
+             normalizedScale:(BOOL)normalizedScale
+        differenceToCentroid:(DollarPoint *)translationPoint
+{
     self = [super init];
     if (self) {
         [self setName:aName];
         
-        somePoints = [DollarP resample:somePoints numPoints:DollarPNumPoints];
-        somePoints = [DollarP scale:somePoints];
-        somePoints = [DollarP translate:somePoints to:[DollarPoint origin]];
+        if (numPoints > 0)
+            somePoints = [DollarP resample:somePoints numPoints:numPoints];
+        
+        if (normalizedScale)
+            somePoints = [DollarP scale:somePoints];
+        
+        if (translationPoint)
+            somePoints = [DollarP translate:somePoints to:translationPoint];
         
         [self setPoints:somePoints];
     }

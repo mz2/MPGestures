@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class DollarStroke;
+@class DollarStroke, DollarPointCloud;
 
 @interface DollarStrokeSequence : NSObject
 
@@ -25,6 +25,8 @@
 - (DollarStroke *)lastStroke;
 
 - (NSDictionary *)dictionaryRepresentation;
+
+- (DollarPointCloud *)pointCloudRepresentation;
 
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
