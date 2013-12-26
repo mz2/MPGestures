@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
  */
 @interface DollarStrokeSequenceDatabase : NSObject
 
+@property (readonly) NSString *identifier;
+
 @property (readonly) NSSet *strokeSequenceNameSet;
 
 @property (readonly) NSArray *sortedStrokeSequenceNames;
@@ -34,6 +36,8 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
 - (void)addStrokeSequence:(DollarStrokeSequence *)sequence;
 
 - (NSDictionary *)dictionaryRepresentation;
+
+- (instancetype)initWithIdentifier:(NSString *)identifier;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

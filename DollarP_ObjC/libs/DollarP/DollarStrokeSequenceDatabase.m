@@ -19,7 +19,12 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
 
 - (instancetype)init
 {
-    return [self initWithDictionary:@{}];
+    @throw [NSException exceptionWithName:@"MPInvalidInitException" reason:nil userInfo:nil];
+}
+
+- (instancetype)initWithIdentifier:(NSString *)identifier
+{
+    return [self initWithDictionary:@{@"identifier":identifier}];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -27,6 +32,7 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
     self = [super init];
     if (self)
     {
+        _identifier = dictionary[@"identifier"];
         _namedStrokeSequences = [NSMutableDictionary dictionaryWithCapacity:dictionary.count];
         
         for (id k in dictionary)
@@ -74,7 +80,9 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
         dict[k] = [[_namedStrokeSequences[k] allObjects] valueForKey:@"dictionaryRepresentation"];
     }
     
-    return dict;
+    dict[@"identifier"] = self.identifier;
+    
+    return [dict copy];
 }
 
 - (void)addStrokeSequence:(DollarStrokeSequence *)sequence

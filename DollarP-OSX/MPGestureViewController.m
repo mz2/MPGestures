@@ -42,7 +42,8 @@
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self strokeSequencePath]])
     {
-        self.db = [[DollarStrokeSequenceDatabase alloc] initWithDictionary:@{}];
+        // FIXME: make the identifier configurable when creating a new database.
+        self.db = [[DollarStrokeSequenceDatabase alloc] initWithIdentifier:NSUserName()];
         
         [self.db dictionaryRepresentation];
     }
@@ -77,6 +78,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
                        NSError *err = nil;
+                       
                        if (![self.db writeToURL:[NSURL fileURLWithPath:self.strokeSequencePath] error:&err])
                        {
                            [[NSAlert alertWithError:err] runModal];
