@@ -86,7 +86,8 @@
         @throw [NSException exceptionWithName:@"MPInvalidArgumentsException"
                                        reason:[NSString stringWithFormat:
                                                @"Mismatching point counts: %lu != %lu",
-                                               pointsA.count, pointsB.count]
+                                               (unsigned long)pointsA.count,
+                                               (unsigned long)pointsB.count]
                                      userInfo:nil];
     
     for (NSUInteger i = 0; i < pointsA.count; i++)

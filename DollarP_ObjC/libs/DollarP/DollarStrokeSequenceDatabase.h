@@ -31,9 +31,6 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
 
 @property (readonly) NSSet *strokeSequenceSet;
 
-- (DollarStrokeSequence *)strokeSequencesSimilarTo:(DollarStrokeSequence *)sequence
-                                 distanceThreshold:(float)distanceThreshold;
-
 - (void)addStrokeSequence:(DollarStrokeSequence *)sequence;
 
 - (NSDictionary *)dictionaryRepresentation;

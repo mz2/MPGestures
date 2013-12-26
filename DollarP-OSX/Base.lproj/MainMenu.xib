@@ -646,23 +646,23 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="DollarP-OSX" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+        <window title="Manuscripts.app Gestures" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="483" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="483" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoI-50-yDd" customClass="MPGestureView">
+                    <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoI-50-yDd" customClass="MPGestureView">
                         <rect key="frame" x="0.0" y="28" width="480" height="292"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
-                            <outlet property="delegate" destination="494" id="Wl9-ms-D2w"/>
+                            <outlet property="delegate" destination="AD8-Ez-SsF" id="uBm-ra-mBo"/>
                         </connections>
                     </customView>
-                    <textField hidden="YES" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="885-sy-nJI">
+                    <textField hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="885-sy-nJI">
                         <rect key="frame" x="7" y="328" width="358" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Label the gesture" drawsBackground="YES" id="myH-ds-H2h">
@@ -671,10 +671,10 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <outlet property="delegate" destination="494" id="ipe-xA-y28"/>
+                            <outlet property="delegate" destination="AD8-Ez-SsF" id="cZj-cS-3if"/>
                         </connections>
                     </textField>
-                    <button hidden="YES" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nno-xX-Ipr">
+                    <button hidden="YES" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nno-xX-Ipr">
                         <rect key="frame" x="364" y="322" width="116" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
@@ -685,11 +685,11 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addExample:" target="494" id="W95-JQ-kmq"/>
+                            <action selector="addExample:" target="AD8-Ez-SsF" id="ltv-ze-yxg"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-yX-K3Q">
-                        <rect key="frame" x="430" y="-3" width="51" height="32"/>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-yX-K3Q">
+                        <rect key="frame" x="430" y="-2" width="51" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="39" id="hby-4G-VQk"/>
@@ -699,11 +699,11 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="nextStrokeSequence:" target="494" id="cEl-rh-lHO"/>
+                            <action selector="nextStrokeSequence:" target="AD8-Ez-SsF" id="DkG-bP-xFZ"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HCP-Bu-8E5">
-                        <rect key="frame" x="388" y="-3" width="51" height="32"/>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCP-Bu-8E5">
+                        <rect key="frame" x="388" y="-2" width="51" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="39" id="Nf7-Zz-Seo"/>
@@ -713,13 +713,14 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="previousStrokeSequence:" target="494" id="uXb-it-tyd"/>
+                            <action selector="previousStrokeSequence:" target="AD8-Ez-SsF" id="OXY-Fq-X7g"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeN-c9-ycj">
-                        <rect key="frame" x="348" y="-3" width="49" height="32"/>
+                        <rect key="frame" x="348" y="-2" width="49" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="STQ-tp-2mF"/>
                             <constraint firstAttribute="width" constant="37" id="Vzy-cX-5gq"/>
                         </constraints>
                         <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Ul-bU-Si3">
@@ -727,39 +728,44 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="deleteStrokeSequence:" target="494" id="ovY-Xz-V61"/>
+                            <action selector="deleteStrokeSequence:" target="AD8-Ez-SsF" id="2TY-Lt-eDs"/>
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTz-rU-rbc">
-                        <rect key="frame" x="4" y="8" width="138" height="17"/>
+                        <rect key="frame" x="4" y="7" width="138" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="kW1-5k-bT1">
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="cellTitle"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <comboBox verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-8J-99E">
-                        <rect key="frame" x="148" y="3" width="203" height="26"/>
+                    <comboBox verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-8J-99E">
+                        <rect key="frame" x="148" y="2" width="203" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="JXo-MK-Kks"/>
+                        </constraints>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="10" id="BJ6-oC-bKX">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </comboBoxCell>
                         <connections>
-                            <outlet property="dataSource" destination="494" id="gev-Zc-bYB"/>
-                            <outlet property="delegate" destination="494" id="4oh-H6-iyJ"/>
+                            <outlet property="dataSource" destination="AD8-Ez-SsF" id="eZJ-fC-smM"/>
+                            <outlet property="delegate" destination="AD8-Ez-SsF" id="fvB-lK-3YQ"/>
                         </connections>
                     </comboBox>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="nno-xX-Ipr" firstAttribute="top" secondItem="372" secondAttribute="top" constant="10" id="2g2-hl-2G7"/>
                     <constraint firstItem="nno-xX-Ipr" firstAttribute="leading" secondItem="885-sy-nJI" secondAttribute="trailing" constant="8" id="6sk-y7-NQU"/>
                     <constraint firstItem="UoI-50-yDd" firstAttribute="top" secondItem="885-sy-nJI" secondAttribute="bottom" constant="8" id="DMT-DV-zE1"/>
                     <constraint firstItem="HCP-Bu-8E5" firstAttribute="leading" secondItem="aeN-c9-ycj" secondAttribute="trailing" constant="6" id="E6E-So-KQe"/>
                     <constraint firstItem="BTY-yX-K3Q" firstAttribute="leading" secondItem="HCP-Bu-8E5" secondAttribute="trailing" constant="3" id="EWt-hQ-jEt"/>
                     <constraint firstAttribute="bottom" secondItem="BTz-rU-rbc" secondAttribute="bottom" constant="8" id="JjC-90-Dbd"/>
                     <constraint firstItem="UoI-50-yDd" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="L5p-of-THj"/>
+                    <constraint firstItem="oVe-8J-99E" firstAttribute="leading" secondItem="BTz-rU-rbc" secondAttribute="trailing" constant="8" id="RYt-rY-gqv"/>
                     <constraint firstItem="885-sy-nJI" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="7" id="TJD-uC-Jfh"/>
                     <constraint firstItem="aeN-c9-ycj" firstAttribute="top" secondItem="UoI-50-yDd" secondAttribute="bottom" constant="3" id="VOM-XL-spo"/>
                     <constraint firstAttribute="trailing" secondItem="nno-xX-Ipr" secondAttribute="trailing" constant="6" id="Ve4-LE-0zg"/>
@@ -770,23 +776,28 @@
                     <constraint firstAttribute="trailing" secondItem="UoI-50-yDd" secondAttribute="trailing" id="mWO-fP-k67"/>
                     <constraint firstAttribute="trailing" secondItem="BTY-yX-K3Q" secondAttribute="trailing" constant="5" id="nMJ-pz-Ene"/>
                     <constraint firstItem="BTz-rU-rbc" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="6" id="qKo-0Q-PdS"/>
+                    <constraint firstItem="885-sy-nJI" firstAttribute="top" secondItem="372" secondAttribute="top" constant="10" id="r0g-ah-Qbr"/>
                     <constraint firstAttribute="bottom" secondItem="HCP-Bu-8E5" secondAttribute="bottom" constant="4" id="rsx-L1-zc4"/>
                 </constraints>
             </view>
         </window>
         <customObject id="494" customClass="MPAppDelegate">
             <connections>
-                <outlet property="deleteGestureButton" destination="aeN-c9-ycj" id="qip-vQ-iYu"/>
-                <outlet property="gestureTextfield" destination="885-sy-nJI" id="qhI-zB-VQn"/>
-                <outlet property="gestureView" destination="UoI-50-yDd" id="dsm-2u-BZg"/>
-                <outlet property="labelComboBox" destination="oVe-8J-99E" id="vKe-Pz-75k"/>
-                <outlet property="nextGestureButton" destination="BTY-yX-K3Q" id="LaL-Mx-QKj"/>
-                <outlet property="previousGestureButton" destination="HCP-Bu-8E5" id="gKJ-al-MIK"/>
-                <outlet property="statusLabel" destination="BTz-rU-rbc" id="UDr-Rx-Cs9"/>
-                <outlet property="submitGestureButton" destination="nno-xX-Ipr" id="Jqf-Nh-bfn"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
+        <viewController title="Gesture view" id="AD8-Ez-SsF" customClass="MPGestureViewController">
+            <connections>
+                <outlet property="deleteGestureButton" destination="aeN-c9-ycj" id="NaS-C4-wVB"/>
+                <outlet property="gestureTextfield" destination="885-sy-nJI" id="bEQ-Xm-PvE"/>
+                <outlet property="labelComboBox" destination="oVe-8J-99E" id="qy5-Ag-X1d"/>
+                <outlet property="nextGestureButton" destination="BTY-yX-K3Q" id="yo1-aV-MnV"/>
+                <outlet property="previousGestureButton" destination="HCP-Bu-8E5" id="zhE-mQ-CTi"/>
+                <outlet property="statusLabel" destination="BTz-rU-rbc" id="Tyl-YV-Gqp"/>
+                <outlet property="submitGestureButton" destination="nno-xX-Ipr" id="mWP-2P-6MO"/>
+                <outlet property="view" destination="UoI-50-yDd" id="EcV-RE-8Xa"/>
+            </connections>
+        </viewController>
     </objects>
 </document>

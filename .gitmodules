@@ -1,0 +1,3 @@
+[submodule "External/MASPreferences"]
+	path = External/MASPreferences
+	url = git@github.com:shpakovski/MASPreferences.git

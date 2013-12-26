@@ -109,7 +109,9 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<DollarStrokeSequence: name:%@ (%lu strokes) >", self.name, self.strokeCount];
+    return [NSString stringWithFormat:@"<DollarStrokeSequence: name:%@ (%lu strokes) >",
+            self.name,
+            (unsigned long)self.strokeCount];
 }
 
 @end

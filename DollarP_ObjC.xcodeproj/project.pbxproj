@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5F04A431186B32CB00AAC922 /* DollarP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* DollarP.framework */; };
+		5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */; };
+		5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */; };
+		5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */; };
+		5FAB2E12186C3F9300F7948E /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F16618690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F16418690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
@@ -143,6 +147,14 @@
 
 /* Begin PBXFileReference section */
 		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
+		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
+		5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MASPreferencesWindow.xib; path = External/MASPreferences/MASPreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
+		5FAB2E02186C3DC100F7948E /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesWindowController.h; path = External/MASPreferences/MASPreferencesWindowController.h; sourceTree = SOURCE_ROOT; };
+		5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASPreferencesWindowController.m; path = External/MASPreferences/MASPreferencesWindowController.m; sourceTree = SOURCE_ROOT; };
+		5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureViewController.h; sourceTree = "<group>"; };
+		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
+		5FAB2E10186C3F9300F7948E /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "DollarP/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
+		5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "DollarP/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
 		5FF3F15A18690ED500466512 /* DollarP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DollarP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -281,6 +293,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5FAB2E09186C3DC400F7948E /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5FAB2E0A186C3DCB00F7948E /* MASPreferences */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		5FAB2E0A186C3DCB00F7948E /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */,
+				5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */,
+				5FAB2E02186C3DC100F7948E /* MASPreferencesWindowController.h */,
+				5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */,
+			);
+			name = MASPreferences;
+			sourceTree = "<group>";
+		};
 		5FF3F15D18690ED500466512 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,11 +365,16 @@
 		5FF3F1961869135C00466512 /* DollarP-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				5FAB2E09186C3DC400F7948E /* External */,
 				5FF3F1A21869135C00466512 /* MPAppDelegate.h */,
 				5FF3F1A31869135C00466512 /* MPAppDelegate.m */,
+				5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */,
+				5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */,
 				5FF3F1A51869135C00466512 /* MainMenu.xib */,
 				5FF3F1A81869135C00466512 /* Images.xcassets */,
 				5FF3F1971869135C00466512 /* Supporting Files */,
+				5FAB2E10186C3F9300F7948E /* NSFileManager+ApplicationSupport.h */,
+				5FAB2E11186C3F9300F7948E /* NSFileManager+ApplicationSupport.m */,
 			);
 			path = "DollarP-OSX";
 			sourceTree = "<group>";
@@ -710,6 +746,7 @@
 			files = (
 				5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */,
 				5FF3F1A91869135C00466512 /* Images.xcassets in Resources */,
+				5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */,
 				5FF3F1A11869135C00466512 /* Credits.rtf in Resources */,
 				5FF3F1A71869135C00466512 /* MainMenu.xib in Resources */,
 			);
@@ -771,7 +808,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF3F19D1869135C00466512 /* main.m in Sources */,
+				5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */,
 				5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */,
+				5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */,
+				5FAB2E12186C3F9300F7948E /* NSFileManager+ApplicationSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
