@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F04A431186B32CB00AAC922 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
-		5F2C0291186CF953003CFD04 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A51869135C00466512 /* MainMenu.xib */; };
+		5F09E1E2187697A80077DF4F /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73578B186CF42E005951E7 /* MPGestureView.h */; };
 		5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73578C186CF42E005951E7 /* MPGestureView.m */; };
 		5F735796186CF478005951E7 /* MPDollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735795186CF478005951E7 /* MPDollarPGestureRecognizer.m */; };
@@ -43,26 +42,26 @@
 		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */; };
-		5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */; };
-		5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */; };
-		5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */; };
+		5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FD5CC88187693FD0038C834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC86187693FD0038C834 /* InfoPlist.strings */; };
+		5FD5CC8A187693FD0038C834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CC89187693FD0038C834 /* main.m */; };
+		5FD5CC8E187693FD0038C834 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC8C187693FD0038C834 /* Credits.rtf */; };
+		5FD5CC94187693FD0038C834 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC92187693FD0038C834 /* MainMenu.xib */; };
+		5FD5CC96187693FD0038C834 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC95187693FD0038C834 /* Images.xcassets */; };
+		5FD5CC9C187693FD0038C834 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
+		5FD5CC9D187693FD0038C834 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
+		5FD5CCA5187693FD0038C834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CCA3187693FD0038C834 /* InfoPlist.strings */; };
+		5FD5CCB2187694800038C834 /* MPGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */; };
+		5FD5CCB3187694840038C834 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A31869135C00466512 /* MPAppDelegate.m */; };
+		5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
+		5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85863D186B6D2A00AD762E /* MPRandomForest.framework */; };
+		5FD5CCBB187694F50038C834 /* MPGesturesOSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPGesturesOSXTests.m */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
 		5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F17518690ED500466512 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F17918690ED500466512 /* InfoPlist.strings */; };
 		5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F17C18690ED500466512 /* DollarPTests.m */; };
-		5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
-		5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1991869135C00466512 /* InfoPlist.strings */; };
-		5FF3F19D1869135C00466512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F19C1869135C00466512 /* main.m */; };
-		5FF3F1A11869135C00466512 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F19F1869135C00466512 /* Credits.rtf */; };
-		5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A31869135C00466512 /* MPAppDelegate.m */; };
-		5FF3F1A91869135C00466512 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A81869135C00466512 /* Images.xcassets */; };
-		5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
-		5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
-		5FF3F1B81869135C00466512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B61869135C00466512 /* InfoPlist.strings */; };
-		5FF3F1BA1869135C00466512 /* DollarP_OSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */; };
-		5FF3F1D0186A0FC700466512 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FF3F257186A28AD00466512 /* ALGLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F250186A284C00466512 /* ALGLIB.framework */; };
 		DC219726165E7072009CFCF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219725165E7072009CFCF3 /* UIKit.framework */; };
 		DC219728165E7072009CFCF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219727165E7072009CFCF3 /* Foundation.framework */; };
@@ -84,14 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FF3F15918690ED400466512;
-			remoteInfo = DollarP;
-		};
-		5F735789186CF253005951E7 /* PBXContainerItemProxy */ = {
+		5F09E1E0187697A10077DF4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
 			proxyType = 1;
@@ -112,19 +104,33 @@
 			remoteGlobalIDString = 5F85861F186B6CBB00AD762E;
 			remoteInfo = MPRandomForestTests;
 		};
+		5FD5CC9E187693FD0038C834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FD5CC80187693FD0038C834;
+			remoteInfo = "Gestures for Mac";
+		};
+		5FD5CCB4187694BB0038C834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF3F15918690ED400466512;
+			remoteInfo = Gestures;
+		};
+		5FD5CCB7187694CA0038C834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F858607186B6CBB00AD762E;
+			remoteInfo = MPRandomForest;
+		};
 		5FF3F17318690ED500466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5FF3F15918690ED400466512;
 			remoteInfo = DollarP;
-		};
-		5FF3F1B11869135C00466512 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FF3F1931869135C00466512;
-			remoteInfo = "DollarP-OSX";
 		};
 		5FF3F24F186A284C00466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -184,6 +190,18 @@
 		5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASPreferencesWindowController.m; path = External/MASPreferences/MASPreferencesWindowController.m; sourceTree = SOURCE_ROOT; };
 		5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureViewController.h; sourceTree = "<group>"; };
 		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
+		5FD5CC81187693FD0038C834 /* Gestures-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD5CC85187693FD0038C834 /* Gestures for Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for Mac-Info.plist"; sourceTree = "<group>"; };
+		5FD5CC87187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FD5CC89187693FD0038C834 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FD5CC8B187693FD0038C834 /* Gestures for Mac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gestures for Mac-Prefix.pch"; sourceTree = "<group>"; };
+		5FD5CC8D187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5FD5CC93187693FD0038C834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5FD5CC95187693FD0038C834 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FD5CC9B187693FD0038C834 /* Gestures-OSX-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gestures-OSX-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD5CCA2187693FD0038C834 /* Gestures for MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for MacTests-Info.plist"; sourceTree = "<group>"; };
+		5FD5CCA4187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FD5CCBA187694F50038C834 /* MPGesturesOSXTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGesturesOSXTests.m; sourceTree = "<group>"; };
 		5FF3F15A18690ED500466512 /* Gestures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gestures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,20 +213,15 @@
 		5FF3F17818690ED500466512 /* DollarPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarPTests-Info.plist"; sourceTree = "<group>"; };
 		5FF3F17A18690ED500466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F17C18690ED500466512 /* DollarPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarPTests.m; sourceTree = "<group>"; };
-		5FF3F1941869135C00466512 /* Gestures-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F1981869135C00466512 /* DollarP-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSX-Info.plist"; sourceTree = "<group>"; };
 		5FF3F19A1869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FF3F19C1869135C00466512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FF3F19E1869135C00466512 /* DollarP-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP-OSX-Prefix.pch"; sourceTree = "<group>"; };
 		5FF3F1A01869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		5FF3F1A21869135C00466512 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
-		5FF3F1A31869135C00466512 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
+		5FF3F1A21869135C00466512 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPAppDelegate.h; path = "../DollarP-OSX/MPAppDelegate.h"; sourceTree = "<group>"; };
+		5FF3F1A31869135C00466512 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPAppDelegate.m; path = "../DollarP-OSX/MPAppDelegate.m"; sourceTree = "<group>"; };
 		5FF3F1A61869135C00466512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5FF3F1A81869135C00466512 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gestures-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FF3F1B51869135C00466512 /* DollarP-OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP-OSXTests-Info.plist"; sourceTree = "<group>"; };
-		5FF3F1B71869135C00466512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarP_OSXTests.m; sourceTree = "<group>"; };
 		5FF3F24A186A284C00466512 /* ALGLIB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ALGLIB.xcodeproj; path = External/alglib/ALGLIB/ALGLIB.xcodeproj; sourceTree = "<group>"; };
 		DC219721165E7072009CFCF3 /* Gestures-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC219725165E7072009CFCF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -238,6 +251,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5FD5CC7E187693FD0038C834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */,
+				5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */,
+				5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD5CC98187693FD0038C834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F09E1E2187697A80077DF4F /* Gestures.framework in Frameworks */,
+				5FD5CC9D187693FD0038C834 /* Cocoa.framework in Frameworks */,
+				5FD5CC9C187693FD0038C834 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF3F15618690ED400466512 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,25 +287,6 @@
 				5FF3F17518690ED500466512 /* Gestures.framework in Frameworks */,
 				5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */,
 				5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1911869135C00466512 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF3F1D0186A0FC700466512 /* Gestures.framework in Frameworks */,
-				5FF3F1951869135C00466512 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1AB1869135C00466512 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F04A431186B32CB00AAC922 /* Gestures.framework in Frameworks */,
-				5FF3F1B01869135C00466512 /* Cocoa.framework in Frameworks */,
-				5FF3F1AF1869135C00466512 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +358,49 @@
 			name = MASPreferences;
 			sourceTree = "<group>";
 		};
+		5FD5CC83187693FD0038C834 /* Gestures for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3F1A21869135C00466512 /* MPAppDelegate.h */,
+				5FF3F1A31869135C00466512 /* MPAppDelegate.m */,
+				5FD5CC92187693FD0038C834 /* MainMenu.xib */,
+				5FD5CC95187693FD0038C834 /* Images.xcassets */,
+				5FD5CC84187693FD0038C834 /* Supporting Files */,
+			);
+			path = "Gestures for Mac";
+			sourceTree = "<group>";
+		};
+		5FD5CC84187693FD0038C834 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD5CC85187693FD0038C834 /* Gestures for Mac-Info.plist */,
+				5FD5CC86187693FD0038C834 /* InfoPlist.strings */,
+				5FD5CC89187693FD0038C834 /* main.m */,
+				5FD5CC8B187693FD0038C834 /* Gestures for Mac-Prefix.pch */,
+				5FD5CC8C187693FD0038C834 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FD5CCA0187693FD0038C834 /* Gestures for Mac Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5FD5CCBA187694F50038C834 /* MPGesturesOSXTests.m */,
+				5FD5CCA1187693FD0038C834 /* Supporting Files */,
+			);
+			name = "Gestures for Mac Tests";
+			path = "Gestures for MacTests";
+			sourceTree = "<group>";
+		};
+		5FD5CCA1187693FD0038C834 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD5CCA2187693FD0038C834 /* Gestures for MacTests-Info.plist */,
+				5FD5CCA3187693FD0038C834 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5FF3F15D18690ED500466512 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,8 +457,6 @@
 			isa = PBXGroup;
 			children = (
 				5FAB2E09186C3DC400F7948E /* External */,
-				5FF3F1A21869135C00466512 /* MPAppDelegate.h */,
-				5FF3F1A31869135C00466512 /* MPAppDelegate.m */,
 				5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */,
 				5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */,
 				5FF3F1A51869135C00466512 /* MainMenu.xib */,
@@ -424,25 +479,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FF3F1B31869135C00466512 /* Gestures-OSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				5FF3F1B91869135C00466512 /* DollarP_OSXTests.m */,
-				5FF3F1B41869135C00466512 /* Supporting Files */,
-			);
-			name = "Gestures-OSXTests";
-			path = "DollarP-OSXTests";
-			sourceTree = "<group>";
-		};
-		5FF3F1B41869135C00466512 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5FF3F1B51869135C00466512 /* DollarP-OSXTests-Info.plist */,
-				5FF3F1B61869135C00466512 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		5FF3F24B186A284C00466512 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,7 +495,8 @@
 				DC21972B165E7072009CFCF3 /* Gestures-iOS */,
 				5FF3F17618690ED500466512 /* Gestures-iOS-Tests */,
 				5FF3F1961869135C00466512 /* Gestures-OSX */,
-				5FF3F1B31869135C00466512 /* Gestures-OSXTests */,
+				5FD5CC83187693FD0038C834 /* Gestures for Mac */,
+				5FD5CCA0187693FD0038C834 /* Gestures for Mac Tests */,
 				DC219724165E7072009CFCF3 /* Frameworks */,
 				DC219722165E7072009CFCF3 /* Products */,
 			);
@@ -471,8 +508,8 @@
 				DC219721165E7072009CFCF3 /* Gestures-iOS.app */,
 				5FF3F15A18690ED500466512 /* Gestures.framework */,
 				5FF3F16F18690ED500466512 /* Gestures-iOSTests.xctest */,
-				5FF3F1941869135C00466512 /* Gestures-OSX.app */,
-				5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */,
+				5FD5CC81187693FD0038C834 /* Gestures-OSX.app */,
+				5FD5CC9B187693FD0038C834 /* Gestures-OSX-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -579,6 +616,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5FD5CC80187693FD0038C834 /* Gestures-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD5CCAF187693FE0038C834 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */;
+			buildPhases = (
+				5FD5CC7D187693FD0038C834 /* Sources */,
+				5FD5CC7E187693FD0038C834 /* Frameworks */,
+				5FD5CC7F187693FD0038C834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FD5CCB8187694CA0038C834 /* PBXTargetDependency */,
+				5FD5CCB5187694BB0038C834 /* PBXTargetDependency */,
+			);
+			name = "Gestures-OSX";
+			productName = "Gestures for Mac";
+			productReference = 5FD5CC81187693FD0038C834 /* Gestures-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FD5CC9A187693FD0038C834 /* Gestures-OSX-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD5CCB0187693FE0038C834 /* Build configuration list for PBXNativeTarget "Gestures-OSX-Tests" */;
+			buildPhases = (
+				5FD5CC97187693FD0038C834 /* Sources */,
+				5FD5CC98187693FD0038C834 /* Frameworks */,
+				5FD5CC99187693FD0038C834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F09E1E1187697A10077DF4F /* PBXTargetDependency */,
+				5FD5CC9F187693FD0038C834 /* PBXTargetDependency */,
+			);
+			name = "Gestures-OSX-Tests";
+			productName = "Gestures for MacTests";
+			productReference = 5FD5CC9B187693FD0038C834 /* Gestures-OSX-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5FF3F15918690ED400466512 /* Gestures */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures" */;
@@ -616,43 +691,6 @@
 			productReference = 5FF3F16F18690ED500466512 /* Gestures-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5FF3F1931869135C00466512 /* Gestures-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */;
-			buildPhases = (
-				5FF3F1901869135C00466512 /* Sources */,
-				5FF3F1911869135C00466512 /* Frameworks */,
-				5FF3F1921869135C00466512 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5F73578A186CF253005951E7 /* PBXTargetDependency */,
-			);
-			name = "Gestures-OSX";
-			productName = "DollarP-OSX";
-			productReference = 5FF3F1941869135C00466512 /* Gestures-OSX.app */;
-			productType = "com.apple.product-type.application";
-		};
-		5FF3F1AD1869135C00466512 /* Gestures-OSXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSXTests" */;
-			buildPhases = (
-				5FF3F1AA1869135C00466512 /* Sources */,
-				5FF3F1AB1869135C00466512 /* Frameworks */,
-				5FF3F1AC1869135C00466512 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5F04A430186B32C600AAC922 /* PBXTargetDependency */,
-				5FF3F1B21869135C00466512 /* PBXTargetDependency */,
-			);
-			name = "Gestures-OSXTests";
-			productName = "DollarP-OSXTests";
-			productReference = 5FF3F1AE1869135C00466512 /* Gestures-OSXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DC219720165E7072009CFCF3 /* Gestures-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "Gestures-iOS" */;
@@ -680,10 +718,10 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = de.ur;
 				TargetAttributes = {
-					5FF3F16E18690ED500466512 = {
+					5FD5CC9A187693FD0038C834 = {
 						TestTargetID = DC219720165E7072009CFCF3;
 					};
-					5FF3F1AD1869135C00466512 = {
+					5FF3F16E18690ED500466512 = {
 						TestTargetID = DC219720165E7072009CFCF3;
 					};
 				};
@@ -714,8 +752,8 @@
 				DC219720165E7072009CFCF3 /* Gestures-iOS */,
 				5FF3F15918690ED400466512 /* Gestures */,
 				5FF3F16E18690ED500466512 /* Gestures-iOSTests */,
-				5FF3F1931869135C00466512 /* Gestures-OSX */,
-				5FF3F1AD1869135C00466512 /* Gestures-OSXTests */,
+				5FD5CC80187693FD0038C834 /* Gestures-OSX */,
+				5FD5CC9A187693FD0038C834 /* Gestures-OSX-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -752,6 +790,25 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5FD5CC7F187693FD0038C834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD5CC88187693FD0038C834 /* InfoPlist.strings in Resources */,
+				5FD5CC96187693FD0038C834 /* Images.xcassets in Resources */,
+				5FD5CC8E187693FD0038C834 /* Credits.rtf in Resources */,
+				5FD5CC94187693FD0038C834 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD5CC99187693FD0038C834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD5CCA5187693FD0038C834 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF3F15818690ED400466512 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -764,26 +821,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1921869135C00466512 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF3F19B1869135C00466512 /* InfoPlist.strings in Resources */,
-				5F2C0291186CF953003CFD04 /* MainMenu.xib in Resources */,
-				5FF3F1A91869135C00466512 /* Images.xcassets in Resources */,
-				5FAB2E04186C3DC100F7948E /* MASPreferencesWindow.xib in Resources */,
-				5FF3F1A11869135C00466512 /* Credits.rtf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1AC1869135C00466512 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF3F1B81869135C00466512 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +842,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5FD5CC7D187693FD0038C834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD5CC8A187693FD0038C834 /* main.m in Sources */,
+				5FD5CCB2187694800038C834 /* MPGestureViewController.m in Sources */,
+				5FD5CCB3187694840038C834 /* MPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD5CC97187693FD0038C834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD5CCBB187694F50038C834 /* MPGesturesOSXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF3F15518690ED400466512 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -828,25 +883,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1901869135C00466512 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF3F19D1869135C00466512 /* main.m in Sources */,
-				5FAB2E05186C3DC100F7948E /* MASPreferencesWindowController.m in Sources */,
-				5FF3F1A41869135C00466512 /* MPAppDelegate.m in Sources */,
-				5FAB2E0E186C3E3700F7948E /* MPGestureViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF3F1AA1869135C00466512 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF3F1BA1869135C00466512 /* DollarP_OSXTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,25 +913,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F04A430186B32C600AAC922 /* PBXTargetDependency */ = {
+		5F09E1E1187697A10077DF4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FF3F15918690ED400466512 /* Gestures */;
-			targetProxy = 5F04A42F186B32C600AAC922 /* PBXContainerItemProxy */;
+			targetProxy = 5F09E1E0187697A10077DF4F /* PBXContainerItemProxy */;
 		};
-		5F73578A186CF253005951E7 /* PBXTargetDependency */ = {
+		5FD5CC9F187693FD0038C834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FD5CC80187693FD0038C834 /* Gestures-OSX */;
+			targetProxy = 5FD5CC9E187693FD0038C834 /* PBXContainerItemProxy */;
+		};
+		5FD5CCB5187694BB0038C834 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FF3F15918690ED400466512 /* Gestures */;
-			targetProxy = 5F735789186CF253005951E7 /* PBXContainerItemProxy */;
+			targetProxy = 5FD5CCB4187694BB0038C834 /* PBXContainerItemProxy */;
+		};
+		5FD5CCB8187694CA0038C834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MPRandomForest;
+			targetProxy = 5FD5CCB7187694CA0038C834 /* PBXContainerItemProxy */;
 		};
 		5FF3F17418690ED500466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FF3F15918690ED400466512 /* Gestures */;
 			targetProxy = 5FF3F17318690ED500466512 /* PBXContainerItemProxy */;
-		};
-		5FF3F1B21869135C00466512 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5FF3F1931869135C00466512 /* Gestures-OSX */;
-			targetProxy = 5FF3F1B11869135C00466512 /* PBXContainerItemProxy */;
 		};
 		5FF3F254186A285400466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -905,6 +946,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5FD5CC86187693FD0038C834 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD5CC87187693FD0038C834 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FD5CC8C187693FD0038C834 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD5CC8D187693FD0038C834 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5FD5CC92187693FD0038C834 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD5CC93187693FD0038C834 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5FD5CCA3187693FD0038C834 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD5CCA4187693FD0038C834 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5FF3F16418690ED500466512 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -947,14 +1020,6 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		5FF3F1B61869135C00466512 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FF3F1B71869135C00466512 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		DC21972E165E7072009CFCF3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -966,6 +1031,140 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5FD5CCA8187693FE0038C834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gestures for Mac/Gestures for Mac-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Gestures for Mac/Gestures for Mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FD5CCA9187693FE0038C834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gestures for Mac/Gestures for Mac-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Gestures for Mac/Gestures for Mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FD5CCAA187693FE0038C834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gestures for Mac/Gestures for Mac-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Gestures for MacTests/Gestures for MacTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5FD5CCAB187693FE0038C834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "\"$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX\"";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gestures for Mac/Gestures for Mac-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Gestures for MacTests/Gestures for MacTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		5FF3F17E18690ED500466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1043,7 +1242,7 @@
 		5FF3F18018690ED500466512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-iOS.app/Gestures-iOS";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1078,7 +1277,7 @@
 		5FF3F18118690ED500466512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DollarP_ObjC.app/DollarP_ObjC";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-iOS.app/Gestures-iOS";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1104,148 +1303,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		5FF3F1BC1869135D00466512 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP-OSX/DollarP-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		5FF3F1BD1869135D00466512 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP-OSX/DollarP-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		5FF3F1BF1869135D00466512 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX";
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP-OSXTests/DollarP-OSXTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = x86_64;
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		5FF3F1C01869135D00466512 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gestures-OSX.app/Contents/MacOS/Gestures-OSX";
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DollarP-OSX/DollarP-OSX-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DollarP-OSXTests/DollarP-OSXTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -1325,6 +1382,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5FD5CCAF187693FE0038C834 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD5CCA8187693FE0038C834 /* Debug */,
+				5FD5CCA9187693FE0038C834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FD5CCB0187693FE0038C834 /* Build configuration list for PBXNativeTarget "Gestures-OSX-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD5CCAA187693FE0038C834 /* Debug */,
+				5FD5CCAB187693FE0038C834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5FF3F18218690ED500466512 /* Build configuration list for PBXNativeTarget "Gestures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1339,24 +1414,6 @@
 			buildConfigurations = (
 				5FF3F18018690ED500466512 /* Debug */,
 				5FF3F18118690ED500466512 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5FF3F1BB1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FF3F1BC1869135D00466512 /* Debug */,
-				5FF3F1BD1869135D00466512 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5FF3F1BE1869135D00466512 /* Build configuration list for PBXNativeTarget "Gestures-OSXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FF3F1BF1869135D00466512 /* Debug */,
-				5FF3F1C01869135D00466512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
