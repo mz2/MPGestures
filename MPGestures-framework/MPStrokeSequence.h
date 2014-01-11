@@ -18,6 +18,14 @@
 
 @property (readonly) NSUInteger strokeCount;
 
+/**
+ * A signature for the stroke sequence.
+ * A stroke sequence database should only contain a single stroke sequence with a matching signature.
+ */
+@property (readonly, copy) NSString *signature;
+
+
+
 - (BOOL)containsStroke:(MPStroke *)stroke;
 
 - (void)addStroke:(MPStroke *)stroke;

@@ -1,5 +1,5 @@
 //
-//  DollarP_OSXTests.m
+//  MPGesturesTestSuite.m
 //  DollarP-OSXTests
 //
 //  Created by Matias Piipari on 24/12/2013.
@@ -13,11 +13,11 @@
 #import "MPPoint.h"
 #import "MPDollarPointCloudRecognizer.h"
 
-@interface DollarP_OSXTests : XCTestCase
+@interface MPGesturesTestSuite : XCTestCase
 
 @end
 
-@implementation DollarP_OSXTests
+@implementation MPGesturesTestSuite
 
 - (void)setUp
 {

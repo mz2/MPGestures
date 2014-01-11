@@ -95,15 +95,32 @@ NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification
 
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence
 {
+    return [self addStrokeSequence:sequence notify:YES];
+}
+
+- (void)addStrokeSequence:(MPStrokeSequence *)sequence notify:(BOOL)notify
+{
     assert(sequence.name);
     if (!_namedStrokeSequences[sequence.name])
         _namedStrokeSequences[sequence.name] = [NSMutableSet setWithCapacity:64];
     
     [_namedStrokeSequences[sequence.name] addObject:sequence];
     
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
-                      object:self userInfo:@{@"name":sequence.name}];
+    if (notify)
+    {
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
+                          object:self userInfo:@{@"name":sequence.name}];
+    }
+}
+
+- (void)addStrokeSequencesFromDatabase:(MPStrokeSequenceDatabase *)database
+{
+    assert(database);
+    assert(database != self);
+    
+    for (MPStrokeSequence *seq in [database strokeSequenceSet])
+        [self addStrokeSequence:seq notify:NO];
 }
 
 - (void)removeStrokeSequence:(MPStrokeSequence *)sequence
@@ -113,10 +130,8 @@ NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:
-     MPStrokeSequenceDatabaseDidRemoveSequenceNotification
-                                                        object:self
-                                                      userInfo:@{@"name":sequence.name}];
+    [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
+                      object:self userInfo:@{@"name":sequence.name}];
 }
 
 - (BOOL)isEqual:(MPStrokeSequenceDatabase *)object

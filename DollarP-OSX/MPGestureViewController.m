@@ -13,6 +13,8 @@
 #import "MPPointCloudRecognition.h"
 #import "MPStrokeSequence.h"
 
+#import "MPStrokeSequenceDatabaseSynchronizer.h"
+
 @interface MPGestureViewController ()
 @property MPStrokeSequence *strokeSequence;
 @end
@@ -45,12 +47,13 @@
         // FIXME: make the identifier configurable when creating a new database.
         self.db = [[MPStrokeSequenceDatabase alloc] initWithIdentifier:NSUserName()];
         
-        [self.db dictionaryRepresentation];
     }
     else
     {
         NSError *err = nil;
         self.db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self strokeSequencePath]] error:&err];
+        
+        [[MPStrokeSequenceDatabaseSynchronizer sharedInstance] continuouslySynchronizeDatabase:self.db];
         
         if (err)
         {

@@ -20,17 +20,24 @@ extern NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification;
   * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name. */
 extern NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification;
 
+/**
+  * Fired after significant externally derived changes have been made to the database.
+  * Can be used by UI elements presenting contents of the stroke sequence to reload its state.
+  */
+extern NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification;
+
 typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
 {
     MPStrokeSequenceDatabaseErrorCodeUnknown = 0,
     MPStrokeSequenceDatabaseErrorCodeInvalidFileFormat = 1
-    
 };
 
 /**
- * The dollar stroke sequence database is a key-value store of stroke sequences keyed by their name.
- * It can be accessed using the keyed subscript notation.
- */
+  * The stroke sequence database is a key-value store of stroke sequences keyed by their name.
+  * It can be accessed using the keyed subscript notation.
+  * 
+  * NOTE! It is permissible to create multiple stroke sequence databases with the same identifier, these objects are not "centrally uniqued" in the framework.
+  */
 @interface MPStrokeSequenceDatabase : NSObject
 
 /**
@@ -45,16 +52,26 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
 
 @property (readonly) NSSet *strokeSequenceSet;
 
+/**
+ *  Adds the given stroke sequence to the database, if a matching sequence was not already present. 
+ * Notifies with a MPStrokeSequenceDatabaseDidAddSequenceNotification.
+ */
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence;
 
+/**
+ *  Removes the given stroke sequence from the database, if present.
+ * Notifies with a MPStrokeSequenceDatabaseDidRemoveSequenceNotification.
+ */
 - (void)removeStrokeSequence:(MPStrokeSequence *)sequence;
 
 /**
- *  Replaces all the stroke sequences in this database with those from a database given as an input.
+ * Adds all the stroke sequences from the given database to this.
+ * Existing stroke sequences are kept intact.
  *
- *  @param database The database from which to draw the stroke sequences from.
+ * @param database The database from which to draw the stroke sequences from.
+ * Must be non-nil, and not self.
  */
-- (void)replaceStrokeSequencesWithContentsOfDatabase:(MPStrokeSequenceDatabase *)database;
+- (void)addStrokeSequencesFromDatabase:(MPStrokeSequenceDatabase *)database;
 
 - (NSDictionary *)dictionaryRepresentation;
 

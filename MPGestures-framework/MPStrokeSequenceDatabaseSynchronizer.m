@@ -21,11 +21,19 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 @interface MPStrokeSequenceDatabaseSynchronizer ()
 @property (readonly) NSMutableDictionary *databaseByIdentifier;
+@property (readonly) dispatch_queue_t asyncRequestQueue;
 @end
 
 @implementation MPStrokeSequenceDatabaseSynchronizer
 
 - (instancetype)init
+{
+    @throw [NSException exceptionWithName:@"MPInitNotPermittedException"
+                                   reason:nil userInfo:nil];
+    return nil;
+}
+
+- (instancetype)initSynchronizer
 {
     self = [super init];
     if (self)
@@ -46,6 +54,17 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     return self;
 }
 
++ (instancetype)sharedInstance
+{
+    static MPStrokeSequenceDatabaseSynchronizer *synchronizer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        synchronizer = [[MPStrokeSequenceDatabaseSynchronizer alloc] initSynchronizer];
+    });
+    
+    return synchronizer;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -63,6 +82,14 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
           {
               return [key hasPrefix:@"synchronizes-"] && [defs boolForKey:key];
           }]]];
+    
+    for (NSString *dbIdentifier in _continuouslySynchronizedDatabaseIdentifiers)
+    {
+        MPStrokeSequenceDatabase *db = _databaseByIdentifier[dbIdentifier];
+        
+        if (db)
+            [self continuouslySynchronizeDatabase:db];
+    }
 }
 
 - (NSString *)keyForDatabase:(MPStrokeSequenceDatabase *)database
@@ -162,7 +189,6 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
         case MPRESTFulOperationTypeAdd:
             verb = @"POST";
             break;
-            
         case MPRESTFulOperationTypeRemove:
             verb = @"DELETE";
             break;
@@ -177,16 +203,79 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     return verb;
 }
 
+- (NSData *)requestBodyForAddingStrokeSequence:(MPStrokeSequence *)strokeSequence
+                                  intoDatabase:(MPStrokeSequenceDatabase *)database
+                                         error:(NSError **)err
+{
+    assert(strokeSequence);
+    assert(strokeSequence.name);
+    assert(database);
+    assert(database.identifier);
+    
+    NSDictionary *dict = strokeSequence.dictionaryRepresentation;
+    assert(dict);
+    
+    return [NSJSONSerialization dataWithJSONObject:dict
+                                           options:NSJSONWritingPrettyPrinted
+                                             error:err];
+}
+
+- (NSData *)requestBodyForRemovingStrokeSequence:(MPStrokeSequence *)strokeSequence
+                                    fromDatabase:(MPStrokeSequenceDatabase *)database
+                                           error:(NSError **)err
+{
+    assert(strokeSequence);
+    assert(strokeSequence.name);
+    assert(database);
+    assert(database.identifier);
+
+    NSDictionary *dict = @{@"name":strokeSequence.name, @"signature":strokeSequence.signature};
+    
+    return [NSJSONSerialization dataWithJSONObject:dict
+                                    options:NSJSONWritingPrettyPrinted error:err];
+}
+
+- (NSData *)HTTPBodyForStrokeSequence:(MPStrokeSequence *)strokeSequence
+                             database:(MPStrokeSequenceDatabase *)database
+                            operation:(MPRESTFulOperationType)operationType
+                                error:(NSError **)err
+{
+    switch (operationType) {
+        case MPRESTFulOperationTypeList:
+            return [NSData data];
+            break;
+        case MPRESTFulOperationTypeAdd:
+            return [self requestBodyForAddingStrokeSequence:strokeSequence
+                                               intoDatabase:database error:err];
+        case MPRESTFulOperationTypeRemove:
+            return [self requestBodyForRemovingStrokeSequence:strokeSequence
+                                                 fromDatabase:database error:err];
+        default:
+            assert(false);
+            break;
+    }
+}
+
 - (id)requestWithStrokeSequence:(MPStrokeSequence *)strokeSequence
                      inDatabase:(MPStrokeSequenceDatabase *)db
                       operation:(MPRESTFulOperationType)operationType
                           error:(NSError **)err
 {
+    // verb
     NSMutableURLRequest *req = [NSURLRequest requestWithURL:[self URLForStrokeSequence:strokeSequence inDatabase:db]
                                          cachePolicy:NSURLRequestReloadIgnoringCacheData
                                      timeoutInterval:-1];
     [req setHTTPMethod:[self HTTPVerbForOperationType:operationType]];
     
+    // content
+    NSData *body = [self HTTPBodyForStrokeSequence:strokeSequence database:db operation:operationType error:err];
+    
+    if (!body)
+        return nil;
+
+    [req setHTTPBody:body];
+    
+    // run the request
     NSHTTPURLResponse *resp = nil;
     NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:&resp error:err];
     
@@ -221,21 +310,28 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     return nil;
 }
 
-- (MPStrokeSequenceDatabase *)databaseWithIdentifier:(NSString *)identifier error:(NSError **)err
+- (MPStrokeSequenceDatabase *)databaseWithIdentifier:(NSString *)identifier
+                                               error:(NSError **)err
 {
     return [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[self URLForDatabaseWithIdentifier:identifier] error:err];
 }
 
-- (BOOL)addStrokeSequence:(MPStrokeSequence *)strokeSequence intoDatabase:(MPStrokeSequenceDatabase *)db
-                    error:(NSError *__autoreleasing *)err
+- (BOOL)addStrokeSequence:(MPStrokeSequence *)strokeSequence
+             intoDatabase:(MPStrokeSequenceDatabase *)db
+                    error:(NSError **)err
 {
-    return [self requestWithStrokeSequence:strokeSequence inDatabase:db operation:MPRESTFulOperationTypeAdd error:err] != nil;
+    return [self requestWithStrokeSequence:strokeSequence
+                                inDatabase:db
+                                 operation:MPRESTFulOperationTypeAdd error:err] != nil;
 }
 
-- (BOOL)removeStrokeSequence:(MPStrokeSequence *)strokeSequence fromDatabase:(MPStrokeSequenceDatabase *)db
+- (BOOL)removeStrokeSequence:(MPStrokeSequence *)strokeSequence
+                fromDatabase:(MPStrokeSequenceDatabase *)db
                        error:(NSError **)err
 {
-    return [self requestWithStrokeSequence:strokeSequence inDatabase:db operation:MPRESTFulOperationTypeRemove error:err] != nil;
+    return [self requestWithStrokeSequence:strokeSequence
+                                inDatabase:db
+                                 operation:MPRESTFulOperationTypeRemove error:err] != nil;
 }
 
 @end

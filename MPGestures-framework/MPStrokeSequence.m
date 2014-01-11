@@ -82,8 +82,9 @@
 
 - (NSDictionary *)dictionaryRepresentation
 {
-    return @{@"name" : _name,
-             @"strokes" : [_strokes valueForKey:@"dictionaryRepresentation"]};
+    return @{@"name"      : _name,
+             @"strokes"   : [_strokes valueForKey:@"dictionaryRepresentation"],
+             @"signature" : self.signature};
 }
 
 - (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
@@ -131,6 +132,11 @@
         result = prime * result + stroke.hash;
     
     return result;
+}
+
+- (NSString *)signature
+{
+    return [NSString stringWithFormat:@"%lu", self.hash];
 }
 
 - (NSString *)description
