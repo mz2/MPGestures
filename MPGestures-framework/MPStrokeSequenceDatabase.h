@@ -1,5 +1,5 @@
 //
-//  DollarStrokeSequenceDatabase.h
+//  MPStrokeSequenceDatabase.h
 //  DollarP_ObjC
 //
 //  Created by Matias Piipari on 24/12/2013.
@@ -10,12 +10,20 @@
 
 @class MPStrokeSequence;
 
-extern NSString * const DollarStrokeSequenceDatabaseErrorDomain;
+extern NSString * const MPStrokeSequenceDatabaseErrorDomain;
 
-typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
+/** A notification with this name is fired after a named stroke sequence has been added. 
+  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name.*/
+extern NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification;
+
+/** Fired after a named stroke sequence has been removed.
+  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name. */
+extern NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification;
+
+typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
 {
-    DollarStrokeSequenceDatabaseErrorCodeUnknown = 0,
-    DollarStrokeSequenceDatabaseErrorCodeInvalidFileFormat = 1
+    MPStrokeSequenceDatabaseErrorCodeUnknown = 0,
+    MPStrokeSequenceDatabaseErrorCodeInvalidFileFormat = 1
     
 };
 
@@ -25,6 +33,10 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
  */
 @interface MPStrokeSequenceDatabase : NSObject
 
+/**
+ * A unique identifier for the stroke sequence database.
+ * Only one database with this identifier is stored on a stroke sequence server.
+ */
 @property (readonly) NSString *identifier;
 
 @property (readonly) NSSet *strokeSequenceNameSet;
@@ -34,6 +46,15 @@ typedef NS_ENUM(NSInteger, DollarStrokeSequenceDatabaseErrorCode)
 @property (readonly) NSSet *strokeSequenceSet;
 
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence;
+
+- (void)removeStrokeSequence:(MPStrokeSequence *)sequence;
+
+/**
+ *  Replaces all the stroke sequences in this database with those from a database given as an input.
+ *
+ *  @param database The database from which to draw the stroke sequences from.
+ */
+- (void)replaceStrokeSequencesWithContentsOfDatabase:(MPStrokeSequenceDatabase *)database;
 
 - (NSDictionary *)dictionaryRepresentation;
 

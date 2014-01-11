@@ -1,5 +1,5 @@
 //
-//  DollarStrokeSequence.m
+//  MPDollarStrokeSequence.m
 //  DollarP_ObjC
 //
 //  Created by Matias Piipari on 24/12/2013.
@@ -88,7 +88,7 @@
 
 - (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
 {
-    NSArray *points = [self.strokes valueForKeyPath:@"unionOfArrays.self"];
+    NSArray *points = [self.strokes valueForKeyPath:@"@unionOfArrays.self"];
     return [[MPPointCloud alloc] initWithName:self.name
                                            points:points
                                 resampledToNumber:resampledPointCount
@@ -135,7 +135,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<DollarStrokeSequence: name:%@ (%lu strokes) >",
+    return [NSString stringWithFormat:@"<MPDollarStrokeSequence: name:%@ (%lu strokes) >",
             self.name,
             (unsigned long)self.strokeCount];
 }

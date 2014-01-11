@@ -100,6 +100,11 @@
     
     XCTAssertTrue([db isEqual:deserialisedDB], @"The original and the deserialised database are equal.");
     
+    [db removeStrokeSequence:seq];
+    
+    XCTAssertTrue([db.strokeSequenceSet isEqualToSet:[NSSet setWithArray:@[]]],
+                  @"No sequences after the only one was removed.");
+    
 }
 
 @end

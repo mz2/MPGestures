@@ -211,7 +211,8 @@
         MPStrokeSequence *selectedSeq
         = self.gestureView.additionalStrokeSequences
         [self.gestureView.selectedAdditionalStrokeSequenceIndex];
-        [self.db[selectedSeq.name] removeObject:selectedSeq];
+        
+        [self.db removeStrokeSequence:selectedSeq];
         
         self.gestureView.additionalStrokeSequences =
         [self.gestureView.additionalStrokeSequences filteredArrayUsingPredicate:

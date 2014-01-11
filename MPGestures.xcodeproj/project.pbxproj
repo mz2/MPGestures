@@ -8,6 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		5F09E1E2187697A80077DF4F /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
+		5F367C0A187A935A007EC421 /* MPPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C06187A935A007EC421 /* MPPoint.h */; };
+		5F367C0B187A935A007EC421 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C07187A935A007EC421 /* MPPoint.m */; };
+		5F367C0C187A935A007EC421 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C07187A935A007EC421 /* MPPoint.m */; };
+		5F367C0D187A935A007EC421 /* MPPointCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C08187A935A007EC421 /* MPPointCloud.h */; };
+		5F367C0E187A935A007EC421 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C09187A935A007EC421 /* MPPointCloud.m */; };
+		5F367C0F187A935A007EC421 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C09187A935A007EC421 /* MPPointCloud.m */; };
+		5F367C12187A936B007EC421 /* MPStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C10187A936B007EC421 /* MPStroke.h */; };
+		5F367C13187A936B007EC421 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C11187A936B007EC421 /* MPStroke.m */; };
+		5F367C14187A936B007EC421 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C11187A936B007EC421 /* MPStroke.m */; };
+		5F367C17187A9381007EC421 /* MPStrokeSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C15187A9381007EC421 /* MPStrokeSequence.h */; };
+		5F367C18187A9381007EC421 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C16187A9381007EC421 /* MPStrokeSequence.m */; };
+		5F367C19187A9381007EC421 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C16187A9381007EC421 /* MPStrokeSequence.m */; };
+		5F367C1C187A9387007EC421 /* MPSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C1A187A9387007EC421 /* MPSymbol.h */; };
+		5F367C1D187A9387007EC421 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C1B187A9387007EC421 /* MPSymbol.m */; };
+		5F367C1E187A9387007EC421 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C1B187A9387007EC421 /* MPSymbol.m */; };
+		5F367C21187A938D007EC421 /* MPStrokeSequenceDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C1F187A938D007EC421 /* MPStrokeSequenceDatabase.h */; };
+		5F367C22187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C20187A938D007EC421 /* MPStrokeSequenceDatabase.m */; };
+		5F367C23187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C20187A938D007EC421 /* MPStrokeSequenceDatabase.m */; };
+		5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C26187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h */; };
+		5F367C29187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C27187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m */; };
+		5F367C2A187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C27187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m */; };
 		5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73578B186CF42E005951E7 /* MPGestureView.h */; };
 		5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73578C186CF42E005951E7 /* MPGestureView.m */; };
 		5F735796186CF478005951E7 /* MPDollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735795186CF478005951E7 /* MPDollarPGestureRecognizer.m */; };
@@ -17,27 +38,9 @@
 		5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */; };
 		5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
 		5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
-		5F7357AF186CF495005951E7 /* MPPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579B186CF495005951E7 /* MPPoint.h */; };
-		5F7357B0186CF495005951E7 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579C186CF495005951E7 /* MPPoint.m */; };
-		5F7357B1186CF495005951E7 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579C186CF495005951E7 /* MPPoint.m */; };
-		5F7357B2186CF495005951E7 /* MPPointCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579D186CF495005951E7 /* MPPointCloud.h */; };
-		5F7357B3186CF495005951E7 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579E186CF495005951E7 /* MPPointCloud.m */; };
-		5F7357B4186CF495005951E7 /* MPPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579E186CF495005951E7 /* MPPointCloud.m */; };
 		5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */; };
 		5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
 		5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
-		5F7357B8186CF495005951E7 /* MPStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A1186CF495005951E7 /* MPStroke.h */; };
-		5F7357B9186CF495005951E7 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A2186CF495005951E7 /* MPStroke.m */; };
-		5F7357BA186CF495005951E7 /* MPStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A2186CF495005951E7 /* MPStroke.m */; };
-		5F7357BB186CF495005951E7 /* MPStrokeSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A3186CF495005951E7 /* MPStrokeSequence.h */; };
-		5F7357BC186CF495005951E7 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A4186CF495005951E7 /* MPStrokeSequence.m */; };
-		5F7357BD186CF495005951E7 /* MPStrokeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A4186CF495005951E7 /* MPStrokeSequence.m */; };
-		5F7357BE186CF495005951E7 /* MPStrokeSequenceDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */; };
-		5F7357BF186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */; };
-		5F7357C0186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */; };
-		5F7357C1186CF495005951E7 /* MPSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357A7186CF495005951E7 /* MPSymbol.h */; };
-		5F7357C2186CF495005951E7 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A8186CF495005951E7 /* MPSymbol.m */; };
-		5F7357C3186CF495005951E7 /* MPSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A8186CF495005951E7 /* MPSymbol.m */; };
 		5F7357C7186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */; };
 		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
@@ -157,6 +160,20 @@
 
 /* Begin PBXFileReference section */
 		5F2C0290186CF947003CFD04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5F367C06187A935A007EC421 /* MPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPoint.h; path = "MPGestures-framework/MPPoint.h"; sourceTree = SOURCE_ROOT; };
+		5F367C07187A935A007EC421 /* MPPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPoint.m; path = "MPGestures-framework/MPPoint.m"; sourceTree = SOURCE_ROOT; };
+		5F367C08187A935A007EC421 /* MPPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloud.h; path = "MPGestures-framework/MPPointCloud.h"; sourceTree = SOURCE_ROOT; };
+		5F367C09187A935A007EC421 /* MPPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloud.m; path = "MPGestures-framework/MPPointCloud.m"; sourceTree = SOURCE_ROOT; };
+		5F367C10187A936B007EC421 /* MPStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStroke.h; path = "MPGestures-framework/MPStroke.h"; sourceTree = SOURCE_ROOT; };
+		5F367C11187A936B007EC421 /* MPStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStroke.m; path = "MPGestures-framework/MPStroke.m"; sourceTree = SOURCE_ROOT; };
+		5F367C15187A9381007EC421 /* MPStrokeSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequence.h; path = "MPGestures-framework/MPStrokeSequence.h"; sourceTree = SOURCE_ROOT; };
+		5F367C16187A9381007EC421 /* MPStrokeSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequence.m; path = "MPGestures-framework/MPStrokeSequence.m"; sourceTree = SOURCE_ROOT; };
+		5F367C1A187A9387007EC421 /* MPSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSymbol.h; path = "MPGestures-framework/MPSymbol.h"; sourceTree = SOURCE_ROOT; };
+		5F367C1B187A9387007EC421 /* MPSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSymbol.m; path = "MPGestures-framework/MPSymbol.m"; sourceTree = SOURCE_ROOT; };
+		5F367C1F187A938D007EC421 /* MPStrokeSequenceDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDatabase.h; path = "MPGestures-framework/MPStrokeSequenceDatabase.h"; sourceTree = SOURCE_ROOT; };
+		5F367C20187A938D007EC421 /* MPStrokeSequenceDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDatabase.m; path = "MPGestures-framework/MPStrokeSequenceDatabase.m"; sourceTree = SOURCE_ROOT; };
+		5F367C26187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDatabaseSynchronizer.h; path = "MPGestures-framework/MPStrokeSequenceDatabaseSynchronizer.h"; sourceTree = SOURCE_ROOT; };
+		5F367C27187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDatabaseSynchronizer.m; path = "MPGestures-framework/MPStrokeSequenceDatabaseSynchronizer.m"; sourceTree = SOURCE_ROOT; };
 		5F73578B186CF42E005951E7 /* MPGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGestureView.h; path = "MPGestures-framework/MPGestureView.h"; sourceTree = SOURCE_ROOT; };
 		5F73578C186CF42E005951E7 /* MPGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGestureView.m; path = "MPGestures-framework/MPGestureView.m"; sourceTree = SOURCE_ROOT; };
 		5F735794186CF478005951E7 /* MPDollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPGestureRecognizer.h; path = "MPGestures-framework/MPDollarPGestureRecognizer.h"; sourceTree = SOURCE_ROOT; };
@@ -165,20 +182,8 @@
 		5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudRecognizer.m; path = "MPGestures-framework/MPDollarPointCloudRecognizer.m"; sourceTree = "<group>"; };
 		5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudUtility.h; path = "MPGestures-framework/MPDollarPointCloudUtility.h"; sourceTree = "<group>"; };
 		5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudUtility.m; path = "MPGestures-framework/MPDollarPointCloudUtility.m"; sourceTree = "<group>"; };
-		5F73579B186CF495005951E7 /* MPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPoint.h; path = "MPGestures-framework/MPPoint.h"; sourceTree = "<group>"; };
-		5F73579C186CF495005951E7 /* MPPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPoint.m; path = "MPGestures-framework/MPPoint.m"; sourceTree = "<group>"; };
-		5F73579D186CF495005951E7 /* MPPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloud.h; path = "MPGestures-framework/MPPointCloud.h"; sourceTree = "<group>"; };
-		5F73579E186CF495005951E7 /* MPPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloud.m; path = "MPGestures-framework/MPPointCloud.m"; sourceTree = "<group>"; };
 		5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloudRecognition.h; path = "MPGestures-framework/MPPointCloudRecognition.h"; sourceTree = "<group>"; };
 		5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloudRecognition.m; path = "MPGestures-framework/MPPointCloudRecognition.m"; sourceTree = "<group>"; };
-		5F7357A1186CF495005951E7 /* MPStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStroke.h; path = "MPGestures-framework/MPStroke.h"; sourceTree = "<group>"; };
-		5F7357A2186CF495005951E7 /* MPStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStroke.m; path = "MPGestures-framework/MPStroke.m"; sourceTree = "<group>"; };
-		5F7357A3186CF495005951E7 /* MPStrokeSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequence.h; path = "MPGestures-framework/MPStrokeSequence.h"; sourceTree = "<group>"; };
-		5F7357A4186CF495005951E7 /* MPStrokeSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequence.m; path = "MPGestures-framework/MPStrokeSequence.m"; sourceTree = "<group>"; };
-		5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDatabase.h; path = "MPGestures-framework/MPStrokeSequenceDatabase.h"; sourceTree = "<group>"; };
-		5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDatabase.m; path = "MPGestures-framework/MPStrokeSequenceDatabase.m"; sourceTree = "<group>"; };
-		5F7357A7186CF495005951E7 /* MPSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSymbol.h; path = "MPGestures-framework/MPSymbol.h"; sourceTree = "<group>"; };
-		5F7357A8186CF495005951E7 /* MPSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSymbol.m; path = "MPGestures-framework/MPSymbol.m"; sourceTree = "<group>"; };
 		5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
 		5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
 		5F7357CA186CF4E8005951E7 /* MPGestures-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MPGestures-Info.plist"; path = "MPGestures-framework/MPGestures-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -303,6 +308,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F367C03187A9338007EC421 /* Domain Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F367C06187A935A007EC421 /* MPPoint.h */,
+				5F367C07187A935A007EC421 /* MPPoint.m */,
+				5F367C08187A935A007EC421 /* MPPointCloud.h */,
+				5F367C09187A935A007EC421 /* MPPointCloud.m */,
+				5F367C10187A936B007EC421 /* MPStroke.h */,
+				5F367C11187A936B007EC421 /* MPStroke.m */,
+				5F367C15187A9381007EC421 /* MPStrokeSequence.h */,
+				5F367C16187A9381007EC421 /* MPStrokeSequence.m */,
+				5F367C1A187A9387007EC421 /* MPSymbol.h */,
+				5F367C1B187A9387007EC421 /* MPSymbol.m */,
+				5F367C1F187A938D007EC421 /* MPStrokeSequenceDatabase.h */,
+				5F367C20187A938D007EC421 /* MPStrokeSequenceDatabase.m */,
+			);
+			name = "Domain Model";
+			sourceTree = "<group>";
+		};
+		5F367C25187A93D3007EC421 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F367C26187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h */,
+				5F367C27187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		5F735792186CF463005951E7 /* OSX */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,10 +447,12 @@
 		5FF3F16118690ED500466512 /* Gestures.framework */ = {
 			isa = PBXGroup;
 			children = (
-				5F7357C4186CF49B005951E7 /* Cocoa Categories */,
 				5F735793186CF467005951E7 /* iOS */,
 				5F735792186CF463005951E7 /* OSX */,
-				DC21979C165EA5CB009CFCF3 /* Point Cloud Recognition */,
+				5F7357C4186CF49B005951E7 /* Cocoa Categories */,
+				5F367C25187A93D3007EC421 /* Services */,
+				5F367C03187A9338007EC421 /* Domain Model */,
+				DC21979C165EA5CB009CFCF3 /* Point Cloud Recognizer */,
 				5FF3F16218690ED500466512 /* Supporting Files */,
 			);
 			name = Gestures.framework;
@@ -566,29 +601,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DC21979C165EA5CB009CFCF3 /* Point Cloud Recognition */ = {
+		DC21979C165EA5CB009CFCF3 /* Point Cloud Recognizer */ = {
 			isa = PBXGroup;
 			children = (
 				5F735797186CF495005951E7 /* MPDollarPointCloudRecognizer.h */,
 				5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */,
 				5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */,
 				5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */,
-				5F73579B186CF495005951E7 /* MPPoint.h */,
-				5F73579C186CF495005951E7 /* MPPoint.m */,
-				5F73579D186CF495005951E7 /* MPPointCloud.h */,
-				5F73579E186CF495005951E7 /* MPPointCloud.m */,
 				5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */,
 				5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */,
-				5F7357A1186CF495005951E7 /* MPStroke.h */,
-				5F7357A2186CF495005951E7 /* MPStroke.m */,
-				5F7357A3186CF495005951E7 /* MPStrokeSequence.h */,
-				5F7357A4186CF495005951E7 /* MPStrokeSequence.m */,
-				5F7357A5186CF495005951E7 /* MPStrokeSequenceDatabase.h */,
-				5F7357A6186CF495005951E7 /* MPStrokeSequenceDatabase.m */,
-				5F7357A7186CF495005951E7 /* MPSymbol.h */,
-				5F7357A8186CF495005951E7 /* MPSymbol.m */,
 			);
-			name = "Point Cloud Recognition";
+			name = "Point Cloud Recognizer";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -600,16 +623,17 @@
 			files = (
 				5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */,
 				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
-				5F7357B8186CF495005951E7 /* MPStroke.h in Headers */,
+				5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */,
 				5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */,
 				5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */,
-				5F7357B2186CF495005951E7 /* MPPointCloud.h in Headers */,
-				5F7357BE186CF495005951E7 /* MPStrokeSequenceDatabase.h in Headers */,
-				5F7357AF186CF495005951E7 /* MPPoint.h in Headers */,
-				5F7357BB186CF495005951E7 /* MPStrokeSequence.h in Headers */,
+				5F367C12187A936B007EC421 /* MPStroke.h in Headers */,
+				5F367C0A187A935A007EC421 /* MPPoint.h in Headers */,
 				5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */,
-				5F7357C1186CF495005951E7 /* MPSymbol.h in Headers */,
+				5F367C17187A9381007EC421 /* MPStrokeSequence.h in Headers */,
+				5F367C0D187A935A007EC421 /* MPPointCloud.h in Headers */,
 				5F7357C7186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h in Headers */,
+				5F367C1C187A9387007EC421 /* MPSymbol.h in Headers */,
+				5F367C21187A938D007EC421 /* MPStrokeSequenceDatabase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,14 +891,15 @@
 				5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */,
 				5F7357AB186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
 				5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
-				5F7357B4186CF495005951E7 /* MPPointCloud.m in Sources */,
-				5F7357C0186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */,
-				5F7357C3186CF495005951E7 /* MPSymbol.m in Sources */,
-				5F7357BD186CF495005951E7 /* MPStrokeSequence.m in Sources */,
-				5F7357BA186CF495005951E7 /* MPStroke.m in Sources */,
+				5F367C1E187A9387007EC421 /* MPSymbol.m in Sources */,
+				5F367C0F187A935A007EC421 /* MPPointCloud.m in Sources */,
+				5F367C23187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */,
+				5F367C2A187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */,
+				5F367C0C187A935A007EC421 /* MPPoint.m in Sources */,
+				5F367C14187A936B007EC421 /* MPStroke.m in Sources */,
 				5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
 				5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
-				5F7357B1186CF495005951E7 /* MPPoint.m in Sources */,
+				5F367C19187A9381007EC421 /* MPStrokeSequence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,20 +918,21 @@
 				5F735796186CF478005951E7 /* MPDollarPGestureRecognizer.m in Sources */,
 				DC219732165E7072009CFCF3 /* main.m in Sources */,
 				DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */,
+				5F367C0E187A935A007EC421 /* MPPointCloud.m in Sources */,
+				5F367C22187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */,
 				5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
+				5F367C29187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */,
 				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
+				5F367C13187A936B007EC421 /* MPStroke.m in Sources */,
 				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,
 				5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
+				5F367C0B187A935A007EC421 /* MPPoint.m in Sources */,
 				5F7357AA186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
-				5F7357C2186CF495005951E7 /* MPSymbol.m in Sources */,
+				5F367C18187A9381007EC421 /* MPStrokeSequence.m in Sources */,
 				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
-				5F7357BF186CF495005951E7 /* MPStrokeSequenceDatabase.m in Sources */,
+				5F367C1D187A9387007EC421 /* MPSymbol.m in Sources */,
 				5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
-				5F7357BC186CF495005951E7 /* MPStrokeSequence.m in Sources */,
-				5F7357B9186CF495005951E7 /* MPStroke.m in Sources */,
-				5F7357B3186CF495005951E7 /* MPPointCloud.m in Sources */,
 				DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */,
-				5F7357B0186CF495005951E7 /* MPPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

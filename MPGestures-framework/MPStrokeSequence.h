@@ -1,5 +1,5 @@
 //
-//  DollarStrokeSequence.h
+//  MPDollarStrokeSequence.h
 //  DollarP_ObjC
 //
 //  Created by Matias Piipari on 24/12/2013.

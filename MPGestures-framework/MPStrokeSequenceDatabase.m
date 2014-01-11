@@ -1,5 +1,5 @@
 //
-//  DollarStrokeSequenceDatabase.m
+//  MPStrokeSequenceDatabase.m
 //  DollarP_ObjC
 //
 //  Created by Matias Piipari on 24/12/2013.
@@ -9,7 +9,13 @@
 #import "MPStrokeSequenceDatabase.h"
 #import "MPStrokeSequence.h"
 
-NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenceDatabaseErrorDomain";
+NSString * const MPStrokeSequenceDatabaseErrorDomain = @"MPStrokeSequenceDatabaseErrorDomain";
+
+NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification
+    = @"MPStrokeSequenceDatabaseDidAddSequenceNotification";
+NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification
+    = @"MPStrokeSequenceDatabaseDidRemoveSequenceNotification";
+
 
 @interface MPStrokeSequenceDatabase ()
 @property NSMutableDictionary *namedStrokeSequences;
@@ -42,7 +48,7 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
             = [NSMutableDictionary dictionaryWithCapacity:strokeSequenceMap.count];
         
         for (id k in strokeSequenceMap)
-            _namedStrokeSequences[k] = [NSSet setWithArray:[MPStrokeSequence strokeSequencesWithArrayOfDictionaries:strokeSequenceMap[k]]];
+            _namedStrokeSequences[k] = [NSMutableSet setWithArray:[MPStrokeSequence strokeSequencesWithArrayOfDictionaries:strokeSequenceMap[k]]];
     }
     
     return self;
@@ -94,6 +100,23 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
         _namedStrokeSequences[sequence.name] = [NSMutableSet setWithCapacity:64];
     
     [_namedStrokeSequences[sequence.name] addObject:sequence];
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
+                      object:self userInfo:@{@"name":sequence.name}];
+}
+
+- (void)removeStrokeSequence:(MPStrokeSequence *)sequence
+{
+    assert(self[sequence.name]);
+    [self[sequence.name] removeObject:sequence];
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+     MPStrokeSequenceDatabaseDidRemoveSequenceNotification
+                                                        object:self
+                                                      userInfo:@{@"name":sequence.name}];
 }
 
 - (BOOL)isEqual:(MPStrokeSequenceDatabase *)object
@@ -139,7 +162,8 @@ NSString * const DollarStrokeSequenceDatabaseErrorDomain = @"DollarStrokeSequenc
 
 - (NSSet *)strokeSequenceSet
 {
-    return [NSSet setWithArray:[self.namedStrokeSequences allValues]];
+    return [NSSet setWithArray:
+            [self.namedStrokeSequences.allValues valueForKeyPath:@"@unionOfSets.self"]];
 }
 
 @end
