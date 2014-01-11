@@ -64,8 +64,17 @@
     
     [_previousGestureButton setEnabled:NO];
     [_nextGestureButton setEnabled:NO];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(databaseDidChangeExternally:)
+                                                 name:MPStrokeSequenceDatabaseChangedExternallyNotification
+                                               object:self.db];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (NSString *)strokeSequencePath
 {
@@ -303,6 +312,14 @@
     [self.submitGestureButton setEnabled:self.gestureLabelEntered];
 }
 
+#pragma mark - 
 
+- (void)databaseDidChangeExternally:(NSNotification *)obj
+{
+    MPStrokeSequenceDatabase *db = obj.object;
+    assert(db == self.db);
+    
+    [self refresh];
+}
 
 @end

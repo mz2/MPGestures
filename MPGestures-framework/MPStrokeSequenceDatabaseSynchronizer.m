@@ -99,7 +99,9 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 - (void)continuouslySynchronizeDatabase:(MPStrokeSequenceDatabase *)database
 {
-    assert(_databaseByIdentifier[database.identifier] == database);
+    if (_databaseByIdentifier[database.identifier])
+        assert(_databaseByIdentifier[database.identifier] == database);
+    
     _databaseByIdentifier[database.identifier] = database;
     
     NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
@@ -153,12 +155,22 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 - (NSString *)baseURI
 {
-    return @"http://localhost:3000";
+    return @"http://localhost:3000/gestures";
 }
 
-- (NSURL *)baseURL
+- (NSURL *)URLForDatabaseIdentifiers
 {
-    return [NSURL URLWithString:self.baseURI];
+    return [NSURL URLWithString:[[self baseURI] stringByAppendingPathComponent:@"index"]];
+}
+
+- (NSURL *)URLForDatabaseWithIdentifier:(NSString *)databaseID
+{
+    return [NSURL URLWithString:[[self baseURI] stringByAppendingPathComponent:databaseID]];
+}
+
+- (NSURL *)URLForDatabase:(MPStrokeSequenceDatabase *)database
+{
+    return [[NSURL URLWithString:self.baseURI] URLByAppendingPathComponent:database.identifier];
 }
 
 - (NSURL *)URLForStrokeSequence:(MPStrokeSequence *)strokeSequence
@@ -169,14 +181,7 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     assert(strokeSequence);
     assert(strokeSequence.name);
     
-    return [[[self baseURL] URLByAppendingPathComponent:db.identifier] URLByAppendingPathComponent:strokeSequence.name];
-}
-
-- (NSURL *)URLForDatabaseWithIdentifier:(NSString *)identifier
-{
-    assert(identifier);
-    
-    return [[self baseURL] URLByAppendingPathComponent:identifier];
+    return [[self URLForDatabase:db] URLByAppendingPathComponent:strokeSequence.name];
 }
 
 - (NSString *)HTTPVerbForOperationType:(MPRESTFulOperationType)operationType
@@ -261,13 +266,13 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
                       operation:(MPRESTFulOperationType)operationType
                           error:(NSError **)err
 {
-    // verb
-    NSMutableURLRequest *req = [NSURLRequest requestWithURL:[self URLForStrokeSequence:strokeSequence inDatabase:db]
-                                         cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                     timeoutInterval:-1];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[self URLForStrokeSequence:strokeSequence inDatabase:db]
+                                                       cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                   timeoutInterval:-1];
+    [req setValue:@"application/json" forHTTPHeaderField:@"content-type"];
+    
     [req setHTTPMethod:[self HTTPVerbForOperationType:operationType]];
     
-    // content
     NSData *body = [self HTTPBodyForStrokeSequence:strokeSequence database:db operation:operationType error:err];
     
     if (!body)
@@ -314,6 +319,15 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
                                                error:(NSError **)err
 {
     return [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[self URLForDatabaseWithIdentifier:identifier] error:err];
+}
+
+- (NSArray *)databaseIdentifiersWithError:(NSError **)err
+{
+    NSData *respData = [NSData dataWithContentsOfURL:[self URLForDatabaseIdentifiers] options:0 error:err];
+    if (!respData)
+        return nil;
+    
+    return [NSJSONSerialization JSONObjectWithData:respData options:0 error:err];
 }
 
 - (BOOL)addStrokeSequence:(MPStrokeSequence *)strokeSequence

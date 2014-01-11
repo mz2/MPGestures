@@ -58,6 +58,11 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseSynchronizerErrorCode)
                        error:(NSError **)err;
 
 /**
+ *  All identifiers for stroke sequence databases stored on the server.
+ */
+- (NSArray *)databaseIdentifiersWithError:(NSError **)err;
+
+/**
  *  Constructs a new stroke sequence database 
  */
 - (MPStrokeSequenceDatabase *)databaseWithIdentifier:(NSString *)identifier

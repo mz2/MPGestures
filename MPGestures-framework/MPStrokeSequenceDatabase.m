@@ -15,7 +15,8 @@ NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification
     = @"MPStrokeSequenceDatabaseDidAddSequenceNotification";
 NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification
     = @"MPStrokeSequenceDatabaseDidRemoveSequenceNotification";
-
+NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
+    = @"MPStrokeSequenceDatabaseChangedExternallyNotification";
 
 @interface MPStrokeSequenceDatabase ()
 @property NSMutableDictionary *namedStrokeSequences;

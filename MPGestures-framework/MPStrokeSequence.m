@@ -136,7 +136,7 @@
 
 - (NSString *)signature
 {
-    return [NSString stringWithFormat:@"%lu", self.hash];
+    return [NSString stringWithFormat:@"%lx", (unsigned long)self.hash];
 }
 
 - (NSString *)description
