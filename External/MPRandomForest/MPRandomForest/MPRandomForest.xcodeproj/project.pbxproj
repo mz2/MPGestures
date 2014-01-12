@@ -21,6 +21,8 @@
 		5FF318C71882937400C8672D /* MPRandomForest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858618186B6CBB00AD762E /* MPRandomForest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF318CD188293F300C8672D /* MPDataTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF318CB188293F300C8672D /* MPDataTable.h */; };
 		5FF318CE188293F300C8672D /* MPDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318CC188293F300C8672D /* MPDataTable.m */; };
+		5FF318D11882B94100C8672D /* NSNumber+NumericalType.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF318CF1882B94100C8672D /* NSNumber+NumericalType.h */; };
+		5FF318D21882B94100C8672D /* NSNumber+NumericalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318D01882B94100C8672D /* NSNumber+NumericalType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		5F858657186B706600AD762E /* MPDataSetTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDataSetTransformer.h; sourceTree = "<group>"; };
 		5FF318CB188293F300C8672D /* MPDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDataTable.h; path = MPRandomForest/MPDataTable.h; sourceTree = "<group>"; };
 		5FF318CC188293F300C8672D /* MPDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDataTable.m; path = MPRandomForest/MPDataTable.m; sourceTree = "<group>"; };
+		5FF318CF1882B94100C8672D /* NSNumber+NumericalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+NumericalType.h"; path = "MPRandomForest/NSNumber+NumericalType.h"; sourceTree = "<group>"; };
+		5FF318D01882B94100C8672D /* NSNumber+NumericalType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+NumericalType.m"; path = "MPRandomForest/NSNumber+NumericalType.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		5F8585FE186B6CBB00AD762E = {
 			isa = PBXGroup;
 			children = (
+				5FF318D31882BA5200C8672D /* Categories */,
 				5FF318CA188293CA00C8672D /* Data Set */,
 				5F858611186B6CBB00AD762E /* MPRandomForest */,
 				5F858626186B6CBB00AD762E /* MPRandomForestTests */,
@@ -192,6 +197,15 @@
 			name = "Data Set";
 			sourceTree = "<group>";
 		};
+		5FF318D31882BA5200C8672D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5FF318CF1882B94100C8672D /* NSNumber+NumericalType.h */,
+				5FF318D01882B94100C8672D /* NSNumber+NumericalType.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -201,6 +215,7 @@
 			files = (
 				5FF318C71882937400C8672D /* MPRandomForest.h in Headers */,
 				5FF318CD188293F300C8672D /* MPDataTable.h in Headers */,
+				5FF318D11882B94100C8672D /* NSNumber+NumericalType.h in Headers */,
 				5F858659186B706600AD762E /* MPDataSetTransformer.h in Headers */,
 				5F858655186B6EFC00AD762E /* MPDataSet.h in Headers */,
 			);
@@ -326,6 +341,7 @@
 			files = (
 				5FF318CE188293F300C8672D /* MPDataTable.m in Sources */,
 				5F85861A186B6CBB00AD762E /* MPRandomForest.mm in Sources */,
+				5FF318D21882B94100C8672D /* NSNumber+NumericalType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

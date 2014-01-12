@@ -13,8 +13,10 @@
  */
 typedef NS_ENUM(NSUInteger, MPColumnType) {
     MPColumnTypeUnknown = 0,
-    MPColumnTypeIntegral = 1,
-    MPColumnTypeFloatingPoint
+    MPColumnTypeCategorical = 1,
+    MPColumnTypeIntegral = 2,
+    MPColumnTypeFloatingPoint = 3,
+    MPColumnTypeBinary = 4
 };
 
 @protocol MPDatum;
@@ -28,6 +30,11 @@ typedef NS_ENUM(NSUInteger, MPColumnType) {
 
 @property (readonly) NSUInteger datumCount;
 
+/**
+ *  The column types of all datum entries in a data set must match that of the data set.
+ */
+@property (readonly) NSArray *columnTypes;
+
 - (id<MPDatum>)datumAtIndex:(NSUInteger)i;
 
 - (void)appendDatum:(id<MPDatum>)datum;
@@ -40,6 +47,10 @@ typedef NSInteger MPDatumLabelIdentifier;
  *  Represents objects that can be thought of as a single row in a data set.
  */
 @protocol MPDatum <NSObject>
+
+/**
+ *  Back pointer to the datum's data set. This should be set only once and only by the data set.
+ */
 @property (weak, readonly) id<MPDataSet> dataSet;
 @property (readonly) NSUInteger columnCount;
 
@@ -50,6 +61,6 @@ typedef NSInteger MPDatumLabelIdentifier;
 - (MPColumnType)typeForColumn:(NSUInteger)index;
 - (id)valueForColumn:(NSUInteger)index;
 
-- (id)initWithValues:(NSArray *)values columnTypes:(NSArray *)columnTypes;
+- (instancetype)initWithValues:(NSArray *)values columnTypes:(NSArray *)columnTypes;
 
 @end

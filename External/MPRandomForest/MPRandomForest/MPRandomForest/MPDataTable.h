@@ -15,11 +15,18 @@
 @interface MPDataTable : NSObject <MPDataSet>
 
 /**
- *  Creates an empty dataset with the specified capacity.
+ *  Creates an empty dataset with the specified column types (all datum entries must have matching column types) and an expected capacity.
  *
- *  @param capacity positive integer, or 0 if required capacity not known.
+ *  @param columnTypes An array of unsigned integers with values from the MPColumnType enum.
+ *  @param capacity positive integer, or 0 if expected required capacity not known.
  */
-- (instancetype)initWithCapacity:(NSUInteger)capacity;
+- (instancetype)initWithColumnTypes:(NSArray *)columnTypes
+                      datumCapacity:(NSUInteger)capacity;
+
+/**
+ *  A shorthand for -initWithColumnTypes:columnTypes datumCapacity:0
+ */
+- (instancetype)initWithColumnTypes:(NSArray *)columnTypes;
 
 /**
  *  An array of id<MPDatum> instances.
@@ -38,8 +45,10 @@
 @interface MPRow : NSObject <MPDatum>
 
 /**
- *  Initialises a row with the given values and column types. The number of values and column types must match.
- */
-- (instancetype)initWithValues:(NSArray *)values columnTypes:(NSArray *)columnTypes;
+  * Initialises a row with the given values and column types.
+  * Both the 'values' and 'columnTypes' arguments are required.
+  */
+- (instancetype)initWithValues:(NSArray *)values
+                   columnTypes:(NSArray *)columnTypes;
 
 @end
