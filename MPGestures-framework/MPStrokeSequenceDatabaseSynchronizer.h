@@ -13,16 +13,34 @@
 extern NSString * const MPStrokeSequenceDatabaseSynchronizerErrorDomain;
 
 /**
-  *  Notifications with this name and an NSError object as the notification's object are posted
+  * Notifications with this name and an NSError object as the notification's object are posted
   * whenever continous synchronization hits issues.
   */
 extern NSString * const MPStrokeSequenceDatabaseSynchronizerErrorNotification;
+
+/**
+  * Posted by the synchronizer whenever it has successfully finished synchronising the state of an object (add / remove).
+  * The notification's object is the object that was synchronized, the database it belongs to is passed with the key "database" in user info, and an operation type (NSNumber with values from MPSynchronizerOperationType) that was conducted is passed with the key 'operationType'.
+  */
+extern NSString * const MPStrokeSequenceDatabaseObjectSynchronizedNotification;
+
 
 typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseSynchronizerErrorCode)
 {
     MPStrokeSequenceDatabaseSynchronizerErrorCodeUnknown = 0,
     MPStrokeSequenceDatabaseSynchronizerErrorCodeInvalidResponse = 1,
     MPStrokeSequenceDatabaseSynchronizerErrorCodeServerReturnedError = 2
+};
+
+/**
+ *  The type of an operation that the synchronizer completes for an object.
+ */
+typedef NS_ENUM(NSInteger, MPSynchronizerOperationType)
+{
+    MPSynchronizerOperationTypeUnknown = 0,
+    MPSynchronizerOperationTypeList = 1,
+    MPSynchronizerOperationTypeAdd = 2,
+    MPSynchronizerOperationTypeRemove = 3
 };
 
 /**

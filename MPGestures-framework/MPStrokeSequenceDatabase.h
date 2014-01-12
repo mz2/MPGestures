@@ -13,11 +13,11 @@
 extern NSString * const MPStrokeSequenceDatabaseErrorDomain;
 
 /** A notification with this name is fired after a named stroke sequence has been added. 
-  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name.*/
+  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name, and 'strokeSequence' for the sequence object that was added.*/
 extern NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification;
 
 /** Fired after a named stroke sequence has been removed.
-  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name. */
+  * The object of the notification is the database, and a userInfo dictionary with 'name' key is included with the stroke sequence's name, and 'strokeSequence' for the sequence object that was removed. */
 extern NSString * const MPStrokeSequenceDatabaseDidRemoveSequenceNotification;
 
 /**

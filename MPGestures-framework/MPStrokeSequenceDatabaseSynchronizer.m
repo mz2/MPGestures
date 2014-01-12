@@ -12,12 +12,8 @@
 
 NSString * const MPStrokeSequenceDatabaseSynchronizerErrorDomain = @"MPStrokeSequenceDatabaseSynchronizerErrorDomain";
 NSString * const MPStrokeSequenceDatabaseSynchronizerErrorNotification = @"MPStrokeSequenceDatabaseSynchronizerErrorNotification";
-typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
-{
-    MPRESTFulOperationTypeList = 0,
-    MPRESTFulOperationTypeAdd = 1,
-    MPRESTFulOperationTypeRemove = 2
-};
+NSString * const MPStrokeSequenceDatabaseObjectSynchronizedNotification =
+    @"MPStrokeSequenceDatabaseObjectSynchronizedNotification";
 
 @interface MPStrokeSequenceDatabaseSynchronizer ()
 @property (readonly) NSMutableDictionary *databaseByIdentifier;
@@ -150,6 +146,10 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
         [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseSynchronizerErrorNotification
                                                             object:err];
     }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseObjectSynchronizedNotification object:seq userInfo:@{@"database":db, @"operationType":@(MPSynchronizerOperationTypeAdd)}];
+    }
 }
 
 - (void)_removeStrokeSequence:(MPStrokeSequence *)seq fromDatabase:(MPStrokeSequenceDatabase *)db
@@ -160,6 +160,10 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
         assert(err);
         [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseSynchronizerErrorNotification
                                                             object:err];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseObjectSynchronizedNotification object:seq userInfo:@{@"database":db,@"operationType":@(MPSynchronizerOperationTypeRemove)}];
     }
 }
 
@@ -259,17 +263,17 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 #pragma mark - Request handling
 
-- (NSString *)HTTPVerbForOperationType:(MPRESTFulOperationType)operationType
+- (NSString *)HTTPVerbForOperationType:(MPSynchronizerOperationType)operationType
 {
     NSString *verb = nil;
     switch (operationType) {
-        case MPRESTFulOperationTypeList:
+        case MPSynchronizerOperationTypeList:
             verb = @"GET";
             break;
-        case MPRESTFulOperationTypeAdd:
+        case MPSynchronizerOperationTypeAdd:
             verb = @"POST";
             break;
-        case MPRESTFulOperationTypeRemove:
+        case MPSynchronizerOperationTypeRemove:
             verb = @"DELETE";
             break;
             
@@ -317,17 +321,17 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 - (NSData *)HTTPBodyForStrokeSequence:(MPStrokeSequence *)strokeSequence
                              database:(MPStrokeSequenceDatabase *)database
-                            operation:(MPRESTFulOperationType)operationType
+                            operation:(MPSynchronizerOperationType)operationType
                                 error:(NSError **)err
 {
     switch (operationType) {
-        case MPRESTFulOperationTypeList:
+        case MPSynchronizerOperationTypeList:
             return [NSData data];
             break;
-        case MPRESTFulOperationTypeAdd:
+        case MPSynchronizerOperationTypeAdd:
             return [self requestBodyForAddingStrokeSequence:strokeSequence
                                                intoDatabase:database error:err];
-        case MPRESTFulOperationTypeRemove:
+        case MPSynchronizerOperationTypeRemove:
             return [self requestBodyForRemovingStrokeSequence:strokeSequence
                                                  fromDatabase:database error:err];
         default:
@@ -338,7 +342,7 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 - (id)requestWithStrokeSequence:(MPStrokeSequence *)strokeSequence
                      inDatabase:(MPStrokeSequenceDatabase *)db
-                      operation:(MPRESTFulOperationType)operationType
+                      operation:(MPSynchronizerOperationType)operationType
                           error:(NSError **)err
 {
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[self URLForStrokeSequence:strokeSequence inDatabase:db]
@@ -411,7 +415,7 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 {
     return [self requestWithStrokeSequence:strokeSequence
                                 inDatabase:db
-                                 operation:MPRESTFulOperationTypeAdd error:err] != nil;
+                                 operation:MPSynchronizerOperationTypeAdd error:err] != nil;
 }
 
 - (NSArray *)strokeSequencesWithSignature:(NSString *)signature
@@ -436,7 +440,7 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 {
     return [self requestWithStrokeSequence:strokeSequence
                                 inDatabase:db
-                                 operation:MPRESTFulOperationTypeRemove error:err] != nil;
+                                 operation:MPSynchronizerOperationTypeRemove error:err] != nil;
 }
 
 @end
