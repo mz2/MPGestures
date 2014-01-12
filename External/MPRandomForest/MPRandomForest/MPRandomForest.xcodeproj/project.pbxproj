@@ -16,8 +16,11 @@
 		5F85862B186B6CBB00AD762E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F858629186B6CBB00AD762E /* InfoPlist.strings */; };
 		5F85862D186B6CBB00AD762E /* MPRandomForestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85862C186B6CBB00AD762E /* MPRandomForestTests.m */; };
 		5F858652186B6E0800AD762E /* ALGLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85864F186B6DC600AD762E /* ALGLIB.framework */; };
-		5F858655186B6EFC00AD762E /* MPDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858653186B6EFC00AD762E /* MPDataSet.h */; };
-		5F858659186B706600AD762E /* MPDataSetTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858657186B706600AD762E /* MPDataSetTransformer.h */; };
+		5F858655186B6EFC00AD762E /* MPDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858653186B6EFC00AD762E /* MPDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F858659186B706600AD762E /* MPDataSetTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858657186B706600AD762E /* MPDataSetTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF318C71882937400C8672D /* MPRandomForest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F858618186B6CBB00AD762E /* MPRandomForest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF318CD188293F300C8672D /* MPDataTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF318CB188293F300C8672D /* MPDataTable.h */; };
+		5FF318CE188293F300C8672D /* MPDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318CC188293F300C8672D /* MPDataTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +64,10 @@
 		5F85862A186B6CBB00AD762E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5F85862C186B6CBB00AD762E /* MPRandomForestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPRandomForestTests.m; sourceTree = "<group>"; };
 		5F858649186B6DC500AD762E /* ALGLIB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ALGLIB.xcodeproj; path = ../../alglib/ALGLIB/ALGLIB.xcodeproj; sourceTree = "<group>"; };
-		5F858653186B6EFC00AD762E /* MPDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDataSet.h; sourceTree = "<group>"; };
+		5F858653186B6EFC00AD762E /* MPDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDataSet.h; path = MPRandomForest/MPDataSet.h; sourceTree = "<group>"; };
 		5F858657186B706600AD762E /* MPDataSetTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDataSetTransformer.h; sourceTree = "<group>"; };
+		5FF318CB188293F300C8672D /* MPDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDataTable.h; path = MPRandomForest/MPDataTable.h; sourceTree = "<group>"; };
+		5FF318CC188293F300C8672D /* MPDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDataTable.m; path = MPRandomForest/MPDataTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		5F8585FE186B6CBB00AD762E = {
 			isa = PBXGroup;
 			children = (
+				5FF318CA188293CA00C8672D /* Data Set */,
 				5F858611186B6CBB00AD762E /* MPRandomForest */,
 				5F858626186B6CBB00AD762E /* MPRandomForestTests */,
 				5F85860A186B6CBB00AD762E /* Frameworks */,
@@ -134,7 +140,6 @@
 				5F858618186B6CBB00AD762E /* MPRandomForest.h */,
 				5F858619186B6CBB00AD762E /* MPRandomForest.mm */,
 				5F858612186B6CBB00AD762E /* Supporting Files */,
-				5F858653186B6EFC00AD762E /* MPDataSet.h */,
 				5F858657186B706600AD762E /* MPDataSetTransformer.h */,
 			);
 			path = MPRandomForest;
@@ -177,6 +182,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5FF318CA188293CA00C8672D /* Data Set */ = {
+			isa = PBXGroup;
+			children = (
+				5F858653186B6EFC00AD762E /* MPDataSet.h */,
+				5FF318CB188293F300C8672D /* MPDataTable.h */,
+				5FF318CC188293F300C8672D /* MPDataTable.m */,
+			);
+			name = "Data Set";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -184,6 +199,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF318C71882937400C8672D /* MPRandomForest.h in Headers */,
+				5FF318CD188293F300C8672D /* MPDataTable.h in Headers */,
 				5F858659186B706600AD762E /* MPDataSetTransformer.h in Headers */,
 				5F858655186B6EFC00AD762E /* MPDataSet.h in Headers */,
 			);
@@ -307,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF318CE188293F300C8672D /* MPDataTable.m in Sources */,
 				5F85861A186B6CBB00AD762E /* MPRandomForest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

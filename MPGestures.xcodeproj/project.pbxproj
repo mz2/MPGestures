@@ -66,6 +66,12 @@
 		5FF318B218817E5200C8672D /* MPGestureTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B018817E5200C8672D /* MPGestureTestHelper.m */; };
 		5FF318B4188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */; };
 		5FF318B5188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */; };
+		5FF318BE18828DB800C8672D /* MPSupervisedGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF318BC18828DB800C8672D /* MPSupervisedGestureRecognizer.h */; };
+		5FF318BF18828DB800C8672D /* MPSupervisedGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318BD18828DB800C8672D /* MPSupervisedGestureRecognizer.m */; };
+		5FF318C018828DB800C8672D /* MPSupervisedGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318BD18828DB800C8672D /* MPSupervisedGestureRecognizer.m */; };
+		5FF318C31882903500C8672D /* MPRandomForest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85863D186B6D2A00AD762E /* MPRandomForest.framework */; };
+		5FF318C51882908500C8672D /* MPRandomForest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85863D186B6D2A00AD762E /* MPRandomForest.framework */; };
+		5FF318C61882909000C8672D /* ALGLIB.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F250186A284C00466512 /* ALGLIB.framework */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
 		5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
@@ -135,6 +141,13 @@
 			remoteGlobalIDString = 5F858607186B6CBB00AD762E;
 			remoteInfo = MPRandomForest;
 		};
+		5FF318C11882903100C8672D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F858607186B6CBB00AD762E;
+			remoteInfo = MPRandomForest;
+		};
 		5FF3F17318690ED500466512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC219718165E7072009CFCF3 /* Project object */;
@@ -164,6 +177,21 @@
 			remoteInfo = ALGLIB;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FF318C41882906300C8672D /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FF318C51882908500C8672D /* MPRandomForest.framework in Copy Frameworks */,
+				5FF318C61882909000C8672D /* ALGLIB.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F2C0290186CF947003CFD04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -218,6 +246,8 @@
 		5FF318AF18817E5200C8672D /* MPGestureTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureTestHelper.h; sourceTree = "<group>"; };
 		5FF318B018817E5200C8672D /* MPGestureTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureTestHelper.m; sourceTree = "<group>"; };
 		5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPContinuousGestureSyncIntegrationTests.m; sourceTree = "<group>"; };
+		5FF318BC18828DB800C8672D /* MPSupervisedGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSupervisedGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
+		5FF318BD18828DB800C8672D /* MPSupervisedGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSupervisedGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
 		5FF3F15A18690ED500466512 /* Gestures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gestures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -291,6 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF318C31882903500C8672D /* MPRandomForest.framework in Frameworks */,
 				5FF3F257186A28AD00466512 /* ALGLIB.framework in Frameworks */,
 				5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */,
 			);
@@ -449,6 +480,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5FF318B918828D1B00C8672D /* Supervised Gesture Recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				5FF318BC18828DB800C8672D /* MPSupervisedGestureRecognizer.h */,
+				5FF318BD18828DB800C8672D /* MPSupervisedGestureRecognizer.m */,
+			);
+			name = "Supervised Gesture Recognizer";
+			sourceTree = "<group>";
+		};
 		5FF3F15D18690ED500466512 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,7 +507,8 @@
 				5F7357C4186CF49B005951E7 /* Cocoa Categories */,
 				5F367C25187A93D3007EC421 /* Services */,
 				5F367C03187A9338007EC421 /* Domain Model */,
-				DC21979C165EA5CB009CFCF3 /* Point Cloud Recognizer */,
+				DC21979C165EA5CB009CFCF3 /* Point Cloud Gesture Recognizer */,
+				5FF318B918828D1B00C8672D /* Supervised Gesture Recognizer */,
 				5FF3F16218690ED500466512 /* Supporting Files */,
 			);
 			name = Gestures.framework;
@@ -616,7 +657,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DC21979C165EA5CB009CFCF3 /* Point Cloud Recognizer */ = {
+		DC21979C165EA5CB009CFCF3 /* Point Cloud Gesture Recognizer */ = {
 			isa = PBXGroup;
 			children = (
 				5F735797186CF495005951E7 /* MPDollarPointCloudRecognizer.h */,
@@ -626,7 +667,7 @@
 				5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */,
 				5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */,
 			);
-			name = "Point Cloud Recognizer";
+			name = "Point Cloud Gesture Recognizer";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -639,6 +680,7 @@
 				5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */,
 				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
 				5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */,
+				5FF318BE18828DB800C8672D /* MPSupervisedGestureRecognizer.h in Headers */,
 				5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */,
 				5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */,
 				5F367C12187A936B007EC421 /* MPStroke.h in Headers */,
@@ -662,6 +704,7 @@
 				5FD5CC7D187693FD0038C834 /* Sources */,
 				5FD5CC7E187693FD0038C834 /* Frameworks */,
 				5FD5CC7F187693FD0038C834 /* Resources */,
+				5FF318C41882906300C8672D /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -705,6 +748,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5FF318C21882903100C8672D /* PBXTargetDependency */,
 				5FF3F254186A285400466512 /* PBXTargetDependency */,
 			);
 			name = Gestures;
@@ -907,6 +951,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */,
+				5FF318C018828DB800C8672D /* MPSupervisedGestureRecognizer.m in Sources */,
 				5F7357AB186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
 				5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
 				5F367C1E187A9387007EC421 /* MPSymbol.m in Sources */,
@@ -949,6 +994,7 @@
 				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,
 				5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
 				5F367C0B187A935A007EC421 /* MPPoint.m in Sources */,
+				5FF318BF18828DB800C8672D /* MPSupervisedGestureRecognizer.m in Sources */,
 				5F7357AA186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
 				5F367C18187A9381007EC421 /* MPStrokeSequence.m in Sources */,
 				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
@@ -980,6 +1026,11 @@
 			isa = PBXTargetDependency;
 			name = MPRandomForest;
 			targetProxy = 5FD5CCB7187694CA0038C834 /* PBXContainerItemProxy */;
+		};
+		5FF318C21882903100C8672D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MPRandomForest;
+			targetProxy = 5FF318C11882903100C8672D /* PBXContainerItemProxy */;
 		};
 		5FF3F17418690ED500466512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

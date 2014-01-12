@@ -10,6 +10,9 @@
 
 #import "MPDataSet.h"
 
+/**
+ *  A dataset transformer converts a set of data into another set of dimensions.
+ */
 @protocol MPDataSetTransformer <NSObject>
 
 @property (readonly) id<MPDataSet> dataSet;

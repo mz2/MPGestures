@@ -55,8 +55,7 @@
         
         [[MPStrokeSequenceDatabaseSynchronizer sharedInstance] continuouslySynchronizeDatabase:self.db];
         
-        if (err)
-        {
+        if (err) {
             NSLog(@"Failed to initialise stroke sequence database");
             [[NSAlert alertWithError:err] runModal];
         }
