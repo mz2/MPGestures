@@ -59,11 +59,13 @@
 		5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85863D186B6D2A00AD762E /* MPRandomForest.framework */; };
 		5FD5CCBB187694F50038C834 /* MPGesturesUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */; };
-		5FF318AC18815C2800C8672D /* MPGesturesIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPGesturesIntegrationTests.m */; };
-		5FF318AD18815C2D00C8672D /* MPGesturesIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPGesturesIntegrationTests.m */; };
+		5FF318AC18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */; };
+		5FF318AD18815C2D00C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */; };
 		5FF318AE18815C3000C8672D /* MPGesturesUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */; };
 		5FF318B118817E5200C8672D /* MPGestureTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B018817E5200C8672D /* MPGestureTestHelper.m */; };
 		5FF318B218817E5200C8672D /* MPGestureTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B018817E5200C8672D /* MPGestureTestHelper.m */; };
+		5FF318B4188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */; };
+		5FF318B5188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */; };
 		5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FF3F17118690ED500466512 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F17018690ED500466512 /* XCTest.framework */; };
 		5FF3F17218690ED500466512 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
@@ -212,9 +214,10 @@
 		5FD5CCA2187693FD0038C834 /* Gestures for MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for MacTests-Info.plist"; sourceTree = "<group>"; };
 		5FD5CCA4187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGesturesUnitTests.m; sourceTree = "<group>"; };
-		5FF318AB18815C2800C8672D /* MPGesturesIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGesturesIntegrationTests.m; sourceTree = "<group>"; };
+		5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPManualGestureSyncIntegrationTests.m; sourceTree = "<group>"; };
 		5FF318AF18817E5200C8672D /* MPGestureTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureTestHelper.h; sourceTree = "<group>"; };
 		5FF318B018817E5200C8672D /* MPGestureTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureTestHelper.m; sourceTree = "<group>"; };
+		5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPContinuousGestureSyncIntegrationTests.m; sourceTree = "<group>"; };
 		5FF3F15A18690ED500466512 /* Gestures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gestures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF3F15B18690ED500466512 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5FF3F15E18690ED500466512 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -427,7 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */,
-				5FF318AB18815C2800C8672D /* MPGesturesIntegrationTests.m */,
+				5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */,
+				5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */,
 				5FD5CCA1187693FD0038C834 /* Supporting Files */,
 				5FF318AF18817E5200C8672D /* MPGestureTestHelper.h */,
 				5FF318B018817E5200C8672D /* MPGestureTestHelper.m */,
@@ -893,7 +897,8 @@
 			files = (
 				5FD5CCBB187694F50038C834 /* MPGesturesUnitTests.m in Sources */,
 				5FF318B218817E5200C8672D /* MPGestureTestHelper.m in Sources */,
-				5FF318AD18815C2D00C8672D /* MPGesturesIntegrationTests.m in Sources */,
+				5FF318AD18815C2D00C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */,
+				5FF318B5188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +927,8 @@
 			files = (
 				5FF318B118817E5200C8672D /* MPGestureTestHelper.m in Sources */,
 				5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */,
-				5FF318AC18815C2800C8672D /* MPGesturesIntegrationTests.m in Sources */,
+				5FF318B4188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */,
+				5FF318AC18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */,
 				5FF318AE18815C3000C8672D /* MPGesturesUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

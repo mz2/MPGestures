@@ -11,7 +11,7 @@
 #import "MPStrokeSequence.h"
 
 NSString * const MPStrokeSequenceDatabaseSynchronizerErrorDomain = @"MPStrokeSequenceDatabaseSynchronizerErrorDomain";
-
+NSString * const MPStrokeSequenceDatabaseSynchronizerErrorNotification = @"MPStrokeSequenceDatabaseSynchronizerErrorNotification";
 typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 {
     MPRESTFulOperationTypeList = 0,
@@ -22,6 +22,11 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 @interface MPStrokeSequenceDatabaseSynchronizer ()
 @property (readonly) NSMutableDictionary *databaseByIdentifier;
 @property (readonly) dispatch_queue_t asyncRequestQueue;
+
+/**
+ *  Posts the add / removal requests synchronously. Synchronous mode not intended for production, only for testing.
+ */
+@property (readwrite) BOOL synchronousRequests;
 @end
 
 @implementation MPStrokeSequenceDatabaseSynchronizer
@@ -75,13 +80,20 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
     NSArray *keys = [[defs dictionaryRepresentation] allKeys];
     
-    _continuouslySynchronizedDatabaseIdentifiers =
+    NSSet *keySet =
         [NSSet setWithArray:[keys filteredArrayUsingPredicate:
          [NSPredicate predicateWithBlock:
           ^BOOL(NSString *key, NSDictionary *bindings)
           {
               return [key hasPrefix:@"synchronizes-"] && [defs boolForKey:key];
           }]]];
+    
+    // remove the prefix from the filtered keys
+    NSMutableSet *dbIDs = [NSMutableSet setWithCapacity:keySet.count];
+    for (NSString *key in keySet)
+        [dbIDs addObject:[key stringByReplacingOccurrencesOfString:@"synchronizes-" withString:@""]];
+    
+    _continuouslySynchronizedDatabaseIdentifiers = dbIDs;
     
     for (NSString *dbIdentifier in _continuouslySynchronizedDatabaseIdentifiers)
     {
@@ -129,15 +141,51 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
 
 #pragma mark - Notification observing
 
+- (void)_addStrokeSequence:(MPStrokeSequence *)seq intoDatabase:(MPStrokeSequenceDatabase *)db
+{
+    NSError *err = nil;
+    if (![self addStrokeSequence:seq intoDatabase:db error:&err])
+    {
+        assert(err);
+        [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseSynchronizerErrorNotification
+                                                            object:err];
+    }
+}
+
+- (void)_removeStrokeSequence:(MPStrokeSequence *)seq fromDatabase:(MPStrokeSequenceDatabase *)db
+{
+    NSError *err = nil;
+    if (![self removeStrokeSequence:seq fromDatabase:db error:&err])
+    {
+        assert(err);
+        [[NSNotificationCenter defaultCenter] postNotificationName:MPStrokeSequenceDatabaseSynchronizerErrorNotification
+                                                            object:err];
+    }
+}
+
 - (void)didAddStrokeSequence:(NSNotification *)notification
 {
     MPStrokeSequenceDatabase *db = notification.object;
     assert([db isKindOfClass:[MPStrokeSequenceDatabase class]]);
     assert(db.identifier);
     
+    MPStrokeSequence *seq = notification.userInfo[@"strokeSequence"];
+    assert([seq isKindOfClass:[MPStrokeSequence class]]);
+    assert(seq.signature);
+    
     if (![_continuouslySynchronizedDatabaseIdentifiers containsObject:db.identifier])
         return;
     
+    if (_synchronousRequests)
+    {
+        [self _addStrokeSequence:seq intoDatabase:db];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self _addStrokeSequence:seq intoDatabase:db];
+        });
+    }
 }
 
 - (void)didRemoveStrokeSequence:(NSNotification *)notification
@@ -146,12 +194,26 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     assert([db isKindOfClass:[MPStrokeSequenceDatabase class]]);
     assert(db.identifier);
     
+    MPStrokeSequence *seq = notification.userInfo[@"strokeSequence"];
+    
     if (![_continuouslySynchronizedDatabaseIdentifiers containsObject:db.identifier])
         return;
-
+    
+    if (_synchronousRequests)
+    {
+        [self _removeStrokeSequence:seq fromDatabase:db];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self _removeStrokeSequence:seq fromDatabase:db];
+        });
+    }
 }
 
 #pragma mark - Network IO
+
+#pragma mark - URL generation
 
 - (NSString *)baseURI
 {
@@ -183,6 +245,19 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     
     return [[self URLForDatabase:db] URLByAppendingPathComponent:strokeSequence.name];
 }
+
+- (NSURL *)URLForStrokeSequenceSignature:(NSString *)signature
+                inDatabaseWithIdentifier:(NSString *)identifier
+{
+    assert(signature);
+    assert(identifier);
+    
+    return [[[self URLForDatabaseWithIdentifier:identifier]
+                URLByAppendingPathComponent:@"signature"]
+                    URLByAppendingPathComponent:signature];
+}
+
+#pragma mark - Request handling
 
 - (NSString *)HTTPVerbForOperationType:(MPRESTFulOperationType)operationType
 {
@@ -337,6 +412,22 @@ typedef NS_ENUM(NSInteger, MPRESTFulOperationType)
     return [self requestWithStrokeSequence:strokeSequence
                                 inDatabase:db
                                  operation:MPRESTFulOperationTypeAdd error:err] != nil;
+}
+
+- (NSArray *)strokeSequencesWithSignature:(NSString *)signature
+                 inDatabaseWithIdentifier:(NSString *)identifier
+                                    error:(NSError **)err
+{
+    NSData *strokeSequenceData = [NSData dataWithContentsOfURL:[self URLForStrokeSequenceSignature:signature inDatabaseWithIdentifier:identifier] options:0 error:err];
+    
+    if (!strokeSequenceData)
+        return nil;
+    
+    NSArray *dicts = [NSJSONSerialization JSONObjectWithData:strokeSequenceData options:0 error:err];
+    if (!dicts)
+        return nil;
+    
+    return [MPStrokeSequence strokeSequencesWithArrayOfDictionaries:dicts];
 }
 
 - (BOOL)removeStrokeSequence:(MPStrokeSequence *)strokeSequence

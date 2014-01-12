@@ -16,12 +16,12 @@
 
 #import "MPStrokeSequenceDatabaseSynchronizer.h"
 
-@interface MPGesturesIntegrationTests : XCTestCase
+@interface MPManualGestureSyncIntegrationTests : XCTestCase
 @property (readwrite) MPStrokeSequenceDatabase *db;
 @property (readwrite) MPStrokeSequence *seq;
 @end
 
-@implementation MPGesturesIntegrationTests
+@implementation MPManualGestureSyncIntegrationTests
 
 - (void)setUp
 {
@@ -44,6 +44,12 @@
     [self.seq addStroke:stroke1];
     [self.seq addStroke:stroke2];
     
+    MPStrokeSequenceDatabaseSynchronizer *service = [MPStrokeSequenceDatabaseSynchronizer sharedInstance];
+    
+    NSError *err = nil;
+    XCTAssertTrue([service addStrokeSequence:self.seq intoDatabase:self.db error:&err], @"Adding sequence succeeded.");
+    [self.db addStrokeSequence:self.seq];
+
 }
 
 - (void)tearDown
@@ -74,16 +80,6 @@
                           @"Removing stroke sequence succeeded.");
         }
     }
-
-}
-
-- (void)testAddingToSynchronizerService
-{
-    MPStrokeSequenceDatabaseSynchronizer *service = [MPStrokeSequenceDatabaseSynchronizer sharedInstance];
-    
-    NSError *err = nil;
-    XCTAssertTrue([service addStrokeSequence:self.seq intoDatabase:self.db error:&err], @"Adding sequence succeeded.");
-    [self.db addStrokeSequence:self.seq];
 }
 
 - (void)testListingSynchronizerServiceDatabaseContents
@@ -94,6 +90,10 @@
     MPStrokeSequenceDatabase *db = [service databaseWithIdentifier:@"mpgestures" error:&err];
     
     XCTAssertNotNil(db, @"A database was successfully created.");
+    XCTAssertTrue(db.strokeSequenceSet.count == 1,
+                  @"There is an expected number of items in the created database.");
+    XCTAssertTrue([db.strokeSequenceSet isEqualToSet:self.db.strokeSequenceSet],
+                  @"The parsed stroke sequences are equal to the input (successful roundtrip).");
 }
 
 @end

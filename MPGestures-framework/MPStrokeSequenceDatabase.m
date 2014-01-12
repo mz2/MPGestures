@@ -110,8 +110,8 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
     if (notify)
     {
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
-                          object:self userInfo:@{@"name":sequence.name}];
+        [nc postNotificationName:MPStrokeSequenceDatabaseDidAddSequenceNotification
+                          object:self userInfo:@{@"name":sequence.name, @"strokeSequence":sequence}];
     }
 }
 
@@ -132,7 +132,7 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
     [nc postNotificationName:MPStrokeSequenceDatabaseDidRemoveSequenceNotification
-                      object:self userInfo:@{@"name":sequence.name}];
+                      object:self userInfo:@{@"name":sequence.name, @"strokeSequence":sequence}];
 }
 
 - (BOOL)isEqual:(MPStrokeSequenceDatabase *)object

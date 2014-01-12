@@ -12,6 +12,12 @@
 
 extern NSString * const MPStrokeSequenceDatabaseSynchronizerErrorDomain;
 
+/**
+  *  Notifications with this name and an NSError object as the notification's object are posted
+  * whenever continous synchronization hits issues.
+  */
+extern NSString * const MPStrokeSequenceDatabaseSynchronizerErrorNotification;
+
 typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseSynchronizerErrorCode)
 {
     MPStrokeSequenceDatabaseSynchronizerErrorCodeUnknown = 0,
@@ -43,16 +49,22 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseSynchronizerErrorCode)
 #pragma mark - Network IO
 
 /**
- * Adds the stroke sequence given as an argument to the database.
- * Stroke sequences are unique by their signature which is posted in the request body.
- */
+  * Adds the stroke sequence given as an argument to the database.
+  * Stroke sequences are unique by their signature which is posted in the request body.
+  *
+  * If db is set to be continuously synchronised with the synchronizer,
+  * there is no need to call this method for any of its stroke sequences.
+  */
 - (BOOL)addStrokeSequence:(MPStrokeSequence *)strokeSequence
              intoDatabase:(MPStrokeSequenceDatabase *)db
                     error:(NSError **)err;
 
 /**
- *  Removes the stroke sequence identified by the name and signature pair posted to the server.
- */
+  * Removes the stroke sequence identified by the name and signature pair posted to the server.
+  *
+  * If db is set to be continuously synchronised with the synchronizer,
+  * there is no need to call this method for any of its stroke sequences.
+  */
 - (BOOL)removeStrokeSequence:(MPStrokeSequence *)strokeSequence
                 fromDatabase:(MPStrokeSequenceDatabase *)database
                        error:(NSError **)err;
@@ -63,9 +75,17 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseSynchronizerErrorCode)
 - (NSArray *)databaseIdentifiersWithError:(NSError **)err;
 
 /**
- *  Constructs a new stroke sequence database 
- */
+  * Returns a new stroke sequence database from the remote service,
+  * containing all the stroke sequences with the matching identifier.
+  */
 - (MPStrokeSequenceDatabase *)databaseWithIdentifier:(NSString *)identifier
                                                error:(NSError **)err;
+
+/**
+ *  Returns an array of StrokeSequence instances matching the signature and database identifier given as input.
+ */
+- (NSArray *)strokeSequencesWithSignature:(NSString *)signature
+                 inDatabaseWithIdentifier:(NSString *)identifier
+                                    error:(NSError **)err;
 
 @end
