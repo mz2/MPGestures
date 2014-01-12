@@ -15,6 +15,10 @@ NSString * const MPStrokeSequenceDatabaseSynchronizerErrorNotification = @"MPStr
 NSString * const MPStrokeSequenceDatabaseObjectSynchronizedNotification =
     @"MPStrokeSequenceDatabaseObjectSynchronizedNotification";
 
+@interface MPStrokeSequenceDatabase ()
+@property (readwrite, getter = isImmutable) BOOL immutable;
+@end
+
 @interface MPStrokeSequenceDatabaseSynchronizer ()
 @property (readonly) NSMutableDictionary *databaseByIdentifier;
 @property (readonly) dispatch_queue_t asyncRequestQueue;
@@ -239,6 +243,11 @@ NSString * const MPStrokeSequenceDatabaseObjectSynchronizedNotification =
     return [[NSURL URLWithString:self.baseURI] URLByAppendingPathComponent:database.identifier];
 }
 
+- (NSURL *)URLForAllGesturesDatabase
+{
+    return [NSURL URLWithString:[[self baseURI] stringByAppendingPathComponent:@"db/all"]];
+}
+
 - (NSURL *)URLForStrokeSequence:(MPStrokeSequence *)strokeSequence
                      inDatabase:(MPStrokeSequenceDatabase *)db
 {
@@ -398,6 +407,15 @@ NSString * const MPStrokeSequenceDatabaseObjectSynchronizedNotification =
                                                error:(NSError **)err
 {
     return [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[self URLForDatabaseWithIdentifier:identifier] error:err];
+}
+
+- (MPStrokeSequenceDatabase *)allGesturesDatabaseWithError:(NSError *__autoreleasing *)err
+{
+    MPStrokeSequenceDatabase *db =
+        [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:[self URLForAllGesturesDatabase] error:err];
+    db.immutable = YES;
+    
+    return db;
 }
 
 - (NSArray *)databaseIdentifiersWithError:(NSError **)err

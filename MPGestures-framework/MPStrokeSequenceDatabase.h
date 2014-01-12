@@ -53,6 +53,11 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
 @property (readonly) NSSet *strokeSequenceSet;
 
 /**
+ *  A database that's been marked immutable is one whose stroke sequences or identifier shuold not be modified.
+ */
+@property (readonly, getter = isImmutable) BOOL immutable;
+
+/**
  *  Adds the given stroke sequence to the database, if a matching sequence was not already present. 
  * Notifies with a MPStrokeSequenceDatabaseDidAddSequenceNotification.
  */

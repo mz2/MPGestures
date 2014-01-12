@@ -100,6 +100,12 @@ typedef NS_ENUM(NSInteger, MPSynchronizerOperationType)
                                                error:(NSError **)err;
 
 /**
+ *  Returns a special sequence database representing the union of all gesture databases. 
+ *  The identifier of the database is '<union>' and mutating it is not permitted (throws an exception).
+ */
+- (MPStrokeSequenceDatabase *)allGesturesDatabaseWithError:(NSError **)err;
+
+/**
  *  Returns an array of StrokeSequence instances matching the signature and database identifier given as input.
  */
 - (NSArray *)strokeSequencesWithSignature:(NSString *)signature

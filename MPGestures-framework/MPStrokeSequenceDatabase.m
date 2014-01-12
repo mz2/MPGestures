@@ -20,6 +20,7 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 @interface MPStrokeSequenceDatabase ()
 @property NSMutableDictionary *namedStrokeSequences;
+@property (readwrite, getter = isImmutable) BOOL immutable;
 @end
 
 @implementation MPStrokeSequenceDatabase
@@ -101,6 +102,11 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence notify:(BOOL)notify
 {
+    if (_immutable)
+        @throw [NSException exceptionWithName:@"MPImmutableDatabaseException"
+                                       reason:@"Attempting to manipulate an immutable database"
+                                     userInfo:nil];
+    
     assert(sequence.name);
     if (!_namedStrokeSequences[sequence.name])
         _namedStrokeSequences[sequence.name] = [NSMutableSet setWithCapacity:64];
@@ -117,6 +123,10 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 - (void)addStrokeSequencesFromDatabase:(MPStrokeSequenceDatabase *)database
 {
+    if (_immutable)
+        @throw [NSException exceptionWithName:@"MPImmutableDatabaseException"
+                                       reason:@"Attempting to manipulate an immutable database"
+                                     userInfo:nil];
     assert(database);
     assert(database != self);
     
@@ -126,6 +136,11 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 - (void)removeStrokeSequence:(MPStrokeSequence *)sequence
 {
+    if (_immutable)
+        @throw [NSException exceptionWithName:@"MPImmutableDatabaseException"
+                                       reason:@"Attempting to manipulate an immutable database"
+                                     userInfo:nil];
+    
     assert(self[sequence.name]);
     [self[sequence.name] removeObject:sequence];
     

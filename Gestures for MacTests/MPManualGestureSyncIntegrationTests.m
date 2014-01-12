@@ -96,4 +96,14 @@
                   @"The parsed stroke sequences are equal to the input (successful roundtrip).");
 }
 
+- (void)testRetrievingAllGestures
+{
+    MPStrokeSequenceDatabaseSynchronizer *service = [MPStrokeSequenceDatabaseSynchronizer sharedInstance];
+    
+    NSError *err = nil;
+    MPStrokeSequenceDatabase *db = [service allGesturesDatabaseWithError:&err];
+    XCTAssertTrue([db.identifier isEqualToString:@"<union>"]);
+    XCTAssertTrue(db.immutable, @"The union database is immutable.");
+}
+
 @end
