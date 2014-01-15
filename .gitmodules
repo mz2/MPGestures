@@ -1,3 +1,6 @@
 [submodule "External/MASPreferences"]
 	path = External/MASPreferences
 	url = git@github.com:shpakovski/MASPreferences.git
+[submodule "External/MPRandomForest"]
+	path = External/MPRandomForest
+	url = git@github.com:mpapp/Swot
