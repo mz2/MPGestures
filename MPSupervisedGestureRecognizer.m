@@ -8,7 +8,7 @@
 
 #import "MPSupervisedGestureRecognizer.h"
 
-#import <MPRandomForest/MPRandomForest.h>
+#import <MPRandomForest/MPDatumClassifier.h>
 
 @implementation MPSupervisedGestureRecognizer
 
