@@ -38,9 +38,9 @@
 		5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */; };
 		5F7357AD186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
 		5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */; };
-		5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */; };
-		5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
-		5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */; };
+		5F7357B5186CF495005951E7 /* MPStrokeSequenceRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F73579F186CF495005951E7 /* MPStrokeSequenceRecognition.h */; };
+		5F7357B6186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPStrokeSequenceRecognition.m */; };
+		5F7357B7186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357A0186CF495005951E7 /* MPStrokeSequenceRecognition.m */; };
 		5F7357C7186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */; };
 		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
@@ -49,6 +49,7 @@
 		5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
 		5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
 		5FCC4151188C7A0500FF08BB /* Fixtures in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
+		5FCC4153188C7D0C00FF08BB /* MPStrokeSequenceRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FCC4152188C7D0C00FF08BB /* MPStrokeSequenceRecognizer.h */; };
 		5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FD5CC88187693FD0038C834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC86187693FD0038C834 /* InfoPlist.strings */; };
 		5FD5CC8A187693FD0038C834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CC89187693FD0038C834 /* main.m */; };
@@ -231,8 +232,8 @@
 		5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudRecognizer.m; path = "MPGestures-framework/MPDollarPointCloudRecognizer.m"; sourceTree = "<group>"; };
 		5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPDollarPointCloudUtility.h; path = "MPGestures-framework/MPDollarPointCloudUtility.h"; sourceTree = "<group>"; };
 		5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPDollarPointCloudUtility.m; path = "MPGestures-framework/MPDollarPointCloudUtility.m"; sourceTree = "<group>"; };
-		5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloudRecognition.h; path = "MPGestures-framework/MPPointCloudRecognition.h"; sourceTree = "<group>"; };
-		5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPointCloudRecognition.m; path = "MPGestures-framework/MPPointCloudRecognition.m"; sourceTree = "<group>"; };
+		5F73579F186CF495005951E7 /* MPStrokeSequenceRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceRecognition.h; path = "MPGestures-framework/MPStrokeSequenceRecognition.h"; sourceTree = "<group>"; };
+		5F7357A0186CF495005951E7 /* MPStrokeSequenceRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceRecognition.m; path = "MPGestures-framework/MPStrokeSequenceRecognition.m"; sourceTree = "<group>"; };
 		5F7357C5186CF4A6005951E7 /* NSFileManager+ApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ApplicationSupport.h"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.h"; sourceTree = SOURCE_ROOT; };
 		5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ApplicationSupport.m"; path = "MPGestures-framework/NSFileManager+ApplicationSupport.m"; sourceTree = SOURCE_ROOT; };
 		5F7357CA186CF4E8005951E7 /* MPGestures-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MPGestures-Info.plist"; path = "MPGestures-framework/MPGestures-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -246,6 +247,7 @@
 		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
 		5FCC4147188C5D8E00FF08BB /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
 		5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStrokeSequenceClassificationTests.m; sourceTree = "<group>"; };
+		5FCC4152188C7D0C00FF08BB /* MPStrokeSequenceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPStrokeSequenceRecognizer.h; sourceTree = SOURCE_ROOT; };
 		5FD5CC81187693FD0038C834 /* Gestures-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD5CC85187693FD0038C834 /* Gestures for Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for Mac-Info.plist"; sourceTree = "<group>"; };
 		5FD5CC87187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		5FCC414E188C5FF300FF08BB /* Recognizers */ = {
 			isa = PBXGroup;
 			children = (
+				5FCC4152188C7D0C00FF08BB /* MPStrokeSequenceRecognizer.h */,
 				DC21979C165EA5CB009CFCF3 /* Point Cloud Gesture Recognizer */,
 				5FF318B918828D1B00C8672D /* Supervised Gesture Recognizer */,
 			);
@@ -690,8 +693,8 @@
 				5F735798186CF495005951E7 /* MPDollarPointCloudRecognizer.m */,
 				5F735799186CF495005951E7 /* MPDollarPointCloudUtility.h */,
 				5F73579A186CF495005951E7 /* MPDollarPointCloudUtility.m */,
-				5F73579F186CF495005951E7 /* MPPointCloudRecognition.h */,
-				5F7357A0186CF495005951E7 /* MPPointCloudRecognition.m */,
+				5F73579F186CF495005951E7 /* MPStrokeSequenceRecognition.h */,
+				5F7357A0186CF495005951E7 /* MPStrokeSequenceRecognition.m */,
 			);
 			name = "Point Cloud Gesture Recognizer";
 			sourceTree = SOURCE_ROOT;
@@ -703,13 +706,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7357B5186CF495005951E7 /* MPPointCloudRecognition.h in Headers */,
+				5F7357B5186CF495005951E7 /* MPStrokeSequenceRecognition.h in Headers */,
 				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
 				5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */,
 				5FF318BE18828DB800C8672D /* MPSupervisedGestureRecognizer.h in Headers */,
 				5F73578D186CF42E005951E7 /* MPGestureView.h in Headers */,
 				5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */,
 				5F367C12187A936B007EC421 /* MPStroke.h in Headers */,
+				5FCC4153188C7D0C00FF08BB /* MPStrokeSequenceRecognizer.h in Headers */,
 				5F367C0A187A935A007EC421 /* MPPoint.h in Headers */,
 				5F7357AC186CF495005951E7 /* MPDollarPointCloudUtility.h in Headers */,
 				5F367C17187A9381007EC421 /* MPStrokeSequence.h in Headers */,
@@ -989,7 +993,7 @@
 				5F367C2A187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */,
 				5F367C0C187A935A007EC421 /* MPPoint.m in Sources */,
 				5F367C14187A936B007EC421 /* MPStroke.m in Sources */,
-				5F7357B7186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
+				5F7357B7186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */,
 				5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
 				5F367C19187A9381007EC421 /* MPStrokeSequence.m in Sources */,
 			);
@@ -1017,7 +1021,7 @@
 				DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */,
 				5F367C0E187A935A007EC421 /* MPPointCloud.m in Sources */,
 				5F367C22187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */,
-				5F7357B6186CF495005951E7 /* MPPointCloudRecognition.m in Sources */,
+				5F7357B6186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */,
 				5F367C29187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */,
 				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
 				5F367C13187A936B007EC421 /* MPStroke.m in Sources */,

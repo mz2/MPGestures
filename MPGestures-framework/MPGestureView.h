@@ -11,7 +11,7 @@
 extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
 
 @class MPGestureView;
-@class MPStrokeSequence, MPStroke, MPPointCloudRecognition;
+@class MPStrokeSequence, MPStroke, MPStrokeSequenceRecognition;
 
 @protocol MPGestureViewDelegate <NSObject>
 
@@ -20,7 +20,7 @@ extern const NSTimeInterval MPGestureViewStrokesEndedInterval;
    inStrokeSequence:(MPStrokeSequence *)strokeSequence;
 
 - (void)gestureView:(MPGestureView *)gestureView
- didFinishDetection:(MPPointCloudRecognition *)result
+ didFinishDetection:(MPStrokeSequenceRecognition *)result
  withStrokeSequence:(MPStrokeSequence *)strokeSequence;
 
 @end

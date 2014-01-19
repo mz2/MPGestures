@@ -13,7 +13,7 @@
 #import "MPStroke.h"
 #import "MPPoint.h"
 #import "MPDollarPointCloudRecognizer.h"
-#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequenceRecognition.h"
 
 #import "MPStrokeSequenceDatabaseSynchronizer.h"
 
@@ -58,7 +58,7 @@
     // should always recognise self and therefore have self's name as a prefix:
     // recognizer's point clouds have names corresponding to label-signature combination.
     for (MPStrokeSequence *seq in db.strokeSequenceSet) {
-        MPPointCloudRecognition *recognition = [recognizer recognizeStrokeSequence:seq];
+        MPStrokeSequenceRecognition *recognition = [recognizer recognizeStrokeSequence:seq];
         
         XCTAssertTrue([recognition.name hasPrefix:seq.name], @"%@ != %@",
                       recognition.name, seq.name);

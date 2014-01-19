@@ -1,6 +1,6 @@
 #import "GestureViewController.h"
 #import "MPDollarPointCloudUtility.h"
-#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequenceRecognition.h"
 #import "CustomizeViewController.h"
 
 @implementation GestureViewController
@@ -31,7 +31,7 @@
 }
 
 - (void)gestureRecognized:(MPDollarPGestureRecognizer *)sender {
-    MPPointCloudRecognition *result = [sender result];
+    MPStrokeSequenceRecognition *result = [sender result];
     [resultLabel setText:[NSString stringWithFormat:@"Result: %@ (Score: %.2f)",
                           [result name], [result score]]];
 }

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MPStrokeSequenceRecognizer.h"
 
 /**
  *  Abstract base class for supervised gesture recognizers.
  */
-@interface MPSupervisedGestureRecognizer : NSObject
+@interface MPSupervisedGestureRecognizer : NSObject <MPStrokeSequenceRecognizer>
 
 @end
 

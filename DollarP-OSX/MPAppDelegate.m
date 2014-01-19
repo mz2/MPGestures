@@ -8,7 +8,7 @@
 
 #import "MPAppDelegate.h"
 #import "MPGestureView.h"
-#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequenceRecognition.h"
 #import "MPStrokeSequence.h"
 
 @interface MPAppDelegate ()

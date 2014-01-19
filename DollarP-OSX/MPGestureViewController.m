@@ -10,7 +10,7 @@
 #import "NSFileManager+ApplicationSupport.h"
 
 #import "MPStrokeSequenceDatabase.h"
-#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequenceRecognition.h"
 #import "MPStrokeSequence.h"
 
 #import "MPStrokeSequenceDatabaseSynchronizer.h"
@@ -121,7 +121,7 @@
 }
 
 - (void)gestureView:(MPGestureView *)gestureView
- didFinishDetection:(MPPointCloudRecognition *)result
+ didFinishDetection:(MPStrokeSequenceRecognition *)result
  withStrokeSequence:(MPStrokeSequence *)strokeSequence
 {
     self.statusLabel.stringValue = [NSString stringWithFormat:@"Detected as %@", result.name];

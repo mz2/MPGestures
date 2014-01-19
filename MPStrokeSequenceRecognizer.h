@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class MPStrokeSequenceRecognition, MPStrokeSequence;
+
 @protocol MPStrokeSequenceRecognizer <NSObject>
+
+/**
+ *  Recognizes a stroke sequence.
+ */
+- (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq;
+
 
 @end

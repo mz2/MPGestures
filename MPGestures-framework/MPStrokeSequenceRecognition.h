@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface MPPointCloudRecognition : NSObject
+@interface MPStrokeSequenceRecognition : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) float score;

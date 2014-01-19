@@ -16,8 +16,8 @@
     return self;
 }
 
-- (MPPointCloudRecognition *)recognize:(NSArray *)points {
-    MPPointCloudRecognition *result = [[MPPointCloudRecognition alloc] init];
+- (MPStrokeSequenceRecognition *)recognize:(NSArray *)points {
+    MPStrokeSequenceRecognition *result = [[MPStrokeSequenceRecognition alloc] init];
     [result setName:@"No match"];
     [result setScore:0.0];
     
@@ -81,7 +81,7 @@
     [[self pointClouds] addObject:pointCloud];
 }
 
-- (MPPointCloudRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq {
+- (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq {
     MPPointCloud *pointCloud = [seq pointCloudRepresentationWithResampleCount:self.resampleRate];
     return [self recognize:pointCloud.points];
 }

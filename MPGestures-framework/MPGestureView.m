@@ -172,7 +172,7 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     
     NSLog(@"Points:\n%@", ps);
     
-    MPPointCloudRecognition *result = [dp recognize:ps];
+    MPStrokeSequenceRecognition *result = [dp recognize:ps];
     NSLog(@"Result: %@ (score: %.2f)", result.name, result.score);
     
     [self.delegate gestureView:self didFinishDetection:result withStrokeSequence:_currentStrokeSequence];

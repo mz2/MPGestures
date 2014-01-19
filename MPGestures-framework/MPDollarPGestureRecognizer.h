@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
-@property (nonatomic, strong, readonly) MPPointCloudRecognition *result;
+@property (nonatomic, strong, readonly) MPStrokeSequenceRecognition *result;
 
 - (void)reset;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

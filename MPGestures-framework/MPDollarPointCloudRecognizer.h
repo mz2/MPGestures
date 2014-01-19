@@ -1,10 +1,12 @@
 #import <Foundation/Foundation.h>
-#import "MPPointCloudRecognition.h"
+#import "MPStrokeSequenceRecognition.h"
 #import "MPPoint.h"
+
+#import "MPStrokeSequenceRecognizer.h"
 
 @class MPStrokeSequence;
 
-@interface MPDollarPointCloudRecognizer : NSObject;
+@interface MPDollarPointCloudRecognizer : NSObject <MPStrokeSequenceRecognizer>
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
 
@@ -17,7 +19,7 @@
 + (NSArray *)scale:(NSArray *)points;
 + (NSArray *)translate:(NSArray *)points to:(MPPoint *)point;
 
-- (MPPointCloudRecognition *)recognize:(NSArray *)points;
+- (MPStrokeSequenceRecognition *)recognize:(NSArray *)points;
 - (void)addGesture:(NSString *)name points:(NSArray *)points;
 
 /**
@@ -28,6 +30,6 @@
 /**
  *  Recognizes a stroke sequence given its point cloud representation.
  */
-- (MPPointCloudRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq;
+- (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq;
 
 @end
