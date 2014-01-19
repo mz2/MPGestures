@@ -89,7 +89,7 @@
 
 - (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
 {
-    NSArray *points = [self.strokes valueForKeyPath:@"@unionOfArrays.self"];
+    NSArray *points = [[self.strokes valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     return [[MPPointCloud alloc] initWithName:self.name
                                            points:points
                                 resampledToNumber:resampledPointCount

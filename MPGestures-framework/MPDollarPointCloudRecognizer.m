@@ -1,6 +1,8 @@
 #import "MPDollarPointCloudRecognizer.h"
 #import "MPPointCloud.h"
 
+#import "MPStrokeSequence.h"
+
 @implementation MPDollarPointCloudRecognizer
 
 @synthesize pointClouds;
@@ -9,7 +11,7 @@
     self = [super init];
     if (self) {
         pointClouds = [NSMutableArray array];
-        _resampleCount = DollarPNumResampledPoints;
+        _resampleRate = DollarPNumResampledPoints;
     }
     return self;
 }
@@ -23,8 +25,8 @@
         return result;
     }
     
-    assert(_resampleCount > 8);
-    points = [[self class] resample:points numPoints:_resampleCount];
+    assert(_resampleRate > 8);
+    points = [[self class] resample:points numPoints:_resampleRate];
     points = [[self class] scale:points];
     points = [[self class] translate:points to:[MPPoint origin]];
     
@@ -53,14 +55,35 @@
 }
 
 - (void)addGesture:(NSString *)name
-            points:(NSArray *)points
-{
+            points:(NSArray *)points {
     MPPointCloud *pointCloud = [[MPPointCloud alloc] initWithName:name
-                                                                   points:points
-                                                        resampledToNumber:self.resampleCount
-                                                          normalizedScale:YES
-                                                     differenceToCentroid:[MPPoint origin]];
+                                                           points:points
+                                                resampledToNumber:self.resampleRate
+                                                  normalizedScale:YES
+                                             differenceToCentroid:[MPPoint origin]];
     [[self pointClouds] addObject:pointCloud];
+}
+
+- (void)addStrokeSequence:(MPStrokeSequence *)sequence {
+    MPPointCloud *pointCloud = [sequence pointCloudRepresentationWithResampleCount:self.resampleRate];
+    
+    // FIXME: make it a map of point clouds by name.
+    BOOL matchingNameExists = [[self.pointClouds filteredArrayUsingPredicate:
+      [NSPredicate predicateWithBlock:
+       ^BOOL(MPPointCloud *cloud, NSDictionary *bindings) {
+           return [cloud.name isEqualToString:sequence.name];
+    }]] firstObject] != nil;
+    
+    if (matchingNameExists)
+        pointCloud.name
+            = [NSString stringWithFormat:@"%@-%@", sequence.name, sequence.signature];
+    
+    [[self pointClouds] addObject:pointCloud];
+}
+
+- (MPPointCloudRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq {
+    MPPointCloud *pointCloud = [seq pointCloudRepresentationWithResampleCount:self.resampleRate];
+    return [self recognize:pointCloud.points];
 }
 
 + (float)greedyCloudMatch:(NSArray *)points

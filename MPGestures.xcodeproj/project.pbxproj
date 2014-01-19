@@ -45,6 +45,10 @@
 		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */; };
+		5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
+		5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
+		5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
+		5FCC4151188C7A0500FF08BB /* Fixtures in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
 		5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15B18690ED500466512 /* Cocoa.framework */; };
 		5FD5CC88187693FD0038C834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD5CC86187693FD0038C834 /* InfoPlist.strings */; };
 		5FD5CC8A187693FD0038C834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CC89187693FD0038C834 /* main.m */; };
@@ -58,10 +62,10 @@
 		5FD5CCB3187694840038C834 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3F1A31869135C00466512 /* MPAppDelegate.m */; };
 		5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
 		5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F85863D186B6D2A00AD762E /* MPRandomForest.framework */; };
-		5FD5CCBB187694F50038C834 /* MPGesturesUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */; };
+		5FD5CCBB187694F50038C834 /* MPStrokeSequenceRoundtripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPStrokeSequenceRoundtripTests.m */; };
 		5FF318AC18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */; };
 		5FF318AD18815C2D00C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */; };
-		5FF318AE18815C3000C8672D /* MPGesturesUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */; };
+		5FF318AE18815C3000C8672D /* MPStrokeSequenceRoundtripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD5CCBA187694F50038C834 /* MPStrokeSequenceRoundtripTests.m */; };
 		5FF318B118817E5200C8672D /* MPGestureTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B018817E5200C8672D /* MPGestureTestHelper.m */; };
 		5FF318B218817E5200C8672D /* MPGestureTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B018817E5200C8672D /* MPGestureTestHelper.m */; };
 		5FF318B4188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */; };
@@ -179,6 +183,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5FCC4150188C7A0000FF08BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				5FCC4151188C7A0500FF08BB /* Fixtures in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF318C41882906300C8672D /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +244,8 @@
 		5FAB2E03186C3DC100F7948E /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASPreferencesWindowController.m; path = External/MASPreferences/MASPreferencesWindowController.m; sourceTree = SOURCE_ROOT; };
 		5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureViewController.h; sourceTree = "<group>"; };
 		5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureViewController.m; sourceTree = "<group>"; };
+		5FCC4147188C5D8E00FF08BB /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
+		5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStrokeSequenceClassificationTests.m; sourceTree = "<group>"; };
 		5FD5CC81187693FD0038C834 /* Gestures-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gestures-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD5CC85187693FD0038C834 /* Gestures for Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for Mac-Info.plist"; sourceTree = "<group>"; };
 		5FD5CC87187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -241,7 +257,7 @@
 		5FD5CC9B187693FD0038C834 /* Gestures-OSX-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gestures-OSX-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD5CCA2187693FD0038C834 /* Gestures for MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gestures for MacTests-Info.plist"; sourceTree = "<group>"; };
 		5FD5CCA4187693FD0038C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGesturesUnitTests.m; sourceTree = "<group>"; };
+		5FD5CCBA187694F50038C834 /* MPStrokeSequenceRoundtripTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStrokeSequenceRoundtripTests.m; sourceTree = "<group>"; };
 		5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPManualGestureSyncIntegrationTests.m; sourceTree = "<group>"; };
 		5FF318AF18817E5200C8672D /* MPGestureTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGestureTestHelper.h; sourceTree = "<group>"; };
 		5FF318B018817E5200C8672D /* MPGestureTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGestureTestHelper.m; sourceTree = "<group>"; };
@@ -433,6 +449,15 @@
 			name = MASPreferences;
 			sourceTree = "<group>";
 		};
+		5FCC414E188C5FF300FF08BB /* Recognizers */ = {
+			isa = PBXGroup;
+			children = (
+				DC21979C165EA5CB009CFCF3 /* Point Cloud Gesture Recognizer */,
+				5FF318B918828D1B00C8672D /* Supervised Gesture Recognizer */,
+			);
+			name = Recognizers;
+			sourceTree = "<group>";
+		};
 		5FD5CC83187693FD0038C834 /* Gestures for Mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,9 +485,11 @@
 		5FD5CCA0187693FD0038C834 /* Gestures for Mac Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5FD5CCBA187694F50038C834 /* MPGesturesUnitTests.m */,
+				5FCC4147188C5D8E00FF08BB /* Fixtures */,
+				5FD5CCBA187694F50038C834 /* MPStrokeSequenceRoundtripTests.m */,
 				5FF318AB18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m */,
 				5FF318B3188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m */,
+				5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */,
 				5FD5CCA1187693FD0038C834 /* Supporting Files */,
 				5FF318AF18817E5200C8672D /* MPGestureTestHelper.h */,
 				5FF318B018817E5200C8672D /* MPGestureTestHelper.m */,
@@ -505,10 +532,9 @@
 				5F735793186CF467005951E7 /* iOS */,
 				5F735792186CF463005951E7 /* OSX */,
 				5F7357C4186CF49B005951E7 /* Cocoa Categories */,
-				5F367C25187A93D3007EC421 /* Services */,
 				5F367C03187A9338007EC421 /* Domain Model */,
-				DC21979C165EA5CB009CFCF3 /* Point Cloud Gesture Recognizer */,
-				5FF318B918828D1B00C8672D /* Supervised Gesture Recognizer */,
+				5FCC414E188C5FF300FF08BB /* Recognizers */,
+				5F367C25187A93D3007EC421 /* Services */,
 				5FF3F16218690ED500466512 /* Supporting Files */,
 			);
 			name = Gestures.framework;
@@ -724,6 +750,7 @@
 				5FD5CC97187693FD0038C834 /* Sources */,
 				5FD5CC98187693FD0038C834 /* Frameworks */,
 				5FD5CC99187693FD0038C834 /* Resources */,
+				5FCC4150188C7A0000FF08BB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -903,6 +930,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */,
 				5FF3F17B18690ED500466512 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,9 +967,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FD5CCBB187694F50038C834 /* MPGesturesUnitTests.m in Sources */,
+				5FD5CCBB187694F50038C834 /* MPStrokeSequenceRoundtripTests.m in Sources */,
 				5FF318B218817E5200C8672D /* MPGestureTestHelper.m in Sources */,
 				5FF318AD18815C2D00C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */,
+				5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */,
 				5FF318B5188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -971,10 +1000,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF318B118817E5200C8672D /* MPGestureTestHelper.m in Sources */,
+				5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */,
 				5FF3F17D18690ED500466512 /* DollarPTests.m in Sources */,
 				5FF318B4188247B600C8672D /* MPContinuousGestureSyncIntegrationTests.m in Sources */,
 				5FF318AC18815C2800C8672D /* MPManualGestureSyncIntegrationTests.m in Sources */,
-				5FF318AE18815C3000C8672D /* MPGesturesUnitTests.m in Sources */,
+				5FF318AE18815C3000C8672D /* MPStrokeSequenceRoundtripTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
