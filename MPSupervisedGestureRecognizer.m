@@ -8,7 +8,19 @@
 
 #import "MPSupervisedGestureRecognizer.h"
 
-#import <MPRandomForest/MPDatumClassifier.h>
+#import "MPStrokeSequenceDatabase.h"
+
+#import <MPRandomForest/MPALGLIBDecisionForestClassifier.h>
+#import <MPRandomForest/MPDataTable.h>
+#import <MPRandomForest/MPIdentityTransformer.h>
+
+@interface MPSupervisedGestureRecognizer ()
+@property (readonly) MPDataTable *trainingData;
+@end
+
+@interface MPRandomForestGestureRecognizer ()
+@property (readonly) MPALGLIBDecisionForestClassifier *classifier;
+@end
 
 @implementation MPSupervisedGestureRecognizer
 
@@ -27,15 +39,30 @@
     return self;
 }
 
+- (void)addStrokeSequence:(MPStrokeSequence *)sequence {
+    @throw [NSException exceptionWithName:@"MPAbstractMethodException" reason:nil userInfo:nil];
+}
+
+- (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)sequence {
+    @throw [NSException exceptionWithName:@"MPAbstractMethodException" reason:nil userInfo:nil];
+}
+
 @end
+
+#pragma mark - Random forest gesture recognizer
 
 @implementation MPRandomForestGestureRecognizer
 
-- (instancetype)init
+- (instancetype)initWithSequenceDatabase:(MPStrokeSequenceDatabase *)database
 {
     self = [super initRecognizer];
     if (self) {
         
+        id<MPTrainableDataSet> dataset = [database dataSetRepresentation];
+        
+        _classifier = [[MPALGLIBDecisionForestClassifier alloc]
+                        initWithTransformer:[[MPIdentityTransformer alloc] initWithDataSet:dataset]
+                       trainingData:dataset];
     }
     return self;
 }

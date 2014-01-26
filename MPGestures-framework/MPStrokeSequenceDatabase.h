@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MPStrokeSequence;
+@protocol MPTrainableDataSet;
 
 extern NSString * const MPStrokeSequenceDatabaseErrorDomain;
 
@@ -78,7 +79,17 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
  */
 - (void)addStrokeSequencesFromDatabase:(MPStrokeSequenceDatabase *)database;
 
-- (NSDictionary *)dictionaryRepresentation;
+/** A JSON and plist encodable dictionary representation. */
+@property (readonly, copy) NSDictionary *dictionaryRepresentation;
+
+/**
+ * A data set representation of the sequence database's stroke sequences.
+ *
+ * Includes two columns:
+ *
+ * 0. the sequence name label (a categorical field),
+ * 1. the stroke sequence as a custom object type. */
+@property (readonly, copy) id<MPTrainableDataSet> dataSetRepresentation;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 

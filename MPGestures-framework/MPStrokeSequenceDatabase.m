@@ -9,6 +9,9 @@
 #import "MPStrokeSequenceDatabase.h"
 #import "MPStrokeSequence.h"
 
+#import <MPRandomForest/MPTrainingInstructions.h>
+#import <MPRandomForest/MPDataTable.h>
+
 NSString * const MPStrokeSequenceDatabaseErrorDomain = @"MPStrokeSequenceDatabaseErrorDomain";
 
 NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification
@@ -94,6 +97,28 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
     
     return @{@"identifier": self.identifier, @"strokeSequenceMap":dict};
 }
+
+NSString * const MPCategoryNameStrokeSequenceLabel = @"sequence-label";
+
+- (id<MPTrainableDataSet>)dataSetRepresentation {
+    MPDataTable *tbl =
+    [[MPDataTable alloc] initWithColumnTypes:
+        @[@(MPColumnTypeCategorical), @(MPColumnTypeCustomObject)]];
+    [tbl addCategoryWithName:MPCategoryNameStrokeSequenceLabel
+                      values:
+     [[self.strokeSequenceNameSet allObjects] sortedArrayUsingSelector:@selector(compare:)]];
+    [tbl assignCategoryWithName:MPCategoryNameStrokeSequenceLabel toColumnWithIndex:0];
+    
+    for (MPStrokeSequence *seq in self.strokeSequenceSet) {
+        assert([tbl indexForCategoryValue:seq.name
+                      forCategoryWithName:MPCategoryNameStrokeSequenceLabel] != NSNotFound);
+        id<MPDatum> datum = [[MPDataTableRow alloc] initWithValues:@[seq.name, seq] columnTypes:tbl.columnTypes];
+        [tbl appendDatum:datum];
+    }
+    
+    return tbl;
+}
+
 
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence
 {
