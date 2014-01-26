@@ -24,8 +24,6 @@
  */
 @property (readonly, copy) NSString *signature;
 
-
-
 - (BOOL)containsStroke:(MPStroke *)stroke;
 
 - (void)addStroke:(MPStroke *)stroke;
@@ -34,6 +32,11 @@
 
 - (NSDictionary *)dictionaryRepresentation;
 
+/**
+ * Point cloud representation, optionally scaled and centered on its centroid.
+ *
+ * @param resampledPointCount If a positive integer, point cloud is resampled at the specified rate, and scale and transaltion normalised. If 0 passed, no resampling, scale, or translation normalisation is done.
+ */
 - (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount;
 
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;

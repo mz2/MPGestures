@@ -89,12 +89,14 @@
 
 - (MPPointCloud *)pointCloudRepresentationWithResampleCount:(NSUInteger)resampledPointCount
 {
+    BOOL shouldProcess = resampledPointCount > 0;
+    
     NSArray *points = [[self.strokes valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
     return [[MPPointCloud alloc] initWithName:self.name
-                                           points:points
-                                resampledToNumber:resampledPointCount
-                                  normalizedScale:YES
-                             differenceToCentroid:[MPPoint origin]];
+                                       points:points
+                            resampledToNumber:resampledPointCount // negative number interpreted as no resampling
+                              normalizedScale:shouldProcess
+                         differenceToCentroid:shouldProcess ? [MPPoint origin] : nil];
 }
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

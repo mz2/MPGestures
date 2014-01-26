@@ -7,9 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MPRandomForest/MPDataSet.h>
 
 @class MPStrokeSequence;
-@protocol MPTrainableDataSet;
+
+/** A protocol used to label the kind of dataset returned by MPStrokeSequenceDatabase -dataSetRepresentation. */
+@protocol MPStrokeSequenceDataSet <MPTrainableDataSet>
+@end
+
+/**
+ *  Category name denoting a label for a stroke sequence (label meaning e.g. "triangle", "letter A").
+ */
+extern NSString * const MPCategoryNameStrokeSequenceLabel;
+
+/** Column name in a dataset for a column containing stroke sequence labels (means the same as the corresponding category name MPCategoryNameStrokeSequenceLabel, but there can be multiple columns of the category, whereas just one column name per dataset). */
+extern NSString * const MPColumnNameStrokeSequenceLabel;
+
+/** Column name in a dataset for a column containing stroke sequence objects. */
+extern NSString * const MPColumnNameStrokeSequenceObject;
 
 extern NSString * const MPStrokeSequenceDatabaseErrorDomain;
 
@@ -89,7 +104,7 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
  *
  * 0. the sequence name label (a categorical field),
  * 1. the stroke sequence as a custom object type. */
-@property (readonly, copy) id<MPTrainableDataSet> dataSetRepresentation;
+@property (readonly, copy) id<MPStrokeSequenceDataSet> dataSetRepresentation;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 

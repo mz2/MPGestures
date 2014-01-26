@@ -12,6 +12,10 @@
 #import <MPRandomForest/MPTrainingInstructions.h>
 #import <MPRandomForest/MPDataTable.h>
 
+NSString * const MPColumnNameStrokeSequenceObject = @"strokeSequence";
+NSString * const MPColumnNameStrokeSequenceLabel = @"strokeSequenceLabel";
+NSString * const MPCategoryNameStrokeSequenceLabel = @"strokeSequenceLabel";
+
 NSString * const MPStrokeSequenceDatabaseErrorDomain = @"MPStrokeSequenceDatabaseErrorDomain";
 
 NSString * const MPStrokeSequenceDatabaseDidAddSequenceNotification
@@ -97,8 +101,6 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
     
     return @{@"identifier": self.identifier, @"strokeSequenceMap":dict};
 }
-
-NSString * const MPCategoryNameStrokeSequenceLabel = @"sequence-label";
 
 - (id<MPTrainableDataSet>)dataSetRepresentation {
     MPDataTable *tbl =

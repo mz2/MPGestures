@@ -45,6 +45,9 @@
 		5F7357C8186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7357C6186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m */; };
 		5F7357CE186CF4E8005951E7 /* MPGestures-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */; };
+		5F9A6E2F18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */; };
+		5F9A6E3018953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
+		5F9A6E3118953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
 		5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
 		5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
 		5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
@@ -239,6 +242,8 @@
 		5F7357CA186CF4E8005951E7 /* MPGestures-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MPGestures-Info.plist"; path = "MPGestures-framework/MPGestures-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5F7357CB186CF4E8005951E7 /* MPGestures-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MPGestures-Prefix.pch"; path = "MPGestures-framework/MPGestures-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
+		5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDimensionMapper.h; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.h"; sourceTree = SOURCE_ROOT; };
+		5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDimensionMapper.m; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.m"; sourceTree = SOURCE_ROOT; };
 		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
 		5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MASPreferencesWindow.xib; path = External/MASPreferences/MASPreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
 		5FAB2E02186C3DC100F7948E /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesWindowController.h; path = External/MASPreferences/MASPreferencesWindowController.h; sourceTree = SOURCE_ROOT; };
@@ -515,6 +520,8 @@
 			children = (
 				5FF318BC18828DB800C8672D /* MPSupervisedGestureRecognizer.h */,
 				5FF318BD18828DB800C8672D /* MPSupervisedGestureRecognizer.m */,
+				5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */,
+				5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */,
 			);
 			name = "Supervised Gesture Recognizer";
 			sourceTree = "<group>";
@@ -706,6 +713,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9A6E2F18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h in Headers */,
 				5F7357B5186CF495005951E7 /* MPStrokeSequenceRecognition.h in Headers */,
 				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
 				5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */,
@@ -994,6 +1002,7 @@
 				5F367C0C187A935A007EC421 /* MPPoint.m in Sources */,
 				5F367C14187A936B007EC421 /* MPStroke.m in Sources */,
 				5F7357B7186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */,
+				5F9A6E3118953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */,
 				5F7357AE186CF495005951E7 /* MPDollarPointCloudUtility.m in Sources */,
 				5F367C19187A9381007EC421 /* MPStrokeSequence.m in Sources */,
 			);
@@ -1023,6 +1032,7 @@
 				5F367C22187A938D007EC421 /* MPStrokeSequenceDatabase.m in Sources */,
 				5F7357B6186CF495005951E7 /* MPStrokeSequenceRecognition.m in Sources */,
 				5F367C29187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.m in Sources */,
+				5F9A6E3018953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */,
 				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
 				5F367C13187A936B007EC421 /* MPStroke.m in Sources */,
 				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,

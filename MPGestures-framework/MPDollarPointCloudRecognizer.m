@@ -16,35 +16,57 @@
     return self;
 }
 
++ (NSArray *)processPoints:(NSArray *)points
+          atResamplingRate:(NSUInteger)resampleRate
+{
+    assert(resampleRate > 8);
+    points = [[self class] resample:points numPoints:resampleRate];
+    points = [[self class] scale:points];
+    points = [[self class] translate:points to:[MPPoint origin]];
+    return points;
+}
+
++ (float)scoreForGreedyCloudMatchOfPointCloud:(MPPointCloud *)pointCloud
+                                 withTemplate:(MPPointCloud *)templatePointCloud
+                               atResamplerate:(NSUInteger)resampleRate {
+    NSArray *points = nil;
+    if (resampleRate)
+        points = [self processPoints:pointCloud.points atResamplingRate:resampleRate];
+    else
+        points = pointCloud.points;
+    
+    float d = [[self class] greedyCloudMatch:points template:templatePointCloud.points];
+    float score = MAX((d - 2.0f) / -2.0f, 0.0f);
+    return score;
+}
+
 - (MPStrokeSequenceRecognition *)recognize:(NSArray *)points {
     MPStrokeSequenceRecognition *result = [[MPStrokeSequenceRecognition alloc] init];
     [result setName:@"No match"];
     [result setScore:0.0];
     
-    if ([points count] == 0) {
+    if (!points.count) {
         return result;
     }
     
-    assert(_resampleRate > 8);
-    points = [[self class] resample:points numPoints:_resampleRate];
-    points = [[self class] scale:points];
-    points = [[self class] translate:points to:[MPPoint origin]];
+    points = [[self class] processPoints:points atResamplingRate:_resampleRate];
     
     float b = +INFINITY;
     int u = -1;
     
     for (int i = 0; i < [[self pointClouds] count]; i++) {
-        float d = [[self class] greedyCloudMatch:points
-                                        template:[[self pointClouds][i] points]];
+        float d = [[self class] greedyCloudMatch:points template:[[self pointClouds][i] points]];
         if (d < b) {
             b = d;
             u = i;
         }
     }
     
+    float score = MAX((b - 2.0f) / -2.0f, 0.0f);
+    
     if (u != -1) {
         [result setName:[[self pointClouds][u] name]];
-        [result setScore:MAX((b - 2.0f) / -2.0f, 0.0f)];
+        [result setScore:score];
     }
     
     return result;

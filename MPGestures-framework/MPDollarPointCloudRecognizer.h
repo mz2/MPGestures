@@ -4,7 +4,7 @@
 
 #import "MPStrokeSequenceRecognizer.h"
 
-@class MPStrokeSequence;
+@class MPStrokeSequence, MPPointCloud;
 
 @interface MPDollarPointCloudRecognizer : NSObject <MPStrokeSequenceRecognizer>
 
@@ -22,14 +22,15 @@
 - (MPStrokeSequenceRecognition *)recognize:(NSArray *)points;
 - (void)addGesture:(NSString *)name points:(NSArray *)points;
 
-/**
- *  Adds a point cloud representation of a stroke sequence at the recognizer's resampling rate.
- */
+/** Adds a point cloud representation of a stroke sequence at the recognizer's resampling rate. */
 - (void)addStrokeSequence:(MPStrokeSequence *)sequence;
 
-/**
- *  Recognizes a stroke sequence given its point cloud representation.
- */
+/** Recognizes a stroke sequence given its point cloud representation. */
 - (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq;
+
+/** Score a point cloud with a template point cloud at the specified resampling rate. */
++ (float)scoreForGreedyCloudMatchOfPointCloud:(MPPointCloud *)pointCloud
+                                 withTemplate:(MPPointCloud *)templatePointCloud
+                               atResamplerate:(NSUInteger)resampleRate;
 
 @end
