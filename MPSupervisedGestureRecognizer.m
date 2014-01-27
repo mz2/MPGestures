@@ -14,12 +14,17 @@
 #import <MPRandomForest/MPDataTable.h>
 #import <MPRandomForest/MPIdentityTransformer.h>
 
+#import "MPStrokeSequenceDimensionMapper.h"
+#import "MPPointCloud.h"
+
 @interface MPSupervisedGestureRecognizer ()
-@property (readonly) MPDataTable *trainingData;
+@property (readonly) MPStrokeSequenceDatabase *trainingDatabase;
+@property (readonly) MPStrokeSequenceDatabase *referenceDatabase;
 @end
 
 @interface MPRandomForestGestureRecognizer ()
 @property (readonly) MPALGLIBDecisionForestClassifier *classifier;
+@property (readonly) MPStrokeSequenceDimensionMapper *dimensionMapper;
 @end
 
 @implementation MPSupervisedGestureRecognizer
@@ -30,11 +35,13 @@
     return nil;
 }
 
-- (instancetype)initRecognizer
+- (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
+                       referenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase
 {
     self = [super init];
     if (self) {
-        
+        _trainingDatabase = trainingDatabase;
+        _referenceDatabase = referenceDatabase;
     }
     return self;
 }
@@ -51,18 +58,30 @@
 
 #pragma mark - Random forest gesture recognizer
 
+@interface MPRandomForestGestureRecognizer ()
+@property (readonly) id<MPTrainableDataSet> trainingDataSet;
+@end
+
 @implementation MPRandomForestGestureRecognizer
 
-- (instancetype)initWithSequenceDatabase:(MPStrokeSequenceDatabase *)database
+- (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
+               referenceSequenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase
 {
-    self = [super initRecognizer];
+    self = [super initWithTrainingDatabase:trainingDatabase referenceDatabase:referenceDatabase];
     if (self) {
+        id<MPStrokeSequenceDataSet> trainingSequenceDataset = [trainingDatabase dataSetRepresentation];
         
-        id<MPTrainableDataSet> dataset = [database dataSetRepresentation];
+        NSArray *referenceSequences = [referenceDatabase.strokeSequenceSet.allObjects sortedArrayUsingSelector:@selector(compare:)];
+        
+        _dimensionMapper = [[MPStrokeSequenceDimensionMapper alloc] initWithDataSet:trainingSequenceDataset
+                                                           referenceStrokeSequences:referenceSequences
+                                                                       resampleRate:MPPointCloudDefaultResampleRate];
+        
+        _trainingDataSet = [_dimensionMapper mappedDataSet];
         
         _classifier = [[MPALGLIBDecisionForestClassifier alloc]
-                        initWithTransformer:[[MPIdentityTransformer alloc] initWithDataSet:dataset]
-                       trainingData:dataset];
+                       initWithTransformer:[[MPIdentityTransformer alloc] initWithDataSet:_trainingDataSet]
+                       trainingData:_trainingDataSet];
     }
     return self;
 }

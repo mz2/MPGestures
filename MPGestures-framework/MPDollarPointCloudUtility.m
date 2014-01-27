@@ -4,7 +4,7 @@
 
 MPPointCloud * MakePointCloud(NSString *name, NSArray *points) {
     return [[MPPointCloud alloc] initWithName:name points:points
-                                resampledToNumber:DollarPNumResampledPoints
+                                resampledToNumber:MPPointCloudDefaultResampleRate
                                   normalizedScale:YES differenceToCentroid:[MPPoint origin]];
 }
 

@@ -33,6 +33,11 @@
 - (NSDictionary *)dictionaryRepresentation;
 
 /**
+ *  Stroke sequences have a natural sorting order based on case **sensitive** comparison of the stroke sequence names.
+ */
+- (NSComparisonResult)compare:(MPStrokeSequence *)other;
+
+/**
  * Point cloud representation, optionally scaled and centered on its centroid.
  *
  * @param resampledPointCount If a positive integer, point cloud is resampled at the specified rate, and scale and transaltion normalised. If 0 passed, no resampling, scale, or translation normalisation is done.

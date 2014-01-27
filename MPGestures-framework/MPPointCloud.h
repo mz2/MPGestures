@@ -2,7 +2,7 @@
 
 @class MPPoint;
 
-static const NSInteger DollarPNumResampledPoints = 32;
+static const NSInteger MPPointCloudDefaultResampleRate = 32;
 
 @interface MPPointCloud : NSObject 
 

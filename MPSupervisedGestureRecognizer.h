@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MPStrokeSequenceRecognizer.h"
 
+@class MPStrokeSequenceDatabase;
+
 /**
  *  Abstract base class for supervised gesture recognizers.
  */
@@ -16,5 +18,6 @@
 @end
 
 @interface MPRandomForestGestureRecognizer : MPSupervisedGestureRecognizer
-
+- (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
+               referenceSequenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase;
 @end

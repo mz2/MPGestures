@@ -18,19 +18,33 @@
 
 @interface MPStrokeSequenceDimensionMapper ()
 @property (readonly) NSArray *referenceStrokeSequences;
-@property (readonly) MPDollarPointCloudRecognizer *recognizer;
-@property (readonly) NSUInteger pointCloudResampleRate;
+@property (readonly) NSArray *referencePointClouds;
 @end
 
 @implementation MPStrokeSequenceDimensionMapper
 
-- (instancetype)initWithDataSet:(id<MPStrokeSequenceDataSet>)dataSet {
+- (instancetype)initWithDataSet:(id<MPStrokeSequenceDataSet>)dataSet
+       referenceStrokeSequences:(NSArray *)referenceStrokeSequences
+                   resampleRate:(NSUInteger)resampleRate {
     self = [super initWithDataSet:dataSet];
     if (self) {
         assert([[dataSet nameForColumn:0] isEqualToString:MPCategoryNameStrokeSequenceLabel]);
         assert([dataSet typeForColumn:0] == MPColumnTypeCategorical);
         assert([[dataSet nameForColumn:1] isEqualToString:MPColumnNameStrokeSequenceObject]);
         assert([dataSet typeForColumn:1] == MPColumnTypeCustomObject);
+        
+        _pointCloudResampleRate = resampleRate;
+        assert(resampleRate > 8);
+
+        _referenceStrokeSequences = referenceStrokeSequences;
+        assert(_referenceStrokeSequences);
+        
+        NSMutableArray *pointClouds = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
+        for (MPStrokeSequence *seq in referenceStrokeSequences) {
+            MPPointCloud *pointCloud = [seq pointCloudRepresentationWithResampleCount:_pointCloudResampleRate];
+            [pointClouds addObject:pointCloud];
+        }
+        _referencePointClouds = [pointClouds copy];
     }
     return self;
 }
@@ -55,9 +69,10 @@
     assert(_referenceStrokeSequences);
     MPPointCloud *valueCloud = [value pointCloudRepresentationWithResampleCount:_pointCloudResampleRate];
     NSMutableArray *output = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
-    for (MPPointCloud *cloud in _recognizer.pointClouds) {
-        float score = [[_recognizer class] scoreForGreedyCloudMatchOfPointCloud:valueCloud withTemplate:cloud
-                                                                 atResamplerate:_pointCloudResampleRate];
+    for (MPPointCloud *cloud in _referenceStrokeSequences) {
+        float score = [[MPDollarPointCloudRecognizer class] scoreForGreedyCloudMatchOfPointCloud:valueCloud
+                                                                                    withTemplate:cloud
+                                                                                  atResamplerate:_pointCloudResampleRate];
         [output addObject:@(score)];
     }
     return [output copy];

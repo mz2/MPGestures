@@ -15,7 +15,7 @@
 #import "MPDollarPointCloudRecognizer.h"
 #import "MPStrokeSequenceRecognition.h"
 
-#import "MPStrokeSequenceDatabaseSynchronizer.h"
+#import "MPSupervisedGestureRecognizer.h"
 
 @interface MPStrokeSequenceClassificationTests : XCTestCase
 @end
@@ -32,17 +32,15 @@
     [super tearDown];
 }
 
-- (void)testRecognition
+- (void)testUnsupervisedPointCloudRecognition
 {
     NSError *dbErr = nil;
-    
     NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
                                                          withExtension:@"strokedb"
                                                           subdirectory:@"Fixtures"];
-    MPStrokeSequenceDatabase *db =
-    [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
-     
-     XCTAssertTrue(db != nil, @"A database was successfully loaded.");
+    MPStrokeSequenceDatabase *db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
+    
+    XCTAssertTrue(db != nil, @"A database was successfully loaded.");
     
     BOOL sequenceSetNamesMatch = [[db strokeSequenceNameSet] isEqualToSet:
                                   [NSSet setWithArray:@[@"circle", @"triangle", @"square"]]];
@@ -63,6 +61,25 @@
         XCTAssertTrue([recognition.name hasPrefix:seq.name], @"%@ != %@",
                       recognition.name, seq.name);
     }
+}
+
+- (void)testSupervisedPointCloudRecogniserTraining {
+    NSError *dbErr = nil;
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
+                                                                                                     withExtension:@"strokedb"
+                                                                                                      subdirectory:@"Fixtures"];
+    MPStrokeSequenceDatabase *tdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
+    
+    XCTAssertTrue(tdb != nil, @"A database was successfully loaded.");
+    
+    // TODO: use a different reference
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
+                                                                                                     withExtension:@"strokedb"
+                                                                                                      subdirectory:@"Fixtures"];
+    MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
+    MPRandomForestGestureRecognizer *recognizer = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:tdb referenceSequenceDatabase:rdb];
+    XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
+    
 }
 
 @end

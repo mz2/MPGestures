@@ -136,6 +136,10 @@
     return result;
 }
 
+- (NSComparisonResult)compare:(MPStrokeSequence *)other {
+    return [self.name compare:other.name];
+}
+
 - (NSString *)signature
 {
     return [NSString stringWithFormat:@"%lx", (unsigned long)self.hash];

@@ -11,7 +11,7 @@
     self = [super init];
     if (self) {
         pointClouds = [NSMutableArray array];
-        _resampleRate = DollarPNumResampledPoints;
+        _resampleRate = MPPointCloudDefaultResampleRate;
     }
     return self;
 }

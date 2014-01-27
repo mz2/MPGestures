@@ -105,10 +105,12 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 - (id<MPTrainableDataSet>)dataSetRepresentation {
     MPDataTable *tbl =
     [[MPDataTable alloc] initWithColumnTypes:
-        @[@(MPColumnTypeCategorical), @(MPColumnTypeCustomObject)]];
+        @[@(MPColumnTypeCategorical), @(MPColumnTypeCustomObject)]
+                                 columnNames:@[MPColumnNameStrokeSequenceLabel, MPColumnNameStrokeSequenceObject]
+                            labelColumnIndex:0
+                               datumCapacity:self.strokeSequenceSet.count];
     [tbl addCategoryWithName:MPCategoryNameStrokeSequenceLabel
-                      values:
-     [[self.strokeSequenceNameSet allObjects] sortedArrayUsingSelector:@selector(compare:)]];
+                      values:[[self.strokeSequenceNameSet allObjects] sortedArrayUsingSelector:@selector(compare:)]];
     [tbl assignCategoryWithName:MPCategoryNameStrokeSequenceLabel toColumnWithIndex:0];
     
     for (MPStrokeSequence *seq in self.strokeSequenceSet) {

@@ -15,6 +15,10 @@
 /**
  *  The input dataset must have two columns: a label, and a stroke sequence.
  */
-- (instancetype)initWithDataSet:(id<MPTrainableDataSet, MPStrokeSequenceDataSet>)dataSet;
+- (instancetype)initWithDataSet:(id<MPStrokeSequenceDataSet>)dataSet
+       referenceStrokeSequences:(NSArray *)referenceStrokeSequences
+                   resampleRate:(NSUInteger)resampleRate;
+
+@property (readwrite) NSUInteger pointCloudResampleRate;
 
 @end
