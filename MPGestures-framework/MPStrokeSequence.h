@@ -24,6 +24,11 @@
  */
 @property (readonly, copy) NSString *signature;
 
+/**
+ *  A string of format name-[first 4 bytes of signature].
+ */
+@property (readonly, copy) NSString *practicallyUniqueIdentifier;
+
 - (BOOL)containsStroke:(MPStroke *)stroke;
 
 - (void)addStroke:(MPStroke *)stroke;

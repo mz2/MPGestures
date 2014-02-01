@@ -63,13 +63,17 @@
     return @[MPColumnNameStrokeSequenceLabel];
 }
 
+- (NSUInteger)mappedDimensionalityForStrokeSequenceLabel {
+    return 1;
+}
+
 #pragma mark - The stroke sequence field mapping
 
 - (NSArray *)mappedStrokeSequenceValuesForDatumValue:(MPStrokeSequence *)value {
     assert(_referenceStrokeSequences);
     MPPointCloud *valueCloud = [value pointCloudRepresentationWithResampleCount:_pointCloudResampleRate];
     NSMutableArray *output = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
-    for (MPPointCloud *cloud in _referenceStrokeSequences) {
+    for (MPPointCloud *cloud in _referencePointClouds) {
         float score = [[MPDollarPointCloudRecognizer class] scoreForGreedyCloudMatchOfPointCloud:valueCloud
                                                                                     withTemplate:cloud
                                                                                   atResamplerate:_pointCloudResampleRate];
@@ -81,7 +85,7 @@
 - (NSArray *)mappedColumnTypesForStrokeSequence {
     assert(_referenceStrokeSequences);
     NSMutableArray *vals = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
-    for (NSUInteger i = 0; i < vals.count; i++)
+    for (NSUInteger i = 0; i < _referenceStrokeSequences.count; i++)
         [vals addObject:@(MPColumnTypeFloatingPoint)];
     
     return [vals copy];
@@ -89,7 +93,11 @@
 
 - (NSArray *)mappedColumnNamesForStrokeSequence {
     assert(_referenceStrokeSequences);
-    return [_referenceStrokeSequences valueForKey:@"name"];
+    return [_referenceStrokeSequences valueForKey:@"practicallyUniqueIdentifier"];
+}
+
+- (NSUInteger)mappedDimensionalityForStrokeSequence {
+    return _referenceStrokeSequences.count;
 }
 
 @end

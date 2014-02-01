@@ -12,15 +12,7 @@
 
 @protocol MPStrokeSequenceRecognizer <NSObject>
 
-/**
- * Adds a stroke sequence to the recognizer's set of recognizable targets.
- * A recognizer can mangle the sequence's name to make it unique.
- */
-- (void)addStrokeSequence:(MPStrokeSequence *)sequence;
-
-/**
- *  Recognizes a stroke sequence.
- */
+/** Recognizes a stroke sequence. */
 - (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)seq;
 
 @end

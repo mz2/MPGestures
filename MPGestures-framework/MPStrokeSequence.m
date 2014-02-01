@@ -137,12 +137,20 @@
 }
 
 - (NSComparisonResult)compare:(MPStrokeSequence *)other {
-    return [self.name compare:other.name];
+    NSComparisonResult res = [self.name compare:other.name];
+    if (res != NSOrderedSame)
+        return res;
+    
+    return [self.signature compare:other.signature];
 }
 
 - (NSString *)signature
 {
     return [NSString stringWithFormat:@"%lx", (unsigned long)self.hash];
+}
+
+- (NSString *)practicallyUniqueIdentifier {
+    return [NSString stringWithFormat:@"%@-%@", self.name, [self.signature substringToIndex:4]];
 }
 
 - (NSString *)description

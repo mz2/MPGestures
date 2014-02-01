@@ -106,8 +106,29 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
  * 1. the stroke sequence as a custom object type. */
 @property (readonly, copy) id<MPStrokeSequenceDataSet> dataSetRepresentation;
 
+/**
+ *  Initialise a stroke sequence database with an identifier and a set of stroke sequences mapped to their names.
+ *
+ *  @param identifier        An identifier for the database.
+ *  @param strokeSequenceMap A dictionary keyed on stroke sequence names, with an array of stroke sequences or stroke sequence dictionary representations as values.
+ */
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                 strokeSequenceMap:(NSDictionary *)strokeSequenceMap;
+
+/**
+ *  Initialise an empty stroke sequence database with an identifier.
+ */
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 
+/**
+ *  Initialise a stroke sequence database with a single stroke sequence.
+ */
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                    strokeSequence:(MPStrokeSequence *)strokeSequence;
+
+/**
+ *  Initialise a stroke sequence from its JSON / plist encodable dictionary representation.
+ */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 - (instancetype)initWithContentsOfURL:(NSURL *)url error:(NSError **)err;

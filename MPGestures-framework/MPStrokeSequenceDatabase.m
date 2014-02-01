@@ -45,21 +45,43 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
-    if (self)
-    {
-        
-        _identifier = dictionary[@"identifier"];
+    return [self initWithIdentifier:dictionary[@"identifier"]
+                  strokeSequenceMap:dictionary[@"strokeSequenceMap"]];
+}
 
-        NSDictionary *strokeSequenceMap = dictionary[@"strokeSequenceMap"];
-        
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                    strokeSequence:(MPStrokeSequence *)strokeSequence
+{
+    return [self initWithIdentifier:identifier
+                  strokeSequenceMap:@{strokeSequence.name : @[strokeSequence]}];
+}
+
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                 strokeSequenceMap:(NSDictionary *)strokeSequenceMap
+{
+    self = [super init];
+    if (self) {
+        _identifier = identifier;
+
         _namedStrokeSequences
             = [NSMutableDictionary dictionaryWithCapacity:strokeSequenceMap.count];
         
-        for (id k in strokeSequenceMap)
-            _namedStrokeSequences[k] = [NSMutableSet setWithArray:[MPStrokeSequence strokeSequencesWithArrayOfDictionaries:strokeSequenceMap[k]]];
+        
+        for (id k in strokeSequenceMap) {
+            NSArray *seqs = strokeSequenceMap[k];
+            
+            // FIXME: currently if first object is a stroke sequence, rest assumed so too.
+            if (seqs.count > 0 && [seqs[0] isKindOfClass:[MPStrokeSequence class]]) {
+                _namedStrokeSequences[k]
+                    = [NSMutableSet setWithArray:seqs];
+            }
+            else {
+                _namedStrokeSequences[k]
+                    = [NSMutableSet setWithArray:[MPStrokeSequence strokeSequencesWithArrayOfDictionaries:seqs]];
+            }
+        }
+
     }
-    
     return self;
 }
 

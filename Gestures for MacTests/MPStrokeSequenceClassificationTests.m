@@ -65,21 +65,28 @@
 
 - (void)testSupervisedPointCloudRecogniserTraining {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-train"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
-    MPStrokeSequenceDatabase *tdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
+    MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
+    XCTAssertTrue(traindb != nil, @"A training database was successfully loaded.");
     
-    XCTAssertTrue(tdb != nil, @"A database was successfully loaded.");
-    
-    // TODO: use a different reference
-    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-ref"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
-    MPRandomForestGestureRecognizer *recognizer = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:tdb referenceSequenceDatabase:rdb];
+    MPRandomForestGestureRecognizer *recognizer
+        = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb];
     XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
     
+    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-test" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    NSError *testDbErr = nil;
+    MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
+    
+    for (MPStrokeSequence *seq in [[testdb.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)]) {
+        MPStrokeSequenceRecognition *recognition = [recognizer recognizeStrokeSequence:seq];
+        XCTAssertTrue([recognition.name isEqualToString:seq.name], @"Stroke sequence was recognised as expected");
+    }
 }
 
 @end
