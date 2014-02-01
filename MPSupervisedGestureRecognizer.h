@@ -15,6 +15,7 @@
  *  Abstract base class for supervised gesture recognizers.
  */
 @interface MPSupervisedGestureRecognizer : NSObject <MPStrokeSequenceRecognizer>
+@property (readonly) NSArray *labelValues;
 @end
 
 @interface MPRandomForestGestureRecognizer : MPSupervisedGestureRecognizer

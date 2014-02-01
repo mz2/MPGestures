@@ -35,7 +35,7 @@
 - (void)testUnsupervisedPointCloudRecognition
 {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-train"
                                                          withExtension:@"strokedb"
                                                           subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
@@ -83,10 +83,30 @@
     NSError *testDbErr = nil;
     MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
     
+    NSMutableDictionary *confusionMatrix = [NSMutableDictionary dictionaryWithCapacity:traindb.strokeSequenceNameSet.count];
+    
     for (MPStrokeSequence *seq in [[testdb.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)]) {
         MPStrokeSequenceRecognition *recognition = [recognizer recognizeStrokeSequence:seq];
-        XCTAssertTrue([recognition.name isEqualToString:seq.name], @"Stroke sequence was recognised as expected");
+        NSLog(@"%@ == %@", recognition, seq.name);
+        
+        if (![recognition.name isEqualToString:seq.name]) {
+            if (!confusionMatrix[recognition.name]) {
+                confusionMatrix[recognition.name] = [NSMutableArray arrayWithCapacity:traindb.strokeSequenceNameSet.count];
+                for (NSUInteger i = 0, cnt; i < cnt; i++) {
+                    confusionMatrix[recognition.name][i] = @(0);
+                }
+            }
+            
+            NSUInteger i = [recognizer.labelValues indexOfObject:recognition.name];
+            
+            NSNumber *incrementedErrorNum = @([confusionMatrix[recognition.name][i] unsignedIntegerValue] + 1);
+            confusionMatrix[recognition.name][i] = incrementedErrorNum;
+        }
+        
+        //XCTAssertTrue([recognition.name isEqualToString:seq.name], @"Stroke sequence should be recognised as expected (%@ != %@, %@)", recognition.name, seq.name, recognition);
     }
+    
+    NSLog(@"%@", confusionMatrix);
 }
 
 @end

@@ -2,7 +2,9 @@
 
 @interface MPStrokeSequenceRecognition : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic) float score;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) float score;
+
+- (instancetype)initWithName:(NSString *)name score:(float)score;
 
 @end

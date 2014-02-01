@@ -35,18 +35,14 @@
     else
         points = pointCloud.points;
     
-    float d = [[self class] greedyCloudMatch:points template:templatePointCloud.points];
-    float score = MAX((d - 2.0f) / -2.0f, 0.0f);
+    float score = [[self class] greedyCloudMatch:points template:templatePointCloud.points];
+    //score = MAX((d - 2.0f) / -2.0f, 0.0f);
     return score;
 }
 
 - (MPStrokeSequenceRecognition *)recognize:(NSArray *)points {
-    MPStrokeSequenceRecognition *result = [[MPStrokeSequenceRecognition alloc] init];
-    [result setName:@"No match"];
-    [result setScore:0.0];
-    
     if (!points.count) {
-        return result;
+        return [[MPStrokeSequenceRecognition alloc] initWithName:nil score:0.0];
     }
     
     points = [[self class] processPoints:points atResamplingRate:_resampleRate];
@@ -65,11 +61,10 @@
     float score = MAX((b - 2.0f) / -2.0f, 0.0f);
     
     if (u != -1) {
-        [result setName:[[self pointClouds][u] name]];
-        [result setScore:score];
+        return [[MPStrokeSequenceRecognition alloc] initWithName:[[self pointClouds][u] name] score:score];
     }
     
-    return result;
+    return [[MPStrokeSequenceRecognition alloc] initWithName:nil score:0.0];
 }
 
 - (void)setPointClouds:(NSMutableArray *)somePointClouds {

@@ -51,6 +51,10 @@
     return self;
 }
 
+- (NSArray *)labelValues {
+    return [[[_trainingDatabase strokeSequenceNameSet] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+}
+
 - (MPStrokeSequenceRecognition *)recognizeStrokeSequence:(MPStrokeSequence *)sequence {
     @throw [NSException exceptionWithName:@"MPAbstractMethodException" reason:nil userInfo:nil];
 }
@@ -64,6 +68,7 @@
 @property (readonly) NSArray *referenceStrokeSequences;
 @property (readwrite, getter = isTrained) BOOL trained;
 @property (readwrite) NSUInteger strokeResampleRate;
+
 @end
 
 @implementation MPRandomForestGestureRecognizer
@@ -108,11 +113,11 @@
     NSArray *probs
         = [_classifier posteriorProbabilitiesForClassifyingDatum:[seqData datumAtIndex:0]];
     
-    float maxValue;
-    [probs indexOfMaxFloatValue:&maxValue];
+    float maxValue = INFINITY;
+    NSUInteger index = [probs indexOfMaxFloatValue:&maxValue];
     
-    MPStrokeSequenceRecognition *recognition = [[MPStrokeSequenceRecognition alloc] init];
-    recognition.score = maxValue;
+    NSString *label = [_trainingDataSet labelValues][index];
+    MPStrokeSequenceRecognition *recognition = [[MPStrokeSequenceRecognition alloc] initWithName:label score:maxValue];
     
     return recognition;
 }
