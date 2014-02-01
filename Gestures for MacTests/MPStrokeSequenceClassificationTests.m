@@ -83,30 +83,16 @@
     NSError *testDbErr = nil;
     MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
     
-    NSMutableDictionary *confusionMatrix = [NSMutableDictionary dictionaryWithCapacity:traindb.strokeSequenceNameSet.count];
+    NSArray *testStrokes = [[testdb.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)];
     
-    for (MPStrokeSequence *seq in [[testdb.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)]) {
-        MPStrokeSequenceRecognition *recognition = [recognizer recognizeStrokeSequence:seq];
-        NSLog(@"%@ == %@", recognition, seq.name);
-        
-        if (![recognition.name isEqualToString:seq.name]) {
-            if (!confusionMatrix[recognition.name]) {
-                confusionMatrix[recognition.name] = [NSMutableArray arrayWithCapacity:traindb.strokeSequenceNameSet.count];
-                for (NSUInteger i = 0, cnt; i < cnt; i++) {
-                    confusionMatrix[recognition.name][i] = @(0);
-                }
-            }
-            
-            NSUInteger i = [recognizer.labelValues indexOfObject:recognition.name];
-            
-            NSNumber *incrementedErrorNum = @([confusionMatrix[recognition.name][i] unsignedIntegerValue] + 1);
-            confusionMatrix[recognition.name][i] = incrementedErrorNum;
-        }
-        
-        //XCTAssertTrue([recognition.name isEqualToString:seq.name], @"Stroke sequence should be recognised as expected (%@ != %@, %@)", recognition.name, seq.name, recognition);
-    }
+    id<MPDataSet> confMatrix = nil;
+    float precision = 0;
     
-    NSLog(@"%@", confusionMatrix);
+    NSArray *recognitions = [recognizer testRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
+    XCTAssertTrue(recognitions.count == testStrokes.count, @"The expected number of recognitions were recovered.");
+    NSLog(@"Confusion matrix:\n%@", confMatrix);
+    XCTAssertTrue(precision > 0.6, @"Precision with this test case should be at least 60%%");
+    
 }
 
 @end

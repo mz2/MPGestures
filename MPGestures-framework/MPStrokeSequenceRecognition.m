@@ -2,7 +2,7 @@
 
 @implementation MPStrokeSequenceRecognition
 
-- (id)initWithName:(NSString *)name score:(float)score
+- (instancetype)initWithName:(NSString *)name score:(float)score
 {
     self = [super init];
     if (self) {
@@ -13,7 +13,21 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<name:%@, score:%f>", _name, _score];
+    NSMutableString *str = [NSMutableString string];
+    
+    [str appendFormat:@"<name:%@ ", _name];
+    
+    if (_correctName)
+        [str appendFormat:@" (%@)", _correctName];
+    
+    [str appendFormat:@", score:%f", _score];
+    
+    if (_scores)
+        [str appendFormat:@" (%@)", _scores];
+    
+    [str appendFormat:@">"];
+    
+    return [str copy];
 }
 
 @end

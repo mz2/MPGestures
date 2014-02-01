@@ -59,6 +59,61 @@
     @throw [NSException exceptionWithName:@"MPAbstractMethodException" reason:nil userInfo:nil];
 }
 
+- (NSArray *)testRecognizerWithStrokeSequences:(NSArray *)strokeSequences
+                               confusionMatrix:(id<MPDataSet> *)confusionMatrix
+                                     precision:(float *)precision {
+    NSMutableArray *recognitions = [NSMutableArray arrayWithCapacity:strokeSequences.count];
+    NSMutableArray *colTypes = [NSMutableArray arrayWithCapacity:self.labelValues.count];
+    NSMutableArray *confusions = [NSMutableArray arrayWithCapacity:self.labelValues.count];
+    
+    NSUInteger correct = 0;
+    NSUInteger incorrect = 0;
+    
+    for (NSUInteger i = 0, cnt = self.labelValues.count; i < cnt; i++) {
+        [colTypes addObject:@(MPColumnTypeIntegral)];
+        [confusions addObject:@(0)];
+    }
+    
+    id<MPDataSet> confMatrix = [[MPDataTable alloc] initWithColumnTypes:[colTypes copy]
+                                                            columnNames:self.labelValues
+                                                       labelColumnIndex:NSNotFound
+                                                          datumCapacity:strokeSequences.count];
+    
+    for (NSUInteger i = 0, cnt = self.labelValues.count; i < cnt; i++) {
+        id<MPDatum> datum = [[MPDataTableRow alloc] initWithValues:confusions.copy columnTypes:confMatrix.columnTypes];
+        [confMatrix appendDatum:datum];
+    }
+    
+    for (MPStrokeSequence *seq in strokeSequences) {
+        MPStrokeSequenceRecognition *recognition = [self recognizeStrokeSequence:seq];
+        recognition.correctName = seq.name;
+        
+        [recognitions addObject:recognition];
+        
+        // update confusion matrix for misclassifications.
+        if (![recognition.name isEqualToString:seq.name]) {
+            incorrect++;
+            
+            NSUInteger datumIndex = [self.labelValues indexOfObject:seq.name];
+            NSUInteger columnIndex = [self.labelValues indexOfObject:recognition.name];
+
+            id<MPDatum> datum = [confMatrix datumAtIndex:datumIndex];
+            NSUInteger val = [[datum valueForColumn:columnIndex] unsignedIntegerValue];
+            [datum setValue:@(val + 1) forColumn:columnIndex];
+        } else {
+            correct++;
+        }
+    }
+    
+    if (confusionMatrix)
+        *confusionMatrix = confMatrix;
+    
+    if (precision)
+        *precision = (float)correct / (float)(correct + incorrect);
+    
+    return recognitions;
+}
+
 @end
 
 #pragma mark - Random forest gesture recognizer
@@ -118,6 +173,7 @@
     
     NSString *label = [_trainingDataSet labelValues][index];
     MPStrokeSequenceRecognition *recognition = [[MPStrokeSequenceRecognition alloc] initWithName:label score:maxValue];
+    recognition.scores = probs;
     
     return recognition;
 }
