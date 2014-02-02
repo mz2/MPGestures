@@ -16,12 +16,11 @@
     return self;
 }
 
-+ (NSArray *)processPoints:(NSArray *)points
-          atResamplingRate:(NSUInteger)resampleRate
++ (NSArray *)processPoints:(NSArray *)points atResamplingRate:(NSUInteger)resampleRate
 {
     assert(resampleRate > 8);
     points = [[self class] resample:points numPoints:resampleRate];
-    points = [[self class] scale:points];
+    points = [[self class] normalizeScale:points];
     points = [[self class] translate:points to:[MPPoint origin]];
     return points;
 }
@@ -103,8 +102,7 @@
     return [self recognize:pointCloud.points];
 }
 
-+ (float)greedyCloudMatch:(NSArray *)points
-                 template:(NSArray *)template {
++ (float)greedyCloudMatch:(NSArray *)points template:(NSArray *)template {
     float e = 0.50f;
 	float step = floor(pow([points count], 1 - e));
 	float min = +INFINITY;
@@ -202,7 +200,17 @@
 	return newPoints;
 }
 
-+ (NSArray *)scale:(NSArray *)points {
++ (NSArray *)scalePoints:(NSArray *)points byRatio:(float)ratio {
+    NSMutableArray *outputPoints = [NSMutableArray arrayWithCapacity:points.count];
+    for (MPPoint *p in points) {
+        MPPoint *op = [[MPPoint alloc] initWithId:p.id x:p.x * ratio y:p.y * ratio];
+        [outputPoints addObject:op];
+    }
+    
+    return outputPoints;
+}
+
++ (NSArray *)normalizeScale:(NSArray *)points {
     float minX = +INFINITY;
     float maxX = -INFINITY;
     float minY = +INFINITY;

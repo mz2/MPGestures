@@ -15,8 +15,7 @@
 
 @implementation MPStroke
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init])
     {
         _points = [NSMutableArray arrayWithCapacity:128];
@@ -25,11 +24,22 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-{
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init])
     {
         _points = [[MPPoint pointsWithArrayOfDictionaries:dictionary[@"points"]] mutableCopy];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithPoints:(NSArray *)points {
+    self = [self init];
+    if (self) {
+        for (MPPoint *p in points) {
+            // FIXME: don't be silly with converting between MPPoint and CGPoint needlessly.
+            [self addPoint:p.CGPointValue identifier:[p.id unsignedIntegerValue]];
+        }
     }
     
     return self;

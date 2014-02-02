@@ -90,7 +90,7 @@
     
     NSArray *recognitions = [recognizer testRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
     XCTAssertTrue(recognitions.count == testStrokes.count, @"The expected number of recognitions were recovered.");
-    NSLog(@"Confusion matrix:\n%@", confMatrix);
+    NSLog(@"\nPrecision:%f\nConfusion matrix:\n%@",precision, confMatrix);
     XCTAssertTrue(precision > 0.6, @"Precision with this test case should be at least 60%%");
     
 }

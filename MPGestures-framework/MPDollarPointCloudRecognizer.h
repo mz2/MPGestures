@@ -16,7 +16,10 @@
 @property (readwrite) NSUInteger resampleRate;
 
 + (NSArray *)resample:(NSArray *)points numPoints:(NSUInteger)numPoints;
-+ (NSArray *)scale:(NSArray *)points;
+
++ (NSArray *)normalizeScale:(NSArray *)points;
++ (NSArray *)scalePoints:(NSArray *)points byRatio:(float)ratio;
+
 + (NSArray *)translate:(NSArray *)points to:(MPPoint *)point;
 
 - (MPStrokeSequenceRecognition *)recognize:(NSArray *)points;
@@ -32,5 +35,7 @@
 + (float)scoreForGreedyCloudMatchOfPointCloud:(MPPointCloud *)pointCloud
                                  withTemplate:(MPPointCloud *)templatePointCloud
                                atResamplerate:(NSUInteger)resampleRate;
+
++ (NSArray *)processPoints:(NSArray *)points atResamplingRate:(NSUInteger)resampleRate;
 
 @end

@@ -27,6 +27,9 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
+/** Initialise a stroke with an array of MPPoint objects. */
+- (instancetype)initWithPoints:(NSArray *)points;
+
 + (NSArray *)strokesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
 @end

@@ -52,6 +52,7 @@
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence;
+- (instancetype)initWithName:(NSString *)name points:(NSArray *)points;
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 

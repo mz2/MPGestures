@@ -11,18 +11,18 @@
 {
     self = [super init];
     if (self) {
-        [self setName:aName];
+        _name = aName;
         
         if (numPoints > 0)
             somePoints = [MPDollarPointCloudRecognizer resample:somePoints numPoints:numPoints];
         
         if (normalizedScale)
-            somePoints = [MPDollarPointCloudRecognizer scale:somePoints];
+            somePoints = [MPDollarPointCloudRecognizer normalizeScale:somePoints];
         
         if (translationPoint)
             somePoints = [MPDollarPointCloudRecognizer translate:somePoints to:translationPoint];
         
-        [self setPoints:somePoints];
+        _points = somePoints;
     }
     return self;
 }

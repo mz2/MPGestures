@@ -11,6 +11,8 @@
 #import "MPDollarPointCloudRecognizer.h"
 #import "MPDollarPointCloudUtility.h"
 
+#import "MPPointCloud.h"
+
 #import "MPStrokeSequence.h"
 
 const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
@@ -63,8 +65,18 @@ const NSTimeInterval MPGestureViewStrokesEndedInterval = 1.0f;
     for (NSUInteger i = 0; i < self.additionalStrokeSequences.count; i++) {
         MPStrokeSequence *seq = self.additionalStrokeSequences[i];
         
+        NSArray *points = [seq pointCloudRepresentationWithResampleCount:MPPointCloudDefaultResampleRate].points;
+        points = [MPDollarPointCloudRecognizer scalePoints:points byRatio:rect.size.height * 0.50];
+        points = [MPDollarPointCloudRecognizer translate:points to:[[MPPoint alloc] initWithId:@"foobar"
+                                                                                             x:rect.size.width * 0.5
+                                                                                             y:rect.size.height * 0.6]];
+        
+        seq = [[MPStrokeSequence alloc] initWithName:seq.name points:points];
+        
+        //[MPDollarPointCloudRecognizer processPoints:points atResamplingRate:MPPointCloudDefaultResampleRate];
+        
         for (NSUInteger j = 0 ; j < seq.strokesArray.count; j++) {
-            MPStroke *stroke = [self.additionalStrokeSequences[i] strokesArray][j];
+            MPStroke *stroke = seq.strokesArray[j];
             [self drawStroke:stroke inContext:context];
         }
     }

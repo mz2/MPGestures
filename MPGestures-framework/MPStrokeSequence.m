@@ -22,8 +22,7 @@
     @throw [NSException exceptionWithName:@"MPInvalidInitException" reason:nil userInfo:nil];
 }
 
-- (instancetype)initWithName:(NSString *)name strokes:(NSArray *)strokes
-{
+- (instancetype)initWithName:(NSString *)name strokes:(NSArray *)strokes {
     self = [super init];
     if (self)
     {
@@ -35,8 +34,7 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-{
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self)
     {
@@ -48,11 +46,30 @@
     return self;
 }
 
-- (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence
-{
+- (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence {
     // FIXME: don't serialise & deserialise to make a deep copy of the strokes.
     return [self initWithName:sequence.name
                       strokes:[MPStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
+}
+
+- (instancetype)initWithName:(NSString *)name points:(NSArray *)points {
+    //FIXME: don't actually require a serialisation to dictionaries.
+    
+    NSMutableDictionary *pointsByID = [NSMutableDictionary dictionary];
+    for (MPPoint *p in points) {
+        if (!pointsByID[p.id])
+            pointsByID[p.id] = [NSMutableArray array];
+        
+        [pointsByID[p.id] addObject:p];
+    }
+    
+    NSMutableArray *strokes = [NSMutableArray arrayWithCapacity:pointsByID.count];
+    for (id k in [[pointsByID allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
+        MPStroke *stroke = [[MPStroke alloc] initWithPoints:pointsByID[k]];
+        [strokes addObject:stroke];
+    }
+    
+    return [self initWithName:name strokes:strokes.copy];
 }
 
 - (BOOL)containsStroke:(MPStroke *)stroke
