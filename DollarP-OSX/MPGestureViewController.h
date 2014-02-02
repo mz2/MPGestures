@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "MPGestureView.h"
 
+#import "PARViewController.h"
+
 @class MPStrokeSequenceDatabase;
 
-@interface MPGestureViewController : NSViewController <MPGestureViewDelegate,
-                                                       NSTextFieldDelegate,
-                                                       NSComboBoxDelegate,
-                                                       NSComboBoxDataSource>
+@interface MPGestureViewController : PARViewController <MPGestureViewDelegate,
+                                                        NSTextFieldDelegate,
+                                                        NSComboBoxDelegate,
+                                                        NSComboBoxDataSource>
 
 @property (readonly, weak) MPGestureView *gestureView;
 

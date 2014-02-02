@@ -96,7 +96,7 @@
                             </menuItem>
                             <menuItem title="Save…" keyEquivalent="s" id="75">
                                 <connections>
-                                    <action selector="saveDocument:" target="-1" id="362"/>
+                                    <action selector="saveDocument:" target="-1" id="gIy-Hv-bBc"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Revert to Saved" id="112">

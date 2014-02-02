@@ -41,12 +41,16 @@
     [self.view.window makeFirstResponder:self.gestureView];
     self.statusLabel.stringValue = @"";
     
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSURL *url = [defs URLForKey:@"last-opened-doc-url"];
     
+    if (!url)
+        url = [NSURL fileURLWithPath:[self strokeSequencePath]];
+
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self strokeSequencePath]])
     {
         // FIXME: make the identifier configurable when creating a new database.
         self.db = [[MPStrokeSequenceDatabase alloc] initWithIdentifier:NSUserName()];
-        
     }
     else
     {
@@ -197,6 +201,15 @@
     [self.gestureView clear:self];
     
     [self persistStrokeSequenceDatabase];
+    
+    NSInteger i = self.labelComboBox.indexOfSelectedItem;
+    if (i == NSNotFound || i < 0)
+        return;
+    NSString *name = self.db.sortedStrokeSequenceNames[i];
+    
+    self.gestureView.additionalStrokeSequences = [self.db[name] allObjects];
+    
+    [self.gestureView setNeedsDisplay:YES];
 }
 
 
@@ -246,6 +259,56 @@
         
         [self persistStrokeSequenceDatabase];
     }
+}
+
+- (IBAction)openDocument:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowedFileTypes:@[@"strokedb"]];
+    [panel setAllowsOtherFileTypes:NO];
+    [panel setCanChooseDirectories:NO];
+    
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        if (result != NSOKButton)
+            return;
+        
+        NSError *err = nil;
+        self.db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:panel.URL error:&err];
+        
+        if (err) {
+            [[NSAlert alertWithError:err] runModal];
+        }
+        
+        NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+        [defs setURL:panel.URL forKey:@"last-opened-doc-url"];
+        [defs synchronize];
+        
+        self.gestureView.additionalStrokeSequences = nil;
+        [self.gestureView selectAdditionalStrokeSequenceAtIndex:NSNotFound];
+        [self.gestureView setNeedsDisplay:YES];
+    }];
+}
+
+- (IBAction)saveDocument:(id)sender {
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setAllowedFileTypes:@[@"strokedb"]];
+    [panel setAllowsOtherFileTypes:NO];
+    
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        if (result != NSOKButton)
+            return;
+        
+        NSError *err = nil;
+        [self.db writeToURL:panel.URL error:&err];
+        
+        NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+        [defs setURL:panel.URL forKey:@"last-opened-doc-url"];
+        [defs synchronize];
+        
+        if (err) {
+            [[NSAlert alertWithError:err] runModal];
+        }
+    }];
 }
 
 #pragma mark - Combo box delegate & data source

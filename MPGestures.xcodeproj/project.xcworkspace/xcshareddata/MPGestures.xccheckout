@@ -10,6 +10,8 @@
 	<string>MPGestures</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>050AEBD8-498C-4053-B157-DFA67908B149</key>
+		<string>ssh://github.com/cparnot/PARViewController.git</string>
 		<key>18C5C4DB-8ED5-488D-9337-98C58947D14C</key>
 		<string>ssh://github.com/shpakovski/MASPreferences.git</string>
 		<key>743DEAC8-2FD5-498E-B099-2CC3A5A0F0FC</key>
@@ -19,6 +21,8 @@
 	<string>MPGestures.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>050AEBD8-498C-4053-B157-DFA67908B149</key>
+		<string>../../External/PARViewController</string>
 		<key>18C5C4DB-8ED5-488D-9337-98C58947D14C</key>
 		<string>../../External/MASPreferences</string>
 		<key>743DEAC8-2FD5-498E-B099-2CC3A5A0F0FC</key>
@@ -47,6 +51,14 @@
 			<string>743DEAC8-2FD5-498E-B099-2CC3A5A0F0FC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MPGestures</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>050AEBD8-498C-4053-B157-DFA67908B149</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PARViewController</string>
 		</dict>
 	</array>
 </dict>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F09E1E2187697A80077DF4F /* Gestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF3F15A18690ED500466512 /* Gestures.framework */; };
+		5F3583B8189DC8B400C9CA0F /* PARObjectObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3583B5189DC8B400C9CA0F /* PARObjectObserver.m */; };
+		5F3583B9189DC8B400C9CA0F /* PARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3583B7189DC8B400C9CA0F /* PARViewController.m */; };
 		5F367C0A187A935A007EC421 /* MPPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F367C06187A935A007EC421 /* MPPoint.h */; };
 		5F367C0B187A935A007EC421 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C07187A935A007EC421 /* MPPoint.m */; };
 		5F367C0C187A935A007EC421 /* MPPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F367C07187A935A007EC421 /* MPPoint.m */; };
@@ -213,6 +215,10 @@
 
 /* Begin PBXFileReference section */
 		5F2C0290186CF947003CFD04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5F3583B4189DC8B400C9CA0F /* PARObjectObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PARObjectObserver.h; path = External/PARViewController/PARObjectObserver.h; sourceTree = SOURCE_ROOT; };
+		5F3583B5189DC8B400C9CA0F /* PARObjectObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PARObjectObserver.m; path = External/PARViewController/PARObjectObserver.m; sourceTree = SOURCE_ROOT; };
+		5F3583B6189DC8B400C9CA0F /* PARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PARViewController.h; path = External/PARViewController/PARViewController.h; sourceTree = SOURCE_ROOT; };
+		5F3583B7189DC8B400C9CA0F /* PARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PARViewController.m; path = External/PARViewController/PARViewController.m; sourceTree = SOURCE_ROOT; };
 		5F367C06187A935A007EC421 /* MPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPoint.h; path = "MPGestures-framework/MPPoint.h"; sourceTree = SOURCE_ROOT; };
 		5F367C07187A935A007EC421 /* MPPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPoint.m; path = "MPGestures-framework/MPPoint.m"; sourceTree = SOURCE_ROOT; };
 		5F367C08187A935A007EC421 /* MPPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPointCloud.h; path = "MPGestures-framework/MPPointCloud.h"; sourceTree = SOURCE_ROOT; };
@@ -373,6 +379,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F3583B1189DC8A000C9CA0F /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5F3583B4189DC8B400C9CA0F /* PARObjectObserver.h */,
+				5F3583B5189DC8B400C9CA0F /* PARObjectObserver.m */,
+				5F3583B6189DC8B400C9CA0F /* PARViewController.h */,
+				5F3583B7189DC8B400C9CA0F /* PARViewController.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		5F367C03187A9338007EC421 /* Domain Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +486,7 @@
 		5FD5CC83187693FD0038C834 /* Gestures for Mac */ = {
 			isa = PBXGroup;
 			children = (
+				5F3583B1189DC8A000C9CA0F /* External */,
 				5FF3F1A21869135C00466512 /* MPAppDelegate.h */,
 				5FF3F1A31869135C00466512 /* MPAppDelegate.m */,
 				5FD5CC92187693FD0038C834 /* MainMenu.xib */,
@@ -969,6 +987,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3583B9189DC8B400C9CA0F /* PARViewController.m in Sources */,
+				5F3583B8189DC8B400C9CA0F /* PARObjectObserver.m in Sources */,
 				5FD5CC8A187693FD0038C834 /* main.m in Sources */,
 				5FD5CCB2187694800038C834 /* MPGestureViewController.m in Sources */,
 				5FD5CCB3187694840038C834 /* MPAppDelegate.m in Sources */,

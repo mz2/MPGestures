@@ -4,3 +4,6 @@
 [submodule "External/MPRandomForest"]
 	path = External/MPRandomForest
 	url = git@github.com:mpapp/Swot
+[submodule "External/PARViewController"]
+	path = External/PARViewController
+	url = git@github.com:cparnot/PARViewController.git
