@@ -163,6 +163,8 @@
             p.y = p.y * vector.y;
             [newStroke addPoint:p identifier:[point.id unsignedIntegerValue]];
         }
+        
+        [newShape addStroke:newStroke];
     }
     
     return newShape;
