@@ -63,7 +63,7 @@
     }
 }
 
-- (void)testSupervisedPointCloudRecogniserTraining {
+- (void)testSupervisedCircleTriangleSquareDetection {
     NSError *dbErr = nil;
     NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-train"
                                                                                                      withExtension:@"strokedb"
@@ -88,11 +88,39 @@
     id<MPDataSet> confMatrix = nil;
     float precision = 0;
     
-    NSArray *recognitions = [recognizer testRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
+    NSArray *recognitions = [recognizer evaluateRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
     XCTAssertTrue(recognitions.count == testStrokes.count, @"The expected number of recognitions were recovered.");
     NSLog(@"\nPrecision:%f\nConfusion matrix:\n%@",precision, confMatrix);
-    XCTAssertTrue(precision > 0.6, @"Precision with this test case should be at least 60%%");
+    XCTAssertTrue(precision > 0.90, @"Precision with this test case should be at least 90%%");
+}
+
+- (void)testSupervisedGreekAlphabetRecognition {
+    NSError *dbErr = nil;
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet"
+                                                                                                     withExtension:@"strokedb"
+                                                                                                      subdirectory:@"Fixtures"];
+    MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
+    XCTAssertTrue(traindb != nil, @"A training database was successfully loaded.");
     
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
+    MPRandomForestGestureRecognizer *recognizer
+        = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb];
+        XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
+    
+    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet-ref-2" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    NSError *testDbErr = nil;
+    MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
+    
+    NSArray *testStrokes = [[testdb.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)];
+
+    id<MPDataSet> confMatrix = nil;
+    float precision = 0;
+
+    NSArray *recognitions = [recognizer evaluateRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
+    XCTAssertTrue(recognitions.count == testStrokes.count, @"The expected number of recognitions were recovered.");
+    NSLog(@"\nPrecision:%f\nConfusion matrix:\n%@",precision, confMatrix);
+    XCTAssertTrue(precision > 0.75, @"Precision with this test case should be at least 75%%");
 }
 
 @end

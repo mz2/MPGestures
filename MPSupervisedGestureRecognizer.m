@@ -62,7 +62,7 @@
 }
 
 // FIXME: move evaluation code to the classifier.
-- (NSArray *)testRecognizerWithStrokeSequences:(NSArray *)strokeSequences
+- (NSArray *)evaluateRecognizerWithStrokeSequences:(NSArray *)strokeSequences
                                confusionMatrix:(id<MPDataSet> *)confusionMatrix
                                      precision:(float *)precision {
     NSMutableArray *recognitions = [NSMutableArray arrayWithCapacity:strokeSequences.count];

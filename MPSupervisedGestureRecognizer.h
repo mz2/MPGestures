@@ -26,7 +26,7 @@
  *  @param precision An optional floating point value pointer to mark the overall classification precision.
  *  @return An array of MPStrokeSequenceRecognition objects.
  */
-- (NSArray *)testRecognizerWithStrokeSequences:(NSArray *)strokeSequences
+- (NSArray *)evaluateRecognizerWithStrokeSequences:(NSArray *)strokeSequences
                                confusionMatrix:(id<MPDataSet> *)confusionMatrix
                                      precision:(float *)precision;
 

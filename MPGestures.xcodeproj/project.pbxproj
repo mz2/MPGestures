@@ -50,8 +50,6 @@
 		5F9A6E2F18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */; };
 		5F9A6E3018953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
 		5F9A6E3118953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
-		5FA74DB5189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
-		5FA74DB6189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
 		5FA74DBB189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FA74DB9189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FA74DBC189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FA74DBA189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm */; };
 		5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
@@ -254,7 +252,6 @@
 		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
 		5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDimensionMapper.h; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.h"; sourceTree = SOURCE_ROOT; };
 		5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDimensionMapper.m; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.m"; sourceTree = SOURCE_ROOT; };
-		5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV2.framework; path = lib/OSX/OpenCV2.framework; sourceTree = SOURCE_ROOT; };
 		5FA74DB9189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MPStrokeSequence+Geometry.h"; path = "MPGestures-framework/MPStrokeSequence+Geometry.h"; sourceTree = SOURCE_ROOT; };
 		5FA74DBA189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "MPStrokeSequence+Geometry.mm"; path = "MPGestures-framework/MPStrokeSequence+Geometry.mm"; sourceTree = SOURCE_ROOT; };
 		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
@@ -339,7 +336,6 @@
 			files = (
 				5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */,
 				5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */,
-				5FA74DB6189E853E0089C5B2 /* OpenCV2.framework in Frameworks */,
 				5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +356,6 @@
 			files = (
 				5FF318C31882903500C8672D /* MPRandomForest.framework in Frameworks */,
 				5FF3F257186A28AD00466512 /* ALGLIB.framework in Frameworks */,
-				5FA74DB5189E853E0089C5B2 /* OpenCV2.framework in Frameworks */,
 				5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +607,6 @@
 		5FF3F1961869135C00466512 /* Gestures-OSX */ = {
 			isa = PBXGroup;
 			children = (
-				5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */,
 				5FAB2E09186C3DC400F7948E /* External */,
 				5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */,
 				5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */,
@@ -1236,6 +1230,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Gestures for Mac/Gestures for Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mz2/Projects/MPGestures/lib/OSX/OpenCV2.framework/Libraries,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1269,6 +1267,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Gestures for Mac/Gestures for Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mz2/Projects/MPGestures/lib/OSX/OpenCV2.framework/Libraries,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1375,7 +1377,17 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "MPGestures-framework/MPGestures-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mz2/Projects/MPGestures/lib/OSX/OpenCV2.framework/Libraries,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_objdetect",
+					"-lopencv_imgproc",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1412,7 +1424,17 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "MPGestures-framework/MPGestures-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mz2/Projects/MPGestures/lib/OSX/OpenCV2.framework/Libraries,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_objdetect",
+					"-lopencv_imgproc",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
