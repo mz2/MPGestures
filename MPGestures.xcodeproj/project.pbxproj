@@ -52,6 +52,8 @@
 		5F9A6E3118953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
 		5FA74DB5189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
 		5FA74DB6189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
+		5FA74DBB189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FA74DB9189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FA74DBC189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FA74DBA189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm */; };
 		5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
 		5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
 		5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
@@ -253,6 +255,8 @@
 		5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDimensionMapper.h; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.h"; sourceTree = SOURCE_ROOT; };
 		5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDimensionMapper.m; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.m"; sourceTree = SOURCE_ROOT; };
 		5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV2.framework; path = lib/OSX/OpenCV2.framework; sourceTree = SOURCE_ROOT; };
+		5FA74DB9189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MPStrokeSequence+Geometry.h"; path = "MPGestures-framework/MPStrokeSequence+Geometry.h"; sourceTree = SOURCE_ROOT; };
+		5FA74DBA189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "MPStrokeSequence+Geometry.mm"; path = "MPGestures-framework/MPStrokeSequence+Geometry.mm"; sourceTree = SOURCE_ROOT; };
 		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
 		5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MASPreferencesWindow.xib; path = External/MASPreferences/MASPreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
 		5FAB2E02186C3DC100F7948E /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesWindowController.h; path = External/MASPreferences/MASPreferencesWindowController.h; sourceTree = SOURCE_ROOT; };
@@ -406,6 +410,8 @@
 				5F367C11187A936B007EC421 /* MPStroke.m */,
 				5F367C15187A9381007EC421 /* MPStrokeSequence.h */,
 				5F367C16187A9381007EC421 /* MPStrokeSequence.m */,
+				5FA74DB9189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h */,
+				5FA74DBA189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm */,
 				5F367C1A187A9387007EC421 /* MPSymbol.h */,
 				5F367C1B187A9387007EC421 /* MPSymbol.m */,
 				5F367C1F187A938D007EC421 /* MPStrokeSequenceDatabase.h */,
@@ -738,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9A6E2F18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h in Headers */,
+				5FA74DBB189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.h in Headers */,
 				5F7357B5186CF495005951E7 /* MPStrokeSequenceRecognition.h in Headers */,
 				5F7357A9186CF495005951E7 /* MPDollarPointCloudRecognizer.h in Headers */,
 				5F367C28187A9514007EC421 /* MPStrokeSequenceDatabaseSynchronizer.h in Headers */,
@@ -1018,6 +1025,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F73578E186CF42E005951E7 /* MPGestureView.m in Sources */,
+				5FA74DBC189E8C2B0089C5B2 /* MPStrokeSequence+Geometry.mm in Sources */,
 				5FF318C018828DB800C8672D /* MPSupervisedGestureRecognizer.m in Sources */,
 				5F7357AB186CF495005951E7 /* MPDollarPointCloudRecognizer.m in Sources */,
 				5F7357C9186CF4A6005951E7 /* NSFileManager+ApplicationSupport.m in Sources */,
