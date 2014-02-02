@@ -32,6 +32,8 @@
 
 @property (strong) MPStrokeSequenceDatabase *db;
 
+@property (strong) IBOutlet NSView *openPanelAccessoryView;
+
 - (IBAction)addExample:(id)sender;
 
 - (IBAction)nextStrokeSequence:(id)sender;

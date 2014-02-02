@@ -7,3 +7,6 @@
 [submodule "External/PARViewController"]
 	path = External/PARViewController
 	url = git@github.com:cparnot/PARViewController.git
+[submodule "External/opencv2-framework-for-mac"]
+	path = External/opencv2-framework-for-mac
+	url = git@github.com:kyogoku42/opencv2-framework-for-mac.git

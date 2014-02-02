@@ -126,19 +126,21 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
 
 - (id<MPTrainableDataSet>)dataSetRepresentation {
     MPDataTable *tbl =
-    [[MPDataTable alloc] initWithColumnTypes:
-        @[@(MPColumnTypeCategorical), @(MPColumnTypeCustomObject)]
-                                 columnNames:@[MPColumnNameStrokeSequenceLabel, MPColumnNameStrokeSequenceObject]
-                            labelColumnIndex:0
+    [[MPDataTable alloc] initWithColumnTypes:@[@(MPColumnTypeCustomObject), @(MPColumnTypeCategorical)]
+                                 columnNames:
+  @[MPColumnNameStrokeSequenceObject, MPColumnNameStrokeSequenceLabel]
+                            labelColumnIndex:1
                                datumCapacity:self.strokeSequenceSet.count];
     [tbl addCategoryWithName:MPCategoryNameStrokeSequenceLabel
                       values:[[self.strokeSequenceNameSet allObjects] sortedArrayUsingSelector:@selector(compare:)]];
-    [tbl assignCategoryWithName:MPCategoryNameStrokeSequenceLabel toColumnWithIndex:0];
+    [tbl assignCategoryWithName:MPCategoryNameStrokeSequenceLabel toColumnWithIndex:1];
     
-    for (MPStrokeSequence *seq in self.strokeSequenceSet) {
+    for (MPStrokeSequence *seq in [self.strokeSequenceSet.allObjects sortedArrayUsingSelector:@selector(compare:)]) {
         assert([tbl indexForCategoryValue:seq.name
                       forCategoryWithName:MPCategoryNameStrokeSequenceLabel] != NSNotFound);
-        id<MPDatum> datum = [[MPDataTableRow alloc] initWithValues:@[seq.name, seq] columnTypes:tbl.columnTypes];
+        id<MPDatum> datum
+            = [[MPDataTableRow alloc] initWithValues:@[seq, seq.name]
+                                         columnTypes:tbl.columnTypes];
         [tbl appendDatum:datum];
     }
     

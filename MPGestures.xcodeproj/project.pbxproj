@@ -50,6 +50,8 @@
 		5F9A6E2F18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */; };
 		5F9A6E3018953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
 		5F9A6E3118953A620006CC4D /* MPStrokeSequenceDimensionMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */; };
+		5FA74DB5189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
+		5FA74DB6189E853E0089C5B2 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */; };
 		5FCC4148188C5D8E00FF08BB /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC4147188C5D8E00FF08BB /* Fixtures */; };
 		5FCC414D188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
 		5FCC414F188C782400FF08BB /* MPStrokeSequenceClassificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC414C188C5E1700FF08BB /* MPStrokeSequenceClassificationTests.m */; };
@@ -250,6 +252,7 @@
 		5F858636186B6D2A00AD762E /* MPRandomForest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MPRandomForest.xcodeproj; path = External/MPRandomForest/MPRandomForest/MPRandomForest.xcodeproj; sourceTree = "<group>"; };
 		5F9A6E2D18953A620006CC4D /* MPStrokeSequenceDimensionMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPStrokeSequenceDimensionMapper.h; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.h"; sourceTree = SOURCE_ROOT; };
 		5F9A6E2E18953A620006CC4D /* MPStrokeSequenceDimensionMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPStrokeSequenceDimensionMapper.m; path = "MPGestures-framework/MPStrokeSequenceDimensionMapper.m"; sourceTree = SOURCE_ROOT; };
+		5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV2.framework; path = lib/OSX/OpenCV2.framework; sourceTree = SOURCE_ROOT; };
 		5FAB2E00186C3DC100F7948E /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesViewController.h; path = External/MASPreferences/MASPreferencesViewController.h; sourceTree = SOURCE_ROOT; };
 		5FAB2E01186C3DC100F7948E /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MASPreferencesWindow.xib; path = External/MASPreferences/MASPreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
 		5FAB2E02186C3DC100F7948E /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASPreferencesWindowController.h; path = External/MASPreferences/MASPreferencesWindowController.h; sourceTree = SOURCE_ROOT; };
@@ -332,6 +335,7 @@
 			files = (
 				5FD5CCB9187694CE0038C834 /* MPRandomForest.framework in Frameworks */,
 				5FD5CCB6187694C00038C834 /* Gestures.framework in Frameworks */,
+				5FA74DB6189E853E0089C5B2 /* OpenCV2.framework in Frameworks */,
 				5FD5CC82187693FD0038C834 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,7 @@
 			files = (
 				5FF318C31882903500C8672D /* MPRandomForest.framework in Frameworks */,
 				5FF3F257186A28AD00466512 /* ALGLIB.framework in Frameworks */,
+				5FA74DB5189E853E0089C5B2 /* OpenCV2.framework in Frameworks */,
 				5FF3F15C18690ED500466512 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +606,7 @@
 		5FF3F1961869135C00466512 /* Gestures-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				5FA74DB4189E853E0089C5B2 /* OpenCV2.framework */,
 				5FAB2E09186C3DC400F7948E /* External */,
 				5FAB2E0B186C3E3700F7948E /* MPGestureViewController.h */,
 				5FAB2E0C186C3E3700F7948E /* MPGestureViewController.m */,
@@ -1208,6 +1214,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/mz2/Projects/MPGestures/lib/OSX,
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1244,6 +1251,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/mz2/Projects/MPGestures/lib/OSX,
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1344,6 +1352,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/mz2/Projects/MPGestures/lib/OSX,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1384,6 +1393,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/mz2/Projects/MPGestures/lib/OSX,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;

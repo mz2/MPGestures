@@ -22,6 +22,8 @@
 
 #import <MPRandomForest/NSArray+MaxValue.h>
 
+#import <OpenCV2/objdetect/objdetect.hpp>
+
 @interface MPSupervisedGestureRecognizer ()
 @property (readonly) MPStrokeSequenceDatabase *trainingDatabase;
 @property (readonly) MPStrokeSequenceDatabase *referenceDatabase;
@@ -59,6 +61,7 @@
     @throw [NSException exceptionWithName:@"MPAbstractMethodException" reason:nil userInfo:nil];
 }
 
+// FIXME: move evaluation code to the classifier.
 - (NSArray *)testRecognizerWithStrokeSequences:(NSArray *)strokeSequences
                                confusionMatrix:(id<MPDataSet> *)confusionMatrix
                                      precision:(float *)precision {
@@ -93,16 +96,16 @@
         // update confusion matrix for misclassifications.
         if (![recognition.name isEqualToString:seq.name]) {
             incorrect++;
-            
-            NSUInteger datumIndex = [self.labelValues indexOfObject:seq.name];
-            NSUInteger columnIndex = [self.labelValues indexOfObject:recognition.name];
-
-            id<MPDatum> datum = [confMatrix datumAtIndex:datumIndex];
-            NSUInteger val = [[datum valueForColumn:columnIndex] unsignedIntegerValue];
-            [datum setValue:@(val + 1) forColumn:columnIndex];
         } else {
             correct++;
         }
+        
+        NSUInteger datumIndex = [self.labelValues indexOfObject:seq.name];
+        NSUInteger columnIndex = [self.labelValues indexOfObject:recognition.name];
+        
+        id<MPDatum> datum = [confMatrix datumAtIndex:datumIndex];
+        NSUInteger val = [[datum valueForColumn:columnIndex] unsignedIntegerValue];
+        [datum setValue:@(val + 1) forColumn:columnIndex];
     }
     
     if (confusionMatrix)
@@ -146,6 +149,11 @@
         
         _trainingDataSet = [_dimensionMapper mappedDataSet];
         
+#ifdef DEBUG
+        NSError *err = nil;
+        [[_trainingDataSet CSVRepresentationWithDelimiter:@"," quoteStrings:NO includeHeader:YES] writeToURL:[NSURL fileURLWithPath:@"/Users/mz2/Desktop/train.csv"] atomically:YES encoding:NSUTF8StringEncoding error:&err];
+#endif
+        
         _classifier = [[MPALGLIBDecisionForestClassifier alloc]
                        initWithTransformer:[[MPIdentityTransformer alloc] initWithDataSet:_trainingDataSet]
                        trainingData:_trainingDataSet];
@@ -177,5 +185,7 @@
     
     return recognition;
 }
+
+
 
 @end

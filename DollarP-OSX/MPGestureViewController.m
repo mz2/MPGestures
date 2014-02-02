@@ -81,6 +81,13 @@
 
 - (NSString *)strokeSequencePath
 {
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSURL *url = [defs URLForKey:@"last-opened-doc-url"];
+    
+    if (url)
+        return [url path];
+    
+    // default stroke sequence path
     NSString *userName = NSUserName();
     return [[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:
             [NSString stringWithFormat:@"%@.strokedb", userName]];
@@ -261,12 +268,33 @@
     }
 }
 
+- (IBAction)newDocument:(id)sender {
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setAllowedFileTypes:@[@"strokedb"]];
+    [panel setAllowsOtherFileTypes:NO];
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        if (result != NSOKButton)
+            return;
+        
+        self.db = [[MPStrokeSequenceDatabase alloc] init];
+        
+        NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+        [defs setURL:panel.URL forKey:@"last-opened-doc-url"];
+        [defs synchronize];
+        
+        self.gestureView.additionalStrokeSequences = nil;
+        [self.gestureView selectAdditionalStrokeSequenceAtIndex:NSNotFound];
+        [self.gestureView setNeedsDisplay:YES];
+    }];
+}
+
 - (IBAction)openDocument:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseDirectories:NO];
     [panel setAllowedFileTypes:@[@"strokedb"]];
     [panel setAllowsOtherFileTypes:NO];
     [panel setCanChooseDirectories:NO];
+    [panel setAccessoryView:self.openPanelAccessoryView];
     
     [panel beginWithCompletionHandler:^(NSInteger result) {
         if (result != NSOKButton)
@@ -282,6 +310,30 @@
         NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
         [defs setURL:panel.URL forKey:@"last-opened-doc-url"];
         [defs synchronize];
+        
+        self.gestureView.additionalStrokeSequences = nil;
+        [self.gestureView selectAdditionalStrokeSequenceAtIndex:NSNotFound];
+        [self.gestureView setNeedsDisplay:YES];
+    }];
+}
+
+- (IBAction)addStrokeSequencesFromFile:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowedFileTypes:@[@"strokedb"]];
+    [panel setAllowsOtherFileTypes:NO];
+    [panel setCanChooseDirectories:NO];
+    
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        if (result != NSOKButton)
+            return;
+        
+        NSError *err = nil;
+        MPStrokeSequenceDatabase *db
+            = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:panel.URL
+                                                                error:&err];
+        
+        [self.db addStrokeSequencesFromDatabase:db];
         
         self.gestureView.additionalStrokeSequences = nil;
         [self.gestureView selectAdditionalStrokeSequenceAtIndex:NSNotFound];

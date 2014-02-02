@@ -102,8 +102,8 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
  *
  * Includes two columns:
  *
- * 0. the sequence name label (a categorical field),
- * 1. the stroke sequence as a custom object type. */
+ * 0. the stroke sequence as a custom object type.
+ * 1. the sequence name label (a categorical field) */
 @property (readonly, copy) id<MPStrokeSequenceDataSet> dataSetRepresentation;
 
 /**

@@ -28,10 +28,10 @@
                    resampleRate:(NSUInteger)resampleRate {
     self = [super initWithDataSet:dataSet];
     if (self) {
-        assert([[dataSet nameForColumn:0] isEqualToString:MPCategoryNameStrokeSequenceLabel]);
-        assert([dataSet typeForColumn:0] == MPColumnTypeCategorical);
-        assert([[dataSet nameForColumn:1] isEqualToString:MPColumnNameStrokeSequenceObject]);
-        assert([dataSet typeForColumn:1] == MPColumnTypeCustomObject);
+        assert([[dataSet nameForColumn:1] isEqualToString:MPCategoryNameStrokeSequenceLabel]);
+        assert([dataSet typeForColumn:1] == MPColumnTypeCategorical);
+        assert([[dataSet nameForColumn:0] isEqualToString:MPColumnNameStrokeSequenceObject]);
+        assert([dataSet typeForColumn:0] == MPColumnTypeCustomObject);
         
         _pointCloudResampleRate = resampleRate;
         assert(resampleRate > 8);
