@@ -22,4 +22,17 @@
 /** Lengths of the strokes in the sequence combined. Distance between subsequent strokes is also treated as an additional length. */
 @property (readonly) float length;
 
+/**
+ *  The minimal distance of the stroke sequence with a template.
+ *
+ *  @param shapeB the template stroke sequence to compare this object to.
+ *  @param rotate if YES, the input shape is rotated to fit the template shape at the optimal rotation.
+ *  @param shapeC A pointer to a transformed shape that gives the shortest distance.
+ *
+ *  @return The Procrustes distance of the stroke sequence with a template.
+ */
+- (double)minimalProcrustesDistanceWithStrokeSequence:(MPStrokeSequence *)shapeB
+                      rotateTransformedStrokeSequence:(BOOL)rotate
+                            transformedStrokeSequence:(MPStrokeSequence **)shapeC;
+
 @end

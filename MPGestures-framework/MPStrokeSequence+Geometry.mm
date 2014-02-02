@@ -556,9 +556,9 @@ double squaredFrobeniusMatrixNorm(alglib::real_2d_array matrix)
     return pr;
 }
 
-- (double)minimalProcrustesDistanceWithShape:(MPStrokeSequence *)shapeB
-                      rotateTransformedShape:(BOOL)rotate
-                            transformedShape:(MPStrokeSequence **)shapeC
+- (double)minimalProcrustesDistanceWithStrokeSequence:(MPStrokeSequence *)shapeB
+                      rotateTransformedStrokeSequence:(BOOL)rotate
+                            transformedStrokeSequence:(MPStrokeSequence **)shapeC
 {
     alglib::real_2d_array *rot = NULL;
     alglib::real_2d_array *trans = NULL;
@@ -615,9 +615,9 @@ double squaredFrobeniusMatrixNorm(alglib::real_2d_array matrix)
     return distance;
 }
 
-- (double)minimalProcrustesDistanceWithShape:(MPStrokeSequence *)shapeB
-                            transformedShape:(MPStrokeSequence **)shapeC
-                      rotateTransformedShape:(BOOL)rotate
+- (double)minimalProcrustesDistanceWithStrokeSequence:(MPStrokeSequence *)shapeB
+                            transformedStrokeSequence:(MPStrokeSequence **)shapeC
+                      rotateTransformedStrokeSequence:(BOOL)rotate
                          optimalVertexOffset:(NSNumber **)vertexOffset
 {
     MPStrokeSequence *minShape = nil;
@@ -629,9 +629,9 @@ double squaredFrobeniusMatrixNorm(alglib::real_2d_array matrix)
     {
         MPStrokeSequence *transShape = nil;
         MPStrokeSequence *shapeWithVertexOffset = [shapeB strokeSequenceWithVertexIndexOffset:i];
-        double score = [self minimalProcrustesDistanceWithShape:shapeWithVertexOffset
-                                         rotateTransformedShape:rotate
-                                               transformedShape:&transShape];
+        double score = [self minimalProcrustesDistanceWithStrokeSequence:shapeWithVertexOffset
+                                         rotateTransformedStrokeSequence:rotate
+                                               transformedStrokeSequence:&transShape];
         
         //NSLog(@"Score: %.2f (offset: %lu)", (CGFloat)score, i);
         if (score < minScore)
