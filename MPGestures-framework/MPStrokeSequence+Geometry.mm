@@ -8,6 +8,8 @@
 
 #import "MPStrokeSequence+Geometry.h"
 
+#include <opencv2/core/core.hpp>
+#include <OpenCV2/objdetect/objdetect.hpp>
 #import <ALGLIB/ALGLIB.h>
 
 #import <math.h>
@@ -25,6 +27,8 @@
 #endif
 @implementation MPStrokeSequence (Geometry)
 
+#pragma mark - Representations
+
 - (NSPointArray)pointArrayRepresentation
 {
     NSArray *points = self.points;
@@ -35,6 +39,93 @@
         parray[i] = [points[i] pointValue];
     
     return parray;
+}
+
+- (std::vector<cv::Point2f> *)stdPointVectorRepresentation
+{
+    NSArray *points = self.points;
+    NSUInteger pointCount = points.count;
+    std::vector<cv::Point2f> *vec = new std::vector<cv::Point2f>(pointCount);
+    
+    for (NSUInteger i = 0; i < pointCount; i++)
+    {
+        NSPoint pn = [points[i] CGPointValue];
+        cv::Point2f v = cv::Point2f(pn.x, pn.y);
+        vec->push_back(v);
+    }
+    
+    return vec;
+}
+
+
+- (cv::Seq<cv::Point2f> *)cvSeqRepresentation
+{
+    cv::Seq<cv::Point2f> *seq = new cv::Seq<cv::Point2f>();
+    
+    NSArray *points = self.points;
+    NSUInteger cnt = points.count;
+    for (NSUInteger i = 0; i < cnt; i++)
+    {
+        NSPoint pn = [points[i] pointValue];
+        seq->push_back(cv::Point2f(pn.x, pn.y));
+    }
+    
+    return seq;
+}
+
+- (std::vector<cv::Vec2f> *)stdVectorRepresentation
+{
+    NSArray *points = self.points;
+    NSUInteger pointCount = points.count;
+    std::vector<cv::Vec2f> *vec = new std::vector<cv::Vec2f>(pointCount);
+    
+    for (NSUInteger i = 0; i < pointCount; i++)
+    {
+        NSPoint pn = [points[i] pointValue];
+        cv::Vec2f v = cv::Point2f(pn.x, pn.y);
+        vec->push_back(v);
+    }
+    
+    return vec;
+}
+
+- (cv::Mat *)cvMatRepresentation
+{
+    std::vector<cv::Vec2f> *vecRep = [self stdVectorRepresentation];
+    cv::Mat *mat = new cv::Mat(*vecRep, false);
+    return mat;
+}
+
+- (cv::Point2f *)cvPointArrayRepresentation
+{
+    NSArray *points = self.points;
+    NSUInteger cnt = self.points.count;
+    cv::Point2f *seq = (cv::Point2f *)malloc(sizeof(cv::Point2f) * cnt);
+    
+    for (NSUInteger i = 0; i < cnt; i++)
+    {
+        NSPoint p = [points[i] pointValue];
+        cv::Point2f cvp;
+        cvp.x = p.x;
+        cvp.y = p.y;
+        seq[i] = cvp;
+    }
+    
+    return seq;
+}
+
+#pragma mark -
+
+- (CGFloat)contourArea
+{
+    CvMemStorage *storage;
+    storage = cvCreateMemStorage();
+    
+    std::vector<cv::Point2f> *seq = [self stdPointVectorRepresentation];
+    double d = cv::contourArea(*seq);
+    cvReleaseMemStorage(&storage);
+    
+    return (CGFloat)d;
 }
 
 - (NSArray *)points {

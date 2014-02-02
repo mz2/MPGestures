@@ -5,5 +5,9 @@
 //
 
 #ifdef __OBJC__
+    #import <OpenCV2/objdetect/objdetect.hpp>
+    #import <OpenCV2/features2d/features2d.hpp>
+    #import <OpenCV2/imgproc/imgproc.hpp>
+    #import <OpenCV2/calib3d/calib3d.hpp>
     #import <Cocoa/Cocoa.h>
 #endif
