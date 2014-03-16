@@ -7,6 +7,7 @@
 @property (nonatomic) id id;
 
 @property (readonly) CGPoint CGPointValue;
+@property (readonly) NSPoint pointValue;
 
 + (MPPoint *)origin;
 

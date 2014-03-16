@@ -52,6 +52,17 @@
                       strokes:[MPStroke strokesWithArrayOfDictionaries:[sequence.strokes valueForKey:@"dictionaryRepresentation"]]];
 }
 
+- (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence resampleCount:(NSUInteger)resampleCount {
+    NSArray *points = [[sequence.strokes valueForKey:@"pointsArray"] valueForKeyPath:@"@unionOfArrays.self"];
+    MPPointCloud *pointCloud = [[MPPointCloud alloc] initWithName:self.name
+                                                           points:points
+                                                resampledToNumber:resampleCount // negative number interpreted as no resampling
+                                                  normalizedScale:YES
+                                             differenceToCentroid:[MPPoint origin]];
+    
+    return [self initWithName:sequence.name points:pointCloud.points];
+}
+
 - (instancetype)initWithName:(NSString *)name points:(NSArray *)points {
     //FIXME: don't actually require a serialisation to dictionaries.
     

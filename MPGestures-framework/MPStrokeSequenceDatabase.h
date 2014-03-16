@@ -127,6 +127,15 @@ typedef NS_ENUM(NSInteger, MPStrokeSequenceDatabaseErrorCode)
                     strokeSequence:(MPStrokeSequence *)strokeSequence;
 
 /**
+ * Initialise a stroke sequence database with a stroke sequence database, creating a copy of its stroke sequences. 
+ * The stroke sequences included are those which sort first with -compare:
+ * @param seqDatabase input stroke sequence, whose stroke sequences are to be copied.
+ * @param maxCount number of stroke sequences with a matching name. If maxCount <= 0, all stroke sequences are included.
+ */
+- (instancetype)initWithStrokeSequenceDatabase:(MPStrokeSequenceDatabase *)seqDatabase
+            maxStrokeSequencesWithMatchingName:(NSUInteger)maxCount;
+
+/**
  *  Initialise a stroke sequence from its JSON / plist encodable dictionary representation.
  */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

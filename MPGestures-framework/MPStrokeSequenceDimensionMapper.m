@@ -15,10 +15,16 @@
 #import "MPStrokeSequenceRecognition.h"
 #import "MPPointCloud.h"
 #import "MPStrokeSequence.h"
+#import "MPStrokeSequence+Geometry.h"
 
 @interface MPStrokeSequenceDimensionMapper ()
 @property (readonly) NSArray *referenceStrokeSequences;
 @property (readonly) NSArray *referencePointClouds;
+
+@property (readwrite) BOOL includePointClouds;
+@property (readwrite) BOOL includeProcrustesAnalysis;
+@property (readwrite) BOOL imageMoment;
+
 @end
 
 @implementation MPStrokeSequenceDimensionMapper
@@ -38,6 +44,9 @@
 
         _referenceStrokeSequences = referenceStrokeSequences;
         assert(_referenceStrokeSequences);
+        
+        self.includePointClouds = YES;
+        self.includeProcrustesAnalysis = NO;
         
         NSMutableArray *pointClouds = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
         for (MPStrokeSequence *seq in referenceStrokeSequences) {
@@ -71,33 +80,90 @@
 
 - (NSArray *)mappedStrokeSequenceValuesForDatumValue:(MPStrokeSequence *)value {
     assert(_referenceStrokeSequences);
-    MPPointCloud *valueCloud = [value pointCloudRepresentationWithResampleCount:_pointCloudResampleRate];
-    NSMutableArray *output = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
-    for (MPPointCloud *cloud in _referencePointClouds) {
-        float score = [[MPDollarPointCloudRecognizer class] scoreForGreedyCloudMatchOfPointCloud:valueCloud
-                                                                                    withTemplate:cloud
-                                                                                  atResamplerate:_pointCloudResampleRate];
-        [output addObject:@(score)];
+    assert(_referenceStrokeSequences.count == _referencePointClouds.count);
+
+    NSMutableArray *output = [NSMutableArray array];
+    if (self.includePointClouds)
+    {
+        MPPointCloud *valueCloud = [value pointCloudRepresentationWithResampleCount:_pointCloudResampleRate];
+        for (MPPointCloud *cloud in _referencePointClouds) {
+            float score = [[MPDollarPointCloudRecognizer class] scoreForGreedyCloudMatchOfPointCloud:valueCloud
+                                                                                        withTemplate:cloud
+                                                                                      atResamplerate:_pointCloudResampleRate];
+            [output addObject:@(score)];
+        }
     }
+    
+    if (self.includeProcrustesAnalysis)
+    {
+        MPStrokeSequence *resampledValue = [[MPStrokeSequence alloc] initWithStrokeSequence:value resampleCount:_pointCloudResampleRate];
+        
+        for (MPStrokeSequence *refSeq in _referenceStrokeSequences) {
+            MPStrokeSequence *transformedSequence = nil;
+            
+            MPStrokeSequence *resampledRefSeq = [[MPStrokeSequence alloc] initWithStrokeSequence:refSeq resampleCount:_pointCloudResampleRate];
+            
+            float score = [resampledValue minimalProcrustesDistanceWithStrokeSequence:resampledRefSeq
+                                                      rotateTransformedStrokeSequence:YES
+                                                            transformedStrokeSequence:&transformedSequence];
+            
+            [output addObject:@(score)];
+        }
+    }
+    
     return [output copy];
 }
 
 - (NSArray *)mappedColumnTypesForStrokeSequence {
     assert(_referenceStrokeSequences);
     NSMutableArray *vals = [NSMutableArray arrayWithCapacity:_referenceStrokeSequences.count];
-    for (NSUInteger i = 0; i < _referenceStrokeSequences.count; i++)
-        [vals addObject:@(MPColumnTypeFloatingPoint)];
+    
+    if (self.includePointClouds)
+    {
+        for (NSUInteger i = 0; i < _referenceStrokeSequences.count; i++)
+            [vals addObject:@(MPColumnTypeFloatingPoint)];
+    }
+    
+    if (self.includeProcrustesAnalysis)
+    {
+        for (NSUInteger i = 0; i < _referenceStrokeSequences.count; i++)
+            [vals addObject:@(MPColumnTypeFloatingPoint)];
+    }
     
     return [vals copy];
 }
 
 - (NSArray *)mappedColumnNamesForStrokeSequence {
     assert(_referenceStrokeSequences);
-    return [_referenceStrokeSequences valueForKey:@"practicallyUniqueIdentifier"];
+    
+    NSArray *identifiers = [_referenceStrokeSequences valueForKey:@"practicallyUniqueIdentifier"];
+    NSMutableArray *columnNames = [NSMutableArray arrayWithCapacity:identifiers.count * 2];
+
+    if (self.includePointClouds)
+    {
+        for (NSString *identifier in identifiers)
+            [columnNames addObject:[identifier stringByAppendingString:@"-dollarP"]];
+    }
+    
+    if (self.includeProcrustesAnalysis)
+    {
+        for (NSString *identifier in identifiers)
+            [columnNames addObject:[identifier stringByAppendingString:@"-procrustes"]];
+    }
+    
+    return [columnNames copy];
 }
 
 - (NSUInteger)mappedDimensionalityForStrokeSequence {
-    return _referenceStrokeSequences.count;
+    NSUInteger count = 0;
+    
+    if (self.includePointClouds)
+        count += _referenceStrokeSequences.count;
+
+    if (self.includeProcrustesAnalysis)
+        count += _referenceStrokeSequences.count;
+    
+    return count;
 }
 
 @end

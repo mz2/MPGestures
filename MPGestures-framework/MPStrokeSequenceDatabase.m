@@ -85,6 +85,43 @@ NSString * const MPStrokeSequenceDatabaseChangedExternallyNotification
     return self;
 }
 
+- (instancetype)initWithStrokeSequenceDatabase:(MPStrokeSequenceDatabase *)seqDatabase
+            maxStrokeSequencesWithMatchingName:(NSUInteger)maxCount
+{
+    if (maxCount <= 0)
+        // TODO: don't serialize & deserialise for performance reasons.
+        return [self initWithDictionary:seqDatabase.dictionaryRepresentation];
+    
+    NSArray *strokeSequences = [[seqDatabase.strokeSequenceSet allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSArray *names = [[seqDatabase.strokeSequenceNameSet allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSMutableDictionary *nameIndices = [NSMutableDictionary dictionaryWithCapacity:names.count];
+    
+    for (NSUInteger i = 0; i < names.count; i++)
+        nameIndices[names[i]] = @(i);
+    
+    NSMutableDictionary *outputStrokeSequenceMap = [NSMutableDictionary dictionaryWithCapacity:names.count * maxCount];
+    
+    NSUInteger *counts = malloc(names.count * sizeof(NSUInteger));
+    for (MPStrokeSequence *seq in strokeSequences)
+    {
+        NSUInteger i = [nameIndices[seq.name] unsignedIntegerValue];
+        
+        if (counts[i] >= maxCount)
+            continue;
+            
+        counts[i] += 1;
+        
+        if (!outputStrokeSequenceMap[seq.name])
+            outputStrokeSequenceMap[seq.name] = [NSMutableArray arrayWithCapacity:maxCount];
+        
+        [outputStrokeSequenceMap[seq.name] addObject:seq];
+    }
+    free(counts);
+    
+    return [self initWithIdentifier:seqDatabase.identifier strokeSequenceMap:[outputStrokeSequenceMap copy]];
+}
+
 - (instancetype)initWithContentsOfURL:(NSURL *)url error:(NSError **)err
 {
     NSData *data = [NSData dataWithContentsOfURL:url options:0 error:err];

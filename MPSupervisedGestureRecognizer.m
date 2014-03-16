@@ -126,19 +126,34 @@
 @property (readonly) NSArray *referenceStrokeSequences;
 @property (readwrite, getter = isTrained) BOOL trained;
 @property (readwrite) NSUInteger strokeResampleRate;
+@property (readwrite) NSUInteger maxStrokeSequencesPerName;
 
 @end
 
 @implementation MPRandomForestGestureRecognizer
 
 - (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
+                       referenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase
+{
+    return [self initWithTrainingDatabase:trainingDatabase
+                referenceSequenceDatabase:referenceDatabase
+            maxReferenceSequencesPerLabel:0];
+}
+
+- (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
                referenceSequenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase
+           maxReferenceSequencesPerLabel:(NSUInteger)maxSeqPerLabel
 {
     self = [super initWithTrainingDatabase:trainingDatabase referenceDatabase:referenceDatabase];
     if (self) {
         _strokeResampleRate = MPPointCloudDefaultResampleRate;
         
         id<MPStrokeSequenceDataSet> trainingSequenceDataset = [trainingDatabase dataSetRepresentation];
+        
+        // if there's a limit to stroke sequences per label, the reference database is swapped here to a database with this limit enforced.
+        if (maxSeqPerLabel > 0)
+            referenceDatabase = [[MPStrokeSequenceDatabase alloc] initWithStrokeSequenceDatabase:referenceDatabase
+                                                              maxStrokeSequencesWithMatchingName:maxSeqPerLabel];
         
         _referenceStrokeSequences = [referenceDatabase.strokeSequenceSet.allObjects sortedArrayUsingSelector:@selector(compare:)];
         

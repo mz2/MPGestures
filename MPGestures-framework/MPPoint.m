@@ -56,6 +56,11 @@
     return CGPointMake(self.x, self.y);
 }
 
+- (NSPoint)pointValue
+{
+    return NSMakePoint(self.x, self.y);
+}
+
 - (NSDictionary *)dictionaryRepresentation
 {
     return @{

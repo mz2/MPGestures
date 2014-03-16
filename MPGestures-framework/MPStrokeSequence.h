@@ -52,6 +52,12 @@
 - (instancetype)initWithName:(NSString *)name strokes:(NSArray *)arrays;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithStrokeSequence:(MPStrokeSequence *)sequence;
+/**
+ * Create a stroke sequence with an input stroke sequence an an optional resample count. If resampleCount <= 0, no resampling is done.
+ */
+- (MPStrokeSequence *)initWithStrokeSequence:(MPStrokeSequence *)strokeSequence resampleCount:(NSUInteger)resampleCount;
+
+
 - (instancetype)initWithName:(NSString *)name points:(NSArray *)points;
 
 + (NSArray *)strokeSequencesWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;

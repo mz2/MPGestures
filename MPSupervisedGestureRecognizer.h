@@ -27,12 +27,22 @@
  *  @return An array of MPStrokeSequenceRecognition objects.
  */
 - (NSArray *)evaluateRecognizerWithStrokeSequences:(NSArray *)strokeSequences
-                               confusionMatrix:(id<MPDataSet> *)confusionMatrix
-                                     precision:(float *)precision;
+                                   confusionMatrix:(id<MPDataSet> *)confusionMatrix
+                                         precision:(float *)precision;
 
 @end
 
 @interface MPRandomForestGestureRecognizer : MPSupervisedGestureRecognizer
+
+/**
+ *  Initialises a gesture recogniser. Optionally limits the number of reference stroke sequences passed in.
+ *
+ *  @param trainingDatabase  Training dataset
+ *  @param referenceDatabase Reference stroke sequence database
+ *  @param maxSeqPerLabel    Maximum number of sequences per label
+ */
 - (instancetype)initWithTrainingDatabase:(MPStrokeSequenceDatabase *)trainingDatabase
-               referenceSequenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase;
+               referenceSequenceDatabase:(MPStrokeSequenceDatabase *)referenceDatabase
+           maxReferenceSequencesPerLabel:(NSUInteger)maxSeqPerLabel;
+
 @end
