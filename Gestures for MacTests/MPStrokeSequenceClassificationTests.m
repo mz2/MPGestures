@@ -96,7 +96,7 @@
 
 - (void)testEmojiDetection {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-ref"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-train"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
@@ -107,7 +107,7 @@
                                                                                                        subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
     MPRandomForestGestureRecognizer *recognizer
-    = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb maxReferenceSequencesPerLabel:32];
+    = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb maxReferenceSequencesPerLabel:16];
     XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
     
     NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-test"
@@ -124,7 +124,7 @@
     NSArray *recognitions = [recognizer evaluateRecognizerWithStrokeSequences:testStrokes confusionMatrix:&confMatrix precision:&precision];
     XCTAssertTrue(recognitions.count == testStrokes.count, @"The expected number of recognitions were recovered.");
     NSLog(@"\nPrecision:%f\nConfusion matrix:\n%@",precision, confMatrix);
-    XCTAssertTrue(precision > 0.85, @"Precision with this test case should be at least 90%%");
+    XCTAssertTrue(precision >= 0.95, @"Precision with this test case should be at least 90%%");
 
 }
 
