@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -35,7 +35,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide DollarP-OSX" keyEquivalent="h" id="134">
+                            <menuItem title="Hide MPGestures" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -54,7 +54,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit DollarP-OSX" keyEquivalent="q" id="136">
+                            <menuItem title="Quit MPGestures" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -641,7 +641,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Manuscripts.app Gestures" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+        <window title="MPGestures" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="483" height="360"/>
@@ -726,17 +726,8 @@
                             <action selector="deleteStrokeSequence:" target="AD8-Ez-SsF" id="2TY-Lt-eDs"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTz-rU-rbc">
-                        <rect key="frame" x="4" y="7" width="138" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="kW1-5k-bT1">
-                            <font key="font" metaFont="cellTitle"/>
-                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <comboBox verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-8J-99E">
-                        <rect key="frame" x="148" y="2" width="203" height="26"/>
+                        <rect key="frame" x="7" y="2" width="344" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="JXo-MK-Kks"/>
@@ -758,9 +749,7 @@
                     <constraint firstItem="UoI-50-yDd" firstAttribute="top" secondItem="885-sy-nJI" secondAttribute="bottom" constant="8" id="DMT-DV-zE1"/>
                     <constraint firstItem="HCP-Bu-8E5" firstAttribute="leading" secondItem="aeN-c9-ycj" secondAttribute="trailing" constant="6" id="E6E-So-KQe"/>
                     <constraint firstItem="BTY-yX-K3Q" firstAttribute="leading" secondItem="HCP-Bu-8E5" secondAttribute="trailing" constant="3" id="EWt-hQ-jEt"/>
-                    <constraint firstAttribute="bottom" secondItem="BTz-rU-rbc" secondAttribute="bottom" constant="8" id="JjC-90-Dbd"/>
                     <constraint firstItem="UoI-50-yDd" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="L5p-of-THj"/>
-                    <constraint firstItem="oVe-8J-99E" firstAttribute="leading" secondItem="BTz-rU-rbc" secondAttribute="trailing" constant="8" id="RYt-rY-gqv"/>
                     <constraint firstItem="885-sy-nJI" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="7" id="TJD-uC-Jfh"/>
                     <constraint firstItem="aeN-c9-ycj" firstAttribute="top" secondItem="UoI-50-yDd" secondAttribute="bottom" constant="3" id="VOM-XL-spo"/>
                     <constraint firstAttribute="trailing" secondItem="nno-xX-Ipr" secondAttribute="trailing" constant="6" id="Ve4-LE-0zg"/>
@@ -770,7 +759,6 @@
                     <constraint firstAttribute="bottom" secondItem="oVe-8J-99E" secondAttribute="bottom" constant="7" id="h9o-Qh-8Yn"/>
                     <constraint firstAttribute="trailing" secondItem="UoI-50-yDd" secondAttribute="trailing" id="mWO-fP-k67"/>
                     <constraint firstAttribute="trailing" secondItem="BTY-yX-K3Q" secondAttribute="trailing" constant="5" id="nMJ-pz-Ene"/>
-                    <constraint firstItem="BTz-rU-rbc" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="6" id="qKo-0Q-PdS"/>
                     <constraint firstItem="885-sy-nJI" firstAttribute="top" secondItem="372" secondAttribute="top" constant="10" id="r0g-ah-Qbr"/>
                     <constraint firstAttribute="bottom" secondItem="HCP-Bu-8E5" secondAttribute="bottom" constant="4" id="rsx-L1-zc4"/>
                 </constraints>
@@ -790,7 +778,6 @@
                 <outlet property="nextGestureButton" destination="BTY-yX-K3Q" id="yo1-aV-MnV"/>
                 <outlet property="openPanelAccessoryView" destination="DIl-jM-uQH" id="3AB-4F-iof"/>
                 <outlet property="previousGestureButton" destination="HCP-Bu-8E5" id="zhE-mQ-CTi"/>
-                <outlet property="statusLabel" destination="BTz-rU-rbc" id="Tyl-YV-Gqp"/>
                 <outlet property="submitGestureButton" destination="nno-xX-Ipr" id="mWP-2P-6MO"/>
                 <outlet property="view" destination="UoI-50-yDd" id="EcV-RE-8Xa"/>
             </connections>

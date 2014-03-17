@@ -35,7 +35,7 @@
 - (void)testUnsupervisedPointCloudRecognition
 {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-train"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"square-triangle-circle-train"
                                                          withExtension:@"strokedb"
                                                           subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *db = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
@@ -65,13 +65,13 @@
 
 - (void)testSupervisedCircleTriangleSquareDetection {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-train"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"square-triangle-circle-train"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
     XCTAssertTrue(traindb != nil, @"A training database was successfully loaded.");
     
-    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-ref"
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"square-triangle-circle-ref"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
@@ -79,7 +79,7 @@
         = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb maxReferenceSequencesPerLabel:16];
     XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
     
-    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"square-triangle-circle-test" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"square-triangle-circle-test" withExtension:@"strokedb" subdirectory:@"Fixtures"];
     NSError *testDbErr = nil;
     MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
     
@@ -96,13 +96,13 @@
 
 - (void)testEmojiDetection {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-train"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"emoji-train"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
     XCTAssertTrue(traindb != nil, @"A training database was successfully loaded.");
     
-    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-train"
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"emoji-train"
                                                                                                       withExtension:@"strokedb"
                                                                                                        subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
@@ -110,7 +110,7 @@
     = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb maxReferenceSequencesPerLabel:16];
     XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
     
-    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"emoji-test"
+    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"emoji-test"
                                                                                                  withExtension:@"strokedb"
                                                                                                   subdirectory:@"Fixtures"];
     NSError *testDbErr = nil;
@@ -130,19 +130,19 @@
 
 - (void)testSupervisedGreekAlphabetRecognition {
     NSError *dbErr = nil;
-    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet"
+    NSURL *trainingDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"greek-alphabet"
                                                                                                      withExtension:@"strokedb"
                                                                                                       subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *traindb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:trainingDatabaseURL error:&dbErr];
     XCTAssertTrue(traindb != nil, @"A training database was successfully loaded.");
     
-    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    NSURL *referenceDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"greek-alphabet" withExtension:@"strokedb" subdirectory:@"Fixtures"];
     MPStrokeSequenceDatabase *rdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:referenceDatabaseURL error:&dbErr];
     MPRandomForestGestureRecognizer *recognizer
         = [[MPRandomForestGestureRecognizer alloc] initWithTrainingDatabase:traindb referenceSequenceDatabase:rdb maxReferenceSequencesPerLabel:8];
         XCTAssertTrue(recognizer != nil, @"A recognizer could be created.");
     
-    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.manuscripts.gestures.tests"] URLForResource:@"greek-alphabet-ref-2" withExtension:@"strokedb" subdirectory:@"Fixtures"];
+    NSURL *testDatabaseURL = [[NSBundle bundleWithIdentifier:@"com.piipari.gestures.tests"] URLForResource:@"greek-alphabet-ref-2" withExtension:@"strokedb" subdirectory:@"Fixtures"];
     NSError *testDbErr = nil;
     MPStrokeSequenceDatabase *testdb = [[MPStrokeSequenceDatabase alloc] initWithContentsOfURL:testDatabaseURL error:&testDbErr];
     
